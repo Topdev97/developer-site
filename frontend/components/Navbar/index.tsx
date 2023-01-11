@@ -10,12 +10,6 @@ const routes: Route[] = [
     onlyPublic: false
   },
   {
-    name: 'Services',
-    path: '/services',
-    private: false,
-    onlyPublic: false
-  },
-  {
     name: 'Projects',
     path: '/projects',
     private: false,
