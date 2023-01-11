@@ -1,0 +1,19 @@
+{
+  "name": "apps",
+  "private":"true",
+  "version": "1.0.0",
+  "description": "Monorepo of davc93 applications, frontend,nodeapss, etc...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "typescript",
+    "webapps",
+    "monorepo"
+  ],
+  "author": "Diego Vergara <davc93@gmail.com>",
+  "license": "ISC"
+}

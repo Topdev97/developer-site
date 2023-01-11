@@ -1,0 +1,27 @@
+{
+  "name": "api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Api for the backend",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --inspect index.js",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "firebase"
+  ],
+  "author": "Diego Vergara <davc93@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@firebase/app-types": "0.x",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.4.1",
+    "mongoose": "^6.8.3"
+  }
+}
