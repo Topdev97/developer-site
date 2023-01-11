@@ -1,4 +1,4 @@
-import { request, response,NextFunction } from "express";
+import { request, response} from "express";
 import { applicationDefault, initializeApp } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 
