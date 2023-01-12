@@ -2,7 +2,10 @@ lockfileVersion: 5.4
 
 importers:
 
-  api:
+  .:
+    specifiers: {}
+
+  apps/api:
     specifiers:
       '@firebase/app-types': 0.x
       cors: ^2.8.5
@@ -11,14 +14,14 @@ importers:
       firebase-admin: ^11.4.1
       mongoose: ^6.8.3
     dependencies:
-      '@firebase/app-types': 0.8.1
+      '@firebase/app-types': 0.9.0
       cors: 2.8.5
       dotenv: 16.0.3
       express: 4.18.2
-      firebase-admin: 11.4.1_@firebase+app-types@0.8.1
+      firebase-admin: 11.4.1_@firebase+app-types@0.9.0
       mongoose: 6.8.3
 
-  app:
+  apps/app:
     specifiers:
       '@types/react': ^18.0.26
       '@types/react-dom': ^18.0.9
@@ -41,7 +44,7 @@ importers:
       typescript: 4.9.3
       vite: 4.0.4
 
-  frontend:
+  apps/frontend:
     specifiers:
       '@tailwindcss/forms': ^0.5.3
       '@types/node': 18.11.10
@@ -75,6 +78,22 @@ importers:
       autoprefixer: 10.4.13_postcss@8.4.21
       postcss: 8.4.21
       tailwindcss: 3.2.4_postcss@8.4.21
+
+  apps/landing-pages/home:
+    specifiers:
+      typescript: ^4.9.3
+      vite: ^4.0.0
+    devDependencies:
+      typescript: 4.9.3
+      vite: 4.0.4
+
+  apps/landing-pages/services:
+    specifiers:
+      typescript: ^4.9.3
+      vite: ^4.0.0
+    devDependencies:
+      typescript: 4.9.3
+      vite: 4.0.4
 
 packages:
 
@@ -1269,13 +1288,13 @@ packages:
       - encoding
     dev: false
 
-  /@firebase/auth-interop-types/0.1.7_ng4u4jtoxpyfdkxsmbmyeoj754:
+  /@firebase/auth-interop-types/0.1.7_aqkrfbrcnr5kenxqdpztnx2xau:
     resolution: {integrity: sha512-yA/dTveGGPcc85JP8ZE/KZqfGQyQTBCV10THdI8HTlP1GDvNrhr//J5jAt58MlsCOaO3XmC4DqScPBbtIsR/EA==}
     peerDependencies:
       '@firebase/app-types': 0.x
       '@firebase/util': 1.x
     dependencies:
-      '@firebase/app-types': 0.8.1
+      '@firebase/app-types': 0.9.0
       '@firebase/util': 1.7.3
     dev: false
 
@@ -1328,11 +1347,11 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@firebase/database-compat/0.2.10_@firebase+app-types@0.8.1:
+  /@firebase/database-compat/0.2.10_@firebase+app-types@0.9.0:
     resolution: {integrity: sha512-fK+IgUUqVKcWK/gltzDU+B1xauCOfY6vulO8lxoNTkcCGlSxuTtwsdqjGkFmgFRMYjXFWWJ6iFcJ/vXahzwCtA==}
     dependencies:
       '@firebase/component': 0.5.21
-      '@firebase/database': 0.13.10_@firebase+app-types@0.8.1
+      '@firebase/database': 0.13.10_@firebase+app-types@0.9.0
       '@firebase/database-types': 0.9.17
       '@firebase/logger': 0.3.4
       '@firebase/util': 1.7.3
@@ -1368,10 +1387,10 @@ packages:
       '@firebase/util': 1.7.3
     dev: false
 
-  /@firebase/database/0.13.10_@firebase+app-types@0.8.1:
+  /@firebase/database/0.13.10_@firebase+app-types@0.9.0:
     resolution: {integrity: sha512-KRucuzZ7ZHQsRdGEmhxId5jyM2yKsjsQWF9yv0dIhlxYg0D8rCVDZc/waoPKA5oV3/SEIoptF8F7R1Vfe7BCQA==}
     dependencies:
-      '@firebase/auth-interop-types': 0.1.7_ng4u4jtoxpyfdkxsmbmyeoj754
+      '@firebase/auth-interop-types': 0.1.7_aqkrfbrcnr5kenxqdpztnx2xau
       '@firebase/component': 0.5.21
       '@firebase/logger': 0.3.4
       '@firebase/util': 1.7.3
@@ -3526,12 +3545,12 @@ packages:
       path-exists: 4.0.0
     dev: false
 
-  /firebase-admin/11.4.1_@firebase+app-types@0.8.1:
+  /firebase-admin/11.4.1_@firebase+app-types@0.9.0:
     resolution: {integrity: sha512-t5+Pf8rC01TW1KPD5U8Q45AEn7eK+FJaHlpzYStFb62J+MQmN/kB/PWUEsNn+7MNAQ0DZxFUCgJoi+bRmf83oQ==}
     engines: {node: '>=14'}
     dependencies:
       '@fastify/busboy': 1.2.1
-      '@firebase/database-compat': 0.2.10_@firebase+app-types@0.8.1
+      '@firebase/database-compat': 0.2.10_@firebase+app-types@0.9.0
       '@firebase/database-types': 0.9.17
       '@types/node': 18.11.10
       jsonwebtoken: 9.0.0
