@@ -81,18 +81,20 @@ importers:
 
   apps/landing-pages/home:
     specifiers:
-      typescript: ^4.9.3
-      vite: ^4.0.0
+      gsap: ^3.11.3
+      vite: ^4.0.1
+    dependencies:
+      gsap: 3.11.4
     devDependencies:
-      typescript: 4.9.3
       vite: 4.0.4
 
   apps/landing-pages/services:
     specifiers:
-      typescript: ^4.9.3
-      vite: ^4.0.0
+      gsap: ^3.11.3
+      vite: ^4.0.1
+    dependencies:
+      gsap: 3.11.4
     devDependencies:
-      typescript: 4.9.3
       vite: 4.0.4
 
 packages:
@@ -3871,6 +3873,10 @@ packages:
 
   /grapheme-splitter/1.0.4:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
+    dev: false
+
+  /gsap/3.11.4:
+    resolution: {integrity: sha512-McHhEguHyExMMnjqKA8G+7TvxmlKQGMbjgwAilnFe1e4id7V/tFveRQ2YMZhTYu0oxHGWvbPltdVYQOu3z1SCA==}
     dev: false
 
   /gtoken/6.1.2:

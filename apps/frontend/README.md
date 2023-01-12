@@ -1,3 +1,3 @@
 # Website
 
-Template website for my nextjs website
+Frontend UI for users
