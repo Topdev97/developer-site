@@ -75,13 +75,13 @@ export const Navbar = () => {
               
               return (
                 <li key={route.path}>
-                  <Link
-                    onClick={toggleMobileMenu}       
+                  <ActiveLink
+                    activeClassName='link-active'
                     href={route.path}
-            
+                    className='link'
                   >
                     {route.name}
-                  </Link>
+                  </ActiveLink>
                 </li>
               )
             })}

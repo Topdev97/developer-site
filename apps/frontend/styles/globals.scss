@@ -45,7 +45,7 @@ li{
     @apply font-semibold text-base hover:text-primary-500 text-black dark:text-white;
 }
 .link-active{
-    @apply font-semibold text-base text-primary-500;
+    @apply font-semibold text-base text-primary-500 dark:text-primary-500;
 }
 .btn--primary{
 
@@ -160,6 +160,17 @@ li{
     @apply  font-bold
 }
 
+
+.project-detail{
+
+    @apply flex flex-col gap-3
+}
+.project-detail ul {
+    @apply px-6
+}
+.project-detail li {
+    list-style: square;
+}
 
 .service-description {
     @apply py-8 lg:py-12
@@ -402,7 +413,9 @@ ul li ul li a {
 .menu--mobile .menu-items li {
     list-style: none;
     margin-bottom: 1.2rem;
+    
 }
+
 
 .logo {
     position: absolute;
@@ -436,3 +449,22 @@ ul li ul li a {
 .nav-container input[type="checkbox"]:checked~.logo {
     display: none;
 }
+
+@media (min-width: 640px) {}
+
+@media (min-width: 768px) {
+    .menu--mobile .menu-items{
+        padding-top: 240px;
+        width: 70%;
+        gap:42px;
+    }
+    .menu--mobile .menu-items li a{
+    font-size: 2rem;
+} 
+
+}
+
+@media (min-width: 1024px) {}
+
+
+// end menu mobile

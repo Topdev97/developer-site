@@ -4,14 +4,13 @@ import Markdown from 'markdown-to-jsx'
 export const ProjectDetail = ({ title, description, images, repositoryLink, webAppLink, techs }:Project) => {
 
     return (
-      <article className='flex flex-col gap-8 items-center md:text-start text-center md:flex-row-reverse shadow-xl p-2 md:p-8'>
+      <article className='flex flex-col gap-8 items-center md:text-start lg:flex-row-reverse p-2 lg:p-8'>
         <img className="lg:w-96 lg:object-cover max-h-screen" src={images[0] || '/not-available/2.svg' } alt={title} />
         <div className='lg:mb-24'>
           <div className='dark:text-white' >
-            <Markdown>{description}</Markdown>
+            <Markdown className="project-detail" >{description}</Markdown>
           </div>
-
-          <div className="techs mt-8 gap-4 grid grid-cols-3 md:grid-cols-6">
+          <div className="techs mt-8 gap-4 grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6">
             {techs.map((tech) => {
 
               if(tech.includes('-')){

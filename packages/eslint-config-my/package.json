@@ -1,0 +1,19 @@
+{
+  "name": "eslint-config-my",
+  "version": "1.0.0",
+  "description": "My eslint config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Diego Vergara <davc93@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "8.29.0"
+  }
+}
