@@ -1,0 +1,23 @@
+{
+  "name": "sequelize",
+  "version": "1.0.0",
+  "description": "ORM module for realational database operations",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "help": "sequelize --help"
+  },
+  "keywords": [
+    "nodejs",
+    "orm",
+    "sequelize",
+    "postgres"
+  ],
+  "author": "Diego Vergara <davc93@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "18.11.10",
+    "dotenv": "^16.0.3",
+    "sequelize": "^6.28.0",
+    "sequelize-cli": "^6.5.2"
+  }
+}
