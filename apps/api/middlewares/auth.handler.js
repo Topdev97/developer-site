@@ -14,13 +14,10 @@ export const authenticate = async (request, response, next) => {
       });
     }
   } else {
-    response.status(401).json({
-      message: "Token invalido",
-    });
+    throw new Error('Token invalido')
   }
 };
 
-console.log(process.env.GOOGLE_APPLICATION_CREDENTIALS);
 initializeApp({
   credential: applicationDefault(),
 });
