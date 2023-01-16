@@ -1,19 +1,32 @@
 import React from "react";
-
+import { Project } from "../models/project.model";
 export const useGetSingleProject = (slug:any) => {
-    const [project, setProject] = React.useState({})
+    const [project, setProject] = React.useState<Project | null>(null) 
+    const [loading, setLoading] = React.useState<Boolean | null>(null)
+    const [error, setError]:any = React.useState<Boolean | null>(null)
     React.useEffect(() => {
         
         const getSingleProject = async () => {
-        
-            const response = await fetch(`/api/projects/${slug}`)
-            const data = await response.json()
-            
-            setProject(data)
+            setLoading(true)
+            if(slug){
+                try {
+                    const response = await fetch(`/api/projects/${slug}`)
+                    const data = await response.json()
+                    setProject(data)
+                    setLoading(false)           
+                } catch (error) {
+                    console.log(`[projects-error]: ${error}`);
+                    setError(error)
+                }
+            }
         }
 
         getSingleProject()
-    },[])
-    return project
+    },[slug])
+    return {
+        project,
+        error,
+        loading
+    }
 
 };

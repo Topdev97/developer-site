@@ -4,6 +4,7 @@ type Data = {
   name: string;
 };
 
+const db = new Database()
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -11,7 +12,6 @@ export default async function handler(
 
   try {
 
-    const db = new Database()
     const slug =  req.query.slug
     
     const project = await db.getById('projects', slug as string)
@@ -23,6 +23,8 @@ export default async function handler(
   } catch (e) {
     console.error(e)
     
-    res.status(404).end()
+    res.status(404).json({
+      "name":"error"
+    })
   }
 }
