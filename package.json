@@ -1,6 +1,6 @@
 {
   "name": "apps",
-  "private":"true",
+  "private":true,
   "version": "1.0.0",
   "description": "Monorepo of davc93 applications, frontend,nodeapss, etc...",
   "main": "index.js",

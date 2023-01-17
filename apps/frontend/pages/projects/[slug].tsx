@@ -14,7 +14,7 @@ const Project = () => {
       <p>Loading...</p>
     )
   }
-  if(project) {
+  else if(project) {
     return (
       <Layout>
         <main className='p-4 lg:p-8'>
