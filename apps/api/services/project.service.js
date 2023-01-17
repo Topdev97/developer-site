@@ -1,36 +1,43 @@
+import Model from '../db/mongo/models/project.model.js'
+
+
 
 class ProjectService {
 
   async create(data) {
-    const project = await models.Category.findByPk(data.categoryId);
-    if (!project) {
-      throw new Error('')
-    }
-    const newProject = await models.Product.create(data);
-    return newProject;
+    const newProject = new Model(data) 
+    return await newProject.save();
+  }
+
+  async findAll(){
+    const projects = await Model.find({})
+    return projects
   }
 
 
   async findOne(id) {
-    const project = await models.Product.findByPk(id, {
-      include: ['category']
-    });
+    const project = await Model.findById(id)
     if (!project) {
-      throw new Error('')
+      throw new Error("Project doesn't exist")
     }
     return project;
   }
 
   async update(id, changes) {
-    const product = await this.findOne(id);
-    const rta = await product.update(changes);
+    try {
+      await Model.findById(id)
+      
+    } catch (error) {
+      
+      throw new Error("Project doesn't exist")
+    }
+    const rta = await Model.updateOne({_id:id},changes)
     return rta;
   }
 
   async delete(id) {
-    const product = await this.findOne(id);
-    await product.destroy();
-    return { id };
+    const project = await Model.findByIdAndDelete(id)
+    return project;
   }
   //   async find(query) {
 //     const options = {
@@ -62,4 +69,4 @@ class ProjectService {
 
 }
 
-export default ProjectService
+export {ProjectService}

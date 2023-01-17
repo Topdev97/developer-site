@@ -1,13 +1,17 @@
 import mongoose from "mongoose";
+const {Schema} = mongoose
 
-const Schema = mongoose.Schema
 
-
-const mySchema = Schema({
+const mySchema = new Schema({
     title:String,
     description:String,
     shortDescription:String,
-    repositoryLink:String
+    repositoryLink:String,
+    webAppLink:String,
+    labels:[String],
+    techs:[String],
+    images:[String],
+    slug:String
 })
 
 const model = mongoose.model('Project',mySchema)

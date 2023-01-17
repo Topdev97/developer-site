@@ -1,10 +1,12 @@
 import express,{ Router,request,response } from "express";
-import service from '../services/project.service.js'
-const router = Router()
+import {ProjectService} from '../services/project.service.js'
 
+
+const router = Router()
+const service = new ProjectService()
 router.get('/', async (req, res, next) => {
   try {
-    const projects = await service.find();
+    const projects = await service.findAll();
     res.json(projects);
   } catch (error) {
     next(error);

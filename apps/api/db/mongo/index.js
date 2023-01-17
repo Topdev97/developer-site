@@ -3,9 +3,8 @@ import {config} from '../../config.js'
 // mongoose.Promise = global.Promise
 async function dbConnect() {
     try {
-        mongoose.set('strictQuery',true)
-        await mongoose.connect(`${config.MONGO_URL}`)
-        console.log(`[db-connection]:connection successfull`);
+        await mongoose.connect(`${config.MONGO_URL}`,{autoIndex:false})
+        console.log(`[db-connection]:Connection successfull`);
         
     } catch (error) {
         throw new Error(`[db-connection]: Problems in connection ${error}`)
