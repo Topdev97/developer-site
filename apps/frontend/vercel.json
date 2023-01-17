@@ -1,5 +1,5 @@
 {
     "rewrites":[
-        {"source": "^/$", "destination": "https://my-apps-home.vercel.app/"}
+        {"source": "/", "destination": "https://my-apps-home.vercel.app/"}
     ]
 }
