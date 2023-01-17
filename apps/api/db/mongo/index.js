@@ -3,7 +3,7 @@ import {config} from '../../config.js'
 // mongoose.Promise = global.Promise
 async function dbConnect() {
     try {
-        await mongoose.connect(`${config.MONGO_URI}`,{autoIndex:false})
+        await mongoose.connect(`${config.MONGODB_URI}`,{autoIndex:false})
         console.log(`[db-connection]:Connection successfull`);
         
     } catch (error) {
