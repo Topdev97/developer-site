@@ -1,0 +1,6 @@
+{
+    "rewrites":[
+        {"source": "/", "destination": "https://my-apps-home.vercel.app/"},
+        {"source": "/:match*", "destination": "https://my-apps-frontend.vercel.app/:match*"}
+    ]
+}
