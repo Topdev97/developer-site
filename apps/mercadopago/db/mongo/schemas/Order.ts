@@ -4,34 +4,34 @@ const { Schema } = mongoose;
 const mySchema = new Schema({
   shipment: {},
   preference: {
-    items: {
-      id: "item-ID-1234",
-      title: "Mi producto",
-      currency_id: "CLP",
-      description: "Descripción del Item",
-      quantity: 2,
-      unit_price: 2500,
-    },
+    items: [{
+      id: String,
+      title: String,
+      currency_id: String,
+      description: String,
+      quantity: Number,
+      unit_price: Number,
+    }],
     payer: {
-      name: "Juan",
-      surname: "Lopez",
-      email: "user@email.com",
+      name: String,
+      surname: String,
+      email: String,
       phone: {
-        area_code: "11",
-        number: 44444444,
+        area_code: String,
+        number: Number,
       },
       identification: {
-        type: "DNI",
-        number: "12345678",
+        type: {type:String},
+        number: String,
       },
       address: {
-        street_name: "Street",
-        street_number: 123,
-        zip_code: "5700",
+        street_name: String,
+        street_number: Number,
+        zip_code: String,
       },
     },
     shipments: {
-      cost: 5000,
+      cost: Number,
     },
   },
 });

@@ -6,7 +6,7 @@ import { errors } from "./network/errors";
 import preferences from './routes/preference';
 import notifications from './routes/notifications'
 import { dbConnection } from './db/mongo';
-
+dbConnection()
 
 const app = express();
 

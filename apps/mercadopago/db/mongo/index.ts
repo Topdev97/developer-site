@@ -10,7 +10,6 @@ async function dbConnection() {
     }
 }
 
-dbConnection()
 
 export {
     dbConnection

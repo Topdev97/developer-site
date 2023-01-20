@@ -10,7 +10,7 @@ class PreferenceService {
     const Model = new OrderModel(order)
     Model.save()
     const preferenceId = await createPreference(preference);
-
+    
     return preferenceId
   }
 }
