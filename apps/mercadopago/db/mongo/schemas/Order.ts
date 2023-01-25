@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 
 const mySchema = new Schema({
-  shipment: {},
+  
   preference: {
     items: [{
       id: String,
@@ -34,6 +34,9 @@ const mySchema = new Schema({
       cost: Number,
     },
   },
+  shipment :{
+    
+  }
 });
 
 const model = mongoose.model("Orders", mySchema);

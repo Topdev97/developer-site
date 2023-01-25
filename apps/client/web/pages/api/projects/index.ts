@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Database } from "../../../db/db";
-Database;
+import clientPromise from "../../../lib/mongodb";
+
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,9 +12,18 @@ export default async function handler(
   // res.end(JSON.stringify({ lenght, data: allEntries }))
   // res.status(200).json({ name: "hello" });
   try {
-    const db = new Database();
-    const projects = await db.getAll("projects");
-    res.status(200).json(projects);
+    const client = await clientPromise;
+    const db = client.db("test");
+
+    const movies = await db
+        .collection("projects")
+        .find({})
+        .sort({ metacritic: -1 })
+        .limit(20)
+        .toArray();
+
+    res.json(movies);
+    
   } catch (error) {
     res.json({
       message: "Hubo un error",

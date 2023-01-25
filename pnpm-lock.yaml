@@ -66,6 +66,7 @@ importers:
       eslint: 8.29.0
       eslint-config-next: 13.0.6
       markdown-to-jsx: ^7.1.8
+      mongodb: ^4.13.0
       next: 13.0.6
       postcss: ^8.4.19
       react: 18.2.0
@@ -80,6 +81,7 @@ importers:
       eslint: 8.29.0
       eslint-config-next: 13.0.6_s5ps7njkmjlaqajutnox5ntcla
       markdown-to-jsx: 7.1.8_react@18.2.0
+      mongodb: 4.13.0
       next: 13.0.6_3duxcpitbtplz62feflag7fwby
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -7081,6 +7083,20 @@ packages:
 
   /mongodb/4.12.1:
     resolution: {integrity: sha512-koT87tecZmxPKtxRQD8hCKfn+ockEL2xBiUvx3isQGI6mFmagWt4f4AyCE9J4sKepnLhMacoCTQQA6SLAI2L6w==}
+    engines: {node: '>=12.9.0'}
+    dependencies:
+      bson: 4.7.2
+      mongodb-connection-string-url: 2.6.0
+      socks: 2.7.1
+    optionalDependencies:
+      '@aws-sdk/credential-providers': 3.245.0
+      saslprep: 1.0.3
+    transitivePeerDependencies:
+      - aws-crt
+    dev: false
+
+  /mongodb/4.13.0:
+    resolution: {integrity: sha512-+taZ/bV8d1pYuHL4U+gSwkhmDrwkWbH1l4aah4YpmpscMwgFBkufIKxgP/G7m87/NUuQzc2Z75ZTI7ZOyqZLbw==}
     engines: {node: '>=12.9.0'}
     dependencies:
       bson: 4.7.2

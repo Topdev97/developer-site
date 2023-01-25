@@ -1,10 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { Database } from "../../../db/db";
+import clientPromise from "../../../lib/mongodb";
+import { Project } from "../../../models/project.model";
+
 type Data = {
   name: string;
 };
 
-const db = new Database()
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -13,8 +14,10 @@ export default async function handler(
   try {
 
     const slug =  req.query.slug
-    
-    const project = await db.getById('projects', slug as string)
+    const client = await clientPromise;
+    const db = client.db("test");
+    const project = await db.collection('projects').findOne({slug:slug}) as any
+    project.description = project.description.replaceAll("\\n","\n")
     if(!project){
       throw new Error('hubo un error')
     }  
