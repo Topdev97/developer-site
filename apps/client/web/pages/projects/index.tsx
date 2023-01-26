@@ -3,7 +3,8 @@ import { Layout } from "../../components/Layout";
 import { ProjectCard } from "../../components/ProjectCard/";
 import { useGetProjects } from "../../hooks/useGetProjects";
 import { Project } from "../../models/project.model";
-import { Loader } from "../../components/loader";
+import { SpinLoader } from "../../components/loaders/SpinLoader";
+import { BubbleLoader } from "../../components/loaders/BubbleLoader";
 
 export default function Projects() {
   const { projects, loading, error } = useGetProjects();
@@ -21,7 +22,7 @@ export default function Projects() {
         </Head>
         <Layout>
           <main className="flex justify-center">
-            <Loader width={24} height={24}/>
+            <BubbleLoader width={30} height={30} gap={20}/>
           </main>
         </Layout>
       </>

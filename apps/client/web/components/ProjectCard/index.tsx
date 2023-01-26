@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import { Project } from '../../models/project.model'
-import { Loader } from '../loader'
+import { SpinLoader } from '../loaders/SpinLoader'
+import { BubbleLoader } from '../loaders/BubbleLoader'
 
 
 
@@ -43,7 +44,7 @@ export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Proj
             })}
           </div>
       </div>
-      <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`/projects/${slug}`}>More details {buttonLoading && <Loader width={4} height={4}/>}</Link>
+      <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`/projects/${slug}`}>More details {buttonLoading && <BubbleLoader width={10} height={10} gap={0}/>}</Link>
     </div>
   )
 }
