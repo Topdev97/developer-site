@@ -45,7 +45,7 @@ export const Navbar = () => {
             return (
               <li key={route.path}>
                 <ActiveLink
-                  activeClassName='link-active'
+                  activeClassName='tab-active'
                   href={route.path}
                   className='link'
                 >
@@ -76,7 +76,7 @@ export const Navbar = () => {
               return (
                 <li key={route.path}>
                   <ActiveLink
-                    activeClassName='link-active'
+                    activeClassName='tab-active'
                     href={route.path}
                     className='link'
                   >

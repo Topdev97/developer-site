@@ -36,7 +36,7 @@ const HomePage = () => {
             <p>
               I'm a business administrator by profession, I worked in
               management control for 5 years, and now that I discovered what I
-              am passionate about, <b>tech and bussiness</b>, specially a i like web development with <b>Javascript</b> in frontend and backend with <b>NodeJS</b> I like to meet
+              am passionate about, <b>Tech and bussiness</b>, specially a i like web development with <b>Javascript</b> in frontend and backend with <b>NodeJS</b> I like to meet
               people, learn new things, achieve goals and sports, I'm a blue
               belt in brazilian jiu jitsu.
             </p>
@@ -157,7 +157,7 @@ const HomePage = () => {
         <section className="cta--projects flex flex-col gap-2 text-center items-center my-36">
           <h2>See my portfolio</h2>
           <h4>Take a look of what can we build</h4>
-          <Link href='/projects' className="btn btn--primary mt-8">Click here</Link>
+          <Link href='/projects' className="btn--primary mt-8">Click here</Link>
         </section>
         <section className='certificates'>
           <h2>Certificates</h2>

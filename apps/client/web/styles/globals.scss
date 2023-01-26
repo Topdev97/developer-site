@@ -4,11 +4,11 @@
 
 
 body {
-    --def--primary: #feeeee;
-    --inv--primary: #f05454;
-    --def--secondary: #f5f6f7;
-    --inv--secondary: #30475e;
-    @apply font-OpenSans dark:bg-gray-800
+    @apply font-OpenSans 
+}
+
+.dark body{
+    background-color: #272635;
 }
 
 h1 {
@@ -29,9 +29,12 @@ h4 {
 }
 
 p {
-    @apply font-light text-base dark:text-white
+    @apply font-normal text-base dark:text-white
 }
 
+b{
+    @apply dark:text-secondary-400 font-extrabold
+}
 span,label,li {
 
     @apply font-medium text-base dark:text-white
@@ -42,104 +45,26 @@ li{
     list-style: none;
 }
 .link {
-    @apply font-semibold text-base hover:text-primary-500 text-black dark:text-white;
+    @apply font-semibold text-base text-black dark:text-white hover:bg-secondary-500 hover:text-white hover:px-4 hover:py-2 hover:rounded-lg transition-all ;
 }
-.link-active{
-    @apply font-semibold text-base text-primary-500 dark:text-primary-500;
+.tab-active{
+    @apply font-semibold text-base text-white bg-secondary-500 rounded-lg px-4 py-2 ;
 }
+
 .btn--primary{
-
-    color: var(--inv--primary);
-    @apply bg-primary-200 font-semibold text-xl
-}
-.btn--primary:hover{
-
-    color: var(--def--primary);
-
-}
-.btn--primary::before{
-
-    border: 1px solid var(--inv--primary);
-
-}
-.btn--primary:hover::after{
-
-    background: var(--inv--primary);
+    @apply text-2xl text-center font-semibold bg-primary-400 hover:bg-primary-500 transition-all text-primary-100 px-4 py-3 w-56 md:w-72
 }
 .btn--secondary{
-    @apply bg-secondary-200 font-semibold text-xl;
-    color: var(--inv--secondary);
-}
-.btn--secondary:hover{
-
-    color: var(--def--secondary);
-
-}
-.btn--secondary::before{
-
-    border: 1px solid var(--inv--secondary);
-
-}
-.btn--secondary:hover::after{
-
-    background: var(--inv--secondary);
+    @apply text-2xl text-center font-semibold bg-secondary-400 hover:bg-secondary-500 transition-all text-primary-100 px-4 py-3 w-56 md:w-72
 }
 
-.btn {
-    z-index: 1;
-    position: relative;
-    text-transform: uppercase;
-    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
-    cursor: pointer;
-    user-select: none;
-    @apply w-full text-center md:w-64 px-2 py-4 flex justify-center
-
-}
-
-.btn:before,
-.btn:after {
-    content: '';
-    position: absolute;
-    transition: inherit;
-    z-index: -1;
-    left: 0;
-    height: 0;
-    width: 100%;
-}
-
-.btn:hover {
-    transition-delay: .5s;
-}
-
-.btn:hover:before {
-    transition-delay: 0s;
-    height: 100%;
-}
-
-.btn:hover:after {
-    transition-delay: .35s;
-    height: 100%;
-}
-
-
-
-.btn:before {
-    bottom: 0;
-    border-top: 0;
-    border-bottom: 0;
-}
-
-.btn:after {
-    top: 0;
-    height: 0;
-}
 
 
 
 
 .project-card{
 
-    @apply w-full p-8 flex flex-col gap-4 items-center rounded-2xl shadow-xl
+    @apply w-full p-8 flex flex-col gap-4 items-center rounded-2xl shadow-xl dark:bg-gray-700
 }
 .project-card img{
     @apply max-h-56
@@ -336,6 +261,9 @@ ul li ul li a {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+.menu--mobile a {
+    padding: 8px 16px;
 }
 
 

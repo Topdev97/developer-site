@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -8,39 +8,35 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        OpenSans: ['Open Sans', 'sans-serif']
+        OpenSans: ["Open Sans", "sans-serif"],
       },
       colors: {
-        'primary': {
-          '50': '#fef6f6',
-          '100': '#feeeee',
-          '200': '#fbd4d4',
-          '300': '#f9bbbb',
-          '400': '#f58787',
-          '500': '#f05454',
-          '600': '#d84c4c',
-          '700': '#b43f3f',
-          '800': '#903232',
-          '900': '#762929'
+        primary: {
+          50: "#f6f5fe",
+          100: "#edebfe",
+          200: "#d1cefb",
+          300: "#b5b1f9",
+          400: "#7e76f5",
+          500: "#473bf0",
+          600: "#4035d8",
+          700: "#352cb4",
+          800: "#2b2390",
+          900: "#231d76",
         },
-        'secondary': {
-          '50': '#f5f6f7',
-          '100': '#eaedef',
-          '200': '#cbd1d7',
-          '300': '#acb5bf',
-          '400': '#6e7e8e',
-          '500': '#30475e',
-          '600': '#2b4055',
-          '700': '#243547',
-          '800': '#1d2b38',
-          '900': '#18232e'
-        }
-      }
-
+        secondary: {
+          50: "#fef4f4",
+          100: "#fde8e9",
+          200: "#fbc6c8",
+          300: "#f8a4a7",
+          400: "#f26066",
+          500: "#ed1c24",
+          600: "#d51920",
+          700: "#b2151b",
+          800: "#8e1116",
+          900: "#740e12",
+        },
+      },
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-
-  ]
-}
+  plugins: [require("@tailwindcss/forms")],
+};

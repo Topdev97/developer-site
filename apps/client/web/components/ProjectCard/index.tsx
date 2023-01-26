@@ -8,7 +8,9 @@ export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Proj
   const mainTechs = techs.slice(0,3)
   return (
     <div className='project-card flex flex-col items-center text-center '>
-      <img src={images[0] || '/not-available/2.svg'} alt={title} />
+      <div className='image-container  dark:bg-gray-900 w-full h-80 flex justify-center items-center'>
+        <img src={images[0] || '/not-available/2.svg'} alt={title} className='h-full object-cover' />
+      </div>
       <h3 className='mb-4'>{title}</h3>
       <p>{shortDescription}</p>
       <div className='project-card__techs my-2'>
