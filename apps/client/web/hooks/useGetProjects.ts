@@ -8,16 +8,19 @@ export const useGetProjects = () => {
     React.useEffect(()=>{
         const getProductList =async () => {
             setLoading(true)
-            try {
-                const response = await fetch('/api/projects')
-                const data = await response.json()
-                setProjects(data)
-                setLoading(false)                
-            } catch (error) {
-                setError(error as string)
-                setLoading(false)
-                
-            }
+            setTimeout(async ()=>{
+
+                try {
+                    const response = await fetch('/api/projects')
+                    const data = await response.json()
+                    setProjects(data)
+                    setLoading(false)                
+                } catch (error) {
+                    setError(error as string)
+                    setLoading(false)
+                    
+                }
+            },6000)
 
         }
         getProductList()

@@ -1,10 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
 import { Project } from '../../models/project.model'
+import { Loader } from '../loader'
 
 
 
 export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Project) => {
+  const [buttonLoading, setButtonLoading] = React.useState(false)
   const mainTechs = techs.slice(0,3)
   return (
     <div className='project-card flex flex-col items-center text-center '>
@@ -41,7 +43,7 @@ export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Proj
             })}
           </div>
       </div>
-      <Link className='btn btn--primary' href={`/projects/${slug}`}>More details</Link>
+      <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`/projects/${slug}`}>More details {buttonLoading && <Loader width={4} height={4}/>}</Link>
     </div>
   )
 }
