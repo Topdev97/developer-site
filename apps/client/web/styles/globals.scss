@@ -50,10 +50,10 @@ li {
 }
 
 .btn--primary {
-  @apply text-2xl text-center font-semibold bg-primary-400 hover:bg-primary-500 transition-all text-primary-100 px-4 py-3 w-56 md:w-72;
+  @apply text-2xl text-center font-semibold bg-primary-400 hover:bg-primary-500 transition-all text-primary-100 px-4 py-3 w-full md:w-72;
 }
 .btn--secondary {
-  @apply text-2xl text-center font-semibold bg-secondary-400 hover:bg-secondary-500 transition-all text-primary-100 px-4 py-3 w-56 md:w-72;
+  @apply text-2xl text-center font-semibold bg-secondary-400 hover:bg-secondary-500 transition-all text-primary-100 px-4 py-3 w-full md:w-72;
 }
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */

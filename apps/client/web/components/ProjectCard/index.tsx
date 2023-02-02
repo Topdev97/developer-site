@@ -9,6 +9,7 @@ import { BubbleLoader } from '../loaders/BubbleLoader'
 export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Project) => {
   const [buttonLoading, setButtonLoading] = React.useState(false)
   const mainTechs = techs.slice(0,3)
+  
   return (
     <div className='project-card flex flex-col items-center text-center '>
       <div className='image-container  dark:bg-gray-900 w-full h-80 flex justify-center items-center'>
@@ -44,7 +45,7 @@ export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Proj
             })}
           </div>
       </div>
-      <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`/projects/${slug}`}>More details {buttonLoading && <BubbleLoader width={10} height={10} gap={0}/>}</Link>
+      <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`/projects/${slug}`}>{buttonLoading ? <BubbleLoader width={15} height={15} gap={10}/> : "More details"}</Link>
     </div>
   )
 }

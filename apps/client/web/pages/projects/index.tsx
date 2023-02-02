@@ -41,7 +41,7 @@ export default function Projects() {
         <Layout>
           <main className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 md:mx-8">
             {projects.map((project: Project) => {
-              return <ProjectCard {...project} />;
+              return <ProjectCard key={project.id} {...project} />;
             })}
           </main>
         </Layout>
