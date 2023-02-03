@@ -11,6 +11,9 @@ export const useGetSingleProject = (slug:any) => {
             if(slug){
                 try {
                     const response = await fetch(`/api/projects/${slug}`)
+                    if(response.status == 500){
+                        throw new Error("Error")
+                    }
                     const data = await response.json()
                     setProject(data)
                     setLoading(false)           

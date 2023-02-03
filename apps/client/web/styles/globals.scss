@@ -196,17 +196,15 @@ li {
   @apply hidden lg:block z-10 bg-white dark:bg-gray-900;
   width: 100%;
   position: fixed;
-  justify-content: end;
-  padding: 20px 0;
+  justify-content: space-between;
+  padding: 20px 80px;
   box-shadow: 1px 1px 1px 0 #00000057;
 
   a {
     text-decoration: none;
   }
-
   &.primary-navigation {
     @apply hidden lg:flex;
-
     text-align: center;
     font-size: 16px;
     padding-right: 50px;

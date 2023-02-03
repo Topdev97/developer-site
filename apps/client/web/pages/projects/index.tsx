@@ -28,6 +28,7 @@ export default function Projects() {
       </>
     );
   } else if (projects) {
+    console.log(projects);
     return (
       <>
         <Head>
@@ -47,5 +48,23 @@ export default function Projects() {
         </Layout>
       </>
     );
+  } else if (error){
+    return (
+      <>
+        <Head>
+          <title>Projects - davc93</title>
+          <meta
+            name="description"
+            content="My Web projects collection made with love by davc3"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Layout>
+          <main className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 md:mx-8">
+            <h2>Content not available , try later</h2>
+          </main>
+        </Layout>
+      </>
+    )
   }
 }

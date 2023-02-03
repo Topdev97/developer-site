@@ -22,11 +22,12 @@ export default async function handler(
         .limit(20)
         .toArray();
 
-    res.json(movies);
+    res.status(200).json(movies);
     
   } catch (error) {
-    res.json({
-      message: "Hubo un error",
+    res.status(500).json({
+      error: "Hubo un error",
+      message:"Hubo un error"
     });
     console.log(error);
   }

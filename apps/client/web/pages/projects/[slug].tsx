@@ -7,6 +7,9 @@ import Head from 'next/head'
 
 export const getServerSideProps = async ({params}:any) => {
   const response = await fetch(`https://davc93.dev/api/projects/${params.slug}`)
+  if(response.status == 500){
+    throw new Error("Error")
+}
   const data = await response.json()
 
   return {

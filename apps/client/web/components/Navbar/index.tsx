@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Route } from '../../models/route.model'
 import ActiveLink from '../ActiveLink'
+import { CV } from '../CV'
 const routes: Route[] = [
   {
     name: 'About me',
@@ -37,9 +38,10 @@ export const Navbar = () => {
 
     <nav className="z-10">
       <div className="menu--desktop primary-navigation">
-        <div className="desktop-logo--container">
+        <div className="desktop-logo--container ">
+          <CV/>
         </div>
-        <ul className="hidden lg:flex gap-2">
+        <ul className="hidden lg:flex lg:items-center gap-2">
           {routes.map((route) => {
             
             return (
@@ -89,7 +91,12 @@ export const Navbar = () => {
             <li>
               <button onClick={toggleDark}><svg className="w-6 h-6 fill-black dark:fill-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg></button>
             </li>
+            <li style={{marginTop:96}}>
+              <CV></CV>
+            </li>
+            
           </div>
+          
         </div>
       </div>
     </nav>
