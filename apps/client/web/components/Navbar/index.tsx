@@ -70,7 +70,8 @@ export const Navbar = () => {
             <span className="line line3" />
           </div>
           <div className="logo">
-            <img src='' alt='' />
+            <button onClick={toggleDark}><svg className="w-6 h-6 fill-black dark:fill-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg></button>
+
           </div>
           <div className="menu-items">
             {routes.map((route) => {
@@ -88,9 +89,6 @@ export const Navbar = () => {
               )
             })}
 
-            <li>
-              <button onClick={toggleDark}><svg className="w-6 h-6 fill-black dark:fill-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" /></svg></button>
-            </li>
             <li style={{marginTop:96}}>
               <CV></CV>
             </li>

@@ -254,6 +254,24 @@ ul li ul li a {
   position: absolute;
 }
 
+
+// CV modal
+
+.cv-modal{
+  background-color: rgba(0, 0, 0, 0.603);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  
+  
+}
+
 // menu mobile
 .menu--mobile {
   width: 100%;
@@ -364,7 +382,7 @@ ul li ul li a {
 
 .logo {
   position: absolute;
-  top: 5px;
+  top: 15px;
   right: 15px;
   font-size: 1.2rem;
   color: #0e2431;
