@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../context/AppContext";
 
 export const Navbar = () => {
+  const [state,dispatch]:any = useContext(AppContext)
   const routes = [
     {
       path: "/profile",
@@ -26,6 +29,9 @@ export const Navbar = () => {
             );
           })}
         </ul>
+      </div>
+      <div className="profile">
+        {state.user?.email}
       </div>
     </nav>
   );

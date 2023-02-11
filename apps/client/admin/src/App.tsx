@@ -1,20 +1,21 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import reactLogo from "./assets/react.svg";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { Profile } from "./routes/Profile";
 import { Login } from "./routes/Login";
 import { Layout } from "./components/Layout";
+import { AppContext } from "./context/AppContext";
 
 function App() {
+  const [state, dispatch] = useContext(AppContext);
+
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route element={<Login />} path="/" />
-          <Route element={<Profile />} path="/profile" />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <Layout>
+      <Routes>
+        <Route element={<Profile />} path="/profile" /> :
+        <Route element={<Login />} path="/" />
+      </Routes>
+    </Layout>
   );
 }
 

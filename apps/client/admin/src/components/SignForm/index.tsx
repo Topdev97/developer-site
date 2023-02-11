@@ -1,13 +1,20 @@
-import React, { ChangeEvent, FocusEventHandler, FormEvent } from "react";
+import React, { ChangeEvent, FocusEventHandler, FormEvent, useContext, useRef } from "react";
 import "./style.css";
+import { config } from "../../config";
+import { AppContext } from "../../context/AppContext";
+import {useNavigate} from'react-router-dom'
 
 export const SignForm = () => {
+  const [state,dispatch]:any = useContext(AppContext)
   const [data, setData] = React.useState({});
   const [loading, setLoading] = React.useState(false);
   const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
-  const [validationErrors, setValidationErrors]:any = React.useState({})
+  const [validationErrors, setValidationErrors]: any = React.useState({});
+
+  const navigate = useNavigate()
+
   React.useEffect(() => {
-    // console.log(data);
+    console.log(data);
   }, [data]);
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setData({
@@ -15,24 +22,43 @@ export const SignForm = () => {
       [event.target?.name]: event.target?.value,
     });
   };
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      try {
-        const iterableData = Object.entries(data);
-        iterableData.forEach((item) => {
-          const [key, value] = item;
-          validate(key, value);
-        });
-        setSubmitMessage("Todo bien");
-        setLoading(false);
-      } catch (error) {
-        console.error("Error en submit", error);
-        setLoading(false);
-        setSubmitMessage("Hubo un error");
+    try {
+      const iterableData = Object.entries(data);
+      iterableData.forEach((item) => {
+        const [key, value] = item;
+        validate(key, value);
+      });
+      const response = await fetch(`${config.apiUri}/auth`,{
+        method:"POST",
+        headers:{
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password
+        })
+      })
+      if(response.status == 200){
+
+        const {token} = await response.json()
+        dispatch({type:'SET_USER',payload:{email:data.email,token}})
+        setSubmitMessage(null)
+        event.target.reset()
+        navigate('/profile')
+      } else {
+        setSubmitMessage('Email or password incorrect')
       }
-    }, 2000);
+      
+      
+      setLoading(false);
+    } catch (error) {
+      console.error("Error en submit", error);
+      setLoading(false);
+      setSubmitMessage("Hubo un error");
+    }
 
     // console.log(data)
   };
@@ -44,19 +70,18 @@ export const SignForm = () => {
   const validate = (field: string, value: any) => {
     switch (field) {
       case "email":
-        if (value !== "davc93@gmail.com") {
+        if (false) {
           setValidationErrors({
             ...validationErrors,
-            [field]:"No es el email correcto"
-          })
+            [field]: "No es el email correcto",
+          });
           throw new Error("Email invalido");
         } else {
           setValidationErrors({
             ...validationErrors,
-            [field]:null
-          })
+            [field]: null,
+          });
           console.log("Todo Ok");
-  
         }
         break;
 
