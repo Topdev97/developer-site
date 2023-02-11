@@ -6,7 +6,7 @@ import {useNavigate} from'react-router-dom'
 
 export const SignForm = () => {
   const [state,dispatch]:any = useContext(AppContext)
-  const [data, setData] = React.useState({});
+  const [data, setData]:any = React.useState({});
   const [loading, setLoading] = React.useState(false);
   const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
   const [validationErrors, setValidationErrors]: any = React.useState({});
@@ -22,7 +22,7 @@ export const SignForm = () => {
       [event.target?.name]: event.target?.value,
     });
   };
-  const handleSubmit = async (event: FormEvent) => {
+  const handleSubmit = async (event: any) => {
     event.preventDefault();
     setLoading(true);
     try {

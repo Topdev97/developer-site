@@ -7,7 +7,7 @@ import { Layout } from "./components/Layout";
 import { AppContext } from "./context/AppContext";
 
 function App() {
-  const [state, dispatch] = useContext(AppContext);
+  const [state, dispatch]:any = useContext(AppContext);
 
   return (
     <Layout>
