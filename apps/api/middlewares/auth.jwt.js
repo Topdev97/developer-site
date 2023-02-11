@@ -1,10 +1,15 @@
-import {Request,Response} from 'express'
+
+import { AuthService } from '../services/auth.service.js'
+
+const service = new AuthService()
 async function checkAuth(req,res,next) {
-    if (req.authorization) {
-        const user = verifyToken(req.authorization)
-        next(user)
-    } else {
-        throw new Error('invalid token')
+    const token = req.headers.authorization 
+    try {
+        const user = await service.verifyToken(token)
+        req.user = user
+        next()        
+    } catch (error) {
+        next(new Error('invalid token'))
     }
 }
 

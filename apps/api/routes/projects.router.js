@@ -1,5 +1,6 @@
 import express,{ Router,request,response } from "express";
 import {ProjectService} from '../services/project.service.js'
+import { checkAuth } from "../middlewares/auth.jwt.js";
 
 
 const router = Router()
@@ -25,7 +26,7 @@ router.get('/:id',
   }
 );
 
-router.post('/',
+router.post('/',checkAuth,
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -37,7 +38,7 @@ router.post('/',
   }
 );
 
-router.patch('/:id',
+router.patch('/:id',checkAuth,
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -50,7 +51,7 @@ router.patch('/:id',
   }
 );
 
-router.delete('/:id',
+router.delete('/:id',checkAuth,
   async (req, res, next) => {
     try {
       const { id } = req.params;

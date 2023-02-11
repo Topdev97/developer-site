@@ -8,7 +8,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --inspect index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "user:create": "node ./scripts/createUser.js"
   },
   "keywords": [
     "nodejs",
@@ -18,10 +19,12 @@
   "license": "ISC",
   "dependencies": {
     "@firebase/app-types": "0.x",
+    "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "firebase-admin": "^11.4.1",
+    "jose": "^4.11.4",
     "mongoose": "^6.8.3"
   }
 }
