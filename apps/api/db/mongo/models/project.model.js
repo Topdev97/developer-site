@@ -3,7 +3,9 @@ const {Schema} = mongoose
 
 
 const mySchema = new Schema({
-    title:String,
+    title:{
+        type:String
+    },
     description:String,
     shortDescription:String,
     repositoryLink:String,
