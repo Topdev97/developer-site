@@ -13,9 +13,6 @@ export const SignForm = () => {
 
   const navigate = useNavigate()
 
-  React.useEffect(() => {
-    console.log(data);
-  }, [data]);
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setData({
       ...data,
@@ -81,7 +78,6 @@ export const SignForm = () => {
             ...validationErrors,
             [field]: null,
           });
-          console.log("Todo Ok");
         }
         break;
 
