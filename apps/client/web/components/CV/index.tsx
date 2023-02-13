@@ -13,6 +13,12 @@ export const CV = (props: any) => {
       <button
         onClick={handleClick}
         className={`text-lg text-center font-semibold bg-primary-400 hover:bg-primary-500 transition-all text-primary-100 px-4 py-2 w-full md:w-42 lg:m-0`}
+        style={{
+          paddingBlock:8,
+          paddingInline:25,
+          width:"fit-content"
+
+        }}
       >
         Download CV
       </button>

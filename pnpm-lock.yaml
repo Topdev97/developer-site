@@ -46,7 +46,7 @@ importers:
       react-dom: ^18.2.0
       react-router-dom: ^6.6.2
       typescript: ^4.9.3
-      vite: ^4.0.0
+      vite: ^4.0.4
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -67,6 +67,7 @@ importers:
       autoprefixer: ^10.4.13
       eslint: 8.29.0
       eslint-config-next: 13.0.6
+      gsap: ^3.11.3
       markdown-to-jsx: ^7.1.8
       mongodb: ^4.13.0
       next: 13.0.6
@@ -82,6 +83,7 @@ importers:
       '@types/react-dom': 18.0.9
       eslint: 8.29.0
       eslint-config-next: 13.0.6_s5ps7njkmjlaqajutnox5ntcla
+      gsap: 3.11.4
       markdown-to-jsx: 7.1.8_react@18.2.0
       mongodb: 4.13.0
       next: 13.0.6_3duxcpitbtplz62feflag7fwby

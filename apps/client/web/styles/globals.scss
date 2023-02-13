@@ -422,7 +422,10 @@ ul li ul li a {
     gap: 42px;
   }
   .menu--mobile .menu-items li a {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .menu--mobile .menu-items li button {
+    font-size: 1.5rem;
   }
 }
 

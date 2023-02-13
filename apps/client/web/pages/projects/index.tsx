@@ -21,7 +21,7 @@ export default function Projects() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Layout>
-          <main className="flex justify-center">
+          <main className="flex justify-center" style={{height:"80vh"}}>
             <BubbleLoader width={30} height={30} gap={20}/>
           </main>
         </Layout>

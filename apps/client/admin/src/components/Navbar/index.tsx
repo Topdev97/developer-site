@@ -14,6 +14,14 @@ export const Navbar = () => {
       name: "Login",
     },
   ];
+  const logout = () => {
+    try {
+      dispatch({type:"LOGOUT"})
+      console.log('Logout exitoso')
+    } catch(error){
+      console.error(error)
+    }
+  }
 
   return (
     <nav>
@@ -28,6 +36,9 @@ export const Navbar = () => {
               </li>
             );
           })}
+          <li>
+            <button type="button" onClick={logout}>Logout</button>
+          </li>
         </ul>
       </div>
       <div className="profile">

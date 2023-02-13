@@ -7,7 +7,7 @@ const initialState= {
 
 const appReducer = (
   state: any,
-  action: { type: string; payload?: any}
+  action: { type: "SET_USER" | "LOGOUT", payload?: any}
 ) => {
   switch (action.type) {
     case "SET_USER":
@@ -16,6 +16,11 @@ const appReducer = (
           ...state,
           user
         }
+    case "LOGOUT":
+      return {
+        ...state,
+        user:null
+      }
     default:
       return {
         ...state
