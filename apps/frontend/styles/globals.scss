@@ -118,6 +118,14 @@ li {
 .project-card {
   @apply w-full p-8 flex flex-col gap-4 items-center rounded-2xl shadow-xl dark:bg-gray-700;
 }
+.project-card h3 {
+
+  height: 60px
+
+}
+.project-card p {
+  height: 80px
+}
 .project-card img {
   @apply max-h-56;
 }
