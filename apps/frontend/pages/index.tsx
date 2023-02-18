@@ -82,7 +82,7 @@ const HomePage = () => {
             </li>
             <li>
               <div className="card--tech">
-              <svg fill="#000000" className="w-24 h-24" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 304.998 304.998" xmlSpace="preserve">
+              <svg  className="w-24 h-24 dark:fill-white" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 304.998 304.998" xmlSpace="preserve">
   <g id="XMLID_91_">
     <path id="XMLID_92_" d="M274.659,244.888c-8.944-3.663-12.77-8.524-12.4-15.777c0.381-8.466-4.422-14.667-6.703-17.117
 		c1.378-5.264,5.405-23.474,0.004-39.291c-5.804-16.93-23.524-42.787-41.808-68.204c-7.485-10.438-7.839-21.784-8.248-34.922
@@ -134,7 +134,7 @@ const HomePage = () => {
             </li>
             <li>
               <div className="card--tech">
-                <svg className="w-24 h-24" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M256,48,496,464H16Z" /></svg>
+                <svg className="w-24 h-24 dark:fill-white" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M256,48,496,464H16Z" /></svg>
 
                 <h3>Vercel</h3>
               </div>
