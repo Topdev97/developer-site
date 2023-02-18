@@ -40,7 +40,7 @@ export default function Projects() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Layout>
-          <main className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-3 md:mx-8">
+          <main className="px-2 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-3 md:mx-8 lg:grid-cols-3 ">
             {projects.map((project: Project) => {
               return <ProjectCard key={project.id} {...project} />;
             })}

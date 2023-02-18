@@ -1,5 +1,6 @@
 import { FormEvent } from "react";
 import { Layout } from "../components/Layout";
+import { FormContact } from "../components/FormContact";
 
 const ContactPage = () => {
   return (
@@ -10,8 +11,8 @@ const ContactPage = () => {
         </header>
 
         <section className="contact p-2 my-32 flex justify-center">
-          <div className="email flex flex-col md:flex-row w-full md:justify-around  gap-16">
-            <div className="social-media p-4 md:p-12 shadow-lg flex flex-col justify-center">
+          <div className="flex flex-col md:flex-row w-full md:justify-around  gap-16">
+            <div className="social-media p-4 md:p-12 shadow-lg flex flex-col h-fit justify-center">
               <h3>Social Media</h3>
               <div className="socia-icons--container flex items-center mt-4 gap-3">
                 <a
@@ -50,15 +51,12 @@ const ContactPage = () => {
                 </a>
               </div>
             </div>
+            <div className="p-4 md:p-12 shadow-lg">
+              <h3 className="mb-8">Enviame un Mensaje</h3>
+              <FormContact />
+            </div>
           </div>
         </section>
-        {/* <form onSubmit={handleSubmit} className="simple-form">
-            <label htmlFor="">Name</label>
-            <input type="text" name="name" />
-            <label htmlFor="">Message</label>
-            <textarea name="message"></textarea>
-            <button type="submit">Enviar</button>
-        </form> */}
       </main>
     </Layout>
   );
