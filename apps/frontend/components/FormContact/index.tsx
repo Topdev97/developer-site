@@ -1,9 +1,11 @@
 import React, { ChangeEvent, FormEvent, useRef } from "react";
+import { BubbleLoader } from "../loaders/BubbleLoader";
 
 export const FormContact = () => {
     const [data, setData] = React.useState({name:'',email:'',message:''})
     const [isButtonDisabled, setIsButtonDisabled] = React.useState(true);
     const [submitMessage, setSubmitMessage] = React.useState<string | null>(null)
+    const [loading, setLoading] = React.useState(false)
     const formRef = useRef<HTMLFormElement>(null)
     React.useEffect(()=>{
         console.log(data)
@@ -24,7 +26,7 @@ export const FormContact = () => {
     }
     const handleSubmit = async (event:FormEvent) => {
         event.preventDefault()
-        
+        setLoading(true)
         if(!isButtonDisabled){
             try {
                 const response = await fetch('/api/contact',{
@@ -33,7 +35,7 @@ export const FormContact = () => {
                 })
                 const dataResponse = await response.json()
                 console.log(dataResponse)
-
+                setLoading(false)
                 formRef.current?.reset()
                 setData({name:'',email:'',message:''})
                 setIsButtonDisabled(true)
@@ -65,7 +67,7 @@ export const FormContact = () => {
         <label htmlFor="form-contact_message">Message</label>
         <textarea onInput={handleChange}  name="message" id="form-contact__message"></textarea>
       </div>
-      <button className={`mt-6 btn--primary ${isButtonDisabled ? "btn--disabled" : ""}`} type="submit">Enviar</button>
+      <button className={`mt-6 btn--primary ${isButtonDisabled ? "btn--disabled" : ""}`} type="submit">{ loading ? <BubbleLoader width={15} height={15} gap={10}/> : "Enviar"}</button>
       <div className="" id="form-contact__submit-message">
         <h4 className="mt-6">{submitMessage}</h4> 
       </div>
