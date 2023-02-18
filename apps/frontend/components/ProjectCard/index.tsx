@@ -6,7 +6,7 @@ import { BubbleLoader } from '../loaders/BubbleLoader'
 
 
 
-export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Project) => {
+export const ProjectCard = ({ title, images, shortDescription,slug,techs,isPublished }: Project) => {
   const [buttonLoading, setButtonLoading] = React.useState(false)
   const mainTechs = techs.slice(0,3)
   
@@ -21,6 +21,7 @@ export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Proj
         <h4 className='text-gray-600 font-bold'>Technologies</h4>
         <div className="gap-2 grid grid-cols-3 mt-8 mb-3">
             {mainTechs.map((tech) => {
+              
 
               if(tech.includes('-')){
                 const splited = tech.split("-").join(' ')
@@ -45,7 +46,11 @@ export const ProjectCard = ({ title, images, shortDescription,slug,techs }: Proj
             })}
           </div>
       </div>
-      <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`/projects/${slug}`}>{buttonLoading ? <BubbleLoader width={15} height={15} gap={10}/> : "More details"}</Link>
+      {
+        isPublished ? <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`/projects/${slug}`}>{buttonLoading ? <BubbleLoader width={15} height={15} gap={10}/> : "More details"}</Link> :
+        <button className='btn--disabled' disabled >Coming Soon</button>
+
+      }
     </div>
   )
 }

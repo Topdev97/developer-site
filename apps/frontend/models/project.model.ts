@@ -9,4 +9,5 @@ export interface Project {
     webAppLink:     string;
     images:         string[];
     slug: string;
+    isPublished:Boolean;
 }
