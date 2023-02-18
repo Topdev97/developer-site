@@ -24,8 +24,8 @@ export default async function handler(
     };
     console.log(userEmail)
     console.log(selfEmail)
-    transporter.sendMail(selfEmail);
-    transporter.sendMail(userEmail);
+    await transporter.sendMail(selfEmail);
+    await transporter.sendMail(userEmail);
     res.status(200).json({
       message: "Enviado con exito",
     });
