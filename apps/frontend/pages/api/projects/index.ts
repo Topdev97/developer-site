@@ -18,7 +18,7 @@ export default async function handler(
     const movies = await db
         .collection("projects")
         .find({})
-        .sort({ metacritic: -1 })
+        .sort({ id: 1 })
         .limit(20)
         .toArray();
 
