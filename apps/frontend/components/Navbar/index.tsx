@@ -41,7 +41,7 @@ export const Navbar = () => {
 
                 return <a className='nav-link' href={route.path}>{route.name}</a>
               } else {
-                return <Link className='nav-link' href={`${config.basePath}/${route.path}`}>{route.name}</Link>
+                return <Link className='nav-link' href={`${config.basePath}${route.path}`}>{route.name}</Link>
               }
             })
           }
