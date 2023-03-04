@@ -8,6 +8,14 @@
       "source": "/projects/:match*",
       "destination": "https://my-apps-frontend.vercel.app/:match*"
     },
+    {
+      "source": "/admin/",
+      "destination": "https://my-apps-admin.vercel.app/"
+    },
+    {
+      "source": "/admin/:match*",
+      "destination": "https://my-apps-admin.vercel.app/:match*"
+    },
 
     {
       "source": "/",

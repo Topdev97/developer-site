@@ -27,7 +27,6 @@ export default function Projects() {
       </>
     );
   } else if (projects) {
-    console.log(projects);
     return (
       <>
         <Head>
