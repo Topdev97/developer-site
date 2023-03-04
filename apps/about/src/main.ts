@@ -1,4 +1,2 @@
-export{}
-
-const message = "Typescript Cargado" 
-console.log(message);
+import { getProjects } from "./apis";
+getProjects()
