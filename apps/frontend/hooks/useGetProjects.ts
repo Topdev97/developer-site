@@ -11,7 +11,7 @@ export const useGetProjects = () => {
       setLoading(true);
 
       try {
-        const response = await fetch(`${config.basePath}/projects/api/projects`);
+        const response = await fetch(`${config.basePath}/api/projects`);
         if(response.status == 500){
           throw new Error("Error")
         }
