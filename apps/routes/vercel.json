@@ -1,12 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "^/projects/(.*)$",
-      "destination": "https://my-apps-frontend.vercel.app/$1"
+      "source": "^/projects/(.*)",
+      "destination": "https://my-apps-frontend.vercel.app"
     },
     {
       "source": "/(.*)",
-      "destination": "https://my-apps-about.vercel.app/$1"
+      "destination": "https://my-apps-about.vercel.app"
     }
   ]
 }
