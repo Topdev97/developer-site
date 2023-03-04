@@ -1,12 +1,21 @@
 {
   "rewrites": [
     {
-      "source": "^/projects/(.*)",
-      "destination": "https://my-apps-frontend.vercel.app"
+      "source": "/projects/",
+      "destination": "https://my-apps-frontend.vercel.app/"
     },
     {
-      "source": "/(.*)",
-      "destination": "https://my-apps-about.vercel.app"
+      "source": "/projects/:match*",
+      "destination": "https://my-apps-frontend.vercel.app/:match*"
+    },
+    {
+      "source": "/",
+      "destination": "https://my-apps-about.vercel.app/"
+    },
+
+    {
+      "source": "/:match*",
+      "destination": "https://my-apps-about.vercel.app/:match*"
     }
   ]
 }
