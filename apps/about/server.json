@@ -1,0 +1,132 @@
+{
+  "projects": [
+    {
+      "_id": "63d153470d56642721c8f2cb",
+      "id": 1,
+      "title": "NodeJS Backend with Firebase Auth",
+      "description": "# NodeJS Backend with Firebase Auth\\n\\nThe following project is an implementation of the firebase authentication service in a backend made in NodeJS. This has a number of advantages, such as:\\n\\n- Have multiple authentication providers such as Google, Facebook, Github, Email, etc...\\n- Manage users from the Firebase suite and use associated services such as notifications and emails\\n- Have a system already tested and constantly improved by Google\\n\\n",
+      "shortDescription": "Improve your security and auth management with this authentication solution for nodejs",
+      "techs": ["firebase", "nodejs", "express", "html", "css", "typescript"],
+      "labels": ["backend", "nodejs", "firebase"],
+      "repositoryLink": "https://github.com/davc93/nodejs-firebase-auth",
+      "webAppLink": "https://nodejs-firebase-auth.vercel.app/",
+      "images": [
+        "https://res.cloudinary.com/dxryc5jgr/image/upload/v1674659346/davc93/projects/images/1-firebase-node.svg"
+      ],
+      "slug": "nodejs-backend-with-firebase-auth",
+      "isPublished": true
+    },
+    {
+      "_id": "63d153470d56642721c8f2cc",
+      "id": 2,
+      "title": "Mercadopago ChekoutPro API",
+      "description": "# Mercadopago CheckoutPro API\\n\\nMercadopago is a free market payment platform ,is present throughout Latin America.\\n\\nThe following implementation is the server that allows processing customer orders and obtaining a payment id to be later used to direct the user to the payment module within the site.\\n\\n## Features\\n\\n- Checkout within the same site\\n- Fast payment and great shopping experience for users\\n- Accept multiple payment methods (credit, debit,banks transferences, mercadopago account)\\n- Customizable\\n- Multiple validations, from payments to the identity of the buyer\\n\\n",
+      "shortDescription": "Fast and excellence in customer experiencie with Mercadopago checkout pro",
+      "techs": [
+        "nodejs",
+        "mercadopago",
+        "express",
+        "mongodb",
+        "typescript",
+        "css",
+        "html"
+      ],
+      "labels": ["backend", "nodejs", "ecommerce"],
+      "repositoryLink": "https://github.com/davc93/mercadopago",
+      "webAppLink": "https://mercadopago-frontend-blush.vercel.app/",
+      "images": [
+        "https://res.cloudinary.com/dxryc5jgr/image/upload/v1674659344/davc93/projects/images/2-mercadopago-server-typescript.svg"
+      ],
+      "slug": "mercadopago-checkoutpro-api",
+      "isPublished": true
+    },
+    {
+      "_id": "63f0fdc77d7620ddb785f459",
+      "id": 3,
+      "title": "NestJS Ecommerce",
+      "description": "# NestJS Ecommerce\\n\\nThe ultimate eCommerce API solution built on the powerful NestJS framework. With seamless integration capabilities, NestJS Ecommerce offers a highly customizable and scalable eCommerce platform that allows businesses to effortlessly manage and grow their online stores. Whether you're a small business owner or an enterprise-level company, NestJS Ecommerce delivers fast, reliable, and secure API services to streamline your eCommerce operations and maximize revenue. Try NestJS Ecommerce today and experience the future of eCommerce!\\n\\n## Features\\n\\n- API with Ecommerce Model Make CRUD operations with products, orders, users, categories.\\n- Authentication with JSON Web Tokens\\n- SQL Database\\n- Full interactive frontend with React.js\\n- Payments with Mercadopago",
+      "shortDescription": "Amazing and fast ecommerce with React and NestJS",
+      "techs": [
+        "nestjs",
+        "postgresql",
+        "typeorm",
+        "react",
+        "css",
+        "jwt",
+        "mercadopago"
+      ],
+      "webAppLink": "https://nestjs-ecommerce-frontend.vercel.app",
+      "images": [
+        "https://res.cloudinary.com/dxryc5jgr/image/upload/v1677444401/davc93/projects/images/nestjs-ecommerce_te2nxi.svg"
+      ],
+      "slug": "nestjs-ecommerce",
+      "isPublished": true,
+      "label": [""],
+      "repositoryLink": "https://github.com/davc93/nestjs-ecommerce"
+    },
+    {
+      "_id": "63fbc359edd064378819008e",
+      "id": 4,
+      "title": "Todo Machine",
+      "description": "# Todo Machine\\n\\nIntroducing our new Todo Machine - the ultimate task manager to help you save and organize your daily tasks effortlessly. With a simple and intuitive interface, you can quickly add, edit, and check off your to-dos on-the-go. Stay on top of your schedule and never miss a deadline again with our powerful Todo Machine. Try it now and start boosting your productivity!\\n\\n## Features\\n\\n- Authentication\\n- Save your task Secure with MongoDB\\n- Fast and interactive Interface\\n- Search bar to seek your tasks",
+      "shortDescription": "Organize your tasks and increase productivity with this incredible application",
+      "techs": [
+        "react",
+        "javascript",
+        "nodejs",
+        "typescript",
+        "firebase",
+        "react-router-dom",
+        "mongodb",
+        "express"
+      ],
+      "webAppLink": "https://todo-machine-frontend.vercel.app",
+      "images": [
+        "https://res.cloudinary.com/dxryc5jgr/image/upload/v1677444401/davc93/projects/images/todo-machine_so4hhs.svg"
+      ],
+      "slug": "todo-machine",
+      "isPublished": true,
+      "label": [""],
+      "repositoryLink": "https://github.com/davc93/todo-machine"
+    },
+    {
+      "_id": "63f0feca7d7620ddb785f45a",
+      "id": 5,
+      "title": "Schedule App",
+      "description": "",
+      "shortDescription": "Booking an appointment with this incredible app, and receive payments",
+      "techs": ["react", "express", "nodejs"],
+      "webAppLink": "",
+      "images": [],
+      "slug": "schedule-app",
+      "isPublished": false,
+      "label": ["nodejs", "express", "mongodb"],
+      "repositoryLink": ""
+    },
+    {
+      "_id": "63fbc9f5c1a0f5a5bed10372",
+      "id": 6,
+      "title": "Turbo Airlines",
+      "description": "",
+      "shortDescription": "Fly high with Turbo Airlines! Enjoy seamless booking, real-time flight updates, and hassle-free travel planning right at your fingertips",
+      "techs": [
+        "graphql",
+        "prisma",
+        "typescript",
+        "react",
+        "react-router-dom",
+        "sass",
+        "xstate",
+        "postgresql",
+        "express",
+        "nodejs"
+      ],
+      "labels": ["backend", "nodejs", "ecommerce"],
+      "repositoryLink": "https://github.com/davc93/mercadopago",
+      "webAppLink": "https://mercadopago-frontend-blush.vercel.app/",
+      "images": [],
+      "slug": "turbo-airlines",
+      "isPublished": false
+    }
+  ]
+}
