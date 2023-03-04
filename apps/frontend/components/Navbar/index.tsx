@@ -11,7 +11,7 @@ const routes = [
   },
   {
     name: 'Projects',
-    path: '/projects',
+    path: '/',
 
     external:true
   },
