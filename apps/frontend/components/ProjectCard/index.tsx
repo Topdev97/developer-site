@@ -3,6 +3,7 @@ import React from 'react'
 import { Project } from '../../models/project.model'
 import { SpinLoader } from '../loaders/SpinLoader'
 import { BubbleLoader } from '../loaders/BubbleLoader'
+import { config } from '../../config'
 
 
 
@@ -47,7 +48,7 @@ export const ProjectCard = ({ title, images, shortDescription,slug,techs,isPubli
           </div>
       </div>
       {
-        isPublished ? <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`/projects/${slug}`}>{buttonLoading ? <BubbleLoader width={15} height={15} gap={10}/> : "More details"}</Link> :
+        isPublished ? <Link className='btn btn--primary flex justify-center gap-2' onClick={()=> setButtonLoading(true)} href={`${slug}`}>{buttonLoading ? <BubbleLoader width={15} height={15} gap={10}/> : "More details"}</Link> :
         <button className='btn--disabled' disabled >Coming Soon</button>
 
       }

@@ -1,12 +1,12 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { useGetSingleProject } from '../../hooks/useGetSingleProject'
-import { ProjectDetail } from '../../components/ProjectDetail'
-import { Layout } from '../../components/Layout'
+import { useGetSingleProject } from '../hooks/useGetSingleProject'
+import { ProjectDetail } from '../components/ProjectDetail'
+import { Layout } from '../components/Layout'
 import Head from 'next/head'
 
 export const getServerSideProps = async ({params}:any) => {
-  const response = await fetch(`https://davc93.dev/api/projects/${params.slug}`)
+  const response = await fetch(`https://davc93.dev/projects/api/projects/${params.slug}`)
   if(response.status == 500){
     throw new Error("Error")
 }

@@ -1,5 +1,7 @@
 import React from "react";
 import { Project } from "../models/project.model";
+import { config } from "../config";
+
 export const useGetSingleProject = (slug:any) => {
     const [project, setProject] = React.useState<Project | null>(null) 
     const [loading, setLoading] = React.useState<Boolean | null>(null)
@@ -10,7 +12,7 @@ export const useGetSingleProject = (slug:any) => {
             setLoading(true)
             if(slug){
                 try {
-                    const response = await fetch(`/api/projects/${slug}`)
+                    const response = await fetch(`${config.basePath}/api/projects/${slug}`)
                     if(response.status == 500){
                         throw new Error("Error")
                     }
