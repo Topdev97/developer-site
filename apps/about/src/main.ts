@@ -1,3 +1,4 @@
 export{}
 
-console.log("Typescript Cargado");
+const message = "Typescript Cargado" 
+console.log(message);
