@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/projects/",
-      "destination": "https://my-apps-frontend.vercel.app/projects/"
+      "destination": "https://my-apps-frontend.vercel.app/"
     },
     {
       "source": "/projects/:match*",
