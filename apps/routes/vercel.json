@@ -6,7 +6,7 @@
     },
     {
       "source": "/projects/:match*",
-      "destination": "https://my-apps-frontend.vercel.app/projects/:match*"
+      "destination": "https://my-apps-frontend.vercel.app/:match*"
     },
 
     {
