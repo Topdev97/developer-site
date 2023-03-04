@@ -6,7 +6,7 @@ import { config } from '../../config'
 const routes = [
   {
     name: 'About me',
-    path: '/',
+    path: 'https://davc93.dev',
     external:true
   },
   {
@@ -17,7 +17,7 @@ const routes = [
   },
   {
     name: 'Contact',
-    path: '/contact',
+    path: 'https://davc93.dev/contact',
 
     external:true
   }
