@@ -5,7 +5,8 @@
   "description": "Monorepo of davc93 applications, frontend,nodeapss, etc...",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm --filter './apps/**/*' run dev",
+    "build": "pnpm --filter './apps/**/*' run build"
   },
   "keywords": [
     "nodejs",

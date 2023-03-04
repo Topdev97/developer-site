@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
+      "source": "/projects/*",
+      "destination": "https://my-apps-frontend.vercel.app"
+    },
+    {
       "source": "/(.*)",
-      "destination": "/index.js"
+      "destination": "https://my-apps-about.vercel.app"
     }
   ]
 }
