@@ -7,7 +7,7 @@ BrowserRouter;
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <AppContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/admin">
         <App />
       </BrowserRouter>
     </AppContextProvider>
