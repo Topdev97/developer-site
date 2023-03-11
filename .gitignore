@@ -1,6 +1,6 @@
 # data of database docker volumes
-data_mongo
-data_postgres
+mongo_data
+postgres_data
 
 node_modules
 .env
