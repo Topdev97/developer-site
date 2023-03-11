@@ -1,59 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  
     <!-- <meta charset="UTF-8" /> -->
-  
-    <link rel="icon" type="image/x-icon" href="/favicon.svg">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
-    <link rel="stylesheet" href="/src/style.css">
-    
+    <link rel="stylesheet" href="/src/style.css" />
+
     <!-- Seo -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="robots" content="index, follow">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="author" content="Company">
-    <meta name="language" content="English">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Company" />
+    <meta name="language" content="English" />
 
-      <!--  Essential META Tags -->
-      <meta property="og:title" content="European Travel Destinations">
-      <meta property="og:type" content="article" />
-      <meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg">
-      <meta property="og:url" content="http://euro-travel-example.com/index.htm">
-      <meta name="twitter:card" content="summary_large_image">
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="European Travel Destinations" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:image"
+      content="http://euro-travel-example.com/thumbnail.jpg"
+    />
+    <meta
+      property="og:url"
+      content="http://euro-travel-example.com/index.htm"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
 
-      <!--  Non-Essential, But Recommended -->
-      <meta property="og:description" content="Offering tour packages for individuals or groups.">
-      <meta property="og:site_name" content="European Travel, Inc.">
-      <meta name="twitter:image:alt" content="Alt text for image">
-
+    <!--  Non-Essential, But Recommended -->
+    <meta
+      property="og:description"
+      content="Offering tour packages for individuals or groups."
+    />
+    <meta property="og:site_name" content="European Travel, Inc." />
+    <meta name="twitter:image:alt" content="Alt text for image" />
 
     <!-- Analytics -->
-    <meta name="twitter:site" content="@website-username">
+    <meta name="twitter:site" content="@website-username" />
     <meta property="fb:app_id" content="your_app_id" />
-
-
   </head>
   <body>
     <header class="p-2 md:p-4">
       <nav class="navbar--desktop">
-        <div class="navbar--desktop__logo">
-          <img src="" alt="Logo">
+      <!-- Credits https://codepen.io/yuhomyan/pen/ExKvNVa -->
+        <input type="checkbox" id="active" />
+        <label for="active" class="menu-btn"><span></span></label>
+        <label for="active" class="close"></label>
+        <div class="wrapper">
+          <ul>
+            <li><a href="/">About</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/admin">Admin</a></li>
+
+          </ul>
         </div>
-        <ul class="navbar--desktop__menu">
-          <li><a href="/" class="link">About Me</a></li>
-          <li><a href="/projects" class="link">Projects</a></li>
-          <li><a href="/admin" class="link">Admin</a></li>
-        </ul>
       </nav>
-      <div class="hero--container bg-primary-60 flex flex-row-reverse flex-wrap justify-evenly w-full gap-4">
-        <div class="hero__text--container space-y-4 w-full sm:w-1/2 md:text-end">
+
+      <nav class="navbar--mobile inactive"></nav>
+      <div
+        class="hero--container bg-primary-60 flex flex-row-reverse flex-wrap justify-evenly w-full gap-4"
+      >
+        <div
+          class="hero__text--container space-y-4 w-full sm:w-1/2 md:text-end"
+        >
           <h1>Diego Vergara</h1>
           <p>
-            Welcome to my web page, I'm a javascript developer from chile, I consider myself passionate about what I do and all
-            about tech.
+            Welcome to my web page, I'm a javascript developer from chile, I
+            consider myself passionate about what I do and all about tech.
           </p>
         </div>
         <div class="hero__img--container flex flex-col">
@@ -71,21 +86,22 @@
         <div class="about-me--container md:w-2/3 flex flex-col gap-4">
           <h2>About me</h2>
           <p>
-            I'm a business administrator by profession, I worked in
-            management control for 5 years, and now that I discovered what I
-            am passionate about, <b>Tech and bussiness</b>, specially a i like web development with <b>Javascript</b> in frontend and backend with <b>NodeJS</b> I like to meet
-            people, learn new things, achieve goals and sports, I'm a blue
-            belt in brazilian jiu jitsu.
+            I'm a business administrator by profession, I worked in management
+            control for 5 years, and now that I discovered what I am passionate
+            about, <b>Tech and bussiness</b>, specially a i like web development
+            with <b>Javascript</b> in frontend and backend with <b>NodeJS</b> I
+            like to meet people, learn new things, achieve goals and sports, I'm
+            a blue belt in brazilian jiu jitsu.
           </p>
         </div>
       </section>
       <section class="favorite-tools">
         <h2 class="text-center">Favorites tools and tech that usually i use</h2>
-        <div class="favorite-tools--container grid grid-cols-2 gap-y-12 md:gap-y-24 md:grid-cols-3 lg:grid-cols-4 my-24 md:my-48">
+        <div
+          class="favorite-tools--container grid grid-cols-2 gap-y-12 md:gap-y-24 md:grid-cols-3 lg:grid-cols-4 my-24 md:my-48"
+        >
           <li>
             <div class="card--tech">
-
-              
               <h3>React</h3>
             </div>
           </li>
@@ -97,51 +113,44 @@
           </li>
           <li>
             <div class="card--tech">
-              
               <h3>TailwindCSS</h3>
             </div>
           </li>
           <li>
             <div class="card--tech">
-              
               <h3>NodeJS</h3>
             </div>
           </li>
           <li>
             <div class="card--tech">
-            
-
               <h3>Linux</h3>
             </div>
           </li>
           <li>
             <div class="card--tech">
-              
               <h3>Vercel</h3>
             </div>
           </li>
           <li>
             <div class="card--tech">
-            
-
               <h3>MongoDB</h3>
             </div>
           </li>
           <li>
             <div class="card--tech">
-
               <h3>PostgreSQL</h3>
             </div>
           </li>
-
         </div>
       </section>
-      <section class="cta--projects flex flex-col gap-2 text-center items-center my-36">
+      <section
+        class="cta--projects flex flex-col gap-2 text-center items-center my-36"
+      >
         <h2>See my portfolio</h2>
         <h4>Take a look of what can we build</h4>
-        <a href='/projects' class="btn--primary mt-8">Click here</a>
+        <a href="/projects" class="btn--primary mt-8">Click here</a>
       </section>
-      <section class='certificates'>
+      <section class="certificates">
         <h2>Certificates</h2>
         <div class="certificates-container">
           <ul>
@@ -183,10 +192,8 @@
           </ul>
         </div>
       </section>
-
     </main>
-    <footer class="h-32">
-    </footer>
+    <footer class="h-32"></footer>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

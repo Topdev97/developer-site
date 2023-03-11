@@ -4,6 +4,8 @@ postgres_data
 
 node_modules
 .env
+.env.stage
+.env.production
 .turbo
 build/**
 dist/**
