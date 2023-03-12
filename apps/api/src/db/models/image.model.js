@@ -8,6 +8,7 @@ const ImageSchema =  {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
+    autoIncrement:true
   },
   url: {
     type: DataTypes.TEXT,
@@ -16,7 +17,7 @@ const ImageSchema =  {
   projectId: {
     field:"project_id",
     type: DataTypes.INTEGER,
-    allowNull: false,
+    allowNull: true,
     references: {
       model: PROJECT_TABLE,
       key: 'id'
@@ -35,10 +36,12 @@ const ImageSchema =  {
 
 class Image extends Model{
   static associate(models) {
-    this.hasOne(models.Project, {
-      as: 'project',
-      foreignKey:"projectId"
+    this.belongsTo(models.Project, {
+      foreignKey:"projectId",
+      
+
     });
+    
   }
   static config(sequelize) {
     return {

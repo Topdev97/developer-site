@@ -1,14 +1,22 @@
-import express from "express";
-import cors from 'cors'
-import { projects ,users,auth} from "./routes/index.js";
-import {errorHandler} from './middlewares/error.handler.js'
-import { checkAuth } from "./middlewares/auth.jwt.js";
+const express = require('express');
+const cors = require('cors');
+const { projects, image, auth,label } = require('./routes/index.js');
+const { errorHandler } = require('./middlewares/error.handler.js');
+const { checkAuth } = require('./middlewares/auth.jwt.js');
 
-export const app = express()
+
+const app = express()
 app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
-app.use('/api/v1/projects',projects)
-app.use('/api/v1/users',checkAuth ,users)
-app.use('/api/v1/auth',auth)
+app.use('/v1/projects',projects)
+
+app.use('/v1/labels',label)
+
+app.use('/v1/images',image)
+app.use('/v1/auth',auth)
 app.use(errorHandler)
+
+module.exports = {
+    app
+}

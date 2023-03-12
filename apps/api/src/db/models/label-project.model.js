@@ -9,6 +9,8 @@ const LabelProjectSchema = {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
+
+    autoIncrement:true
   },
   projectId: {
     field:"project_id",

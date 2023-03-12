@@ -1,6 +1,6 @@
-import * as jose from "jose";
-import { config } from "./config.js";
-const secret = new TextEncoder().encode(config.JWT_SECRET);
+const jose = require("jose");
+const { config } = require("./config.js");
+const secret = new TextEncoder().encode(config.jwtSecret);
 
 const alg = "HS256";
 
@@ -33,4 +33,4 @@ async function decodeToken(token) {
   }
 }
 
-export { signJWT, decodeToken };
+module.exports = { signJWT, decodeToken };

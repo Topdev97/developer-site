@@ -13,7 +13,6 @@ module.exports =  function setupModels(sequelize) {
     
     
     
-    User.associate(sequelize.models);
     Project.associate(sequelize.models)
     Label.associate(sequelize.models)
     Image.associate(sequelize.models)

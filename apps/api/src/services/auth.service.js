@@ -1,11 +1,10 @@
-import { matchPassword } from "../bcrypt.js";
-import Model from "../db/mongo/models/user.model.js";
-import { signJWT,decodeToken } from "../jwt.js";
-
+const { matchPassword } = require("../bcrypt.js");
+const { signJWT, decodeToken } = require("../jwt.js");
+const { models } = require('../db/sequelize');
 class AuthService {
   async sendToken(data) {
     const { email, password } = data;
-    const user = await Model.findOne({ email });
+    const user = await models.findOne({ email });
     if (user) {
       const isAuth = matchPassword(password, user.password);
       if (isAuth) {
@@ -24,4 +23,4 @@ class AuthService {
   }
 }
 
-export { AuthService };
+module.exports =  { AuthService };

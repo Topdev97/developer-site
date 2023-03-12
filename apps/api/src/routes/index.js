@@ -1,9 +1,15 @@
-import projects from './projects.router.js'
-import users from './user.router.js'
-import auth from './auth.router.js'
-export {
+const projects = require('./projects.router.js');
+const profile = require('./profile.router.js');
+const auth = require('./auth.router.js');
+const label = require('./label.router.js');
+
+const image = require('./image.router.js');
+
+module.exports =  {
     projects,
-    users,
-    auth
+    profile,
+    auth,
+    label,
+    image
 
 }

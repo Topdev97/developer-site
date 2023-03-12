@@ -1,5 +1,5 @@
-import express  from 'express'
-import { AuthService } from '../services/auth.service.js'
+const express  = require('express')
+const { AuthService } = require('../services/auth.service.js') 
 
 
 
@@ -17,4 +17,4 @@ router.post('/',async (req,res,next)=>{
 })
 
 
-export default router
+module.exports = router

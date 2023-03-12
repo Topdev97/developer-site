@@ -54,6 +54,7 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
+        autoIncrement:true
       },
       title: {
         type: DataTypes.STRING(255),
@@ -75,6 +76,7 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
+        autoIncrement:true
       },
       link: {
         type: DataTypes.TEXT,
@@ -112,6 +114,7 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
+        autoIncrement:true
       },
       projectId: {
         field:"project_id",
@@ -149,6 +152,7 @@ module.exports = {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
+        autoIncrement:true
       },
       url: {
         type: DataTypes.TEXT,
@@ -157,7 +161,7 @@ module.exports = {
       projectId: {
         field:"project_id",
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: {
           model: PROJECT_TABLE,
           key: 'id'
@@ -185,10 +189,10 @@ module.exports = {
      */
 
 
-    await queryInterface.dropTable(USER_TABLE);
     await queryInterface.dropTable(LABEL_PROJECT_TABLE);
+    await queryInterface.dropTable(USER_TABLE);
     await queryInterface.dropTable(LABEL_TABLE);
-    await queryInterface.dropTable(PROJECT_TABLE);
     await queryInterface.dropTable(IMAGE_TABLE);
+    await queryInterface.dropTable(PROJECT_TABLE);
   }
 };

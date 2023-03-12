@@ -1,5 +1,5 @@
 
-import { AuthService } from '../services/auth.service.js'
+const { AuthService } = require('../services/auth.service.js') 
 
 const service = new AuthService()
 async function checkAuth(req,res,next) {
@@ -14,6 +14,6 @@ async function checkAuth(req,res,next) {
 }
 
 
-export {
+module.exports = {
     checkAuth
 }

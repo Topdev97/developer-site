@@ -5,6 +5,7 @@ const LabelSchema = {
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
+    autoIncrement: true,
     primaryKey: true,
   },
   title: {
@@ -26,7 +27,8 @@ const LabelSchema = {
 
 class Label extends Model{
   static associate(models) {
-    this.belongToMany(models.Project, {
+    this.belongsToMany(models.Project, {
+      as:"projects",
       through:"LabelProject",
       foreignKey:"projectId"
     });

@@ -1,15 +1,15 @@
 const express = require("express");
-const { ProjectService } = require("../services/project.service.js");
-const { checkAuth } = require("../middlewares/auth.jwt.js");
-
+const {LabelService} = require('../services/label.service')
 
 
 const router = express.Router()
-const service = new ProjectService()
+const service = new LabelService()
 router.get('/', async (req, res, next) => {
   try {
-    const projects = await service.findAll();
-    res.json(projects);
+    console.log('hello');
+
+    const labels = await service.findAll();
+    res.json(labels);
   } catch (error) {
     next(error);
   }
@@ -19,8 +19,8 @@ router.get('/:id',
   async (req, res, next) => {
     try {
       const { id } = req.params;
-      const project = await service.findOne(id);
-      res.json(project);
+      const label = await service.findOne(id);
+      res.json(label);
     } catch (error) {
       next(error);
     }
@@ -31,8 +31,8 @@ router.post('/',
   async (req, res, next) => {
     try {
       const body = req.body;
-      const newProject = await service.create(body);
-      res.status(201).json(newProject);
+      const newLabel = await service.create(body);
+      res.status(201).json(newLabel);
     } catch (error) {
       next(error);
     }
@@ -44,8 +44,8 @@ router.patch('/:id',
     try {
       const { id } = req.params;
       const body = req.body;
-      const project = await service.update(id, body);
-      res.json(project);
+      const label = await service.update(id, body);
+      res.json(label);
     } catch (error) {
       next(error);
     }

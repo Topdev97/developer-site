@@ -8,6 +8,7 @@ const ProjectSchema =  {
     type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
+    autoIncrement: true,
   },
   link: {
     type: DataTypes.TEXT,
@@ -43,12 +44,15 @@ const ProjectSchema =  {
 
 class Project extends Model{
   static associate(models) {
-    this.belongsToMany(models.Image, {
-      as: 'image'
+    this.hasMany(models.Image, {
+      as: 'images',
+      foreignKey:"projectId",
+      allowNull:true
     });
     this.belongsToMany(models.Label,{
+      as:'labels',
       through:"LabelProject",
-      foreignKey:"label_id"
+      foreignKey:"labelId"
     })
     
 
