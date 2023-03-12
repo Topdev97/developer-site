@@ -50,9 +50,9 @@ class Project extends Model{
       allowNull:true
     });
     this.belongsToMany(models.Label,{
-      as:'labels',
       through:"LabelProject",
-      foreignKey:"labelId"
+      foreignKey:"projectId",
+      otherKey:"labelId"
     })
     
 

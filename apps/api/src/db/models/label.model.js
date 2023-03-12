@@ -28,9 +28,9 @@ const LabelSchema = {
 class Label extends Model{
   static associate(models) {
     this.belongsToMany(models.Project, {
-      as:"projects",
       through:"LabelProject",
-      foreignKey:"projectId"
+      foreignKey:"labelId",
+      otherKey:"projectId"
     });
   }
   static config(sequelize) {

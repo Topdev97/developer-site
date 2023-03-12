@@ -39,6 +39,20 @@ router.post('/',
   }
 );
 
+router.post('/add-label',
+  async (req, res, next) => {
+    try {
+      const body = req.body;
+      
+      const newLabel = await service.addLabel(body);
+      res.status(201).json(newLabel);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+
 router.patch('/:id',
   async (req, res, next) => {
     try {

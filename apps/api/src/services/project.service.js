@@ -7,12 +7,22 @@ class ProjectService {
     const newProject = await models.Project.create(data)
     return await newProject.save();
   }
-
+  async addLabel(data) {
+    console.log('entre aqui')
+    const project = await models.Project.findByPk(data.projectId);
+    if (!project) {
+      throw new Error("project not found")
+    }
+    const label = await models.Label.findByPk(data.labelId);
+    if (!label) {
+      throw  new Error('label not found') 
+    }
+    const newItem = await models.LabelProject.create(data);
+    return newItem;
+  }
   async findAll(){
     const projects = await models.Project.findAll({
-      include:[
-        'images'
-      ]
+      include:[{ all: true }]
     })
     return projects
   }
