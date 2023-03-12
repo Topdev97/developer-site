@@ -4,12 +4,15 @@
   "version": "1.0.0",
   "description": "Api for the backend",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --inspect index.js",
     "start": "node index.js",
-    "user:create": "node ./scripts/createUser.js"
+    "user:create": "node ./scripts/createUser.js",
+    "migrations:generate": "sequelize-cli migration:generate --name",
+    "migrations:run": "sequelize-cli db:migrate",
+    "migrations:revert": "sequelize-cli db:migrate:undo",
+    "migrations:delete": "sequelize-cli db:migrate:undo:all"
   },
   "keywords": [
     "nodejs",
@@ -25,6 +28,9 @@
     "express": "^4.18.2",
     "firebase-admin": "^11.4.1",
     "jose": "^4.11.4",
-    "mongoose": "^6.8.3"
+    "mongoose": "^6.8.3",
+    "pg": "^8.10.0",
+    "sequelize": "^6.29.3",
+    "sequelize-cli": "^6.6.0"
   }
 }
