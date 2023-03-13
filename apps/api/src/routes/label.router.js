@@ -1,5 +1,6 @@
 const express = require("express");
-const {LabelService} = require('../services/label.service')
+const {LabelService} = require('../services/label.service');
+const { checkAuth } = require("../middlewares/auth.jwt");
 
 
 const router = express.Router()
@@ -27,7 +28,7 @@ router.get('/:id',
   }
 );
 
-router.post('/',
+router.post('/',checkAuth,
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -39,7 +40,7 @@ router.post('/',
   }
 );
 
-router.patch('/:id',
+router.patch('/:id',checkAuth,
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -52,7 +53,7 @@ router.patch('/:id',
   }
 );
 
-router.delete('/:id',
+router.delete('/:id', checkAuth,
   async (req, res, next) => {
     try {
       const { id } = req.params;

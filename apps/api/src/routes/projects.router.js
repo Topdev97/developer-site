@@ -27,7 +27,7 @@ router.get('/:id',
   }
 );
 
-router.post('/',
+router.post('/',checkAuth,
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -39,7 +39,7 @@ router.post('/',
   }
 );
 
-router.post('/add-label',
+router.post('/add-label',checkAuth,
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -53,7 +53,7 @@ router.post('/add-label',
 );
 
 
-router.patch('/:id',
+router.patch('/:id',checkAuth,
   async (req, res, next) => {
     try {
       const { id } = req.params;
@@ -66,7 +66,7 @@ router.patch('/:id',
   }
 );
 
-router.delete('/:id',
+router.delete('/:id',checkAuth,
   async (req, res, next) => {
     try {
       const { id } = req.params;

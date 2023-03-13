@@ -13,7 +13,7 @@ app.use('/v1/projects',projects)
 
 app.use('/v1/labels',label)
 
-app.use('/v1/images',image)
+app.use('/v1/images',checkAuth,image)
 app.use('/v1/auth',auth)
 app.use(errorHandler)
 

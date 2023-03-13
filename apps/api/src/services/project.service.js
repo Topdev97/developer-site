@@ -29,7 +29,9 @@ class ProjectService {
 
 
   async findOne(id) {
-    const project = await models.Project.findByPk(id)
+    const project = await models.Project.findByPk(id,{
+      include:[{ all: true }]
+    })
     if (!project) {
       throw new Error("Project doesn't exist")
     }
