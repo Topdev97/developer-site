@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { AppContext } from "../../context/AppContext"
 
 
-export const Login = () => {
+export default () => {
   
   
   return (
