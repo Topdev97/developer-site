@@ -26,7 +26,8 @@ import { ProjectpageComponent } from './pages/projectpage/projectpage.component'
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
