@@ -18,11 +18,11 @@
     },
     {
       "source": "/",
-      "destination": "https://my-apps-home.vercel.app/"
+      "destination": "https://davc93.dev/"
     },
     {
       "source": "/:match*",
-      "destination": "https://my-apps-home.vercel.app/:match*"
+      "destination": "https://davc93/:match*"
     }
   ]
 }
