@@ -1,1 +1,17 @@
-<p>navbar works!</p>
+<nav class="navbar--desktop">
+  <!-- Credits https://codepen.io/yuhomyan/pen/ExKvNVa -->
+  <input (click)="setIsOpen()" type="checkbox" [checked]="isMenuOpen" id="active" />
+  <label for="active" class="menu-btn"><span></span></label>
+  <label for="active" class="close"></label>
+  <div class="wrapper">
+    <ul>
+
+      <li *ngFor="let link of links">
+        <a *ngIf="link.external;else internal" [href]="link.path">{{link.name}}</a>
+        <ng-template #internal>
+          <a (click)="closeModal()" [routerLink]="link.path">{{link.name}}</a>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+</nav>

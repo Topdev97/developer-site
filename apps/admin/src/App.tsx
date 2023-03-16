@@ -87,8 +87,9 @@ export const AdminRoutes = () => {
 function App() {
   const [state, dispatch]: any = useContext(AppContext);
   const user = useAuth();
+  const userState:any = null
   // dispatch({type:"",payload:user})
-  if (userState.role == "admin") {
+  if (userState?.role == "admin") {
     return (
       <Layout>
         <Routes>
