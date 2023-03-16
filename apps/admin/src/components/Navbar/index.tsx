@@ -23,7 +23,7 @@ export const Navbar = () => {
             <a href="/contact">Contact</a>
           </li>
           <li>
-            <Link to="/admin">Admin</Link>
+            <Link to="/">Admin</Link>
           </li>
         </ul>
       </div>
