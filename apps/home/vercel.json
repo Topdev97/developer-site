@@ -15,6 +15,14 @@
     {
       "source": "/admin/:match*",
       "destination": "https://my-apps-admin.vercel.app/:match*"
+    },
+    {
+      "source": "/",
+      "destination": "https://my-apps-home.vercel.app/"
+    },
+    {
+      "source": "/:match*",
+      "destination": "https://my-apps-home.vercel.app/:match*"
     }
   ]
 }
