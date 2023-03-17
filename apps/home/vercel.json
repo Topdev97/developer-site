@@ -17,12 +17,8 @@
       "destination": "https://my-apps-admin.vercel.app/:match*"
     },
     {
-      "source": "/",
-      "destination": "https://davc93.dev/"
-    },
-    {
-      "source": "/:match*",
-      "destination": "https://davc93/:match*"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
