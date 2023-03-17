@@ -27,7 +27,7 @@ import { ProjectpageComponent } from './pages/projectpage/projectpage.component'
     AppRoutingModule
   ],
   providers: [
-    // {provide: APP_BASE_HREF, useValue: '/projects'}
+    {provide: APP_BASE_HREF, useValue: '/projects'}
   ],
   bootstrap: [AppComponent]
 })
