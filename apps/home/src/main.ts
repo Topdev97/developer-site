@@ -19,7 +19,7 @@ linksExternals.forEach((link) => {
     const target:any = event.target
     setTimeout(() => {
       window.location.href = target.href
-    }, 700);
+    }, 600);
     
   });
 });

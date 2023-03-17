@@ -44,6 +44,6 @@ export class NavbarComponent {
     setTimeout(() => {
       console.log(event.target.href)
       window.location.href =  event.target.href
-    }, 700);
+    }, 600);
   }
 }

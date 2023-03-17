@@ -13,7 +13,7 @@ export const Navbar = () => {
     debugger
     setTimeout(() => {
       window.location.href = target.href 
-    }, 700);
+    }, 600);
   }
   return (
     <nav className="navbar--desktop">
