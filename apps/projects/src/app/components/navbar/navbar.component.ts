@@ -15,7 +15,7 @@ export class NavbarComponent {
       external: true,
     },
     {
-      path: '/projects',
+      path: '/',
       name: 'Projects',
       external: false,
     },
@@ -44,6 +44,6 @@ export class NavbarComponent {
     setTimeout(() => {
       console.log(event.target.href)
       window.location.href =  event.target.href
-    }, 1500);
+    }, 700);
   }
 }
