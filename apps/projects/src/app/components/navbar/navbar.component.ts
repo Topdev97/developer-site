@@ -38,10 +38,12 @@ export class NavbarComponent {
   setIsOpen() {
     this.isMenuOpen = !this.isMenuOpen;
   }
-  href(path: string) {
-    this.closeModal()
+  href(event:any) {
+    event.preventDefault()
+    this.isMenuOpen = false
     setTimeout(() => {
-      this.router.navigateByUrl(path);
+      console.log(event.target.href)
+      window.location.href =  event.target.href
     }, 1500);
   }
 }

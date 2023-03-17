@@ -7,7 +7,7 @@
     <ul>
 
       <li *ngFor="let link of links">
-        <a *ngIf="link.external;else internal" (click)="href(link.path)">{{link.name}}</a>
+        <a *ngIf="link.external;else internal" [href]="link.path" (click)="href($event)">{{link.name}}</a>
         <ng-template #internal>
           <a (click)="closeModal()" [routerLink]="link.path">{{link.name}}</a>
         </ng-template>
