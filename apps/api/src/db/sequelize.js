@@ -12,5 +12,6 @@ const options = {
 const sequelize = new Sequelize(config.dbUrl, options);
 setupModels(sequelize);
 
+console.log('[sequelize]:',sequelize.config)
 
 module.exports =   sequelize ;

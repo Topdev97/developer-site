@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { projects, image, auth,label } = require('./routes/index.js');
+const { projects, image, auth,label,file } = require('./routes/index.js');
 const { errorHandler } = require('./middlewares/error.handler.js');
 const { checkAuth } = require('./middlewares/auth.jwt.js');
 
@@ -15,7 +15,10 @@ app.use('/v1/labels',label)
 
 app.use('/v1/images',checkAuth,image)
 app.use('/v1/auth',auth)
+
+app.use('/v1/file',checkAuth,file)
 app.use(errorHandler)
+
 
 module.exports = {
     app
