@@ -4,7 +4,7 @@ import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 
 import { Layout } from "./components/Layout";
 import { AppContext } from "./context/AppContext";
-import { useAuth } from "./hooks/useAuth";
+import { useJwt } from "./hooks/useJwt";
 
 const DashboardPage = lazy(() => import("./routes/Dashboard"));
 const AdminPage = lazy(() => import("./routes/Admin"));
@@ -86,7 +86,7 @@ export const AdminRoutes = () => {
 
 function App() {
   const [state, dispatch]: any = useContext(AppContext);
-  const user = useAuth();
+  const user = useJwt();
   const userState:any = null
   // dispatch({type:"",payload:user})
   if (userState?.role == "admin") {

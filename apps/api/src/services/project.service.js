@@ -8,7 +8,6 @@ class ProjectService {
     return await newProject.save();
   }
   async addLabel(data) {
-    console.log('entre aqui')
     const project = await models.Project.findByPk(data.projectId);
     if (!project) {
       throw new Error("project not found")

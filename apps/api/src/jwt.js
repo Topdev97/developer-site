@@ -15,7 +15,6 @@ function signJWT(userId) {
         .sign(secret);
       resolve(jwt);
     } catch (error) {
-      console.error(`[jwt]:Hubo un error:${error}`);
       reject(error);
     }
   });
@@ -28,7 +27,6 @@ async function decodeToken(token) {
     const verified = await jose.jwtVerify(cleanToken, secret);
     return verified;
   } catch (error) {
-    console.error(error);
     throw new Error("Token invalido");
   }
 }

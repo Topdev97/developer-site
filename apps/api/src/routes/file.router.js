@@ -1,25 +1,33 @@
-const express  = require('express')
-const multer = require('multer');
+const express = require("express");
+const multer = require("multer");
 
-const { FileService } = require('../services/file.service.js') 
-const upload = multer();
+const { FileService } = require("../services/file.service.js");
+const { bufferToStream } = require("../utils/index.js");
 
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
-const router = express.Router()
-const service = new FileService()
-router.post('/',upload.single('file'),async (req,res,next)=>{
-    try {
-        const {secure_url,public_id} = await service.create(req.file.buffer)
-        res.status(201).json({
-            url:secure_url,
-            public_id
+const router = express.Router();
+const service = new FileService();
 
-        })
-      } catch (err) {
+router.post("/", upload.single("file"), async (req, res, next) => {
+  try {
+    const buffer = req.file.buffer;
+    const cloudinaryStream = service.create((err, result) => {
+      if (err) {
         next(err);
+      } else {
+        res.status(201).json({
+          url: result.secure_url,
+          public_id: result.public_id,
+        });
       }
+    });
+    
+    bufferToStream(buffer).pipe(cloudinaryStream);
+  } catch (err) {
+    next(err);
+  }
+});
 
-})
-
-
-module.exports = router
+module.exports = router;
