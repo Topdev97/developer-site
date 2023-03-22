@@ -1,1 +1,26 @@
-<p>projectpage works!</p>
+<main>
+  <div *ngIf="project?.published">
+    <h1>{{ project?.title }}</h1>
+    <div class="images">
+      <img [src]="image.url" alt="Project Image" *ngFor="let image of project?.images"/>
+    </div>
+    <div>
+      {{ project?.description }}
+    </div>
+    <div>
+      <h3>Technologies</h3>
+
+      <div *ngFor="let label of project?.labels">
+        <div *ngIf="label.type === 'tech'" class="tech-container">
+          <img [src]="'./' + label.title" [alt]="label.title" /><span>{{
+            label.title
+          }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <a [href]="project?.link" class="btn--primary">Go to App</a>
+      <a [href]="project?.repository" class="btn--secondary">Go to Repo</a>
+    </div>
+  </div>
+</main>

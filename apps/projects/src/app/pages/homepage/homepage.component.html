@@ -1,1 +1,13 @@
-<p>homepage works!</p>
+<main>
+  <div class="projects">
+    <div class="project-card" *ngFor="let project of projects">
+      <img [src]="project.images[0]" [alt]="project.title">
+      <h3>{{project.title}}</h3>
+      <p>{{project.shortDescription}}</p>
+      <a *ngIf="project.published; else coomingSoon " [routerLink]="project.slug" class="btn--primary">More Details</a>
+      <ng-template #coomingSoon>
+        <button disabled  class="btn--primary" >Cooming Soon</button>
+      </ng-template>
+    </div>
+  </div>
+</main>

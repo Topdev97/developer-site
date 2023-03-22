@@ -39,6 +39,12 @@ const ProjectSchema =  {
     type: DataTypes.DATE,
     field: 'created_at',
     defaultValue: Sequelize.NOW
+  },
+
+  slug:{
+    allowNull:false,
+    type:DataTypes.STRING,
+    unique:true
   }
 }
 

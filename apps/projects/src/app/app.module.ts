@@ -10,6 +10,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ProjectpageComponent } from './pages/projectpage/projectpage.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,10 +25,11 @@ import { ProjectpageComponent } from './pages/projectpage/projectpage.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    {provide: APP_BASE_HREF, useValue: '/projects'}
+    // {provide: APP_BASE_HREF, useValue: '/projects'}
   ],
   bootstrap: [AppComponent]
 })

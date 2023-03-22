@@ -108,6 +108,11 @@ module.exports = {
         type: DataTypes.DATE,
         field: 'created_at',
         defaultValue: Sequelize.NOW
+      },
+      slug:{
+        allowNull:false,
+        type:DataTypes.STRING,
+        unique:true
       }
     })
     await queryInterface.createTable(LABEL_PROJECT_TABLE,{

@@ -8,7 +8,8 @@ const router = express.Router()
 const service = new ProjectService()
 router.get('/', async (req, res, next) => {
   try {
-    const projects = await service.findAll();
+    const {limit,offset,slug} = req.query
+    const projects = await service.findAll(limit,offset,slug);
     res.json(projects);
   } catch (error) {
     next(error);

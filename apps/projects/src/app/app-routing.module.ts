@@ -15,7 +15,7 @@ const routes: Routes = [
         component: HomepageComponent,
       },
       {
-        path: ':id',
+        path: ':slug',
         component: ProjectpageComponent,
       },
     ],

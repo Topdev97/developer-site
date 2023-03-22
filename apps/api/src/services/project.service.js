@@ -19,7 +19,18 @@ class ProjectService {
     const newItem = await models.LabelProject.create(data);
     return newItem;
   }
-  async findAll(){
+  async findAll(limit,offset,slug){
+    if(slug){
+
+    const projects = await models.Project.findAll({
+      include:[{ all: true }],
+      where:{
+        slug
+      },
+      limit:1
+    })
+    return projects
+    }
     const projects = await models.Project.findAll({
       include:[{ all: true }]
     })
