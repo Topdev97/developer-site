@@ -7,6 +7,7 @@ export interface Project {
     published:        boolean;
     description:      string;
     createdAt:        Date;
+    slug:               string;
     images:           Image[];
     labels:           Label[];
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Project, ProjectWithSlug} from '../../models/project.model'
+import {Project} from '../../models/project.model'
 import { ProjectService } from 'src/app/services/projects.service';
 import { pipe, tap } from 'rxjs';
 @Component({
@@ -8,7 +8,7 @@ import { pipe, tap } from 'rxjs';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit{
-  projects:ProjectWithSlug[]= []
+  projects:Project[]= []
 
   constructor(
     private projectService:ProjectService

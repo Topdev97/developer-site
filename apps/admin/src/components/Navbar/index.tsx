@@ -1,24 +1,34 @@
-import React, { MouseEventHandler } from "react";
-import './style.css'
+import React, { MouseEventHandler, useContext } from "react";
+import "./style.css";
 import { Link } from "react-router-dom";
+import { userContext } from "../../context/UserContext";
+import { userReducerActions } from "../../context/userReducer";
 export const Navbar = () => {
-  const [checked, setChecked] = React.useState(false)
+  const [checked, setChecked] = React.useState(false);
+  
   const toggleMenu = () => {
-    setChecked(!checked)
-  }
-  const handleExternalNavigate:MouseEventHandler<HTMLAnchorElement> = (event) => {
-    event.preventDefault()
-    setChecked(false)
-    const target = event.target as any
-    debugger
+    setChecked(!checked);
+  };
+  const handleExternalNavigate: MouseEventHandler<HTMLAnchorElement> = (
+    event
+  ) => {
+    event.preventDefault();
+    setChecked(false);
+    const target = event.target as any;
+    debugger;
     setTimeout(() => {
-      window.location.href = target.href 
+      window.location.href = target.href;
     }, 600);
-  }
+  };
   return (
     <nav className="navbar--desktop">
       {/* Credits https://codepen.io/yuhomyan/pen/ExKvNVa */}
-      <input type="checkbox" id="active" checked={checked} onChange={toggleMenu}/>
+      <input
+        type="checkbox"
+        id="active"
+        checked={checked}
+        onInput={toggleMenu}
+      />
       <label htmlFor="active" className="menu-btn">
         <span />
       </label>
@@ -26,14 +36,20 @@ export const Navbar = () => {
       <div className="wrapper">
         <ul>
           <li>
-            <a onClick={handleExternalNavigate} href="/">About</a>
+            <a onClick={handleExternalNavigate} href="/">
+              About
+            </a>
           </li>
           <li>
-            <a onClick={handleExternalNavigate} href="/projects">Projects</a>
+            <a onClick={handleExternalNavigate} href="/projects">
+              Projects
+            </a>
           </li>
 
           <li>
-            <a onClick={handleExternalNavigate} href="/contact">Contact</a>
+            <a onClick={handleExternalNavigate} href="/contact">
+              Contact
+            </a>
           </li>
           <li>
             <Link to="/">Admin</Link>

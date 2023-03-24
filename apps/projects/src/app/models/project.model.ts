@@ -1,6 +1,7 @@
 export interface Project {
   id:               number;
   link:             string;
+  slug:             string;
   repository:       string;
   title:            string;
   shortDescription: string;
@@ -35,6 +36,3 @@ export interface LabelProject {
 }
 
 
-export interface ProjectWithSlug extends Project{
-  slug:string
-}

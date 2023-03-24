@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { SignForm } from "../../components/SignForm"
+import { LoginForm } from "../../components/LoginForm"
 import { useNavigate } from "react-router-dom"
 import { AppContext } from "../../context/AppContext"
 
@@ -8,6 +8,6 @@ export default () => {
   
   
   return (
-    <SignForm />
+    <LoginForm />
   )
 }
