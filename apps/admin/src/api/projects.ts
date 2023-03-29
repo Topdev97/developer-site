@@ -4,7 +4,7 @@ import { LabelProjectDto, CreateProjectDto, Project, UpdateProjectDto } from "..
 class ProjectService{
 
     async getProjects():Promise<Project[]>{
-        const response = await fetch(`${config.apiUri}/v1/projects`)
+        const response = await fetch(`${config.apiUri}/projects`)
         const data = await response.json()
         if(data.error){
             throw new Error(data.message)

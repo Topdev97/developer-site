@@ -4,7 +4,7 @@ class AuthService{
 
     async login(email:string,password:string){
         
-        const response =  await fetch(`${config.apiUri}/v1/auth/login`,{
+        const response =  await fetch(`${config.apiUri}/auth/login`,{
             method:"POST",
             headers:{
                 'Content-type':"application/json"
@@ -23,7 +23,7 @@ class AuthService{
         return data
     }
     async getProfile(token:string):Promise<User>{
-        const response =  await fetch(`${config.apiUri}/v1/auth/profile`,{
+        const response =  await fetch(`${config.apiUri}/auth/profile`,{
             method:"GET",
             headers:{
                 'Authorization':`Bearer ${token}`

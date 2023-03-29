@@ -36,7 +36,7 @@ export const LabelForm =  ({data}:{data: CreateLabelDto | UpdateLabelDto | null}
       <br />
       <label>
         Type:
-        <select name="type" placeholder='Technologies' onSelect={handleInput}>
+        <select  name="type" placeholder='Technologies' onSelect={handleInput}>
           <option value="tech">Tech</option>
           <option value="business">Business</option>
           <option value="health">Health</option>

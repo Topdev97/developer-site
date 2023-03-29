@@ -7,5 +7,4 @@ class ImageService{
     async deleteImage(id:number){}
 }
 
-
-export default new ImageService()
+export const imageService = new ImageService()

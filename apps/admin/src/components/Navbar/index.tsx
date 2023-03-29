@@ -26,7 +26,7 @@ export const Navbar = () => {
       <input
         type="checkbox"
         id="active"
-        checked={checked}
+        defaultChecked={checked}
         onInput={toggleMenu}
       />
       <label htmlFor="active" className="menu-btn">

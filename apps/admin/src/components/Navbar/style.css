@@ -1,3 +1,7 @@
+
+.navbar--desktop input[type="checkbox"]{
+  display: none;
+}
 .wrapper{
     position: fixed;
     top: 0;
@@ -120,9 +124,6 @@
   }
   .wrapper ul li a:hover{
     color: #1a73e8;
-  }
-  input[type="checkbox"]{
-    display: none;
   }
   .content{
     position: absolute;
