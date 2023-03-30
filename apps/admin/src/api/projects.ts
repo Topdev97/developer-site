@@ -1,5 +1,5 @@
 import { config } from "../config";
-import { LabelProjectDto, CreateProjectDto, Project, UpdateProjectDto } from "../models/project.model";
+import { CreateProjectDto, Project, UpdateProjectDto } from "../models/project.model";
 
 class ProjectService{
 
@@ -12,17 +12,28 @@ class ProjectService{
         return data
     }
 
-    async addProject(token:string,project:CreateProjectDto){
+    async addProject(token:string,project:CreateProjectDto):Promise<Project>{
+        const response =  await fetch(`${config.apiUri}/projects`,{
+            method:"POST",
+            headers:{
+                'Authorization':`Bearer ${token}`,
+                'Content-type':"application/json"
+            },
+            body:JSON.stringify(project)
+        })
 
+        const data = await response.json()
+        
+        if(data.error){
+            throw new Error(data.message)
+        }
+        return data
     }
     async updateProject(token:string,changes:UpdateProjectDto){}
     async deleteProject(token:string,id:number){
 
     }
-    async addLabel(token:string,LabelProject:LabelProjectDto){}
-
-    async deleteLabel(token:string,LabelProject:LabelProjectDto){}
-
+    
     
 }
 

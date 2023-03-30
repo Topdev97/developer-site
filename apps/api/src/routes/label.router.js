@@ -7,7 +7,6 @@ const router = express.Router()
 const service = new LabelService()
 router.get('/', async (req, res, next) => {
   try {
-    console.log('hello');
 
     const labels = await service.findAll();
     res.json(labels);
@@ -56,6 +55,7 @@ router.patch('/:id',checkAuth,
 router.delete('/:id', checkAuth,
   async (req, res, next) => {
     try {
+      console.log(req);
       const { id } = req.params;
       await service.delete(id);
       res.status(201).json({id});

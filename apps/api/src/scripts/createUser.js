@@ -20,7 +20,8 @@ rl.question("What is the email? ",async (answer) => {
     try {
       const newUser = await models.User.create({
         email:user,
-        password:hashedPassword
+        password:hashedPassword,
+        role:'admin'
       })
       const response = await newUser.save()
       console.log(response)

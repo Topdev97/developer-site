@@ -209,7 +209,7 @@ export const AdminRoutes = () => {
             <EditLabelPage/>
           </Suspense>
         }
-        path="/labels/edit/:slug"
+        path="/labels/edit/:id"
       />
       <Route path="/*" element={<Navigate to="/profile" replace />} />
     </Routes>

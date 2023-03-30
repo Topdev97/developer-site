@@ -10,10 +10,11 @@ const upload = multer({ storage });
 const router = express.Router();
 const service = new FileService();
 
-router.post("/", upload.single("file"), async (req, res, next) => {
+router.post("/", upload.single("image"), async (req, res, next) => {
   try {
     const buffer = req.file.buffer;
-    const cloudinaryStream = service.create((err, result) => {
+    const fileName = req.file.originalname
+    const cloudinaryStream = service.create(fileName,(err, result) => {
       if (err) {
         next(err);
       } else {

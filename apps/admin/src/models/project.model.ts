@@ -8,16 +8,15 @@ export interface Project {
     description:      string;
     createdAt:        Date;
     slug:               string;
-    images:           Image[];
-    labels:           Label[];
+    images?:           Image[];
+    labels?:           Label[];
 }
 
 export interface Image {
     id:        number;
-    projectID: number;
-    labelID?:  number;
+    projectId: number;
     createdAt: Date;
-    url?:      string;
+    url:      string;
 }
 
 export interface Label {
@@ -30,14 +29,14 @@ export interface Label {
 
 export interface LabelProject {
     id:        number;
-    projectID: number;
-    labelID:   number;
+    projectId: number;
+    labelId:   number;
     createdAt: Date;
 }
 
 
 
-export interface CreateProjectDto extends Omit<Project,'id' | 'images' | 'label' | 'createdAt'> {}
+export interface CreateProjectDto extends Omit<Project,'id' | 'images' | 'labels' | 'createdAt'> {}
 
 export interface UpdateProjectDto extends Partial<CreateProjectDto>{}
 
@@ -45,7 +44,7 @@ export interface CreateLabelDto extends Omit<Label,'id' | 'createdAt'>{}
 
 export interface UpdateLabelDto extends Partial<CreateLabelDto>{}
 
-export interface LabelProjectDto extends Omit<LabelProject,'id' | 'createdAt' >{}
+export interface CreateLabelProjectDto extends Omit<LabelProject,'id' | 'createdAt' >{}
 
 export interface CreateImageDto extends Omit<Image,'id' | 'createdAt'>{}
 

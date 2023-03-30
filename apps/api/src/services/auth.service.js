@@ -5,6 +5,7 @@ class AuthService {
   async sendToken(data) {
     const { email, password } = data;
     const user = await models.User.findOne({ email });
+    
     if (user) {
       const isAuth = matchPassword(password, user.password);
       if (isAuth) {

@@ -26,8 +26,10 @@ class AuthService{
         const response =  await fetch(`${config.apiUri}/auth/profile`,{
             method:"GET",
             headers:{
-                'Authorization':`Bearer ${token}`
+                'Authorization':`Bearer ${token}`,
+                'Content-type':"application/json"
             }
+
         })
 
         const data = await response.json()

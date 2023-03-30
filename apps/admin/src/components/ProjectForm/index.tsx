@@ -1,9 +1,21 @@
-import React, { FormEventHandler, ChangeEvent, useState,FormEvent } from "react";
+import React, {
+  FormEventHandler,
+  ChangeEvent,
+  useState,
+  FormEvent,
+} from "react";
 import { CreateProjectDto, UpdateProjectDto } from "../../models/project.model";
 import "./style.css";
 import { fileService } from "../../api/file";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { projectService } from "../../api/projects";
+import { imageService } from "../../api/images";
+import { labelProjectService } from "../../api/label-project";
+import { useGetLabels } from "../../hooks/useGetLabels";
 export const ProjectForm = ({ data }: { data: any }) => {
+  const { labels } = useGetLabels();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = React.useState(() => {
     if (!data) {
       return {
@@ -23,9 +35,39 @@ export const ProjectForm = ({ data }: { data: any }) => {
   });
   const [token, setToken] = useLocalStorage("token", null);
 
-  const handleSubmit: FormEventHandler = (event) => {
+  const handleSubmit: FormEventHandler = async (event) => {
     event.preventDefault();
     console.log(formData);
+
+    // setLoading(true)
+
+    // try {
+
+    //   const {
+    //     link,
+    //     repository,
+    //     title,
+    //     shortDescription,
+    //     slug,
+    //     description,
+    //     published,
+    //   }: CreateProjectDto = formData;
+    //   const { id } = await projectService.addProject(token, {
+    //     link,
+    //     repository,
+    //     title,
+    //     shortDescription,
+    //     slug,
+    //     published,
+    //     description,
+    //   });
+    //   await Promise.all(formData.images.map((image: any) => { return imageService.addImage(token, { projectId: id, url: image }) }))
+    //   await Promise.all(formData.techs.map((tech: any) => { return labelProjectService.setLabelProject(token, { projectId: id, labelId: tech }) }))
+    //   setError(null)
+    // } catch (error) {
+    //   setError(`hubo un error ${error}`)
+    // }
+    // setLoading(false)
   };
 
   const handleCheckBox = (event: any) => {
@@ -35,8 +77,6 @@ export const ProjectForm = ({ data }: { data: any }) => {
       ...prevState,
       [name]: target.checked,
     }));
-    
-
   };
   const handleInput: FormEventHandler<
     HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -68,19 +108,25 @@ export const ProjectForm = ({ data }: { data: any }) => {
   const handleFile: FormEventHandler<HTMLElement> = async (event) => {
     const target = event.target as any;
     const files = target.files as FileList;
-    const filesUploaded = [];
+    
+
     for (let i = 0; i < files.length; i++) {
-      filesUploaded.push(fileService.uploadFile(token, files[i]));
+      const formData = new FormData();
+      formData.append("image", files[i]);
+      
+       
+      try {
+        const images = await fileService.uploadFile(token, formData);
+        setFormData((prevState: any) => ({
+          ...prevState,
+          images,
+        }));
+      } catch (error) {
+        setError(`Error uploading files: ${error}`);
+      }
     }
-    const images = await Promise.all(filesUploaded);
-    setFormData((prevState: any) => ({
-      ...prevState,
-      images,
-    }));
   };
-  React.useEffect(() => {
-    console.log(formData);
-  }, [formData]);
+  React.useEffect(() => {}, [formData]);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -127,26 +173,24 @@ export const ProjectForm = ({ data }: { data: any }) => {
       <div className="input-group">
         <label>Techs:</label>
         <select name="techs" onInput={handleSelect} multiple={true}>
-          <option value="react">React</option>
-          <option value="angular">Angular</option>
-          <option value="nodejs">Node.js</option>
+          {labels.map((label) => {
+            return (
+              <option key={label.id} value={label.id}>
+                {label.title}
+              </option>
+            );
+          })}
         </select>
       </div>
 
       <div className="input-group">
         <label>Published:</label>
-        <input
-          type="checkbox"
-          name="published"
-          onInput={handleCheckBox}
-          
-        />
+        <input type="checkbox" name="published" onInput={handleCheckBox} />
       </div>
 
       <div className="input-group">
         <label>Description:</label>
         <textarea
-        
           name="description"
           value={formData.description}
           onInput={handleInput}

@@ -1,11 +1,15 @@
 const { cloudinary } = require("../cloudinary");
 
 class FileService {
-  create(callback) {
+  create(fileName,callback) {
     // Use the uploaded file's name as the asset's public ID and
     // allow overwriting the asset with new versions
-
-    return cloudinary.uploader.upload_stream({ folder: "davc93",overwrite:true }, callback);
+    const options= { 
+      folder: "davc93",
+      overwrite:true,
+      public_id:fileName
+    }
+    return cloudinary.uploader.upload_stream(options, callback);
   }
 
   async findAll() {
