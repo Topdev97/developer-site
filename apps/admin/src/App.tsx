@@ -27,193 +27,59 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  React.useEffect(() => {
-    const checkAuth = async () => {
-      if (token) {
-        setLoading(true);
-        try {
-          const profile = await authService.getProfile(token);
-          userDispatch({ type: userReducerActions.SET_USER, payload: profile });
-        } catch (error) {
-          setError(`${error}`);
-        }
-        setLoading(false);
-      } else {
-        userDispatch({ type: userReducerActions.SET_USER, payload: null });
-      }
-    };
-    checkAuth();
-  }, []);
-  if (loading) {
-    return <p>Loading...</p>;
-  } else {
-    if (userState) {
-      if (userState.role == "admin") {
-        console.log("eres admin");
+  return (
+    <Layout>
+      <Routes>
+        <Route
+          element={<Suspense fallback={<>...</>}><LoginPage /></Suspense>}
+          path="/login"
+        />
+  
+  
+        <Route
+          element={<Suspense fallback={<>...</>}><ProfilePage /></Suspense>}
+          path="/profile"
+        />
+  
 
-        return (
-          <Layout>
-            <Routes>
-              <Route path="/*" element={<AdminRoutes />} />
-            </Routes>
-          </Layout>
-        );
-      } else {
-        console.log("solo eres usuario");
+        <Route
+          element={<Suspense fallback={<>...</>}><ProjectsPage /></Suspense>}
+          path="/projects"
+        />
+        <Route
+          element={<Suspense fallback={<>...</>}><CreateProjectPage /></Suspense>}
+          path="/projects/create"
+        />
+  
+        <Route
+          element={<Suspense fallback={<>...</>}><EditProjectPage /></Suspense>}
+          path="/projects/edit/:id"
+        />  
+        <Route
+          element={<Suspense fallback={<>...</>}><LabelsPage /></Suspense>}
+          path="/labels"
+        />
+  
 
-        return (
-          <Layout>
-            <Routes>
-              <Route path="/*" element={<PrivateRoutes />} />
-            </Routes>
-          </Layout>
-        );
-      }
-    } else {
-      console.log("no estas autenticado");
-      return (
-        <Layout>
-          <Routes>
-            <Route path="/*" element={<PublicRoutes />} />
-          </Routes>
-        </Layout>
-      );
-    }
-  }
+  
+        <Route
+          element={<Suspense fallback={<>...</>}><CreateLabelPage /></Suspense>}
+          path="/labels/create"
+        />
+  
+        <Route
+          element={<Suspense fallback={<>...</>}><EditLabelPage /></Suspense>}
+          path="/labels/edit/:id"
+        />
+        <Route
+          path="/*"
+          element={<Navigate to="/login" replace />}
+        />
+
+      </Routes>
+    </Layout>
+  );
+  
 }
-
-export const PublicRoutes = () => {
-  return (
-    <Routes>
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <LoginPage />
-          </Suspense>
-        }
-        path="/login"
-      />
-      <Route path="/*" element={<Navigate to="/login" replace />} />
-    </Routes>
-  );
-};
-
-export const PrivateRoutes = () => {
-  return (
-    <Routes>
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <DashboardPage />
-          </Suspense>
-        }
-        path="/dashboard"
-      />
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <ProfilePage />
-          </Suspense>
-        }
-        path="/profile"
-      />
-
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <ProjectsPage />
-          </Suspense>
-        }
-        path="/projects"
-      />
-
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <LabelsPage />
-          </Suspense>
-        }
-        path="/labels"
-      />
-      <Route path="/*" element={<Navigate to="/profile" replace />} />
-    </Routes>
-  );
-};
-
-export const AdminRoutes = () => {
-  return (
-    <Routes>
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <ProfilePage />
-          </Suspense>
-        }
-        path="/profile"
-      />
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <AdminPage />
-          </Suspense>
-        }
-        path="/admin"
-      />
-
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <ProjectsPage />
-          </Suspense>
-        }
-        path="/projects"
-      />
-
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <LabelsPage />
-          </Suspense>
-        }
-        path="/labels"
-      />
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <CreateProjectPage />
-          </Suspense>
-        }
-        path="/projects/create"
-      />
-
-<Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <EditProjectPage/>
-          </Suspense>
-        }
-        path="/projects/edit/:slug"
-      />
-      <Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <CreateLabelPage />
-          </Suspense>
-        }
-        path="/labels/create"
-      />
-
-<Route
-        element={
-          <Suspense fallback={<>...</>}>
-            <EditLabelPage/>
-          </Suspense>
-        }
-        path="/labels/edit/:id"
-      />
-      <Route path="/*" element={<Navigate to="/profile" replace />} />
-    </Routes>
-  );
-};
 
 export default App;

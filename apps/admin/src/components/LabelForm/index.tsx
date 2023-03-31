@@ -4,7 +4,7 @@ import { labelService } from '../../api/labels';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const LabelForm =  ({data}:any) => {
-  console.log(data);
+  
   
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
@@ -58,7 +58,7 @@ export const LabelForm =  ({data}:any) => {
       <br />
       <label>
         Type:
-        <select  name="type" placeholder='Technologies' onInput={handleInput}>
+        <select name="type" placeholder='Technologies' onInput={handleInput}>
           <option value="tech">Tech</option>
           <option value="other">Otro</option>
         </select>

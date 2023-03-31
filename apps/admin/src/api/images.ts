@@ -5,7 +5,7 @@ class ImageService{
 
     async addImage(token:string,image:CreateImageDto):Promise<Image>{
 
-        const response =  await fetch(`${config.apiUri}/projects/set-labels`,{
+        const response =  await fetch(`${config.apiUri}/images`,{
             method:"POST",
             headers:{
                 'Authorization':`Bearer ${token}`,

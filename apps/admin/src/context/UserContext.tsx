@@ -8,7 +8,7 @@ export const userContext = createContext<[User | null, Dispatch<{ type: string, 
 
 // export const userContext = createContext<AppUser | Dispatch<{type:any; payload?:AppUser}>[]>([initialState,()=>{}]);
 
-export const UserContext = ({ children }: React.PropsWithChildren) => {
+export const UserContext = ({ children }: any) => {
   const [state, dispatch] = useReducer<Reducer<User | null,{ type: string; payload?: User | null }>>(userReducer, initialState)
   return (
     <userContext.Provider value={[state, dispatch]}>

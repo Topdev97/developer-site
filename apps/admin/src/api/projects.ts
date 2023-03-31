@@ -11,6 +11,15 @@ class ProjectService{
         }
         return data
     }
+    async getProject(id:number):Promise<Project>{
+        const response = await fetch(`${config.apiUri}/projects/${id}`)
+        const data = await response.json()
+        if(data.error){
+            throw new Error(data.message)
+        }
+        return data
+
+    }
 
     async addProject(token:string,project:CreateProjectDto):Promise<Project>{
         const response =  await fetch(`${config.apiUri}/projects`,{
@@ -31,6 +40,19 @@ class ProjectService{
     }
     async updateProject(token:string,changes:UpdateProjectDto){}
     async deleteProject(token:string,id:number){
+        const response =  await fetch(`${config.apiUri}/projects/${id}`,{
+            method:"DELETE",
+            headers:{
+                'Authorization':`Bearer ${token}`,
+            }
+        })
+
+        const data = await response.json()
+        
+        if(data.error){
+            throw new Error(data.message)
+        }
+        return data
 
     }
     

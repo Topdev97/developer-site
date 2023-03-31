@@ -19,6 +19,7 @@ export const useGetProjects = () => {
             }
             setLoading(false)
         }
+        getProjects()
 
     },[])
 
