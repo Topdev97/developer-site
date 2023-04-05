@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { userContext } from '../../context/UserContext';
-import { userReducerActions } from '../../context/userReducer';
+import { UserContext } from '../../context/UserContext';
+import { userReducerActions } from '../../context/UserContext';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { AuthContext } from '../../context/AuthContext';
 
 const routes = [
     {
@@ -20,14 +21,18 @@ const routes = [
 ]
 
 export const Sidebar = () => {
-    const [state, dispatch] = useContext(userContext);
-    const [token,setToken] = useLocalStorage('token',null)
+    const {state, dispatch} = useContext(UserContext);
+    const {token,setToken} = useContext(AuthContext)
+    const [darkMode,setDarkMode] = useLocalStorage('darkmode')
     const handleLogoutClick = () => {
         setToken(null)
-        
-        
         dispatch({type:userReducerActions.LOGOUT})
       }
+      const handleDarkMode = () => {
+        document.documentElement.classList.toggle('dark')
+        setDarkMode(!darkMode)
+      }
+
     return (
     <aside>
         <ul>
@@ -40,6 +45,7 @@ export const Sidebar = () => {
             })}
                         <li>
               <button onClick={handleLogoutClick} className="btn--secondary">Logout</button>
+              <button onClick={handleDarkMode} >Dark Mode</button>
             </li>
 
         </ul>

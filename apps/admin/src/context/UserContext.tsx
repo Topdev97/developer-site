@@ -1,18 +1,35 @@
 import { type Dispatch, Reducer, createContext, useReducer } from 'react'
-import { userReducer } from './userReducer'
-import { Credentials } from '../models/credentials.models'
+
 import { User } from '../models/user.model'
 
-const initialState: User | null = null
-export const userContext = createContext<[User | null, Dispatch<{ type: string, payload?: User | null }>]>([initialState, () => {}])
+export const initialState: User | null = null
+
+
+export const userReducerActions = {
+  SET_USER: 'SET_USER',
+  LOGOUT: 'LOGOUT'
+}
+
+export const userReducer = (
+  state: User | null,
+  action: { type: string, payload?: User | null }
+) => {
+  switch (action.type) {
+    case userReducerActions.SET_USER:
+      
+      const user = action.payload as User | null
+      
+      return user
+
+    case userReducerActions.LOGOUT:
+      return null
+    default:
+
+    return state
+  }
+}
+
+
+export const UserContext = createContext<{state:User | null,dispatch: Dispatch<{ type: string, payload?: User | null }>}>({state:initialState, dispatch:() => {}})
 
 // export const userContext = createContext<AppUser | Dispatch<{type:any; payload?:AppUser}>[]>([initialState,()=>{}]);
-
-export const UserContext = ({ children }: any) => {
-  const [state, dispatch] = useReducer<Reducer<User | null,{ type: string; payload?: User | null }>>(userReducer, initialState)
-  return (
-    <userContext.Provider value={[state, dispatch]}>
-      {children}
-    </userContext.Provider>
-  )
-}

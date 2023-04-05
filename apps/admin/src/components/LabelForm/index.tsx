@@ -1,6 +1,6 @@
 import React, { useState ,FormEventHandler} from 'react';
 import {CreateLabelDto, UpdateLabelDto} from '../../models/project.model'
-import { labelService } from '../../api/labels';
+import { labelService } from '../../services/label.service';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const LabelForm =  ({data}:any) => {

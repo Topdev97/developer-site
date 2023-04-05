@@ -1,85 +1,48 @@
-import React, { useContext, useState, lazy, Suspense } from "react";
-import reactLogo from "./assets/react.svg";
-import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
-
+import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
-
+import { AuthContext } from "./context/AuthContext";
+import { UserContext, initialState, userReducer } from "./context/UserContext";
 import { useLocalStorage } from "./hooks/useLocalStorage";
-import { userContext } from "./context/UserContext";
-import { userReducerActions } from "./context/userReducer";
-import { authService } from "./api/auth";
+import React, { useReducer } from "react";
+import { LoginPage } from "./routes/login";
+import { ProfilePage } from "./routes/profile";
+import { ProjectsPage } from "./routes/projects";
+import { CreateProjectPage } from "./routes/project-create";
+import { EditProjectPage } from "./routes/project-edit";
+import { LabelsPage } from "./routes/labels";
+import { CreateLabelPage } from "./routes/label-create";
+import { EditLabelPage } from "./routes/label-edit";
 
-const DashboardPage = lazy(() => import("./routes/Dashboard"));
-const AdminPage = lazy(() => import("./routes/Admin"));
-const ProfilePage = lazy(() => import("./routes/Profile"));
-const LoginPage = lazy(() => import("./routes/Login"));
-const ProjectsPage = lazy(() => import("./routes/Projects"));
-const LabelsPage = lazy(() => import("./routes/Labels"));
-const CreateProjectPage = lazy(() => import("./routes/CreateProject"));
-const EditProjectPage = lazy(() => import("./routes/EditProject"));
-
-const CreateLabelPage = lazy(() => import("./routes/CreateLabel"));
-
-const EditLabelPage = lazy(() => import("./routes/EditLabel"));
 function App() {
-  const [userState, userDispatch] = useContext(userContext);
-  const [token, setToken] = useLocalStorage("token", null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-
+  const [token,setToken] = useLocalStorage('token',null)
+  const [state,dispatch] = useReducer(userReducer,initialState)
+  const [darkMode,setDarkMode] = useLocalStorage('darkmode',false)
+  React.useEffect(()=>{
+    if(darkMode){
+      document.documentElement.classList.add('dark')
+    }
+  },[])
   return (
-    <Layout>
-      <Routes>
-        <Route
-          element={<Suspense fallback={<>...</>}><LoginPage /></Suspense>}
-          path="/login"
-        />
-  
-  
-        <Route
-          element={<Suspense fallback={<>...</>}><ProfilePage /></Suspense>}
-          path="/profile"
-        />
-  
-
-        <Route
-          element={<Suspense fallback={<>...</>}><ProjectsPage /></Suspense>}
-          path="/projects"
-        />
-        <Route
-          element={<Suspense fallback={<>...</>}><CreateProjectPage /></Suspense>}
-          path="/projects/create"
-        />
-  
-        <Route
-          element={<Suspense fallback={<>...</>}><EditProjectPage /></Suspense>}
-          path="/projects/edit/:id"
-        />  
-        <Route
-          element={<Suspense fallback={<>...</>}><LabelsPage /></Suspense>}
-          path="/labels"
-        />
-  
-
-  
-        <Route
-          element={<Suspense fallback={<>...</>}><CreateLabelPage /></Suspense>}
-          path="/labels/create"
-        />
-  
-        <Route
-          element={<Suspense fallback={<>...</>}><EditLabelPage /></Suspense>}
-          path="/labels/edit/:id"
-        />
-        <Route
-          path="/*"
-          element={<Navigate to="/login" replace />}
-        />
-
-      </Routes>
-    </Layout>
+    <AuthContext.Provider value={{token,setToken}}>
+      <UserContext.Provider value={{state,dispatch}}>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route element={<LoginPage />} path="/login" />
+              <Route element={<ProfilePage />} path="/profile" />
+              <Route element={<ProjectsPage />} path="/projects" />
+              <Route element={<CreateProjectPage />} path="/projects/create" />
+              <Route element={<EditProjectPage />} path="/projects/edit/:id" />
+              <Route element={<LabelsPage />} path="/labels" />
+              <Route element={<CreateLabelPage />} path="/labels/create" />
+              <Route element={<EditLabelPage />} path="/labels/edit/:id" />
+              <Route path="/*" element={<Navigate to="/login" replace />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </UserContext.Provider>
+    </AuthContext.Provider>
   );
-  
 }
 
 export default App;

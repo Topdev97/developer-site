@@ -9,13 +9,13 @@ import "./style.css";
 import { config } from "../../config";
 import { AppContext } from "../../context/AppContext";
 import { useNavigate } from "react-router-dom";
-import { userContext } from "../../context/UserContext";
-import { authService } from "../../api/auth";
+import { UserContext } from "../../context/UserContext";
+import { authService } from "../../services/auth.service";
 import { userReducerActions } from "../../context/userReducer";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 
 export const LoginForm = () => {
-  const [state, dispatch] = useContext(userContext);
+  const [state, dispatch] = useContext(UserContext);
   const [data, setData] = React.useState({
     email: "",
     password: "",

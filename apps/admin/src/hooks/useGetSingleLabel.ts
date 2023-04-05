@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { labelService } from "../api/labels";
+import { labelService } from "../services/label.service";
 import { Label } from "../models/project.model";
 export const useGetSingleLabel = (id: string) => {
   const [loading, setLoading] = useState(false);

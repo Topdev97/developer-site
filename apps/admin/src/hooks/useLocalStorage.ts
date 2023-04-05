@@ -1,43 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react'
 
-export const useLocalStorage = (key:string, initialValue:unknown) => {
-  const [storedValue, setStoredValue] = useState(() => {
+export function useLocalStorage (key:string, initialValue:unknown = null) {
+  const [storedValue, setValue] = useState(() => {
     try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
-    } catch (error) {
-      console.log(error);
-      return initialValue;
+      const item = window.localStorage.getItem(key)
+      return item !== null ? JSON.parse(item) : initialValue
+    } catch (e) {
+      return initialValue
     }
-  });
+  })
 
-  const setValue = (value:any) => {
+  const setLocalStorage = (value:unknown) => {
     try {
-      const valueToStore = value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (error) {
-      console.log(error);
+      window.localStorage.setItem(key, JSON.stringify(value))
+      setValue(value)
+    } catch (e) {
+      console.error(e)
     }
-  };
+  }
 
-  useEffect(() => {
-    const handleStorageChange = () => {
-      try {
-        const item = window.localStorage.getItem(key);
-        setStoredValue(item ? JSON.parse(item) : initialValue);
-      } catch (error) {
-        console.log(error);
-        setStoredValue(initialValue);
-      }
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, [initialValue, key]);
-
-  return [storedValue, setValue];
-};
+  return [storedValue, setLocalStorage]
+}

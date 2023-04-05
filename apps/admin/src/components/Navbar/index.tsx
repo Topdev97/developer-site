@@ -1,7 +1,7 @@
 import React, { MouseEventHandler, useContext } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-import { userContext } from "../../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 import { userReducerActions } from "../../context/userReducer";
 export const Navbar = () => {
   const [checked, setChecked] = React.useState(false);
