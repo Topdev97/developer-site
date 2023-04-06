@@ -1,0 +1,15 @@
+.projects-list__item{
+
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    gap: 10px;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+}
+.cut-text { 
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    width: fit-content;
+    white-space: nowrap;
+  }

@@ -25,7 +25,7 @@ export const LoginForm = () => {
     setLoading(true);
     try {
       const token = await authService.login(email.value,password.value)
-      debugger
+      
       setError(null)
       setToken(token.token)
       navigate('/profile')

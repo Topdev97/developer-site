@@ -7,6 +7,6 @@ export interface Label {
     labelProject: LabelProject;
 }
 
-export interface CreateLabelDto extends Omit<Label,'id' | 'createdAt'>{}
+export interface CreateLabelDto extends Omit<Label,'id' | 'createdAt' | 'labelProject'>{}
 
 export interface UpdateLabelDto extends Partial<CreateLabelDto>{}

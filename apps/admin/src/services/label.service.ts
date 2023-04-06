@@ -1,5 +1,5 @@
 import { config } from "../config";
-import { CreateLabelDto, Label, UpdateLabelDto } from "../models/project.model";
+import { CreateLabelDto, Label, UpdateLabelDto } from "../models/label.model";
 
 class LabelService{
 

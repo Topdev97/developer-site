@@ -1,0 +1,9 @@
+.labels-list__item{
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+}

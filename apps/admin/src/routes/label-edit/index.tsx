@@ -1,20 +1,36 @@
-import React from 'react'
-import { LabelForm } from '../../components/LabelForm'
-import { useParams } from 'react-router-dom'
-import { useGetSingleLabel } from '../../hooks/useGetSingleLabel'
+import React, { useState } from "react";
+import { LabelForm } from "../../components/LabelForm";
+import { useParams } from "react-router-dom";
+import { Label } from "../../models/label.model";
+import { labelService } from "../../services/label.service";
 
 export const EditLabelPage = () => {
-  const {id} = useParams()
-  console.log(id);
-  
-  const {label,loading,error} = useGetSingleLabel(id as string)
+  const { id } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [label, setLabel] = useState<Label | null>(null);
 
-  return (
-    <>
-      {loading && <p>Loading</p>}
+  const getLabel = async () => {
+    setLoading(true);
+    try {
+      const data = await labelService.getLabel(parseInt(id as string));
+      setLabel(data);
+      setError(null)
+    } catch (error) {
+      setError(`${error}`);
+    }
+    setLoading(false);
+  };
+  React.useEffect(() => {
+    getLabel();
+  }, []);
 
-      {error && <p>{error}</p>}
-      {!loading && <LabelForm data={label}/>}
-    </>
-  )
-}
+  if (loading) {
+    return <p>Loading...</p>;
+  } else if (error) {
+    return <p>{error}</p>;
+  } else {
+    
+    return <LabelForm label={label} />;
+  }
+};
