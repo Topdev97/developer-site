@@ -12,9 +12,10 @@ import { EditProjectPage } from "./routes/project-edit";
 import { LabelsPage } from "./routes/labels";
 import { CreateLabelPage } from "./routes/label-create";
 import { EditLabelPage } from "./routes/label-edit";
+import { AuthRoute } from "./components/AuthRoute";
 
 function App() {
-  const [token,setToken] = useLocalStorage('token',null)
+  const [token,setToken] = useLocalStorage('token')
   const [state,dispatch] = useReducer(userReducer,initialState)
   const [darkMode,setDarkMode] = useLocalStorage('darkmode',false)
   React.useEffect(()=>{
@@ -25,17 +26,18 @@ function App() {
   return (
     <AuthContext.Provider value={{token,setToken}}>
       <UserContext.Provider value={{state,dispatch}}>
-        <BrowserRouter>
+        <BrowserRouter basename="admin">
           <Layout>
             <Routes>
-              <Route element={<LoginPage />} path="/login" />
-              <Route element={<ProfilePage />} path="/profile" />
-              <Route element={<ProjectsPage />} path="/projects" />
-              <Route element={<CreateProjectPage />} path="/projects/create" />
-              <Route element={<EditProjectPage />} path="/projects/edit/:id" />
-              <Route element={<LabelsPage />} path="/labels" />
-              <Route element={<CreateLabelPage />} path="/labels/create" />
-              <Route element={<EditLabelPage />} path="/labels/edit/:id" />
+              <Route element={<LoginPage /> } path="/login" />
+              <Route element={<AuthRoute><ProfilePage /></AuthRoute>} path="/profile" />
+              <Route element={<AuthRoute><ProjectsPage /></AuthRoute>} path="/projects" />
+              <Route element={<AuthRoute><CreateProjectPage /></AuthRoute>} path="/projects/create" />
+              <Route element={<AuthRoute><EditProjectPage /></AuthRoute>} path="/projects/edit/:id" />
+              <Route element={<AuthRoute><LabelsPage /></AuthRoute>} path="/labels" />
+              <Route element={<AuthRoute><CreateLabelPage /></AuthRoute>} path="/labels/create" />
+              <Route element={<AuthRoute><EditLabelPage /></AuthRoute>} path="/labels/edit/:id" />
+
               <Route path="/*" element={<Navigate to="/login" replace />} />
             </Routes>
           </Layout>

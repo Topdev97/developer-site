@@ -1,51 +1,37 @@
 import React, {
-  ChangeEvent,
-  FocusEventHandler,
-  FormEvent,
+  FormEventHandler,
   useContext,
   useRef,
 } from "react";
 import "./style.css";
-import { config } from "../../config";
-import { AppContext } from "../../context/AppContext";
-import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../context/UserContext";
 import { authService } from "../../services/auth.service";
-import { userReducerActions } from "../../context/userReducer";
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+import { useInputValue } from "../../hooks/useInputValue";
+import { AuthContext } from "../../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export const LoginForm = () => {
-  const [state, dispatch] = useContext(UserContext);
-  const [data, setData] = React.useState({
-    email: "",
-    password: "",
-  });
-  const [token,setToken] = useLocalStorage('token',null)
-  const [loading, setLoading] = React.useState(false);
-  const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
+  //inputs handler
+  const email = useInputValue('')
+  const password = useInputValue('')
+  // end input handler
 
-  const navigate = useNavigate();
+  const {setToken} = useContext(AuthContext)  
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const navigate = useNavigate()
   
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setData({
-      ...data,
-      [event.target?.name]: event.target?.value,
-    });
-  };
-  const handleSubmit = async (event: any) => {
-    event.preventDefault();
-    const{email,password} = data
+  const handleSubmit:FormEventHandler<HTMLFormElement> = async (event) => {
+    event.preventDefault()
     setLoading(true);
     try {
-      const token = await authService.login(email,password)
+      const token = await authService.login(email.value,password.value)
+      debugger
+      setError(null)
       setToken(token.token)
-      const profile = await authService.getProfile(token.token)
-
+      navigate('/profile')
       
-      dispatch({type:userReducerActions.SET_USER,payload:profile})
     } catch (error) {
-      setSubmitMessage(`${error}`)
-      
+      setError(`${error}`)      
     }
     setLoading(false)
   };
@@ -55,26 +41,23 @@ export const LoginForm = () => {
       <div className="input-groups">
         <label htmlFor="email">Email</label>
         <input
-          required
-          onInput={handleInputChange}
           id="email"
           type="email"
           name="email"
+          {...email}
         />
       </div>
       <div className="input-groups">
         <label htmlFor="password">Password</label>
         <input
-          minLength={8}
-          required
-          onInput={handleInputChange}
           type="password"
           name="password"
           id="password"
+          {...password}
         />
       </div>
       <button type="submit">Login</button>
-      {submitMessage && <p>{submitMessage}</p>}
+      {error && <p>{error}</p>}
       {loading && <p>Loading...</p>}
     </form>
   );
