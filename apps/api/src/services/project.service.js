@@ -1,6 +1,5 @@
 const { models } = require('../db/sequelize');
 
-
 class ProjectService {
 
   async create(data) {
@@ -32,7 +31,7 @@ class ProjectService {
     return projects
     }
     const projects = await models.Project.findAll({
-      include:[{ all: true }]
+      include:['images','labels'],
     })
     return projects
   }

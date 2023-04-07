@@ -33,6 +33,16 @@ class ImageService {
     await image.destroy();
     return { id };
   }
+  async deleteByProject(projectId){
+    const id = await models.Image.destroy({
+      where:{
+        projectId
+      }
+    })
+    return {
+      id
+    }
+  }
 
 
 }
