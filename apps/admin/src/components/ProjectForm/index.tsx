@@ -16,6 +16,7 @@ import { useMultiSelect } from "../../hooks/useMultiSelect";
 import { useCheckbox } from "../../hooks/useCheckbox";
 import { AuthContext } from "../../context/AuthContext";
 import { imageService } from "../../services/image.service";
+import { Image } from "../../models/image.model";
 
 type ProjectFormProps = {
   project: Project | null;
@@ -39,9 +40,9 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
   const repository = useInputValue(project?.repository ?? "");
   const slug = useInputValue(project?.slug ?? "");
   const shortDescription = useInputValue(project?.shortDescription ?? "");
-  const labelsInput = useMultiSelect( project?.labels.length !== 0 ? project?.labels : []);
+  const labelsInput = useMultiSelect( project?.labels ?? []);
   const publishedInput = useCheckbox(true);
-  const [images, setImages] = useState<any>(project?.images.length !== 0 ? project?.images : []);
+  const [images, setImages] = useState<Image[] | null>(project?.images ?? []);
 
   // end input handler
 
@@ -63,7 +64,7 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
     setLoading(true);
 
     try {
-      if (!project?.id) {
+      if (!project) {
         const { id } = await projectService.addProject(token as string, {
           title: title.value,
           shortDescription: shortDescription.value,
@@ -73,7 +74,7 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
           published: publishedInput.checked,
           slug: slug.value,
         });
-        const imagesPromises = images.map((image:any) => {
+        const imagesPromises:any = images?.map((image) => {
           return imageService.addImage(token as string, { url:image.url, projectId: id });
         });
 
@@ -101,7 +102,7 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
         );
         await projectService.deleteLabels(token as string, project.id);
         await projectService.deleteImages(token as string, project.id);
-        const imagesPromises = images.map((image:any) => {
+        const imagesPromises:any = images?.map((image:any) => {
           return imageService.addImage(token as string, {
             url:image.url,
             projectId: project.id,
@@ -208,7 +209,7 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
         <input type="file" name="files" id="" multiple onInput={handleFile} />
         {loadingImages && <p>Loading Images</p>}
         <div className="images">
-          { images && images.map((image:any)=>{
+          {images?.map((image:any)=>{
 
             return (
               <img src={image} alt="" />
