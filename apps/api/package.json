@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --inspect ./src/index.js",
-    "start": "node ./dist/index.js",
+    "start": "node ./src/index.js",
     "user:create": "node ./src/scripts/createUser.js",
     "migrations:generate": "sequelize-cli migration:generate --name",
     "migrations:run": "sequelize-cli db:migrate",
