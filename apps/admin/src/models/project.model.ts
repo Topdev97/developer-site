@@ -10,8 +10,8 @@ export interface Project {
   description: string;
   createdAt: Date;
   slug: string;
-  images?: Image[];
-  labels?: Label[];
+  images: Image[];
+  labels: Label[];
 }
 
 export interface CreateProjectDto

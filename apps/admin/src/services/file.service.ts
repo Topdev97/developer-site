@@ -14,7 +14,7 @@ class FileService {
         throw new Error(data.message)
     }
     
-    return data.url;
+    return data
   }
 }
 

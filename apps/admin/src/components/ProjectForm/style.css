@@ -7,3 +7,6 @@ form{
     display: flex;
     flex-direction: column;
 }
+.input-group .selected {
+    background-color: aquamarine;
+}

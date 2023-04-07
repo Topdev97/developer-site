@@ -1,10 +1,9 @@
 import { config } from "../config";
-import { CreateLabelProjectDto, LabelProject } from "../models/project.model";
-
+import { CreateLabelProjectDto,LabelProject } from "../models/label-project.model";
 class LabelProjectService{
 
-    async setLabelProject(token:string,labelProject:CreateLabelProjectDto):Promise<LabelProject>{
-        const response =  await fetch(`${config.apiUri}/projects/set-labels`,{
+    async addLabel(token:string,labelProject:CreateLabelProjectDto):Promise<LabelProject>{
+        const response =  await fetch(`${config.apiUri}/projects/add-label`,{
             method:"POST",
             headers:{
                 'Authorization':`Bearer ${token}`,
