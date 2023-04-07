@@ -28,6 +28,6 @@ export class ProjectService {
     if(slug){
       params = params.set('slug',slug)
     }
-    return this.http.get<Project>(`${this.apiUrl}/projects`,{params})
+    return this.http.get<Project[]>(`${this.apiUrl}/projects`,{params})
   }
 }

@@ -42,7 +42,6 @@ export class NavbarComponent {
     event.preventDefault()
     this.isMenuOpen = false
     setTimeout(() => {
-      console.log(event.target.href)
       window.location.href =  event.target.href
     }, 600);
   }

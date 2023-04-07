@@ -11,39 +11,7 @@ import { ProjectService } from 'src/app/services/projects.service';
 })
 export class ProjectpageComponent implements OnInit {
   projectSlug: string | null = null;
-  project: Project | null = {
-    id: 0,
-    link: '',
-    repository: '',
-    title: '',
-    shortDescription: '',
-    published: false,
-    description: '',
-    createdAt: '',
-    slug:"",
-    images: [
-      {
-        id: 0,
-        url: '',
-        projectId: 0,
-        createdAt: '',
-      },
-    ],
-    labels: [
-      {
-        id: 0,
-        title: '',
-        type: '',
-        createdAt: '',
-        LabelProject: {
-          id: 0,
-          projectId: 0,
-          labelId: 0,
-          createdAt: '',
-        },
-      },
-    ],
-  };
+  project: Project | null = null
 
   constructor(
     private route: ActivatedRoute,
@@ -58,7 +26,14 @@ export class ProjectpageComponent implements OnInit {
       }
       return [null]
     })).subscribe(data=>{
-      this.project = data
+
+      if(data){
+
+        this.project = data[0]
+      }else {
+        this.project = null
+      }
+
     })
   }
 }
