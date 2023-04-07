@@ -6,7 +6,6 @@ import {
 } from "react";
 import { Project } from "../../models/project.model";
 import "./style.css";
-import { fileService } from "../../services/file.service";
 import { projectService } from "../../services/project.service";
 import { labelProjectService } from "../../services/label-project.service";
 import { Label } from "../../models/label.model";
@@ -16,7 +15,7 @@ import { useMultiSelect } from "../../hooks/useMultiSelect";
 import { useCheckbox } from "../../hooks/useCheckbox";
 import { AuthContext } from "../../context/AuthContext";
 import { imageService } from "../../services/image.service";
-import { Image } from "../../models/image.model";
+import { useMultiFile } from "../../hooks/useMultiFile";
 
 type ProjectFormProps = {
   project: Project | null;
@@ -27,7 +26,6 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [labels, setLabels] = useState<Label[]>([]);
-  const [loadingImages, setLoadingImages] = useState(false);
   // end hooks
 
   const { token } = useContext(AuthContext);
@@ -42,7 +40,8 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
   const shortDescription = useInputValue(project?.shortDescription ?? "");
   const labelsInput = useMultiSelect( project?.labels ?? []);
   const publishedInput = useCheckbox(true);
-  const [images, setImages] = useState<Image[] | null>(project?.images ?? []);
+
+  const {loadingFiles,errorFiles,files,handleFiles} = useMultiFile('image',project?.images)
 
   // end input handler
 
@@ -74,8 +73,8 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
           published: publishedInput.checked,
           slug: slug.value,
         });
-        const imagesPromises:any = images?.map((image) => {
-          return imageService.addImage(token as string, { url:image.url, projectId: id });
+        const filesPromises:any = files?.map((file:any) => {
+          return imageService.addImage(token as string, { url:file.url, projectId: id });
         });
 
         const LabelProjectPromises = labelsInput.value.map((labelId: any) => {
@@ -84,7 +83,7 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
             labelId,
           });
         });
-        await Promise.all(imagesPromises);
+        await Promise.all(filesPromises);
         await Promise.all(LabelProjectPromises);
       } else {
         await projectService.updateProject(
@@ -102,7 +101,7 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
         );
         await projectService.deleteLabels(token as string, project.id);
         await projectService.deleteImages(token as string, project.id);
-        const imagesPromises:any = images?.map((image:any) => {
+        const filesPromises:any = files?.map((image:any) => {
           return imageService.addImage(token as string, {
             url:image.url,
             projectId: project.id,
@@ -116,7 +115,7 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
           });
         });
 
-        await Promise.all(imagesPromises);
+        await Promise.all(filesPromises);
         await Promise.all(LabelProjectPromises);
       }
 
@@ -127,30 +126,6 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
     setLoading(false);
   };
 
-  const handleFile: FormEventHandler<HTMLElement> = async (event) => {
-    setLoadingImages(true);
-    const target = event.target as any;
-    const files = target.files as FileList;
-    const uploadedImages:any = [];
-  
-    for (let i = 0; i < files.length; i++) {
-      const formData = new FormData();
-      formData.append("image", files[i]);
-  
-      try {
-        const image = await fileService.uploadFile(token as string, formData);
-        
-        
-        uploadedImages.push(image);
-        
-      } catch (error) {
-        setError(`${error}`);
-      }
-    }
-    
-    setImages((prevState:any) => [...prevState, ...uploadedImages]);
-    setLoadingImages(false);
-  };
 
   useEffect(() => {
     getLabels();
@@ -206,13 +181,14 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
         <input type="text" name="slug" {...slug} />
       </div>
       <div className="input-group">
-        <input type="file" name="files" id="" multiple onInput={handleFile} />
-        {loadingImages && <p>Loading Images</p>}
+        <input type="file" name="files" id="" multiple onInput={handleFiles} />
+        {loadingFiles && <p>Loading Images</p>}
+        {errorFiles && <p>{errorFiles}</p>}
         <div className="images">
-          {images?.map((image:any)=>{
+          {files?.map((file:any)=>{
 
             return (
-              <img src={image} alt="" />
+              <img src={file.url} alt="" />
             )
           })}
         </div>

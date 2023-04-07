@@ -7,9 +7,12 @@
     place-items: center;
     text-align: center;
 }
+.projects-list__item > *{
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
 .cut-text { 
     text-overflow: ellipsis;
     overflow: hidden; 
     width: fit-content;
     white-space: nowrap;
-  }
+}

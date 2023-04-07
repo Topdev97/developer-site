@@ -30,7 +30,7 @@ export const ListOfLabels = () => {
   }, []);
 
   return (
-    <div>
+    <div className="labels-list">
       {loading && <p>Loading</p>}
       {error && <p>{error}</p>}
 

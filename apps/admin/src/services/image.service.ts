@@ -1,5 +1,5 @@
 import { config } from "../config";
-import { CreateImageDto, Image, UpdateImageDto } from "../models/project.model";
+import { CreateImageDto, Image, UpdateImageDto } from "../models/image.model";
 
 class ImageService{
 
