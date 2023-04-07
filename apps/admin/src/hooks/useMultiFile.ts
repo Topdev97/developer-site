@@ -27,7 +27,7 @@ export const useMultiFile = (fileType: string,initialState:unknown[] | null = nu
       }
     }
 
-    setFiles((prevState: any) => [...prevState, ...uploadedFiles]);
+    setFiles(uploadedFiles);
     setLoadingFiles(false);
   };
   return {

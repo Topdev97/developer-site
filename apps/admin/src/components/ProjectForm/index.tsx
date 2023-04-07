@@ -188,7 +188,7 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
           {files?.map((file:any)=>{
 
             return (
-              <img src={file.url} alt="" />
+              <img key={file.public_id} src={file.url} alt="" />
             )
           })}
         </div>
