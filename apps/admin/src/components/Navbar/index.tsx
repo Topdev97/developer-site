@@ -13,7 +13,7 @@ export const Navbar = () => {
     event.preventDefault();
     setChecked(false);
     const target = event.target as any;
-    debugger;
+    
     setTimeout(() => {
       window.location.href = target.href;
     }, 600);
