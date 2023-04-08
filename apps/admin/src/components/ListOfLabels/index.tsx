@@ -38,6 +38,7 @@ export const ListOfLabels = () => {
         <h4>Id</h4>
         <h4>Title</h4>
         <h4>Type</h4>
+        <h4>Image</h4>
         <h4>Created At</h4>
         <h4>Options</h4>
       </div>
@@ -59,6 +60,9 @@ export const ListOfLabels = () => {
             <h4>{label.id}</h4>
             <h4>{label.title}</h4>
             <h4>{label.type}</h4>
+            <div>
+              <img style={{width:40}} src={label.image} alt={label.title} />
+            </div>
             <h4>{`${label.createdAt}`}</h4>
             <div className="buttons">
               <button onClick={handleDelete}>Delete</button>

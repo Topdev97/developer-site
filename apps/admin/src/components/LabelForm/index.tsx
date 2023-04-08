@@ -21,7 +21,7 @@ export const LabelForm = ({ label }: LabelFormProps) => {
 
   const title = useInputValue(label?.title ?? "");
   const type = useInputValue(label?.type ?? "tech");
-  const {loadingFile,fileError,file,handleFile} = useFileInput('image',null)
+  const {loadingFile,fileError,file,handleFile} = useFileInput('image',label?.image ?? null)
 
   // end inputs handler
 
@@ -35,6 +35,7 @@ export const LabelForm = ({ label }: LabelFormProps) => {
         const changes = {
           title: title.value,
           type: type.value,
+          image:file.url
         };
         await labelService.updateLabel(token as string, changes, label.id);
       } else {
@@ -68,6 +69,7 @@ export const LabelForm = ({ label }: LabelFormProps) => {
         <input type="file" name="file" id="" onInput={handleFile} />
         {loadingFile && <p>Loading File...</p>}
         {fileError && <p>{fileError}</p>}
+        {file && <img src={file} alt="" />}
       </div>
       <button type="submit">Submit</button>
       {loading && <p>Loading</p>}

@@ -12,7 +12,8 @@ export const useFileInput = (fileType: string, initialState:unknown | null = nul
         event.preventDefault()
         setloadingFile(true)
         const target = event.target as any
-        const file = target.file as File
+        const file = target.files[0] as File
+        
         
         try {
             const formData = new FormData()
