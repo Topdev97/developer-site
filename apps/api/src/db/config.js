@@ -1,13 +1,21 @@
-require('dotenv/config')
-
+const {config} = require('../config')
 
 module.exports =  {
   development: {
-    url: process.env.DATABASE_URL,
+    url: config.dbUrl,
     dialect: "postgres",
   },
+  stage: {
+    url: config.dbUrl,
+    dialect: "postgres",
+    dialectOptions:{
+      ssl:{
+        rejectUnauthorized:false
+      }
+    }
+  },
   production: {
-    url: process.env.DATABASE_URL,
+    url: config.dbUrl,
     dialect: "postgres",
     dialectOptions: {
       ssl: {

@@ -16,6 +16,10 @@ const LabelSchema = {
   type: {
     type: DataTypes.STRING(255),
   },
+  image:{
+    type:DataTypes.TEXT,
+    allowNull:true
+  },
 
   createdAt: {
     allowNull: false,

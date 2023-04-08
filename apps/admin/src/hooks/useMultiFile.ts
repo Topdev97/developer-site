@@ -20,8 +20,8 @@ export const useMultiFile = (fileType: string,initialState:unknown[] | null = nu
 
       try {
         const image = await fileService.uploadFile(token as string, formData);
-
         uploadedFiles.push(image);
+        setErrorFiles(null)
       } catch (error) {
         setErrorFiles(`${error}`);
       }

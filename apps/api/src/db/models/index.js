@@ -6,7 +6,7 @@ const { LabelProjectSchema, LabelProject } = require("./label-project.model");
 
 module.exports = async function setupModels(sequelize) {
   await sequelize.authenticate();
-  console.log("Connection has been established successfully.");
+  console.log("[sequelize]: Connection has been established successfully.");
 
   User.init(UserSchema, User.config(sequelize));
   Project.init(ProjectSchema, Project.config(sequelize));

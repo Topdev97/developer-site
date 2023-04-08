@@ -11,6 +11,7 @@
     "user:create": "node ./src/scripts/createUser.js",
     "migrations:generate": "sequelize-cli migration:generate --name",
     "migrations:run": "sequelize-cli db:migrate",
+    "migrations:status": "sequelize-cli db:migrate:status", 
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all"
   },

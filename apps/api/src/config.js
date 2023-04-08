@@ -1,7 +1,21 @@
-require('dotenv/config')
+const env = process.env.NODE_ENV ?? 'development'
+const envs = {
+    "development":".env",
+    "stage":".env.stage",
+    "production":".env.production"
+
+}
+
+const options = {}
+if(envs[env]){
+    options.path = envs[env]
+}
+
+require('dotenv').config(options)
 
 
- const config = {
+const config = {
+    env,
     dbUrl:process.env.DATABASE_URL,
     port: process.env.PORT ?? 3000,
     host: process.env.HOST ?? "http://localhost",
@@ -9,6 +23,8 @@ require('dotenv/config')
     cloudinaryUrl:process.env.CLOUDINARY_URL
     
 }
+
+console.log("[project-config]:",config);
 module.exports = {
     config
 }

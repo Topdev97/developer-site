@@ -3,6 +3,7 @@ export interface Label {
     id:           number;
     title:        string;
     type:         string;
+    image:          string;
     createdAt:    Date;
     labelProject: LabelProject;
 }

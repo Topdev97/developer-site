@@ -9,7 +9,7 @@ cloudinary.config({
 
 
 // Log the configuration
-console.log("[cloudinary]:",cloudinary.config());
+console.log("[cloudinary]:","Configuration Succesfull");
 
 module.exports = {
   cloudinary

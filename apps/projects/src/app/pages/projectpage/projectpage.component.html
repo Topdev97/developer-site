@@ -12,7 +12,7 @@
 
       <div *ngFor="let label of project.labels">
         <div *ngIf="label.type === 'tech'" class="tech-container">
-          <img src="" [alt]="label.title" /><span>{{
+          <img [src]="label.image" [alt]="label.title" /><span>{{
             label.title
           }}</span>
         </div>

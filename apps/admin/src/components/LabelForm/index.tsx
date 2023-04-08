@@ -4,6 +4,7 @@ import { useLocalStorage } from "../../hooks/useLocalStorage";
 import { Label } from "../../models/label.model";
 import { AuthContext } from "../../context/AuthContext";
 import { useInputValue } from "../../hooks/useInputValue";
+import { useFileInput } from "../../hooks/useFileInput";
 
 type LabelFormProps = {
   label: Label | null;
@@ -20,6 +21,7 @@ export const LabelForm = ({ label }: LabelFormProps) => {
 
   const title = useInputValue(label?.title ?? "");
   const type = useInputValue(label?.type ?? "tech");
+  const {loadingFile,fileError,file,handleFile} = useFileInput('image',null)
 
   // end inputs handler
 
@@ -39,6 +41,7 @@ export const LabelForm = ({ label }: LabelFormProps) => {
         await labelService.createLabel(token as string, {
           title: title.value,
           type: type.value,
+          image:file.url
         });
       }
     } catch (error) {
@@ -59,6 +62,12 @@ export const LabelForm = ({ label }: LabelFormProps) => {
           <option value="tech">Tech</option>
           <option value="other">Otro</option>
         </select>
+      </div>
+      <div className="input-group">
+        <label htmlFor="">Image:</label>
+        <input type="file" name="" id="" onInput={handleFile} />
+        {loadingFile && <p>Loading File...</p>}
+        {fileError && <p>{fileError}</p>}
       </div>
       <button type="submit">Submit</button>
       {loading && <p>Loading</p>}
