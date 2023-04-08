@@ -1,14 +1,10 @@
-const {config} = require('dotenv')
-config()
 
 const bcrypt = require('bcrypt');
 const { Client } = require('pg');
 const readline = require('readline');
-
-const connectionString = process.env.DATABASE_URL;
-console.log(connectionString)
+const {config} = require('../src/config')
 const client = new Client({
-  connectionString: connectionString,
+  connectionString: config.dbUrl,
 });
 
 const rl = readline.createInterface({
@@ -40,6 +36,7 @@ function promptUser() {
       rl.question('Enter password: ', (password) => {
         rl.question('Enter role: ', (role) => {
           createUser(email, password, role);
+          client.end()
           rl.close();
         });
       });
