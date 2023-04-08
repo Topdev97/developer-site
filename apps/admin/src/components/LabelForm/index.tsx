@@ -65,7 +65,7 @@ export const LabelForm = ({ label }: LabelFormProps) => {
       </div>
       <div className="input-group">
         <label htmlFor="">Image:</label>
-        <input type="file" name="" id="" onInput={handleFile} />
+        <input type="file" name="file" id="" onInput={handleFile} />
         {loadingFile && <p>Loading File...</p>}
         {fileError && <p>{fileError}</p>}
       </div>
