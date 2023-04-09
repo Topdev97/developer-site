@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <!-- <meta charset="UTF-8" /> -->
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/x-icon" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing Page</title>
@@ -53,19 +58,15 @@
           <li><a class="link--external" href="/projects">Projects</a></li>
           <li><a class="link" href="/contact">Contact</a></li>
           <li><a class="link--external" href="/admin">Admin</a></li>
+          <li><button id="darkMode" class="dark-mode btn btn--secondary">Dark</button></li>
         </ul>
       </div>
     </nav>
     <div id="pages">
       <div class="/ home">
         <header class="p-2 md:p-4">
-          <nav class="navbar--mobile inactive"></nav>
-          <div
-            class="hero--container"
-          >
-            <div
-              class="hero__text--container"
-            >
+          <div class="hero--container">
+            <div class="hero__text--container">
               <h1>Diego Vergara</h1>
               <p>
                 Welcome to my web page, I'm a javascript developer from chile, I
@@ -78,7 +79,7 @@
                 alt="Diego Vergara"
                 class="hero__img"
               />
-              <span class="">Frontend Developer</span>
+              <strong class="">Fullstack Developer</strong>
             </div>
           </div>
         </header>
@@ -89,21 +90,18 @@
               <p>
                 I'm a business administrator by profession, I worked in
                 management control for 5 years, and now that I discovered what I
-                am passionate about, <b>Tech and bussiness</b>, specially a i
-                like web development with <b>Javascript</b> in frontend and
-                backend with <b>NodeJS</b> I like to meet people, learn new
-                things, achieve goals and sports, I'm a blue belt in brazilian
-                jiu jitsu.
+                am passionate about, <strong>Tech and bussiness</strong>,
+                specially a i like web development with
+                <strong>Javascript</strong> in frontend and backend with
+                <strong>NodeJS</strong> I like to meet people, learn new things,
+                achieve goals and sports, I'm a blue belt in brazilian jiu
+                jitsu.
               </p>
             </div>
           </section>
           <section class="favorite-tools">
-            <h2 class="text-center">
-              Favorites tools and tech that usually i use
-            </h2>
-            <div
-              class="favorite-tools--container"
-            >
+            <h2>Favorites tools and tech that usually i use</h2>
+            <div class="favorite-tools__list">
               <li>
                 <div class="card--tech">
                   <h3>React</h3>
@@ -148,48 +146,48 @@
             </div>
           </section>
           <section class="projects">
+            <h2>See some of my projects</h2>
             <div id="project-carrousel"></div>
+            <a href="/projects" class="btn btn--primary">Projects</a>
           </section>
           <section class="certificates">
             <h2>Certificates</h2>
-            <div class="certificates-container">
-              <ul>
-                <li>
-                  <div>
-                    <img src="" alt="Full Stack Developer con JavaScript" />
-                    <h3>Full Stack Developer con JavaScript</h3>
-                    <h4>Platzi</h4>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <img src="" alt="Frontend con React.js" />
-                    <h3>Frontend con React.js</h3>
-                    <h4>Platzi</h4>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <img src="" alt="Checkout Pro" />
-                    <h3>Checkout Pro</h3>
-                    <h4>Mercado Libre</h4>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <img src="" alt="JavaScript a Profundidad" />
-                    <h3>JavaScript a Profundidad</h3>
-                    <h4>Platzi</h4>
-                  </div>
-                </li>
-                <li>
-                  <div>
-                    <img src="" alt="HTML y CSS a Profundidad" />
-                    <h3>HTML y CSS a Profundidad</h3>
-                    <h4>Platzi</h4>
-                  </div>
-                </li>
-              </ul>
+            <div class="certificates__list">
+              <li>
+                <div>
+                  <img src="" alt="Full Stack Developer con JavaScript" />
+                  <h3>Full Stack Developer con JavaScript</h3>
+                  <h4>Platzi</h4>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="" alt="Frontend con React.js" />
+                  <h3>Frontend con React.js</h3>
+                  <h4>Platzi</h4>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="" alt="Checkout Pro" />
+                  <h3>Checkout Pro</h3>
+                  <h4>Mercado Libre</h4>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="" alt="JavaScript a Profundidad" />
+                  <h3>JavaScript a Profundidad</h3>
+                  <h4>Platzi</h4>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <img src="" alt="HTML y CSS a Profundidad" />
+                  <h3>HTML y CSS a Profundidad</h3>
+                  <h4>Platzi</h4>
+                </div>
+              </li>
             </div>
           </section>
         </main>

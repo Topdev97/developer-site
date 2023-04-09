@@ -1,5 +1,5 @@
 import { navigation, renderPage } from "./navigation";
-import { links, linksExternals, navBar, projectsCarrousel } from "./nodes";
+import { darkMode, links, linksExternals, navBar, projectsCarrousel } from "./nodes";
 import { projectService } from "./project.service";
 
 window.addEventListener("DOMContentLoaded", renderPage);
@@ -35,7 +35,7 @@ async function loadProjectCarrousel() {
       shortDescription.textContent = project.shortDescription;
       const featureImage = document.createElement("img");
       featureImage.alt = project.title;
-      featureImage.src = project.images[0].url;
+      featureImage.src = ""
       projectCard.append(title, shortDescription, featureImage);
       if (project.published) {
         const publishedIcon = document.createElement("img");
@@ -52,3 +52,7 @@ async function loadProjectCarrousel() {
   }
 }
 loadProjectCarrousel();
+
+darkMode.addEventListener('click',()=>{
+  document.documentElement.classList.toggle('dark')
+})
