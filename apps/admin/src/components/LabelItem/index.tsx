@@ -7,21 +7,22 @@ import { Link } from 'react-router-dom'
 import { ButtonLoader } from '../ButtonLoader'
 import './style.css'
 type LabelProps = {
-    label:Label
+    label:Label,
+    getLabels:any
 }
 
 export const LabelItem = ({label}:LabelProps) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const {token} = useContext(AuthContext)
-    const {getLabels} = useGetLabels()
+    // const {getLabels} = useGetLabels()
  
     const handleDelete = async () => {
         setLoading(true);
         try {
           await labelService.deleteLabel(token as string,label.id);
           
-          await getLabels()
+          // await getLabels()
           setError(null)
         } catch (error) {
           setError(`${error}`);

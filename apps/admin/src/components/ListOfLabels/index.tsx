@@ -34,7 +34,7 @@ export const useGetLabels = () => {
 
 
 export const ListOfLabels = () => {
-  const {loading,error,labels} = useGetLabels()
+  const {loading,error,labels,getLabels} = useGetLabels()
   // End Hooks
 
   return (
@@ -50,7 +50,7 @@ export const ListOfLabels = () => {
         <h4>Created At</h4>
         <h4>Options</h4>
       </div>
-      {labels.map((label) => <LabelItem label={label} /> )}
+      {labels.map((label) => <LabelItem label={label} getLabels={getLabels} /> )}
     </div>
   );
 };
