@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { Project } from "../../models/project.model";
-import { Link } from "react-router-dom";
 import { projectService } from "../../services/project.service";
-import { AuthContext } from "../../context/AuthContext";
 import "./style.css";
-export const ListOfProjects = () => {
-  const { token } = useContext(AuthContext);
+import { ProjectItem } from "../ProjectItem";
+
+export const useGetProjects = () => {
   const [projects, setProjects] = React.useState<Project[]>([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
@@ -24,6 +23,17 @@ export const ListOfProjects = () => {
   React.useEffect(() => {
     getProjects();
   }, []);
+
+  return {
+    projects,
+    loading,
+    error,
+    getProjects
+  }
+}
+
+export const ListOfProjects = () => {
+  const {projects,loading,error} = useGetProjects()
   return (
     <>
       <div className="projects-list__item">
@@ -36,34 +46,7 @@ export const ListOfProjects = () => {
         <h4>Created At</h4>
         <h4>Options</h4>
       </div>
-      {projects.map((project) => {
-        const handleDelete = async () => {
-          setLoading(true);
-          try {
-            await projectService.deleteProject(token as string, project.id);
-            setError(null);
-            await getProjects();
-          } catch (error) {
-            setError(`${error}`);
-          }
-          setLoading(false);
-        };
-        return (
-          <div className="projects-list__item" key={project.id}>
-            <h4>{project.id}</h4>
-            <h4>{project.title}</h4>
-            <h4>{project.slug}</h4>
-            <h4>{project.shortDescription}</h4>
-            <h4>{`${project.published}`}</h4>
-            <h4 className="cut-text">{project.repository}</h4>
-            <h4>{`${project.createdAt}`}</h4>
-            <div className="project-list__buttons">
-              <Link to={`/projects/edit/${project.id}`}>Edit</Link>
-              <button onClick={handleDelete}>Delete</button>
-            </div>
-          </div>
-        );
-      })}
+      {projects.map((project) => <ProjectItem project={project}/>)}
 
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}

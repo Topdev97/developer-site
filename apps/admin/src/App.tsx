@@ -37,7 +37,6 @@ function App() {
               <Route element={<AuthRoute><LabelsPage /></AuthRoute>} path="/labels" />
               <Route element={<AuthRoute><CreateLabelPage /></AuthRoute>} path="/labels/create" />
               <Route element={<AuthRoute><EditLabelPage /></AuthRoute>} path="/labels/edit/:id" />
-
               <Route path="/*" element={<Navigate to="/login" replace />} />
             </Routes>
           </Layout>
