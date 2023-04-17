@@ -9,9 +9,11 @@ import './style.css'
 type LabelProps = {
     label:Label,
     getLabels:any
+    setFilteredLabels:any,
+    filteredLabels:Label[]
 }
 
-export const LabelItem = ({label}:LabelProps) => {
+export const LabelItem = ({label,setFilteredLabels,filteredLabels}:LabelProps) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const {token} = useContext(AuthContext)
@@ -21,7 +23,7 @@ export const LabelItem = ({label}:LabelProps) => {
         setLoading(true);
         try {
           await labelService.deleteLabel(token as string,label.id);
-          
+          setFilteredLabels(filteredLabels.filter((item)=> item.id !== label.id))
           // await getLabels()
           setError(null)
         } catch (error) {

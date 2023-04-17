@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { labelService } from "../../services/label.service";
 import { Label } from "../../models/label.model";
 
@@ -32,10 +32,15 @@ export const useGetLabels = () => {
   }
 }
 
-
 export const ListOfLabels = () => {
   const {loading,error,labels,getLabels} = useGetLabels()
+  const [filteredLabels, setFilteredLabels] = useState<Label[]>(labels)
   // End Hooks
+  useEffect(() => {
+    setFilteredLabels(labels)
+  
+  }, [labels])
+  
 
   return (
     <div className="labels-list">
@@ -50,7 +55,7 @@ export const ListOfLabels = () => {
         <h4>Created At</h4>
         <h4>Options</h4>
       </div>
-      {labels.map((label) => <LabelItem label={label} getLabels={getLabels} /> )}
+      {filteredLabels.map((label) => <LabelItem key={label.id} label={label} getLabels={getLabels} filteredLabels={filteredLabels} setFilteredLabels={setFilteredLabels} /> )}
     </div>
   );
 };
