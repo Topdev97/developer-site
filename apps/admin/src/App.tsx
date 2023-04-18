@@ -33,8 +33,10 @@ function App() {
     <AuthContext.Provider value={{ token, setToken }}>
       <UserContext.Provider value={{ state, dispatch }}>
         <NotificationContext.Provider value={{notifications,addNotification}}  >
+          
           <BrowserRouter basename="admin">
             <Layout>
+
               <Routes>
                 <Route element={<LoginPage />} path="/login" />
                 <Route
@@ -95,6 +97,7 @@ function App() {
                 />
                 <Route path="/*" element={<Navigate to="/login" replace />} />
               </Routes>
+              
             </Layout>
           </BrowserRouter>
         </NotificationContext.Provider>

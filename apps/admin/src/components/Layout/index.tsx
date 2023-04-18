@@ -2,7 +2,7 @@ import React, { useContext,ReactNode } from 'react'
 import { Navbar } from '../Navbar'
 import { Sidebar } from '../Sidebar'
 import { AuthContext } from '../../context/AuthContext';
-
+import './style.css'
 type LayoutProps = {
   children: ReactNode;
 }
@@ -10,11 +10,14 @@ type LayoutProps = {
 export const Layout = ({children}:LayoutProps) => {
   const {token} = useContext(AuthContext)
   return (
-    <main>
+    <>
 
         <Navbar />
         {token && <Sidebar/>}
-        {children}
-    </main>
+        <div className='page-content'>
+          {children}
+
+        </div>
+    </>
   )
 }

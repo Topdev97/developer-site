@@ -1,4 +1,49 @@
-.input-groups{
+.input-group{
     display: flex;
     flex-direction: column;
+
+}
+.input-group input{
+    background: transparent;
+    border: 0;
+    outline: none;
+}
+.input-group label{
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+.input-group__container{
+    position: relative;
+    display: flex;
+    background-color: var(--md-sys-color-surface-container-highest-light);
+    border-radius: 4px 4px 0px 0px;
+    padding: 4px 0px 4px 16px;
+    border-bottom: 1px solid var(--md-sys-color-on-surface-variant-light);
+}
+.input-group__label-input{
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.input-group__supporting-text{
+
+    color: var(--md-sys-color-on-surface-variant-light);
+}
+.material-symbols-outlined {
+    top: 16px;
+    right: 16px;
+    position: absolute;
+    color: var(--md-sys-color-on-surface-variant-light);
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.login-form button {
+    align-self: center;
 }
