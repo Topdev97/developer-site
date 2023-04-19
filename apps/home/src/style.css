@@ -163,16 +163,13 @@ strong{
 
 }
 
-.btn {
+
+.btn--primary {
   text-decoration: none;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   cursor: pointer;
-}
-
-.btn--primary {
-  
   /* color: ; */
   display: flex;
   width: fit-content;
@@ -188,6 +185,11 @@ strong{
 }
 
 .btn--secondary {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
 
   /* color: ; */
   display: flex;
@@ -287,10 +289,16 @@ main{
 }
 
 .favorite-tools__list{
+  margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fill,minmax(140px,1fr));
   justify-items: center;
   align-items: end;
+}
+.card--tech{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .certificates {
@@ -299,6 +307,9 @@ main{
 }
 .certificates h2 {
   text-align: center;
+}
+.certificates img{
+  height: 70px;
 }
 .certificates__list {
   display: grid;
@@ -311,9 +322,34 @@ main{
   
 }
 
+
+
+@media (min-width: 640px) {
+
+  .favorite-tools__list{
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  }
+}
+
+@media (min-width: 768px) {}
+  
+@media (min-width: 1024px) {
+}
+@media (min-width: 1280px) {}
+
+@media (min-width: 1536px) {}
+
+
 /* End Home Page */
 
-
+.dark-mode{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
 
 
 
@@ -339,7 +375,7 @@ main{
   right:0;
 }
 .menu-btn{
-  position: absolute;
+  position: fixed;
   z-index: 2;
   right: 20px;
   /*left: 20px; */
@@ -486,4 +522,15 @@ input[type="checkbox"]{
 	transition-timing-function: ease, cubic-bezier(.1,1.3,.3,1); /* easeOutBackを緩めた感じ */
    transition-delay: .6s;
   transform: translateX(-100px);
+}
+/* social media */
+.social-media-menu{
+
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  z-index: -2;
 }

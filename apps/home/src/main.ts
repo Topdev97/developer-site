@@ -1,5 +1,6 @@
+import { labelService } from "./label.service";
 import { navigation, renderPage } from "./navigation";
-import { darkMode, links, linksExternals, navBar, projectsCarrousel } from "./nodes";
+import { darkMode, favoriteTools, links, linksExternals, navBar, projectsCarrousel } from "./nodes";
 import { projectService } from "./project.service";
 
 window.addEventListener("DOMContentLoaded", renderPage);
@@ -51,7 +52,56 @@ async function loadProjectCarrousel() {
     projectsCarrousel.textContent = `${error}`
   }
 }
-loadProjectCarrousel();
+
+async function loadLabels() {
+  const labels = await labelService.getLabels()
+  const techs = labels.filter((label)=> label.type == 'tech')
+  const techsToSelect = [
+    'react',
+    'angular',
+    'tailwind',
+    'nodejs',
+    'typescript',
+    'linux',
+    'mongodb',
+    'postgresql',
+    'css',
+    'sequelize'
+  ]
+  const selectedTechs = techs.filter((tech)=>{
+    const textTransform = tech.title.toLowerCase().replaceAll(' ','-')
+      return techsToSelect.some((item)=>item == textTransform)
+    
+
+  })
+  const techContainer = document.createElement('div')
+  techContainer.classList.add('favorite-tools__list')
+  const techList = selectedTechs.map((tech)=>{
+    const li = document.createElement('li')
+    const cardTech = document.createElement('div')
+    cardTech.classList.add('card--tech')
+    const image = document.createElement('img')
+    
+    image.src = tech.image
+    image.alt = tech.title
+    image.width = 48
+    const title = document.createElement('h3')
+    title.textContent = tech.title
+    li.append(cardTech)
+    cardTech.append(image,title)
+    return li
+
+  })
+  techContainer.append(...techList)
+  favoriteTools.insertAdjacentElement('beforeend',techContainer)
+
+
+
+}
+
+
+// loadProjectCarrousel();
+loadLabels()
 
 darkMode.addEventListener('click',()=>{
   document.documentElement.classList.toggle('dark')
