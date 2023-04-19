@@ -24,7 +24,7 @@ linksExternals.forEach((link) => {
   });
 });
 
-async function loadProjectCarrousel() {
+export async function loadProjectCarrousel() {
   try {
     const projects = await projectService.getProjects();
     const projectsCard = projects.map((project) => {
