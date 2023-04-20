@@ -1,6 +1,7 @@
 import { labelService } from "./label.service";
 import { navigation, renderPage } from "./navigation";
-import { darkMode, favoriteTools, links, linksExternals, navBar, projectsCarrousel } from "./nodes";
+import {  favoriteTools, links, linksExternals, navBar, projectsCarrousel } from "./nodes";
+import { mobileButtonAnimation } from "./animations/mobile-button";
 import { projectService } from "./project.service";
 
 window.addEventListener("DOMContentLoaded", renderPage);
@@ -102,7 +103,4 @@ async function loadLabels() {
 
 // loadProjectCarrousel();
 loadLabels()
-
-darkMode.addEventListener('click',()=>{
-  document.documentElement.classList.toggle('dark')
-})
+mobileButtonAnimation()
