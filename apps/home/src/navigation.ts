@@ -1,6 +1,4 @@
-import { navBar } from "./nodes";
 
-const menuClose = navBar.querySelector("input") as HTMLInputElement;
 
 function renderPage() {
   // detect path
@@ -34,9 +32,7 @@ function renderPage() {
 }
 
 function navigation(path: string) {
-  if (menuClose.checked == true) {
-    menuClose.checked = false;
-  }
+  
   window.history.pushState({}, "", path);
   renderPage();
 }
