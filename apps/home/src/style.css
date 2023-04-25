@@ -4,17 +4,17 @@
 }
 /* Globals */
 :root {
-  --ligth: #fbfef9;
-  --dark: #191923;
-  --primary-light: #7e76f5;
-  --primary: #473bf0;
-  --primary-dark: #4035d8;
+  --light: #E4DFDA;
+  --dark: #060220;
+  --tertiary-light: #6f85f3;
+  --tertiary: #3C5BFF;
+  --tertiary-dark: #0A014F;
   --secondary-light: #828485;
   --secondary: #848586;
   --secondary-dark: #848586;
-  --tertiary-light: #25ac83;
-  --tertiary: #1a936f;
-  --tertiary-dark: #157a5c;
+  --primary-light: #e43bc5;
+  --primary: #DB0EB7;
+  --primary-dark: #a10d86;
 }
 
 .inactive {
@@ -31,12 +31,10 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--ligth);
   font-family: "Ubuntu", sans-serif;
+  background-color: var(--tertiary-dark);
 }
-.dark body {
-  background-color: var(--dark);
-}
+
 /* 1rem=16px */
 h1 {
   font-family: "Nebula-Regular", Fallback, sans-serif;
@@ -45,35 +43,30 @@ h1 {
   line-height: 4rem;
   color: var(--dark);
 }
-.dark h1 {
-  color: var(--ligth);
-}
+
 
 h2 {
   font-weight: 500;
   font-size: 2.5rem;
   line-height: 3rem;
-  color: var(--primary-light);
+  color: var(--light);
 }
 
 h3 {
   font-weight: 500;
   font-size: 1.75rem;
   line-height: 2.5rem;
+  color: white;
 }
-.dark h3 {
-  color: var(--ligth);
-}
+
 
 h4 {
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 4rem;
+  color: white;
 }
 
-.dark h4 {
-  color: var(--ligth);
-}
 
 h5 {
   font-weight: 500;
@@ -91,7 +84,7 @@ li {
 }
 
 .nav-link {
-  color: var(--ligth);
+  color: var(--light);
   text-decoration: none;
   font-size: 1.75rem;
 }
@@ -101,31 +94,22 @@ li {
 
 .nav-link--external {
   font-size: 1.75rem;
-  color: var(--ligth);
+  color: var(--light);
   text-decoration: none;
 }
 .nav-link--external:hover {
   color: var(--tertiary-light);
 }
 
-.dark p {
-  color: var(--ligth);
-}
+
 
 p {
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 300;
+  color: white;
 }
 
-p.big {
-  font-size: 1.25rem;
-  line-height: 2.25rem;
-  font-weight: 400;
-}
-.dark strong {
-  color: var(--tertiary-light);
-}
 strong {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -149,9 +133,9 @@ strong {
   display: flex;
   width: fit-content;
   font-size: 1rem;
-  color: var(--primary-light);
+  color:var(--light);
   background: var(--primary-dark);
-  padding: 1rem 3rem;
+  padding: 15px 30px;
   font-weight: 700;
   transition: background 0.3s;
 }
@@ -169,10 +153,10 @@ strong {
   /* color: ; */
   display: flex;
   width: fit-content;
-  font-size: 2rem;
-  color: var(--tertiary-100);
+  font-size: 1rem;
+  color: var(--light);
   background: var(--tertiary-light);
-  padding: 1rem 3rem;
+  padding: 15px 30px;
   font-weight: 700;
   transition: background 0.3s;
 }
@@ -195,7 +179,7 @@ strong {
   }
 
   .nav-link {
-    color: var(--ligth);
+    color: var(--light);
     text-decoration: none;
     font-size: 1.25rem;
   }
@@ -204,7 +188,7 @@ strong {
   }
 
   .nav-link--external {
-    color: var(--ligth);
+    color: var(--light);
     text-decoration: none;
     font-size: 1.25rem;
   }
@@ -265,10 +249,11 @@ section {
 
 header {
   position: relative;
-  height: 152vh;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  
 }
 
 header::before {
@@ -283,7 +268,7 @@ header::before {
   background: linear-gradient(
     180deg,
     rgba(25, 25, 35, 0.3519782913165266) 65%,
-    rgba(71, 59, 240, 1) 96%
+    rgb(10, 1, 79) 96%
   );
 }
 header .bg-image {
@@ -297,7 +282,7 @@ header::after {
   background: linear-gradient(
     90deg,
     rgba(25, 25, 35, 0.2519782913165266) 65%,
-    rgba(71, 59, 240, 1) 84%
+    rgb(10, 1, 79) 84%
   );
   content: "";
   display: block;
@@ -321,7 +306,7 @@ header::after {
   background: linear-gradient(
     134deg,
     rgba(25, 25, 35, 0.4519782913165266) 45%,
-    rgba(71, 59, 240, 1) 99%
+    rgb(10, 1, 79) 99%
   );
   padding: 50px 30px; 
   border-radius: 20px;
@@ -340,13 +325,14 @@ header::after {
   font-size: 1.5rem;
   line-height: 1.7rem;
   margin-bottom: 10px;
-  
+  color: white;
 }
 
 .diego-card__profession{
   font-family: "Nebula-Regular", Fallback, sans-serif;
   font-size: 1.25rem;
   line-height: 1.7rem;
+  color: var(--tertiary);
 }
 
 .diego-card__description{
@@ -356,7 +342,7 @@ header::after {
 .about-me {
   padding: 80px 0;
   position: relative;
-  height: 140vh;
+  height: 128vh;
 }
 .about-me img {
   width : 100%;
@@ -389,6 +375,7 @@ header::after {
   display: flex;
   flex-direction: column;
   padding-block: 80px;
+  background-color: var(--tertiary-dark);
 }
 .favorite-tools h2 {
   text-align: center;
@@ -429,7 +416,8 @@ header::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 80px 0;
+  padding: 80px 0;
+  background-color: var(--dark);
 
 }
 .project-carrousel{
@@ -476,6 +464,7 @@ align-items: center;
 .certificates {
   display: flex;
   flex-direction: column;
+  background: var(--dark);
 }
 .certificates h2 {
   text-align: center;
@@ -512,14 +501,6 @@ align-items: center;
 
 /* End Home Page */
 
-.dark-mode {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
 
 /* navbar desktop */
 
@@ -584,7 +565,7 @@ align-items: center;
 .navbar--mobile__button .line {
   width: 42px;
   height: 3px;
-  background-color: var(--ligth);
+  background-color: var(--light);
 }
 
 /* end navbar mobile */
