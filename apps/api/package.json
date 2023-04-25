@@ -15,7 +15,8 @@
     "migrations:revert": "sequelize-cli db:migrate:undo",
     "migrations:delete": "sequelize-cli db:migrate:undo:all",
     "backup:all": "node ./scripts/backup.js",
-    "backup:schemas": "node ./scripts/backup-schemas.js"
+    "backup:schemas": "node ./scripts/backup-schemas.js",
+    "restore":"node ./scripts/restore.js"
   },
   "keywords": [
     "nodejs",

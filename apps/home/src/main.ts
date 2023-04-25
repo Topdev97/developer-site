@@ -1,7 +1,7 @@
 import { labelService } from "./label.service";
 import { navigation, renderPage } from "./navigation";
 import {  favoriteTools, navLinks, navLinksExternal, navBar, projectsCarrousel } from "./nodes";
-// import { projectService } from "./project.service";
+import { projectService } from "./project.service";
 import { menuButtonAnimation } from "./animations/menu-button";
 import { diegoCardAnimation } from "./animations/diego-card";
 
@@ -31,34 +31,39 @@ navLinksExternal.forEach((link) => {
   });
 });
 
-// export async function loadProjectCarrousel() {
-//   try {
-//     const projects = await projectService.getProjects();
-//     const projectsCard = projects.map((project) => {
-//       const projectCard = document.createElement("div");
-//       projectCard.classList.add("project-card");
-//       const title = document.createElement("h2");
-//       title.textContent = project.title;
-//       const shortDescription = document.createElement("p");
-//       shortDescription.textContent = project.shortDescription;
-//       const featureImage = document.createElement("img");
-//       featureImage.alt = project.title;
-//       featureImage.src = ""
-//       projectCard.append(title, shortDescription, featureImage);
-//       if (project.published) {
-//         const publishedIcon = document.createElement("img");
-//         publishedIcon.alt = "published";
-//         projectCard.append(publishedIcon);
-//       }
+export async function loadProjectCarrousel() {
+  try {
+    const projects = await projectService.getProjects();
+    const projectsCard = projects.map((project) => {
+      const projectCard = document.createElement("div");
+      projectCard.classList.add("project-card");
+      const title = document.createElement("h2");
+      title.textContent = project.title;
+      const shortDescription = document.createElement("p");
+      shortDescription.textContent = project.shortDescription;
+      const featureImage = document.createElement("img");
+      featureImage.alt = project.title;
+      featureImage.src = ""
+      const linkButton = document.createElement('a')
+      linkButton.classList.add('btn--primary')
+      linkButton.href = project.link
+      linkButton.textContent = 'Go to Project'
+      linkButton.target= '_blank'
+      projectCard.append(featureImage,title, shortDescription,linkButton);
+      if (project.published) {
+        const publishedIcon = document.createElement("img");
+        publishedIcon.alt = "published";
+        featureImage.insertAdjacentElement('afterend',publishedIcon)
+      }
 
-//       return projectCard;
-//     });
-//     projectsCarrousel.append(...projectsCard);
-//   } catch (error) {
+      return projectCard;
+    });
+    projectsCarrousel.append(...projectsCard);
+  } catch (error) {
 
-//     projectsCarrousel.textContent = `${error}`
-//   }
-// }
+    projectsCarrousel.textContent = `${error}`
+  }
+}
 
 async function loadLabels() {
   const labels = await labelService.getLabels()
@@ -107,5 +112,5 @@ async function loadLabels() {
 }
 
 
-// loadProjectCarrousel();
+loadProjectCarrousel();
 loadLabels()

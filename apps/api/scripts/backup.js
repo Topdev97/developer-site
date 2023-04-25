@@ -10,7 +10,7 @@ const timestamp = new Date().toISOString().slice(0, 19).replace(/[-T:]/g, '');
 
 // specify the backup file name and location
 const backupFilename = `backup_${timestamp}.sql`;
-const backupPath = `../backups/${backupFilename}`;
+const backupPath = `./backups/${backupFilename}`;
 
 // construct the pg_dump command
 const pgdumpCmd = `pg_dump ${connectionString} > ${backupPath}`;

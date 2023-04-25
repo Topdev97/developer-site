@@ -12,8 +12,8 @@ const labelService = new LabelService()
 const imageService = new ImageService()
 router.get('/', async (req, res, next) => {
   try {
-    const {limit,offset,slug} = req.query
-    const projects = await projectService.findAll(limit,offset,slug);
+    const {limit,offset,slug,label} = req.query
+    const projects = await projectService.findAll(limit,offset,slug,label);
     res.json(projects);
   } catch (error) {
     next(error);
