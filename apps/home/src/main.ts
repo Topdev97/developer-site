@@ -1,6 +1,6 @@
 import { labelService } from "./label.service";
 import { navigation, renderPage } from "./navigation";
-import {  favoriteTools, navLinks, navLinksExternal, navBar, projectsCarrousel } from "./nodes";
+import {  favoriteTools, navLinks, navLinksExternal, projectsCarrousel } from "./nodes";
 import { projectService } from "./project.service";
 import { menuButtonAnimation } from "./animations/menu-button";
 import { diegoCardAnimation } from "./animations/diego-card";

@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { menuAnimation } from "./menu";
 
 export function menuButtonAnimation() {
-  mobileButton.addEventListener("click", (event) => {
+  mobileButton.addEventListener("click", () => {
     mobileButton.classList.toggle("isOpen");
 
     if (mobileButton.classList.contains("isOpen")) {
@@ -26,7 +26,7 @@ export function menuButtonAnimation() {
   });
 
   navLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
+    link.addEventListener("click", () => {
       mobileButton.classList.remove("isOpen");
       const line1 = mobileButton.querySelector(".line-1");
       const line2 = mobileButton.querySelector(".line-2");
