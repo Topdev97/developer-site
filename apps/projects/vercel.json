@@ -1,6 +1,13 @@
 {
     "rewrites": [
-      
+        {
+            "source": "/projects/",
+            "destination": "https://my-apps-tau.vercel.app/"
+          },
+          {
+            "source": "/projects/:match*",
+            "destination": "https://my-apps-tau.vercel.app/:match*"
+          },
       {
         "source": "/admin/",
         "destination": "https://my-apps-admin.vercel.app/"
@@ -12,6 +19,11 @@
       {
         "source": "/",
         "destination": "https://my-apps-home.vercel.app/"
+      },
+
+      {
+        "source": "/:match*",
+        "destination": "https://my-apps-home.vercel.app/:match*"
       }
     ]
   }
