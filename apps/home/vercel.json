@@ -10,11 +10,11 @@
       },
       {
         "source": "/admin/",
-        "destination": "https://my-apps-admin.vercel.app/"
+        "destination": "https://my-apps-2gq4.vercel.app/"
       },
       {
         "source": "/admin/:match*",
-        "destination": "https://my-apps-admin.vercel.app/:match*"
+        "destination": "https://my-apps-2gq4.vercel.app/:match*"
       },
       {
         "source": "/",
