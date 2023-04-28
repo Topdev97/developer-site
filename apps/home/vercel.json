@@ -1,9 +1,6 @@
 {
     "rewrites": [
-      {
-        "source": "/projects/",
-        "destination": "https://my-apps-ten.vercel.app/projects"
-      },
+      
       {
         "source": "/admin/",
         "destination": "https://my-apps-2gq4.vercel.app/"
@@ -15,6 +12,10 @@
       {
         "source": "/",
         "destination": "https://davc93.dev/"
+      },
+      {
+        "source": "/:match*",
+        "destination": "https://davc93.dev/:match*"
       }
     ]
   }
