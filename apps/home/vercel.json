@@ -5,10 +5,6 @@
         "destination": "https://my-apps-ten.vercel.app/projects"
       },
       {
-        "source": "/projects/:match*",
-        "destination": "https://my-apps-ten.vercel.app/projects/:match*"
-      },
-      {
         "source": "/admin/",
         "destination": "https://my-apps-2gq4.vercel.app/"
       },
