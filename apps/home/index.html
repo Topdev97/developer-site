@@ -1,228 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="/src/style.css" />
 
-<head>
-  <!-- <meta charset="UTF-8" /> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-    rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Landing Page</title>
-  <link rel="stylesheet" href="/src/style.css" />
+    <!-- Seo -->
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Company" />
+    <meta name="language" content="English" />
 
-  <!-- Seo -->
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <meta name="robots" content="index, follow" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="author" content="Company" />
-  <meta name="language" content="English" />
+    <!--  Essential META Tags -->
+    <meta property="og:title" content="European Travel Destinations" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:image"
+      content="http://euro-travel-example.com/thumbnail.jpg"
+    />
+    <meta
+      property="og:url"
+      content="http://euro-travel-example.com/index.htm"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <!--  Essential META Tags -->
-  <meta property="og:title" content="European Travel Destinations" />
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="http://euro-travel-example.com/thumbnail.jpg" />
-  <meta property="og:url" content="http://euro-travel-example.com/index.htm" />
-  <meta name="twitter:card" content="summary_large_image" />
+    <!--  Non-Essential, But Recommended -->
+    <meta
+      property="og:description"
+      content="Offering tour packages for individuals or groups."
+    />
+    <meta property="og:site_name" content="European Travel, Inc." />
+    <meta name="twitter:image:alt" content="Alt text for image" />
 
-  <!--  Non-Essential, But Recommended -->
-  <meta property="og:description" content="Offering tour packages for individuals or groups." />
-  <meta property="og:site_name" content="European Travel, Inc." />
-  <meta name="twitter:image:alt" content="Alt text for image" />
+    <!-- Analytics -->
+    <meta name="twitter:site" content="@website-username" />
+    <meta property="fb:app_id" content="your_app_id" />
+  </head>
 
-  <!-- Analytics -->
-  <meta name="twitter:site" content="@website-username" />
-  <meta property="fb:app_id" content="your_app_id" />
-</head>
+  <body>
+    <div>
+      <nav class="navbar--desktop" role="navigation">
+        <ul class="navbar--desktop__menu">
+          <li><a class="nav-link" href="/">About me</a></li>
+          <li><a class="nav-link--external" href="/projects">Projects</a></li>
+          <li><a class="nav-link" href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      <nav
+        role="navigation"
+        class="navbar--mobile"
+        id="navbar-container--mobile"
+      >
+        <ul class="navbar--mobile__menu" id="navbar--mobile__menu">
+          <li>
+            <a href="/" class="nav-link">About me</a>
+          </li>
+          <li>
+            <a href="/projects" class="nav-link--external">Projects</a>
+          </li>
+          <li>
+            <a href="/contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <button
+          type="button"
+          class="navbar--mobile__button"
+          id="navbar--mobile__button"
+        >
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+      </nav>
+    </div>
 
-<body>
-  <div>
-    <nav class="navbar--desktop" role="navigation">
-      <ul class="navbar--desktop__menu">
-        <li><a class="nav-link" href="/">About me</a></li>
-        <li><a class="nav-link--external" href="/projects">Projects</a></li>
-        <li><a class="nav-link" href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-    <nav role="navigation" class="navbar--mobile" id="navbar-container--mobile">
-      <ul class="navbar--mobile__menu" id="navbar--mobile__menu">
-        <li>
-          <a href="/" class="nav-link">About me</a>
-        </li>
-        <li>
-          <a href="/projects" class="nav-link--external">Projects</a>
-        </li>
-        <li>
-          <a href="/contact" class="nav-link">Contact</a>
-        </li>
-      </ul>
-      <button type="button" class="navbar--mobile__button" id="navbar--mobile__button">
-        <span class="line line-1"></span>
-        <span class="line line-2"></span>
-        <span class="line line-3"></span>
-      </button>
-    </nav>
-  </div>
-
-  <div id="pages">
-    <div class="/ home">
-      <header class="">
-        <picture>
-          <source media="(max-width: 767px)"
-            srcset="https://res.cloudinary.com/dxryc5jgr/image/upload/c_fill,h_800,w_400/v1682371470/davc93/landing/descarga_4_fuv5ef.jpg">
-          <source media="(min-width: 768px) and (max-width: 1023px)"
-            srcset="https://res.cloudinary.com/dxryc5jgr/image/upload/c_scale,w_768/v1682371470/davc93/landing/descarga_4_fuv5ef.jpg">
-          <source media="(min-width: 1024px)"
-            srcset="https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,g_xy_center,h_1080,w_1532,y_918/v1682371470/davc93/landing/descarga_4_fuv5ef.jpg">
-          <img class="bg-image"
-            src="https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,g_xy_center,h_1080,w_1532,y_918/v1682371470/davc93/landing/descarga_4_fuv5ef.jpg"
-            alt="Image">
-        </picture>
-
-        <div class="hero-container container">
-          <div class="diego-card">
-            <img src="https://res.cloudinary.com/dxryc5jgr/image/upload/v1682379166/davc93/landing/fot_uls_aehauk.png"
-              alt="Diego Vergara" class="hero__img" />
-            <h1 class="diego-card__name">Diego Vergara</h1>
-            <h2 class="diego-card__profession">Fullstack developer</h2>
-            <p class="diego-card__description">
-              Welcome to my web page, i'm a Fullstack developer with complete knowledge of JavaScript-based technologies, especially React and NodeJS.
-            </p>
-          </div>
-        </div>
-      </header>
-      <main class="">
-        <section class="about-me">
+    <div id="pages">
+      <div class="/ home">
+        <header class="">
           <picture>
-            <source media="(max-width: 767px)"
-              srcset="https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,g_xy_center,h_812,w_400,x_372/v1681946231/davc93/landing/Link_Roundups___Cool_Material_avgkft.jpg">
-            <source media="(min-width: 768px) and (max-width: 1023px)"
-              srcset="https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,h_1000,w_800/v1681946231/davc93/landing/Link_Roundups___Cool_Material_avgkft.jpg">
-            <source media="(min-width: 1024px)"
-              srcset="https://res.cloudinary.com/dxryc5jgr/image/upload/c_scale,w_1532/v1681946231/davc93/landing/Link_Roundups___Cool_Material_avgkft.jpg">
+            <source
+              media="(max-width: 767px)"
+              srcset="
+                https://res.cloudinary.com/dxryc5jgr/image/upload/c_fill,h_800,w_400/v1682371470/davc93/landing/descarga_4_fuv5ef.jpg
+              "
+            />
+            <source
+              media="(min-width: 768px) and (max-width: 1023px)"
+              srcset="
+                https://res.cloudinary.com/dxryc5jgr/image/upload/c_scale,w_768/v1682371470/davc93/landing/descarga_4_fuv5ef.jpg
+              "
+            />
+            <source
+              media="(min-width: 1024px)"
+              srcset="
+                https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,g_xy_center,h_1080,w_1532,y_918/v1682371470/davc93/landing/descarga_4_fuv5ef.jpg
+              "
+            />
             <img
-              src="https://res.cloudinary.com/dxryc5jgr/image/upload/c_scale,w_1532/v1681946231/davc93/landing/Link_Roundups___Cool_Material_avgkft.jpg"
-              alt="Image">
+              class="bg-image"
+              src="https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,g_xy_center,h_1080,w_1532,y_918/v1682371470/davc93/landing/descarga_4_fuv5ef.jpg"
+              alt="Image"
+            />
           </picture>
 
-          <div class="about-me-container container">
-            <div class="about-me-card">
-              <h2>About me</h2>
-              <p>I'm a business administrator by profession, I worked in
-                management control for 5 years, and now that I discovered what I
-                am passionate about, <strong>Tech and bussiness</strong>,
-                specially a i like web development with
-                <strong>Javascript</strong> in frontend and backend with
-                <strong>NodeJS</strong> I like to meet people, learn new things,
-                achieve goals and sports, I'm a blue belt in brazilian jiu
-                jitsu.
-                </p>
+          <div class="hero-container container">
+            <div class="diego-card">
+              <img
+                src="https://res.cloudinary.com/dxryc5jgr/image/upload/v1682379166/davc93/landing/fot_uls_aehauk.png"
+                alt="Diego Vergara"
+                class="hero__img"
+              />
+              <h1 class="diego-card__name">Diego Vergara</h1>
+              <h2 class="diego-card__profession">Fullstack developer</h2>
+              <p class="diego-card__description">
+                Welcome to my web page, i'm a Fullstack developer with complete
+                knowledge of JavaScript-based technologies, especially React and
+                NodeJS.
+              </p>
             </div>
-
-
-            
           </div>
-        </section>
-        <section class="favorite-tools container">
-          <h2>Favorites tools</h2>
-        </section>
-        <section class="projects">
-          <h2>Projects portfolio</h2>
-          <div id="project-carrousel" class="project-carrousel"></div>
-          <a href="/projects" class="btn btn--primary">Projects</a>
-        </section>
-        <section class="certificates">
-          <h2>Certificates</h2>
-          <div class="certificates__list">
-            <li>
-              <div>
-                <img src="/certificates/javascript.png" alt="JavaScript a Profundidad" />
-                <h3>JavaScript a Profundidad</h3>
-                <h4>Platzi</h4>
-              </div>
-            </li>
+        </header>
+        <main class="">
+          <section class="about-me">
+            <picture>
+              <source
+                media="(max-width: 767px)"
+                srcset="
+                  https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,g_xy_center,h_812,w_400,x_372/v1681946231/davc93/landing/Link_Roundups___Cool_Material_avgkft.jpg
+                "
+              />
+              <source
+                media="(min-width: 768px) and (max-width: 1023px)"
+                srcset="
+                  https://res.cloudinary.com/dxryc5jgr/image/upload/c_thumb,h_1000,w_800/v1681946231/davc93/landing/Link_Roundups___Cool_Material_avgkft.jpg
+                "
+              />
+              <source
+                media="(min-width: 1024px)"
+                srcset="
+                  https://res.cloudinary.com/dxryc5jgr/image/upload/c_scale,w_1532/v1681946231/davc93/landing/Link_Roundups___Cool_Material_avgkft.jpg
+                "
+              />
+              <img
+                src="https://res.cloudinary.com/dxryc5jgr/image/upload/c_scale,w_1532/v1681946231/davc93/landing/Link_Roundups___Cool_Material_avgkft.jpg"
+                alt="Image"
+              />
+            </picture>
 
-            <li>
-              <div>
-                <img src="/certificates/react.svg" alt="Frontend con React.js" />
+            <div class="about-me-container container">
+              <div class="about-me-card">
+                <h2>About me</h2>
+                <p>
+                  I'm a business administrator by profession, I worked in
+                  management control for 5 years, and now that I discovered what
+                  I am passionate about, <strong>Tech and bussiness</strong>,
+                  specially a i like web development with
+                  <strong>Javascript</strong> in frontend and backend with
+                  <strong>NodeJS</strong> I like to meet people, learn new
+                  things, achieve goals and sports, I'm a blue belt in brazilian
+                  jiu jitsu.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section class="favorite-tools container">
+            <div class="favorite-tools-container">
+              <h2>Favorites tools</h2>
+            </div>
+          </section>
+          <section class="projects">
+            <div class="projects-container">
+              <h2>Projects portfolio</h2>
+              <div id="project-carrousel" class="project-carrousel"></div>
+              <a href="/projects" class="btn btn--primary">Projects</a>
+            </div>
+          </section>
+          <section class="certificates">
+            <div class="certificates-container">
+              <h2>Certificates</h2>
+              <div class="certificates__list">
+                <li>
+                  <div>
+                    <img
+                      src="/certificates/javascript.png"
+                      alt="JavaScript a Profundidad"
+                    />
+                    <h3>JavaScript a Profundidad</h3>
+                    <h4>Platzi</h4>
+                  </div>
+                </li>
 
-                <h3>Frontend con React.js</h3>
-                <h4>Platzi</h4>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="/certificates/checkoutpro.png" alt="Checkout Pro" />
-                <h3>Checkout Pro</h3>
-                <h4>Mercado Libre</h4>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="/certificates/fullstack.png" alt="FullStack Developer con JavaScript" />
-                <h3>FullStack Developer con JavaScript</h3>
-                <h4>Platzi</h4>
-              </div>
-            </li>
-            <li>
-              <div>
-                <img src="/certificates/htmlycss.png" alt="HTML y CSS a Profundidad" />
-                <h3>HTML y CSS a Profundidad</h3>
-                <h4>Platzi</h4>
-              </div>
-            </li>
-          </div>
-        </section>
-      </main>
-    </div>
-    <div class="/contact contact">
-      <header>
-        <h1>Contact Page</h1>
-      </header>
-    </div>
-    <div class="/not-found not-found">
-      <header>
-        <h1>Not Found</h1>
-      </header>
-    </div>
-  </div>
-  <div class="social-media-menu">
-    <li>
-      <a href="https://www.linkedin.com/in/diego-vergara-casanova/">
-        <svg class="linkedin" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#0077B5" fill-rule="evenodd"
-            d="M20.45175,20.45025 L16.89225,20.45025 L16.89225,14.88075 C16.89225,13.5525 16.86975,11.844 15.04275,11.844 C13.191,11.844 12.90825,13.2915 12.90825,14.7855 L12.90825,20.45025 L9.3525,20.45025 L9.3525,8.997 L12.765,8.997 L12.765,10.563 L12.81375,10.563 C13.2885,9.66225 14.4495,8.71275 16.18125,8.71275 C19.78575,8.71275 20.45175,11.08425 20.45175,14.169 L20.45175,20.45025 Z M5.33925,7.4325 C4.1955,7.4325 3.27375,6.50775 3.27375,5.36775 C3.27375,4.2285 4.1955,3.30375 5.33925,3.30375 C6.47775,3.30375 7.4025,4.2285 7.4025,5.36775 C7.4025,6.50775 6.47775,7.4325 5.33925,7.4325 L5.33925,7.4325 Z M7.11975,20.45025 L3.5565,20.45025 L3.5565,8.997 L7.11975,8.997 L7.11975,20.45025 Z M23.00025,0 L1.0005,0 C0.44775,0 0,0.44775 0,0.99975 L0,22.9995 C0,23.55225 0.44775,24 1.0005,24 L23.00025,24 C23.55225,24 24,23.55225 24,22.9995 L24,0.99975 C24,0.44775 23.55225,0 23.00025,0 L23.00025,0 Z" />
-        </svg>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com/davc1993/">
-        <svg class="instagram" width="36px" height="36px" viewBox="0 0 2500 2500" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="0" cx="332.14" cy="2511.81" r="3263.54" gradientUnits="userSpaceOnUse">
-              <stop offset=".09" stop-color="#fa8f21" />
-              <stop offset=".78" stop-color="#d82d7e" />
-            </radialGradient>
-            <radialGradient id="1" cx="1516.14" cy="2623.81" r="2572.12" gradientUnits="userSpaceOnUse">
-              <stop offset=".64" stop-color="#8c3aaa" stop-opacity="0" />
-              <stop offset="1" stop-color="#8c3aaa" />
-            </radialGradient>
-          </defs>
-          <path
-            d="M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57"
-            fill="url(#0)" />
-          <path
-            d="M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57"
-            fill="url(#1)" />
-        </svg>
-      </a>
-    </li>
-  </div>
-  <footer class=""></footer>
-  <script type="module" src="/src/main.ts"></script>
-</body>
+                <li>
+                  <div>
+                    <img
+                      src="/certificates/react.svg"
+                      alt="Frontend con React.js"
+                    />
 
+                    <h3>Frontend con React.js</h3>
+                    <h4>Platzi</h4>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img
+                      src="/certificates/checkoutpro.png"
+                      alt="Checkout Pro"
+                    />
+                    <h3>Checkout Pro</h3>
+                    <h4>Mercado Libre</h4>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img
+                      src="/certificates/fullstack.png"
+                      alt="FullStack Developer con JavaScript"
+                    />
+                    <h3>FullStack Developer con JavaScript</h3>
+                    <h4>Platzi</h4>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <img
+                      src="/certificates/htmlycss.png"
+                      alt="HTML y CSS a Profundidad"
+                    />
+                    <h3>HTML y CSS a Profundidad</h3>
+                    <h4>Platzi</h4>
+                  </div>
+                </li>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <div class="/contact contact">
+        <header>
+          <h1>Contact Page</h1>
+        </header>
+      </div>
+      <div class="/not-found not-found">
+        <header>
+          <h1>Not Found</h1>
+        </header>
+      </div>
+    </div>
+    <div class="social-media-menu">
+      <li>
+        <a href="https://www.linkedin.com/in/diego-vergara-casanova/">
+          <svg
+            class="linkedin"
+            width="36px"
+            height="36px"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="#0077B5"
+              fill-rule="evenodd"
+              d="M20.45175,20.45025 L16.89225,20.45025 L16.89225,14.88075 C16.89225,13.5525 16.86975,11.844 15.04275,11.844 C13.191,11.844 12.90825,13.2915 12.90825,14.7855 L12.90825,20.45025 L9.3525,20.45025 L9.3525,8.997 L12.765,8.997 L12.765,10.563 L12.81375,10.563 C13.2885,9.66225 14.4495,8.71275 16.18125,8.71275 C19.78575,8.71275 20.45175,11.08425 20.45175,14.169 L20.45175,20.45025 Z M5.33925,7.4325 C4.1955,7.4325 3.27375,6.50775 3.27375,5.36775 C3.27375,4.2285 4.1955,3.30375 5.33925,3.30375 C6.47775,3.30375 7.4025,4.2285 7.4025,5.36775 C7.4025,6.50775 6.47775,7.4325 5.33925,7.4325 L5.33925,7.4325 Z M7.11975,20.45025 L3.5565,20.45025 L3.5565,8.997 L7.11975,8.997 L7.11975,20.45025 Z M23.00025,0 L1.0005,0 C0.44775,0 0,0.44775 0,0.99975 L0,22.9995 C0,23.55225 0.44775,24 1.0005,24 L23.00025,24 C23.55225,24 24,23.55225 24,22.9995 L24,0.99975 C24,0.44775 23.55225,0 23.00025,0 L23.00025,0 Z"
+            />
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/davc1993/">
+          <svg
+            class="instagram"
+            width="36px"
+            height="36px"
+            viewBox="0 0 2500 2500"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <radialGradient
+                id="0"
+                cx="332.14"
+                cy="2511.81"
+                r="3263.54"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset=".09" stop-color="#fa8f21" />
+                <stop offset=".78" stop-color="#d82d7e" />
+              </radialGradient>
+              <radialGradient
+                id="1"
+                cx="1516.14"
+                cy="2623.81"
+                r="2572.12"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset=".64" stop-color="#8c3aaa" stop-opacity="0" />
+                <stop offset="1" stop-color="#8c3aaa" />
+              </radialGradient>
+            </defs>
+            <path
+              d="M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57"
+              fill="url(#0)"
+            />
+            <path
+              d="M833.4,1250c0-230.11,186.49-416.7,416.6-416.7s416.7,186.59,416.7,416.7-186.59,416.7-416.7,416.7S833.4,1480.11,833.4,1250m-225.26,0c0,354.5,287.36,641.86,641.86,641.86S1891.86,1604.5,1891.86,1250,1604.5,608.14,1250,608.14,608.14,895.5,608.14,1250M1767.27,582.69a150,150,0,1,0,150.06-149.94h-0.06a150.07,150.07,0,0,0-150,149.94M745,2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28,7.27-505.15c5.55-121.87,26-188,43-232.13,22.72-58.36,49.78-100,93.5-143.78s85.32-70.88,143.78-93.5c44-17.16,110.26-37.46,232.13-43,131.76-6.06,171.34-7.27,505-7.27s373.28,1.31,505.15,7.27c121.87,5.55,188,26,232.13,43,58.36,22.62,100,49.78,143.78,93.5s70.78,85.42,93.5,143.78c17.16,44,37.46,110.26,43,232.13,6.06,131.87,7.27,171.34,7.27,505.15s-1.21,373.28-7.27,505.15c-5.55,121.87-25.95,188.11-43,232.13-22.72,58.36-49.78,100-93.5,143.68s-85.42,70.78-143.78,93.5c-44,17.16-110.26,37.46-232.13,43-131.76,6.06-171.34,7.27-505.15,7.27s-373.28-1.21-505-7.27M734.65,7.57c-133.07,6.06-224,27.16-303.41,58.06C349,97.54,279.38,140.35,209.81,209.81S97.54,349,65.63,431.24c-30.9,79.46-52,170.34-58.06,303.41C1.41,867.93,0,910.54,0,1250s1.41,382.07,7.57,515.35c6.06,133.08,27.16,223.95,58.06,303.41,31.91,82.19,74.62,152,144.18,221.43S349,2402.37,431.24,2434.37c79.56,30.9,170.34,52,303.41,58.06C868,2498.49,910.54,2500,1250,2500s382.07-1.41,515.35-7.57c133.08-6.06,223.95-27.16,303.41-58.06,82.19-32,151.86-74.72,221.43-144.18s112.18-139.24,144.18-221.43c30.9-79.46,52.1-170.34,58.06-303.41,6.06-133.38,7.47-175.89,7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95,97.54,2068.86,65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17,1.51,1589.56,0,1250.1,0S868,1.41,734.65,7.57"
+              fill="url(#1)"
+            />
+          </svg>
+        </a>
+      </li>
+    </div>
+    <footer class=""></footer>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

@@ -1,6 +1,6 @@
 import { labelService } from "./label.service";
 import { navigation, renderPage } from "./navigation";
-import {  favoriteTools, navLinks, navLinksExternal, projectsCarrousel } from "./nodes";
+import {  favoriteToolsContainer, navLinks, navLinksExternal, projectsCarrousel } from "./nodes";
 import { projectService } from "./project.service";
 import { menuButtonAnimation } from "./animations/menu-button";
 import { diegoCardAnimation } from "./animations/diego-card";
@@ -43,7 +43,7 @@ export async function loadProjectCarrousel() {
       shortDescription.textContent = project.shortDescription;
       const featureImage = document.createElement("img");
       featureImage.alt = project.title;
-      featureImage.src = ""
+      featureImage.src = project.images[0].url
       const linkButton = document.createElement('a')
       linkButton.classList.add('btn--primary')
       linkButton.href = project.link
@@ -52,6 +52,7 @@ export async function loadProjectCarrousel() {
       projectCard.append(featureImage,title, shortDescription,linkButton);
       if (project.published) {
         const publishedIcon = document.createElement("img");
+        publishedIcon.classList.add('inactive')
         publishedIcon.alt = "published";
         featureImage.insertAdjacentElement('afterend',publishedIcon)
       }
@@ -105,7 +106,7 @@ async function loadLabels() {
 
   })
   techContainer.append(...techList)
-  favoriteTools.insertAdjacentElement('beforeend',techContainer)
+  favoriteToolsContainer.insertAdjacentElement('beforeend',techContainer)
 
 
 
