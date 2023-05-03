@@ -4,14 +4,19 @@ import {  favoriteToolsContainer, navLinks, navLinksExternal, projectsCarrousel 
 import { projectService } from "./project.service";
 import { menuButtonAnimation } from "./animations/menu-button";
 import { diegoCardAnimation } from "./animations/diego-card";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { aboutMeAnimation } from "./animations/bg-animation";
 
+gsap.registerPlugin(ScrollTrigger);
 
 
 
 window.addEventListener("DOMContentLoaded", ()=>{
   renderPage()
   menuButtonAnimation()
-  diegoCardAnimation()  
+  diegoCardAnimation()
+  aboutMeAnimation()
 });
 
 navLinks.forEach((link) => {
@@ -46,7 +51,7 @@ export async function loadProjectCarrousel() {
       featureImage.src = project.images[0].url
       const linkButton = document.createElement('a')
       linkButton.classList.add('btn--primary')
-      linkButton.href = project.link
+      linkButton.href = `https://my-apps-ten.vercel.app/${project.slug}`
       linkButton.textContent = 'Go to Project'
       linkButton.target= '_blank'
       projectCard.append(featureImage,title, shortDescription,linkButton);

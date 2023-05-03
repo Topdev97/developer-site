@@ -6,7 +6,7 @@ export const Navbar = () => {
     <nav className="navbar--desktop" role="navigation">
       <ul className="navbar--desktop__menu">
         <li>
-          <a className="nav-link" href="/">
+          <a className="nav-link" href="https://davc93.dev">
             About me
           </a>
         </li>
@@ -16,7 +16,7 @@ export const Navbar = () => {
           </Link>
         </li>
         <li>
-          <a className="nav-link" href="/contact">
+          <a className="nav-link" href="https://davc93.dev/contact">
             Contact
           </a>
         </li>

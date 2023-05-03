@@ -48,7 +48,7 @@ interface ProjectPageProps {
  function ProjectPage({project}:ProjectPageProps){
     
     return (
-        <main>
+        <main className="px-2 md:px-32 py-4 md:py-20">
             { project ? <ProjectDetail project={project[0]}/> : (<p>Loading</p>) } 
         </main>
     )

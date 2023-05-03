@@ -27,16 +27,16 @@ body {
 } */
 
 :root {
-  --light: #E4DFDA;
+  --light: #e4dfda;
   --dark: #060220;
   --tertiary-light: #6f85f3;
-  --tertiary: #3C5BFF;
-  --tertiary-dark: #0A014F;
+  --tertiary: #3c5bff;
+  --tertiary-dark: #0a014f;
   --secondary-light: #828485;
   --secondary: #848586;
   --secondary-dark: #848586;
   --primary-light: #e43bc5;
-  --primary: #DB0EB7;
+  --primary: #db0eb7;
   --primary-dark: #a10d86;
 }
 
@@ -67,7 +67,6 @@ h1 {
   color: var(--dark);
 }
 
-
 h2 {
   font-weight: 500;
   font-size: 2.5rem;
@@ -82,14 +81,12 @@ h3 {
   color: white;
 }
 
-
 h4 {
   font-weight: 500;
   font-size: 1.5rem;
   line-height: 4rem;
   color: white;
 }
-
 
 h5 {
   font-weight: 500;
@@ -124,8 +121,6 @@ li {
   color: var(--tertiary-light);
 }
 
-
-
 p {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -154,9 +149,8 @@ strong {
   cursor: pointer;
   /* color: ; */
   display: flex;
-  width: fit-content;
   font-size: 1rem;
-  color:var(--light);
+  color: var(--light);
   background: var(--primary-dark);
   padding: 15px 30px;
   font-weight: 700;
@@ -175,7 +169,6 @@ strong {
 
   /* color: ; */
   display: flex;
-  width: fit-content;
   font-size: 1rem;
   color: var(--light);
   background: var(--tertiary-light);
@@ -308,7 +301,6 @@ strong {
 @media (min-width: 1536px) {
 }
 
-
 /* end navbars */
 .social-media-menu {
   position: fixed;
@@ -340,3 +332,26 @@ strong {
 .linkedin:hover {
   opacity: 1;
 }
+
+/* loaders */
+.btn-loader {
+  width: 24px;
+  height: 24px;
+  border: 5px solid #fff;
+  border-bottom-color: var(--tertiary);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* end loaders */
