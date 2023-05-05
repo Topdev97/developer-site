@@ -220,6 +220,9 @@ importers:
       eslint-config-next:
         specifier: 13.3.1
         version: 13.3.1(eslint@8.38.0)(typescript@5.0.4)
+      gsap:
+        specifier: ^3.11.5
+        version: 3.11.5
       next:
         specifier: 13.3.1
         version: 13.3.1(react-dom@18.2.0)(react@18.2.0)

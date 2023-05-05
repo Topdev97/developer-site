@@ -4,7 +4,7 @@ export const aboutMeAnimation = () => {
     gsap.to("header", {
         scrollTrigger: {
         trigger:'header',
-          markers: true,
+          markers: false,
           start:'top top',
             end:'bottom center',
             toggleActions:'pause'

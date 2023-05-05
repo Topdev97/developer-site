@@ -10,11 +10,12 @@ export const ProjectDetail = ({project}:ProjectDetailProps) => {
   
     
     return (
-    <div className='flex flex-col items-center gap-5 md:gap-10'>
+    <div className='flex flex-col gap-5 md:gap-10'>
         <h1>{project.title}</h1>
-        <p>{project.description}</p>
-        
-        <div className='images-container container max-w-sm'>
+        <div className='flex flex-col gap-10 lg:flex-row lg:justify-between'>
+            <div className='mt-16 project-description max-w-lg'>{project.description}</div>
+
+        <div className='images-container mt-16 lg:mr-20 w-72 h-72 overflow-hidden container max-w-sm'>
         {project.images.map((image)=>{
             return (
                 <img key={image.id} src={image.url} alt={`${image.id}`} />
@@ -22,6 +23,8 @@ export const ProjectDetail = ({project}:ProjectDetailProps) => {
             )
         })}
         </div>
+        </div>
+        
         <h3>Technologies</h3>
         <div className='labels container grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-5 '>
             {project.labels.map((label)=>{
@@ -33,11 +36,11 @@ export const ProjectDetail = ({project}:ProjectDetailProps) => {
                 )
             })}
         </div>
-        <div className='buttons flex flex-col items-center md:flex-row gap-3 md:gap-6' style={{alignSelf:'start'}}>
-            <Link href={project.repository} className='btn--primary'>
+        <div className='buttons w-full flex flex-col items-center md:flex-row gap-3 md:gap-6' style={{alignSelf:'start'}}>
+            <Link href={project.repository} className='btn--primary w-64'>
                 Go to Repo
             </Link>
-            <Link href={project.link} className='btn--secondary'>
+            <Link href={project.link} className='btn--secondary w-64'>
                 Go to App
             </Link>
         </div>
