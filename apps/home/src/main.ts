@@ -11,11 +11,21 @@ import { aboutMeAnimation } from "./animations/bg-animation";
 gsap.registerPlugin(ScrollTrigger);
 
 
+window.addEventListener('DOMContentLoaded',()=>{
 
-window.addEventListener("DOMContentLoaded", ()=>{
   renderPage()
+})
+
+window.addEventListener("load", ()=>{
+  document.querySelector('.page-loader-container')?.classList.add('deactivating')
+  setTimeout(() => {
+    document.querySelector('.page-loader-container')?.remove()
+  }, 3000);
+  setTimeout(() => {
+    diegoCardAnimation()
+    
+  }, 1000);
   menuButtonAnimation()
-  diegoCardAnimation()
   aboutMeAnimation()
 });
 
