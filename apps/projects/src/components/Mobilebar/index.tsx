@@ -44,7 +44,7 @@ export const Mobilebar = () => {
     >
       <ul className="navbar--mobile__menu" id="navbar--mobile__menu" ref={menu as any}>
         <li>
-          <a href="/" className="nav-link">
+          <a href="https://davc93.dev" className="nav-link">
             About me
           </a>
         </li>
@@ -54,7 +54,7 @@ export const Mobilebar = () => {
           </a>
         </li>
         <li>
-          <a href="/contact" className="nav-link">
+          <a href="https://davc93.dev" className="nav-link">
             Contact
           </a>
         </li>

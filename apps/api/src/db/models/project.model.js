@@ -1,9 +1,9 @@
-const { Sequelize, DataTypes, Model } = require('sequelize') 
+const { Sequelize, DataTypes, Model,Op } = require("sequelize");
+const sequelize = require("../sequelize");
 
+const PROJECT_TABLE = "projects";
 
-const PROJECT_TABLE = 'projects'
-
-const ProjectSchema =  {
+const ProjectSchema = {
   id: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -22,7 +22,7 @@ const ProjectSchema =  {
     allowNull: false,
   },
   shortDescription: {
-    field:"short_description",
+    field: "short_description",
     type: DataTypes.STRING(255),
     allowNull: false,
   },
@@ -37,46 +37,42 @@ const ProjectSchema =  {
   createdAt: {
     allowNull: false,
     type: DataTypes.DATE,
-    field: 'created_at',
-    defaultValue: Sequelize.NOW
+    field: "created_at",
+    defaultValue: Sequelize.NOW,
   },
 
-  slug:{
-    allowNull:false,
-    type:DataTypes.STRING,
-    unique:true
-  }
-}
-
-class Project extends Model{
+  slug: {
+    allowNull: false,
+    type: DataTypes.STRING,
+    unique: true,
+  },
+};
+class Project extends Model {
   static associate(models) {
     this.hasMany(models.Image, {
-      as: 'images',
-      foreignKey:"projectId",
-      allowNull:true
+      as: "images",
+      foreignKey: "projectId",
+      allowNull: true,
     });
-    this.belongsToMany(models.Label,{
-      through:"LabelProject",
-      foreignKey:"projectId",
-      otherKey:"labelId",
-      as:'labels'
-    })
-    
-
+    this.belongsToMany(models.Label, {
+      through: models.LabelProject,
+      foreignKey: "projectId",
+      otherKey: "labelId",
+      as: "labels",
+    });
   }
   static config(sequelize) {
     return {
       sequelize,
       tableName: PROJECT_TABLE,
-      modelName: 'Project',
-      timestamps: false
-    }
+      modelName: "Project",
+      timestamps: false,
+    };
   }
-
 }
 
-module.exports =  {
+module.exports = {
   Project,
   ProjectSchema,
-  PROJECT_TABLE
-}
+  PROJECT_TABLE,
+};

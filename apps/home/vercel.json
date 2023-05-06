@@ -2,20 +2,8 @@
     "rewrites": [
       
       {
-        "source": "/admin/",
-        "destination": "https://my-apps-2gq4.vercel.app/"
-      },
-      {
-        "source": "/admin/:match*",
-        "destination": "https://my-apps-2gq4.vercel.app/:match*"
-      },
-      {
-        "source": "/",
-        "destination": "https://davc93.dev/"
-      },
-      {
-        "source": "/:match*",
-        "destination": "https://davc93.dev/:match*"
+        "source": "/(.*)",
+        "destination": "/index.html"
       }
     ]
   }

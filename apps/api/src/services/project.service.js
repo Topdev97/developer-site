@@ -20,7 +20,7 @@ class ProjectService {
   async findAll(limit, offset, slug, label) {
     if (slug) {
       const projects = await models.Project.findAll({
-        include: ["images", "labels"],
+        include: [{ all: true, attributes: ["order"] }],
         where: {
           slug,
         },
@@ -30,15 +30,26 @@ class ProjectService {
     }
     if (label) {
       const projects = await models.Project.findAll({
-        include: ["images", "labels"]
-        
+        include: [
+          {
+            model: models.Image,
+            as: "images",
+            attributes: ["id", "url"],
+          },
+          {
+            model: models.Label,
+            as: "labels",
+            attributes: ["id", "title", "image"],
+            through:['project_id',"label_id","order"]
+          },
+        ],
       });
       const projectsFiltered = projects.filter((project) =>
         project.labels.some((labelObj) => {
           return labelObj.title.toLowerCase() === label;
         })
       );
-      return projectsFiltered
+      return projectsFiltered;
     }
 
     const projects = await models.Project.findAll({
@@ -49,7 +60,10 @@ class ProjectService {
 
   async findOne(id) {
     const project = await models.Project.findByPk(id, {
-      include: [{ all: true }],
+      include: [
+        { all: true },
+        
+      ],
     });
     if (!project) {
       throw new Error("Project doesn't exist");
