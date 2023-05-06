@@ -2,33 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
-
+/* globals */
 :root {
   --light: #ffffff;
-  --dark: #060220;
+  --dark: #05060d;
   --tertiary-light: #6f85f3;
   --tertiary: #3c5bff;
   --tertiary-dark: #0a014f;
@@ -60,32 +37,31 @@ body {
 
 /* 1rem=16px */
 h1 {
-  font-family: "Nebula-Regular", Fallback, sans-serif;
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 4rem;
   color: var(--dark);
 }
 
 h2 {
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   line-height: 3rem;
   color: var(--dark);
 }
 
 h3 {
   font-weight: 500;
-  font-size: 1.75rem;
+  font-size: 1.1rem;
   line-height: 2.5rem;
   color: var(--dark);
 }
 
 h4 {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.5rem;
   line-height: 4rem;
-  color: var(--dark);
+  color: var(--tertiary-dark);
 }
 
 h5 {
@@ -134,11 +110,8 @@ strong {
   font-weight: 500;
   color: var(--tertiary-light);
 }
-
-.item {
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  font-weight: 500;
+input{
+  background: #ffffff25!important;
 }
 
 .btn--primary {
@@ -146,6 +119,7 @@ strong {
   text-transform: uppercase;
   display: flex;
   justify-content: center;
+  align-items: center;
   cursor: pointer;
   /* color: ; */
   display: flex;
@@ -160,18 +134,19 @@ strong {
   background: var(--primary-light);
 }
 
-.btn--secondary {
+.btn--tertiary {
   text-decoration: none;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   cursor: pointer;
+  align-items: center;
 
   /* color: ; */
   display: flex;
   font-size: 1rem;
   color: var(--light);
-  background: var(--tertiary);
+  background: var(--tertiary-dark);
   padding: 15px 30px;
   font-weight: 700;
   transition: background 0.3s;
@@ -184,20 +159,84 @@ strong {
 }
 
 @media (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+    line-height: 2.5rem;
+  }
+  h2 {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    line-height: 2.5rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    line-height: 4rem;
+  }
+
+  h5 {
+    font-size: 1.5rem;
+    line-height: 4rem;
+  }
+
+  h6 {
+    font-size: 1.25rem;
+    line-height: 4rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
   h1 {
-    font-size: 4rem;
+    font-size: 5rem;
+    line-height: 4rem;
+
   }
   h2 {
-    font-size: 3rem;
+    font-size: 4rem;
+    line-height: 4rem;
+
+  }
+
+  h3 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+
+  }
+
+  h4 {
+    font-size: 1.5rem;
+    line-height: 4rem;
+
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    line-height: 4rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+    line-height: 4rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 
   .nav-link {
     color: var(--light);
     text-decoration: none;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
   .nav-link:hover {
     color: var(--tertiary-light);
@@ -206,7 +245,7 @@ strong {
   .nav-link--external {
     color: var(--light);
     text-decoration: none;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
   .nav-link--external:hover {
     color: var(--tertiary-light);
@@ -218,6 +257,9 @@ strong {
 
 @media (min-width: 1536px) {
 }
+
+
+/* end global */
 /* navbars desktop */
 
 .navbar--desktop {

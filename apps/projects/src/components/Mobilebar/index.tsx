@@ -58,6 +58,12 @@ export const Mobilebar = () => {
             Contact
           </a>
         </li>
+
+        <li>
+          <a href="https://my-apps-2gq4.vercel.app/" className="nav-link">
+            Admin
+          </a>
+        </li>
       </ul>
       <button
         type="button"
