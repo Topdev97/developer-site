@@ -129,7 +129,7 @@ strong {
   width: fit-content;
   font-size: 1rem;
   color: var(--light);
-  background: var(--primary-dark);
+  background: var(--primary);
   padding: 15px 30px;
   font-weight: 700;
   transition: background 0.3s;
@@ -150,7 +150,7 @@ strong {
   width: fit-content;
   font-size: 1rem;
   color: var(--light);
-  background: var(--tertiary-light);
+  background: var(--tertiary);
   padding: 15px 30px;
   font-weight: 700;
   transition: background 0.3s;
