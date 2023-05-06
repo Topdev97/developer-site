@@ -39,14 +39,14 @@ body {
 h1 {
   font-weight: 500;
   font-size: 2rem;
-  line-height: 4rem;
+  line-height: 3rem;
   color: var(--dark);
 }
 
 h2 {
   font-weight: 500;
   font-size: 1.5rem;
-  line-height: 3rem;
+  line-height: 2rem;
   color: var(--dark);
 }
 
@@ -60,7 +60,7 @@ h3 {
 h4 {
   font-weight: 700;
   font-size: 1.5rem;
-  line-height: 4rem;
+  line-height: 2rem;
   color: var(--tertiary-dark);
 }
 
@@ -197,7 +197,7 @@ input{
 @media (min-width: 1024px) {
   h1 {
     font-size: 5rem;
-    line-height: 4rem;
+    line-height: 5.5rem;
 
   }
   h2 {
@@ -214,7 +214,7 @@ input{
 
   h4 {
     font-size: 1.5rem;
-    line-height: 4rem;
+    line-height: 2rem;
 
   }
 
@@ -260,6 +260,7 @@ input{
 
 
 /* end global */
+
 /* navbars desktop */
 
 .navbar--desktop {
@@ -397,3 +398,14 @@ input{
 }
 
 /* end loaders */
+
+.project-description ul {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.project-description li{
+  list-style: square;
+  margin-left: 20px;
+}
