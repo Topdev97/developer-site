@@ -20,7 +20,7 @@ class ProjectService {
   async findAll(limit, offset, slug, label) {
     if (slug) {
       const projects = await models.Project.findAll({
-        include: [{ all: true, attributes: ["order"] }],
+        include: [{ all: true }],
         where: {
           slug,
         },
