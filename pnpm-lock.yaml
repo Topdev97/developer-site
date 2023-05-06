@@ -19,6 +19,9 @@ importers:
       '@faker-js/faker':
         specifier: ^7.6.0
         version: 7.6.0
+      '@tailwindcss/forms':
+        specifier: ^0.5.3
+        version: 0.5.3(tailwindcss@3.3.1)
       '@types/react':
         specifier: ^18.2.0
         version: 18.2.0
@@ -28,6 +31,9 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: ^3.3.0
         version: 3.3.0(vite@4.3.3)
+      autoprefixer:
+        specifier: 10.4.14
+        version: 10.4.14(postcss@8.4.23)
       cors:
         specifier: ^2.8.5
         version: 2.8.5
@@ -37,6 +43,12 @@ importers:
       jose:
         specifier: ^4.14.4
         version: 4.14.4
+      postcss:
+        specifier: 8.4.23
+        version: 8.4.23
+      tailwindcss:
+        specifier: 3.3.1
+        version: 3.3.1(postcss@8.4.23)
       typescript:
         specifier: ^4.9.5
         version: 4.9.5
@@ -4010,6 +4022,15 @@ packages:
     dependencies:
       tslib: 2.5.0
     dev: false
+
+  /@tailwindcss/forms@0.5.3(tailwindcss@3.3.1):
+    resolution: {integrity: sha512-y5mb86JUoiUgBjY/o6FJSFZSEttfb3Q5gllE4xoKjAAD+vBrnIhE4dViwUuow3va8mpH4s9jyUbUbrRGoRdc2Q==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+    dependencies:
+      mini-svg-data-uri: 1.4.4
+      tailwindcss: 3.3.1(postcss@8.4.23)
+    dev: true
 
   /@tootallnate/once@1.1.2:
     resolution: {integrity: sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==}
@@ -9155,6 +9176,11 @@ packages:
     dependencies:
       schema-utils: 4.0.1
       webpack: 5.76.1(esbuild@0.17.8)
+    dev: true
+
+  /mini-svg-data-uri@1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
     dev: true
 
   /minimalistic-assert@1.0.1:

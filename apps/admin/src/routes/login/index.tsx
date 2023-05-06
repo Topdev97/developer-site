@@ -5,8 +5,8 @@ export const LoginPage = () => {
   
   
   return (
-    <div className="form-container">
-      <h2 className="headline-medium">Login Form</h2>
+    <div className="grid place-content-center">
+
       <LoginForm />
     </div>
   )

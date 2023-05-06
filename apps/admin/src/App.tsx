@@ -34,7 +34,7 @@ function App() {
       <UserContext.Provider value={{ state, dispatch }}>
         <NotificationContext.Provider value={{notifications,addNotification}}  >
           
-          <BrowserRouter basename="admin">
+          <BrowserRouter >
             <Layout>
 
               <Routes>

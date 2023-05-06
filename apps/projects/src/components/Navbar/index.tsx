@@ -20,6 +20,9 @@ export const Navbar = () => {
             Contact
           </a>
         </li>
+        <li>
+          <a className="nav-link" href="https://my-apps-2gq4.vercel.app/">Admin</a>
+        </li>
       </ul>
     </nav>
   );

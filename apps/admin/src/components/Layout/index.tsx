@@ -12,9 +12,8 @@ export const Layout = ({children}:LayoutProps) => {
   return (
     <>
 
-        <Navbar />
         {token && <Sidebar/>}
-        <div className='page-content'>
+        <div  className='page-content'>
           {children}
 
         </div>

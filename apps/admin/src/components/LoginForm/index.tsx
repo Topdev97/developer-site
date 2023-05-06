@@ -4,6 +4,8 @@ import { authService } from "../../services/auth.service";
 import { useInputValue } from "../../hooks/useInputValue";
 import { AuthContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { ButtonLoader } from "../ButtonLoader";
+import { ErrorMessage } from "../ErrorMessage";
 
 export const LoginForm = () => {
   //inputs handler
@@ -32,34 +34,42 @@ export const LoginForm = () => {
   };
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
-      <div className="input-group">
-        <div className="input-group__container">
-          <div className="input-group__label-input">
-            <label className="body-small" htmlFor="email">Email</label>
-            <input className="body-large" id="email" type="email" name="email" {...email} />
-          </div>
-          <span className="material-symbols-outlined">cancel</span>
+    <div
+      style={{ border: "1px solid var(--primary)",maxWidth:500 }}
+      className="form-container login-form py-8 px-12"
+    >
+      <form className="flex flex-col items-center gap-6" onSubmit={handleSubmit}>
+        <h3>Login</h3>
+        <div className="input-group">
+          <label htmlFor="email">Email</label>
+          <input
+
+      style={{ border: "1px solid var(--primary-dark)" }}
+            className="body-large "
+            id="email"
+            type="email"
+            name="email"
+            {...email}
+          />
         </div>
-        <span className="input-group__supporting-text body-small">supporting text</span>
-      </div>
-      <div className="input-group">
-        <div className="input-group__container">
-          <div className="input-group__label-input">
-            <label className="body-small" htmlFor="email">password</label>
-            <input className="body-large" id="password" type="password" name="password" {...password} />
-          </div>
-          <span className="material-symbols-outlined">cancel</span>
+        <div className="input-group">
+         <label htmlFor="password">Password</label>
+          <input
+
+      style={{ border: "1px solid var(--primary-dark)"}}
+            className="body-large"
+            id="password"
+            type="password"
+            name="password"
+            {...password}
+          />
         </div>
-        <span className="input-group__supporting-text body-small">supporting text</span>
-      </div>
-      <button className="btn btn--filled" type="submit">
-        <div className="btn--filled__container">
-          <span className="btn--filled__text label-large">Login</span>
-        </div>
-      </button>
-      {error && <p>{error}</p>}
-      {loading && <p>Loading...</p>}
-    </form>
+        <button className="btn--primary w-56 h-14" type="submit">
+          {loading ? <ButtonLoader/> : 'Login'}
+
+        </button>
+        <ErrorMessage>{error}</ErrorMessage>
+      </form>
+    </div>
   );
 };

@@ -5,9 +5,9 @@ interface propsWithChildren {
 }
 
 export const ErrorMessage = ({ children }: propsWithChildren) => {
-  if (children !== "") {
-    return <div>{children}</div>;
+  if (children) {
+    return <div className="bg-red-200 text-red-600 px-5 py-2 rounded-md">{children}</div>;
   } else {
-    return <div></div>;
+    return <div className="px-5 py-2 h-10"></div>;
   }
 };
