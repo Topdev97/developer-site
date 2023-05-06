@@ -176,7 +176,7 @@ strong {
   .nav-link {
     color: var(--light);
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   .nav-link:hover {
     color: var(--tertiary-light);
@@ -185,7 +185,7 @@ strong {
   .nav-link--external {
     color: var(--light);
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   .nav-link--external:hover {
     color: var(--tertiary-light);
