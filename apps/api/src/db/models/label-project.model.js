@@ -40,6 +40,10 @@ const LabelProjectSchema = {
     type: DataTypes.DATE,
     field: 'created_at',
     defaultValue: Sequelize.NOW
+  },
+  order:{
+    allowNull:true,
+    type:DataTypes.INTEGER
   }
 
 }
