@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom'
 
 export const LabelsPage = () => {
   return (
-    <div>
+    <div className='flex flex-col'>
 
-      <h3>Labels</h3>
-      <Link className='btn--primary w-52' to={'/labels/create'}>Create Label</Link>
+      <h3 style={{alignSelf:'center'}}>Labels</h3>
       <ListOfLabels />
     </div>
   )

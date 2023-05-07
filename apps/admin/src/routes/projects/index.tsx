@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 
 export const ProjectsPage = () => {
   return (
-    <div>
-      <h1>ProjectsPage</h1>
-      <Link to={`/projects/create`}>Create Project</Link>
+    <div className='flex flex-col'>
+      <h3 style={{alignSelf:'center'}}>ProjectsPage</h3>
       <ListOfProjects/>
     </div>
   )
