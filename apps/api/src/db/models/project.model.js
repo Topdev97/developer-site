@@ -1,5 +1,5 @@
-const { Sequelize, DataTypes, Model,Op } = require("sequelize");
-const sequelize = require("../sequelize");
+const { Sequelize, DataTypes, Model } = require("sequelize");
+
 
 const PROJECT_TABLE = "projects";
 

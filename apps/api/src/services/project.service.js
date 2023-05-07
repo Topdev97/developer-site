@@ -40,7 +40,7 @@ class ProjectService {
             model: models.Label,
             as: "labels",
             attributes: ["id", "title", "image"],
-            through:['project_id',"label_id","order"]
+            through:['project_id',"label_id"]
           },
         ],
       });

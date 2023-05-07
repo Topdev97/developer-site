@@ -6,7 +6,7 @@ const {config} = require('../src/config')
 const connectionString = config.dbUrl
 
 // create a timestamp for the backup file name
-const timestamp = new Date().toISOString().slice(0, 19).replace(/[-T:]/g, '');
+const timestamp = new Date().toISOString()
 
 // specify the backup file name and location
 const backupFilename = `backup_${timestamp}.sql`;
