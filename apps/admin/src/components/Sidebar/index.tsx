@@ -73,7 +73,7 @@ export const Sidebar = () => {
   const menuAnimation = MenuAnimation();
   const handleMenuClick = () => {
     mobileButton.current?.classList.toggle("isOpen");
-    console.log(mobileButton.current);
+    
 
     menu.current?.querySelectorAll(".dropdown-content").forEach((element) => {
       element.classList.add("hidden");

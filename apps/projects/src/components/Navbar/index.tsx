@@ -21,7 +21,7 @@ export const Navbar = () => {
           </a>
         </li>
         <li>
-          <a className="nav-link" href="https://my-apps-2gq4.vercel.app/">Admin</a>
+          <a className="nav-link" href="https://console.davc93.dev">Admin</a>
         </li>
       </ul>
     </nav>

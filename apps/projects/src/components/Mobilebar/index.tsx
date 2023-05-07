@@ -60,7 +60,7 @@ export const Mobilebar = () => {
         </li>
 
         <li>
-          <a href="https://my-apps-2gq4.vercel.app/" className="nav-link">
+          <a href="https://console.davc93.dev" className="nav-link">
             Admin
           </a>
         </li>
