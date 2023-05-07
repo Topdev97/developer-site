@@ -10,6 +10,7 @@
     "api": "nodemon api/index.js"
   },
   "dependencies": {
+    "gsap": "^3.11.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.0"

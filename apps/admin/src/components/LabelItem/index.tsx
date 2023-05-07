@@ -33,13 +33,13 @@ export const LabelItem = ({label,setFilteredLabels,filteredLabels}:LabelProps) =
       };
       return (
         <div className="labels-list__item" key={label.id}>
-          <h4>{label.id}</h4>
-          <h4>{label.title}</h4>
-          <h4>{label.type}</h4>
+          <h6>{label.id}</h6>
+          <h6>{label.title}</h6>
+          <h6>{label.type}</h6>
           <div>
             <img style={{width:40}} src={label.image} alt={label.title} />
           </div>
-          <h4>{`${label.createdAt}`}</h4>
+          <h6>{`${label.createdAt}`}</h6>
           <div className="buttons">
             <button onClick={handleDelete}>{ loading ? <ButtonLoader /> : 'Delete' }</button>
             <Link to={`/labels/edit/${label.id}`}>Edit</Link>

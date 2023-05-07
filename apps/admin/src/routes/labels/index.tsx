@@ -6,8 +6,8 @@ export const LabelsPage = () => {
   return (
     <div>
 
-      <h1>LabelsPage</h1>
-      <Link to={'/labels/create'}>Create Label</Link>
+      <h3>Labels</h3>
+      <Link className='btn--primary w-52' to={'/labels/create'}>Create Label</Link>
       <ListOfLabels />
     </div>
   )

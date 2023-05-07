@@ -1,8 +1,8 @@
-.project-list__headers{
+.project-list__item{
 
     display: grid;
     grid-template-columns: repeat(9,1fr);
-
+    grid-auto-rows: 40px;
     gap: 10px;
     place-content: center;
     place-items: center;
@@ -10,8 +10,8 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     width: 90%;
 }
-.project-list__headers > *{
-    /* width: 100%;
+.project-list__item > *{
+    width: 100%;
     height: 100%;
-    overflow: hidden; */
+    overflow: hidden;
 }

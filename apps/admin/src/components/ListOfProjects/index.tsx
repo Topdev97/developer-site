@@ -36,17 +36,21 @@ export const ListOfProjects = () => {
   const {projects,loading,error} = useGetProjects()
   return (
     <>
-      <div className="projects-list__item">
-        <h4>Id</h4>
-        <h4>Title</h4>
-        <h4>Slug</h4>
-        <h4>Short Description</h4>
-        <h4>Published</h4>
-        <h4>Repository</h4>
-        <h4>Created At</h4>
-        <h4>Options</h4>
+      <div className="project-list__headers">
+        <h5>Id</h5>
+        <h5>Title</h5>
+        <h5>Slug</h5>
+        <h5>Short Description</h5>
+        <h5>Published</h5>
+        <h5>Repository</h5>
+        <h5>App Link</h5>
+        <h5>Created At</h5>
+        <h5>Options</h5>
       </div>
-      {projects.map((project) => <ProjectItem project={project}/>)}
+      <div className="grid gap-2 mt-3">
+
+        {projects.map((project) => <ProjectItem project={project}/>)}
+      </div>
 
       {loading && <p>Loading...</p>}
       {error && <p>{error}</p>}

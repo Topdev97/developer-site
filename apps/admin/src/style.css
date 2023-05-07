@@ -73,28 +73,24 @@ h5 {
 h6 {
   font-weight: 500;
   font-size: 1.25rem;
-  line-height: 4rem;
+  line-height: 2rem;
 }
 li {
   list-style: none;
 }
 
 .nav-link {
-  color: var(--light);
   text-decoration: none;
   font-size: 1.75rem;
 }
 .nav-link:hover {
-  color: var(--tertiary-light);
 }
 
 .nav-link--external {
   font-size: 1.75rem;
-  color: var(--light);
   text-decoration: none;
 }
 .nav-link--external:hover {
-  color: var(--tertiary-light);
 }
 
 p {
@@ -108,7 +104,6 @@ strong {
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 500;
-  color: var(--tertiary-light);
 }
 input{
   background: #ffffff25!important;
@@ -185,7 +180,7 @@ input{
 
   h6 {
     font-size: 1.25rem;
-    line-height: 4rem;
+    line-height: 2rem;
   }
 
   p {
@@ -220,12 +215,12 @@ input{
 
   h5 {
     font-size: 1.25rem;
-    line-height: 4rem;
+    line-height: 1.5rem;
   }
 
   h6 {
     font-size: 1rem;
-    line-height: 4rem;
+    line-height: 1.3rem;
   }
 
   p {
@@ -234,21 +229,17 @@ input{
   }
 
   .nav-link {
-    color: var(--light);
     text-decoration: none;
     font-size: 1.25rem;
   }
   .nav-link:hover {
-    color: var(--tertiary-light);
   }
 
   .nav-link--external {
-    color: var(--light);
     text-decoration: none;
     font-size: 1.25rem;
   }
   .nav-link--external:hover {
-    color: var(--tertiary-light);
   }
 }
 

@@ -5,7 +5,7 @@ import { Project } from '../../models/project.model';
 import { Link } from 'react-router-dom';
 import { ButtonLoader } from '../ButtonLoader';
 import { useGetProjects } from '../ListOfProjects';
-
+import './style.css'
 type ProjectItemProps = {
     project:Project
 }
@@ -27,14 +27,16 @@ export const ProjectItem = ({project}:ProjectItemProps) => {
         setLoading(false);
       };
       return (
-        <div className="projects-list__item" key={project.id}>
-          <h4>{project.id}</h4>
-          <h4>{project.title}</h4>
-          <h4>{project.slug}</h4>
-          <h4>{project.shortDescription}</h4>
-          <h4>{`${project.published}`}</h4>
-          <h4 className="cut-text">{project.repository}</h4>
-          <h4>{`${project.createdAt}`}</h4>
+        <div className="project-list__item" key={project.id}>
+          <h6>{project.id}</h6>
+          <h6>{project.title}</h6>
+          <h6>{project.slug}</h6>
+          <h6>{project.shortDescription}</h6>
+          <h6>{`${project.published}`}</h6>
+          <h6 className=""> <a target='blank' href={project.repository} title={project.repository}> Link</a> </h6>
+          <h6 className=""> <a target='blank' href={project.link} title={project.link}> Link</a> </h6>
+          
+          <h6>{`${project.createdAt}`}</h6>
           <div className="project-list__buttons">
             <Link to={`/projects/edit/${project.id}`}>Edit</Link>
             <button onClick={handleDelete}>{loading ? <ButtonLoader /> : 'Delete'}</button>

@@ -48,12 +48,12 @@ export const ListOfLabels = () => {
       {error && <p>{error}</p>}
 
       <div className="labels-list__item">
-        <h4>Id</h4>
-        <h4>Title</h4>
-        <h4>Type</h4>
-        <h4>Image</h4>
-        <h4>Created At</h4>
-        <h4>Options</h4>
+        <h5>Id</h5>
+        <h5>Title</h5>
+        <h5>Type</h5>
+        <h5>Image</h5>
+        <h5>Created At</h5>
+        <h5>Options</h5>
       </div>
       {filteredLabels.map((label) => <LabelItem key={label.id} label={label} getLabels={getLabels} filteredLabels={filteredLabels} setFilteredLabels={setFilteredLabels} /> )}
     </div>
