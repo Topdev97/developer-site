@@ -105,7 +105,7 @@ strong {
   line-height: 1.5rem;
   font-weight: 500;
 }
-input[type="string"]{
+input[type=text],input[type=email],input[type=password]{
   background: #ffffff25!important;
 }
 

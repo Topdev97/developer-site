@@ -14,6 +14,7 @@ import { CreateLabelPage } from "./routes/label-create";
 import { EditLabelPage } from "./routes/label-edit";
 import { AuthRoute } from "./components/AuthRoute";
 import { NotificationContext } from "./context/NotificationContext";
+import { PublicRoute } from "./components/PublicRoute";
 
 function App() {
   const [token, setToken] = useLocalStorage("token");
@@ -38,7 +39,11 @@ function App() {
             <Layout>
 
               <Routes>
-                <Route element={<LoginPage />} path="/login" />
+                <Route element={
+                <PublicRoute>
+                    <LoginPage />
+                </PublicRoute>
+                } path="/login" />
                 <Route
                   element={
                     <AuthRoute>
