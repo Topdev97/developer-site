@@ -7,13 +7,13 @@ import { Link } from 'react-router-dom'
 import { ButtonLoader } from '../ButtonLoader'
 import './style.css'
 type LabelProps = {
-    label:Label,
+    data:Label,
     getLabels:any
     setFilteredLabels:any,
     filteredLabels:Label[]
 }
 
-export const LabelItem = ({label,setFilteredLabels,filteredLabels}:LabelProps) => {
+export const LabelItem = ({data: label,setFilteredLabels,filteredLabels}:LabelProps) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const {token} = useContext(AuthContext)

@@ -167,7 +167,7 @@ export const Sidebar = () => {
             );
           } else {
             return (
-              <li className="dropdown w-full cursor-pointer  relative inline-block">
+              <li className="dropdown w-full cursor-pointer  relative inline-block" key={index}>
                 <Link
                   className="dropdown-btn w-full text-start hover:bg-slate-200 py-2 pl-6 pr-2 flex justify-between"
                   to={route.path}

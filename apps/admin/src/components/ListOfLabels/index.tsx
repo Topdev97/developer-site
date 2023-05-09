@@ -10,6 +10,7 @@ import { Label } from "../../models/label.model";
 import "./style.css";
 import { LabelItem } from "../LabelItem";
 import { useInputValue } from "../../hooks/useInputValue";
+import { Pagination } from "../Pagination";
 
 export const useGetLabels = () => {
   const [loading, setLoading] = useState(false);
@@ -87,8 +88,8 @@ export const ListOfLabels = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M3 7C3 6.44772 3.44772 6 4 6H20C20.5523 6 21 6.44772 21 7C21 7.55228 20.5523 8 20 8H4C3.44772 8 3 7.55228 3 7ZM6 12C6 11.4477 6.44772 11 7 11H17C17.5523 11 18 11.4477 18 12C18 12.5523 17.5523 13 17 13H7C6.44772 13 6 12.5523 6 12ZM9 17C9 16.4477 9.44772 16 10 16H14C14.5523 16 15 16.4477 15 17C15 17.5523 14.5523 18 14 18H10C9.44772 18 9 17.5523 9 17Z"
                   fill="#000000"
                 />
@@ -121,15 +122,19 @@ export const ListOfLabels = () => {
       <div className="label-list__items">
         {loading && <p>Loading</p>}
         {error && <p>{error}</p>}
-        {filteredLabels.map((label) => (
-          <LabelItem
-            key={label.id}
-            label={label}
-            getLabels={getLabels}
-            filteredLabels={filteredLabels}
-            setFilteredLabels={setFilteredLabels}
-          />
-        ))}
+        <Pagination>
+          {filteredLabels.map((label) => {
+            return (
+              <LabelItem
+                key={label.id}
+                data={label}
+                getLabels={getLabels}
+                filteredLabels={filteredLabels}
+                setFilteredLabels={setFilteredLabels}
+              />
+            );
+          })}
+        </Pagination>
       </div>
     </section>
   );

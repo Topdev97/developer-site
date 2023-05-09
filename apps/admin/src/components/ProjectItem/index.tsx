@@ -7,10 +7,10 @@ import { ButtonLoader } from '../ButtonLoader';
 import { useGetProjects } from '../ListOfProjects';
 import './style.css'
 type ProjectItemProps = {
-    project:Project
+    data:Project
 }
 
-export const ProjectItem = ({project}:ProjectItemProps) => {
+export const ProjectItem = ({data: project}:ProjectItemProps) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
     const {getProjects} = useGetProjects()

@@ -70,7 +70,7 @@ export const ListOfProjects = () => {
       </div>
       <div className="project-list__items grid gap-2 mt-3">
         {filteredProjects.map((project) => (
-          <ProjectItem project={project} />
+          <ProjectItem data={project} />
         ))}
       </div>
 
