@@ -9,6 +9,7 @@ export const useMultiFile = (fileType: string,initialState:unknown[] | null = nu
   const [files, setFiles] = useState<unknown[] | null>(initialState);
 
   const handleFiles: FormEventHandler<HTMLElement> = async (event) => {
+    event.preventDefault()
     setLoadingFiles(true);
     const target = event.target as any;
     const files = target.files as FileList;

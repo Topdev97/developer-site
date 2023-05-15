@@ -6,6 +6,9 @@ export const CreateProjectPage =  () => {
   
 
   return (
-    <ProjectForm project={null}/>
+    <main className="flex justify-center items-center h-screen w-full">
+
+      <ProjectForm project={null}/>
+    </main>
   )
 }

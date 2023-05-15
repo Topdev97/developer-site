@@ -9,7 +9,7 @@
   --tertiary-light: #6f85f3;
   --tertiary: #3c5bff;
   --tertiary-dark: #0a014f;
-  --secondary-light: #828485;
+  --secondary-light: #a9aeb1;
   --secondary: #848586;
   --secondary-dark: #848586;
   --primary-light: #e43bc5;
@@ -125,10 +125,22 @@ input[type=text],input[type=email],input[type=password]{
   font-weight: 700;
   transition: background 0.3s;
 }
-.btn--primary:hover {
-  background: var(--primary-light);
+.btn--secondary {
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* color: ; */
+  display: flex;
+  font-size: 1rem;
+  color: var(--light);
+  background: var(--secondary-light);
+  padding: 15px 30px;
+  font-weight: 700;
+  transition: background 0.3s;
 }
-
 .btn--tertiary {
   text-decoration: none;
   text-transform: uppercase;
@@ -145,9 +157,6 @@ input[type=text],input[type=email],input[type=password]{
   padding: 15px 30px;
   font-weight: 700;
   transition: background 0.3s;
-}
-.btn--secondary:hover {
-  background: var(--tertiary);
 }
 
 @media (min-width: 640px) {

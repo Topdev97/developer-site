@@ -1,4 +1,10 @@
-import { FormEventHandler, useState, useEffect, useContext } from "react";
+import {
+  FormEventHandler,
+  useState,
+  useEffect,
+  useContext,
+  useReducer,
+} from "react";
 import { Project } from "../../models/project.model";
 import "./style.css";
 import { projectService } from "../../services/project.service";
@@ -10,18 +16,81 @@ import { AuthContext } from "../../context/AuthContext";
 import { imageService } from "../../services/image.service";
 import { useMultiFile } from "../../hooks/useMultiFile";
 import { useGetLabels } from "../ListOfLabels";
+import { initialState, reducer } from "./reducer";
+import { Link } from "react-router-dom";
+import { LabelProject } from "../../models/label-project.model";
 
 type ProjectFormProps = {
   project: Project | null;
 };
 
+type LabelInput = {
+  inputId:string,
+  order:number | null,
+  labelId:number | null,
+
+}
+
+
+export const useLabelsInputs = (project?:Project | null) => {
+
+  const [labelsInputs, setLabelsInputs] = useState<LabelInput[]>(()=>{
+    if(project){
+      return project.labels.map((label)=> {return {inputId:`input-label-${label.id}`,order:label.labelProject.order,labelId:label.id}})
+    } else {
+      return []
+    }
+  })
+
+  const handleAddLabel = () => {
+
+    setLabelsInputs([
+      {inputId:`input-label-${labelsInputs.length}`,order:null,labelId:null},
+      ...labelsInputs
+    ]) 
+  }
+
+  const handleRemoveLabel = (id:string) => {
+
+    setLabelsInputs(labelsInputs.filter((labelInput)=> labelInput.inputId !== id))
+  }
+
+  const handleInputChange:FormEventHandler<HTMLElement> = (event) => {
+    event.preventDefault()
+    const target = event.target as HTMLInputElement
+    const value = target.value
+    const [property,input,label,id] = target.id.split('-')
+    
+    setLabelsInputs((prev)=>{
+      
+      return prev.map((labelInput)=>{
+        
+        if(labelInput.inputId == `input-label-${id}`){
+            
+            return {
+              ...labelInput,
+              [property]:value
+            }
+        } else {
+          return labelInput
+        }
+      })
+    })
+  }
+  return {
+    handleAddLabel,
+    handleInputChange,
+    handleRemoveLabel,
+    labelsInputs
+  }
+
+}
+
+
 export const ProjectForm = ({ project }: ProjectFormProps) => {
-  // hooks
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const labels = useGetLabels();
-  // end hooks
   const { token } = useContext(AuthContext);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const labels = useGetLabels();
 
   //input handler
 
@@ -31,23 +100,21 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
   const repository = useInputValue(project?.repository ?? "");
   const slug = useInputValue(project?.slug ?? "");
   const shortDescription = useInputValue(project?.shortDescription ?? "");
-  const labelsInput = useMultiSelect(project?.labels ?? []);
   const publishedInput = useCheckbox(true);
+  const {handleAddLabel,handleInputChange,handleRemoveLabel,labelsInputs} = useLabelsInputs(project)
+  // end input handler
 
   const { loadingFiles, errorFiles, files, handleFiles } = useMultiFile(
     "image",
     project?.images
   );
 
-  // end input handler
-
   const handleSubmit: FormEventHandler = async (event) => {
     event.preventDefault();
 
-    setLoading(true);
-
     try {
       if (!project) {
+        dispatch({ type: "CREATE_PROJECT", payload: null });
         const { id } = await projectService.addProject(token as string, {
           title: title.value,
           shortDescription: shortDescription.value,
@@ -64,15 +131,17 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
           });
         });
 
-        const LabelProjectPromises = labelsInput.value.map((labelId: any) => {
+        const LabelProjectPromises = labelsInputs.map((labelInput) => {
           return labelProjectService.addLabel(token as string, {
             projectId: id,
-            labelId,
+            labelId:labelInput.labelId as number,
+            order:labelInput.order
           });
         });
         await Promise.all(filesPromises);
         await Promise.all(LabelProjectPromises);
       } else {
+        dispatch({ type: "EDIT_PROJECT", payload: null });
         await projectService.updateProject(token as string, project.id, {
           title: title.value,
           shortDescription: shortDescription.value,
@@ -91,10 +160,11 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
           });
         });
 
-        const LabelProjectPromises = labelsInput.value.map((labelId: any) => {
+        const LabelProjectPromises = labelsInputs.map((labelInput) => {
           return labelProjectService.addLabel(token as string, {
             projectId: project.id,
-            labelId,
+            labelId:labelInput.labelId as number,
+            order:labelInput.order
           });
         });
 
@@ -102,87 +172,116 @@ export const ProjectForm = ({ project }: ProjectFormProps) => {
         await Promise.all(LabelProjectPromises);
       }
 
-      setError(null);
+      dispatch({ type: "ERROR", payload: null });
     } catch (error) {
-      setError(`hubo un error ${error}`);
+      dispatch({ type: "ERROR", payload: `${error}` });
     }
-    setLoading(false);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="input-group">
-        <label>Link:</label>
-        <input type="text" name="link" {...link} />
-      </div>
+    <div className="relative h-full w-full flex flex-col items-center">
+      <div className="forms-container flex justify-center pt-36">
+      {state.step == 1 && (
+        <form>
+          <div className="input-group">
+            <label>Title:</label>
+            <input type="text" name="title" {...title} />
+          </div>
+          <div className="input-group">
+            <label>Description:</label>
+            <textarea name="description" {...description} />
+          </div>
+          <div className="input-group">
+            <label>Short Description:</label>
+            <input type="text" name="shortDescription" {...shortDescription} />
+          </div>
+          <div className="input-group">
+            <label>Link:</label>
+            <input type="text" name="link" {...link} />
+          </div>
 
-      <div className="input-group">
-        <label>Repository:</label>
-        <input type="text" name="repository" {...repository} />
-      </div>
+          <div className="input-group">
+            <label>Repository:</label>
+            <input type="text" name="repository" {...repository} />
+          </div>
+          <div className="input-group">
+            <label>Published:</label>
+            <input type="checkbox" name="published" {...publishedInput} />
+          </div>
 
-      <div className="input-group">
-        <label>Title:</label>
-        <input type="text" name="title" {...title} />
-      </div>
-
-      <div className="input-group">
-        <label>Short Description:</label>
-        <input type="text" name="shortDescription" {...shortDescription} />
-      </div>
-
-      <div className="input-group">
-        <label>Labels:</label>
-        <select name="labels" {...labelsInput} multiple={true}>
-          {labels.loading && <option disabled>Loading Labels</option>}
-          {labels.labels.map((label) => {
+          <div className="input-group">
+            <label>Slug:</label>
+            <input type="text" name="slug" {...slug} />
+          </div>
+        </form>
+      )}
+      {state.step == 2 && (
+        <form>
+          <div>
+            <button type="button" onClick={handleAddLabel}>Agregar</button>
+          </div>
+          {labelsInputs.map((labelInput)=>{
             return (
-              <option
-                className={
-                  project?.labels.some(
-                    (labelSelected) => labelSelected.id == label.id
-                  )
-                    ? "selected"
-                    : ""
-                }
-                key={label.id}
-                value={label.id}
-              >
-                {label.title}
-              </option>
-            );
+              <div key={labelInput.inputId}>
+                <div className="input-group">
+                  <label htmlFor="">Label</label>
+                  <select value={labelInput.labelId ?? ''} name="" id={`labelId-${labelInput.inputId}`} onInput={handleInputChange}>
+                    {labels?.labels.map((label)=>{
+                      return (
+                        <option key={label.id} value={label.id}>{label.title} </option>
+                      )
+                    })}
+                  </select>
+                </div>
+                <div className="input-group">
+                  <label htmlFor="">Order</label>
+                  <select value={labelInput.order ?? ''} name="" id={`order-${labelInput.inputId}`} onInput={handleInputChange}>
+                    {[1,2,3,4,5,6,7,8,9,10].map((number)=>{
+                      return (
+                        <option key={number} value={number}>{number}</option>
+                      )
+                    })}
+                  </select>
+                  </div>
+                  <button onInput={(event)=> handleRemoveLabel(labelInput.inputId)}></button>
+              </div>
+            )
           })}
-        </select>
+        </form>
+      )}
+      {state.step == 3 && (
+        <form>
+          <div className="input-group">
+            <input
+            type="file"
+            name="files"
+            id=""
+            multiple
+            onInput={handleFiles}
+          />
+            {loadingFiles && <p>Loading Images</p>}
+            {errorFiles && <p>{errorFiles}</p>}
+            <div className="images">
+              {files?.map((file: any) => {
+                return <img key={file.public_id} src={file.url} alt="" />;
+              })}
+            </div>
+          </div>
+          {state.uploadingForm && <p>Loading</p>}
+          {state.error && <p>{state.error}</p>}
+        </form>
+      )}
       </div>
+      
 
-      <div className="input-group">
-        <label>Published:</label>
-        <input type="checkbox" name="published" {...publishedInput} />
-      </div>
+      <div className="buttons absolute bottom-4 flex gap-5 justify-center w-full" style={{}}>
 
-      <div className="input-group">
-        <label>Description:</label>
-        <textarea name="description" {...description} />
-      </div>
+        {state.step == 1 ? <Link className="btn--secondary w-52" to="/projects">Back to projects</Link> : <button className="btn--secondary w-52" type="button" onClick={(event) => {dispatch({ type: "CHANGE_STEP", payload: state.step - 1 })}}>Previous</button>}
+        {state.step == 3 ? <button className="btn--primary w-52" onClick={handleSubmit} type="submit">Submit</button>: <button className="btn--primary w-52" type="button"onClick={(event) => { dispatch({ type: "CHANGE_STEP", payload: state.step + 1 })}}>Next</button>}
+        
+        
 
-      <div className="input-group">
-        <label>Slug:</label>
-        <input type="text" name="slug" {...slug} />
       </div>
-      <div className="input-group">
-        <input type="file" name="files" id="" multiple onInput={handleFiles} />
-        {loadingFiles && <p>Loading Images</p>}
-        {errorFiles && <p>{errorFiles}</p>}
-        <div className="images">
-          {files?.map((file: any) => {
-            return <img key={file.public_id} src={file.url} alt="" />;
-          })}
-        </div>
-      </div>
-
-      <button type="submit">Submit</button>
-      {loading && <p>Loading</p>}
-      {error && <p>{error}</p>}
-    </form>
+    </div>
   );
 };
