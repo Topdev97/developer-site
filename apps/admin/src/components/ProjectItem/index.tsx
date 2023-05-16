@@ -7,20 +7,23 @@ import { ButtonLoader } from '../ButtonLoader';
 import { useGetProjects } from '../ListOfProjects';
 import './style.css'
 type ProjectItemProps = {
-    data:Project
+    data:Project,
+    setFilteredProjects:any
 }
 
-export const ProjectItem = ({data: project}:ProjectItemProps) => {
+export const ProjectItem = ({data: project,setFilteredProjects}:ProjectItemProps) => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState<string | null>(null)
-    const {getProjects} = useGetProjects()
     const {token} = useContext(AuthContext)    
     const handleDelete = async () => {
         setLoading(true);
         try {
           await projectService.deleteProject(token as string, project.id);
           setError(null);
-          await getProjects();
+          setFilteredProjects((prev:Project[])=>{
+            
+            prev.filter((projectFiltered:Project)=>projectFiltered.id !== project.id)
+          } )
         } catch (error) {
           setError(`${error}`);
         }

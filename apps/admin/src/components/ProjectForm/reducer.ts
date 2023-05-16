@@ -41,7 +41,18 @@ type EDIT_PROJECT = {
     payload:null
 }
 
-type ActionTypes =  CHANGE_STEP | CREATE_PROJECT | EDIT_PROJECT | ERROR
+type CREATE_PROJECT_FINISHED = {
+    type:"CREATE_PROJECT_FINISHED",
+    payload:null
+}
+
+type EDIT_PROJECT_FINISHED = {
+    type:"EDIT_PROJECT_FINISHED",
+    payload:null
+}
+
+
+type ActionTypes =  CHANGE_STEP | CREATE_PROJECT | CREATE_PROJECT_FINISHED | EDIT_PROJECT | EDIT_PROJECT_FINISHED | ERROR
 
 
 
@@ -53,8 +64,27 @@ const reducerObject = (state:ReducerState,payload:any ) => {
     return {
         "CREATE_PROJECT":{
             ...state,
-            uploadingForm:true
+            uploadingForm:true,
+            error:null
         },
+
+        "CREATE_PROJECT_FINISHED":{
+            ...state,
+            uploadingForm:false
+        },
+        "EDIT_PROJECT":{
+            ...state,
+            uploadingForm:true,
+            error:null
+        },
+
+
+        "EDIT_PROJECT_FINISHED":{
+            ...state,
+            uploadingForm:false,
+            
+        },
+
         "CHANGE_STEP":{
             ...state,
             step:payload
@@ -63,10 +93,7 @@ const reducerObject = (state:ReducerState,payload:any ) => {
             ...state,
             error:payload
         },
-        "EDIT_PROJECT":{
-            ...state,
-            uploadingForm:true
-        },
+
     }
 }
 export const reducer = (state:ReducerState,action:ActionTypes)=>{

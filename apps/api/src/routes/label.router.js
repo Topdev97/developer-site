@@ -1,6 +1,8 @@
 const express = require("express");
 const {LabelService} = require('../services/label.service');
 const { checkAuth } = require("../middlewares/auth.jwt");
+const { validatorHandler } = require("../middlewares/validator.handler");
+const { createLabelDto, updateLabelDto } = require("../dtos/label.dto");
 
 
 const router = express.Router()
@@ -28,6 +30,7 @@ router.get('/:id',
 );
 
 router.post('/',checkAuth,
+  validatorHandler(createLabelDto,'body'),
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -40,6 +43,7 @@ router.post('/',checkAuth,
 );
 
 router.patch('/:id',checkAuth,
+validatorHandler(updateLabelDto,'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
