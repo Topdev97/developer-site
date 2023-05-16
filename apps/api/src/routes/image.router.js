@@ -1,6 +1,8 @@
 const express = require("express");
 const { ImageService } = require("../services/image.service.js");
 const { checkAuth } = require("../middlewares/auth.jwt.js");
+const { validatorHandler } = require("../middlewares/validator.handler.js");
+const { createImageDto } = require("../dtos/image.dto.js");
 
 
 
@@ -28,6 +30,7 @@ router.get('/:id',
 );
 
 router.post('/',
+  validatorHandler(createImageDto,'body'),
   async (req, res, next) => {
     try {
       const body = req.body;

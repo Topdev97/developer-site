@@ -3,6 +3,8 @@ const { ProjectService } = require("../services/project.service.js");
 const { checkAuth } = require("../middlewares/auth.jwt.js");
 const { LabelService } = require("../services/label.service.js");
 const { ImageService } = require("../services/image.service.js");
+const { validatorHandler } = require("../middlewares/validator.handler.js");
+const { createProjectDto, updateProjectDto } = require("../dtos/project.dto.js");
 
 
 
@@ -33,6 +35,7 @@ router.get('/:id',
 );
 
 router.post('/',checkAuth,
+  validatorHandler(createProjectDto,'body'),
   async (req, res, next) => {
     try {
       const body = req.body;
@@ -60,6 +63,7 @@ router.post('/add-label',checkAuth,
 
 
 router.patch('/:id',checkAuth,
+  validatorHandler(updateProjectDto,'body'),
   async (req, res, next) => {
     try {
       const { id } = req.params;
