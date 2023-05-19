@@ -40,7 +40,7 @@ class ProjectService {
             model: models.Label,
             as: "labels",
             attributes: ["id", "title", "image"],
-            through:['project_id',"label_id"]
+            through: ["project_id", "label_id"],
           },
         ],
       });
@@ -53,7 +53,15 @@ class ProjectService {
     }
 
     const projects = await models.Project.findAll({
-      include: ["images", "labels"],
+      include: [
+        { model: models.Image, as: "images", attributes: ["id", "url"] },
+        {
+          model: models.Label,
+          through: { as: "labelProject", attributes: ["order", "createdAt"] },
+          as: "labels",
+          attributes: ["id", "title", "image"],
+        },
+      ],
     });
     return projects;
   }
@@ -61,8 +69,13 @@ class ProjectService {
   async findOne(id) {
     const project = await models.Project.findByPk(id, {
       include: [
-        { all: true },
-        
+        { model: models.Image, as: "images", attributes: ["id", "url"] },
+        {
+          model: models.Label,
+          through: { as: "labelProject", attributes: ["order", "createdAt"] },
+          as: "labels",
+          attributes: ["id", "title", "image"],
+        },
       ],
     });
     if (!project) {
