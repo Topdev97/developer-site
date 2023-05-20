@@ -10,7 +10,6 @@ import "./style.css";
 import { projectService } from "../../services/project.service";
 import { labelProjectService } from "../../services/label-project.service";
 import { useInputValue } from "../../hooks/useInputValue";
-import { useMultiSelect } from "../../hooks/useMultiSelect";
 import { useCheckbox } from "../../hooks/useCheckbox";
 import { AuthContext } from "../../context/AuthContext";
 import { imageService } from "../../services/image.service";
@@ -18,7 +17,6 @@ import { useMultiFile } from "../../hooks/useMultiFile";
 import { useGetLabels } from "../ListOfLabels";
 import { initialState, reducer } from "./reducer";
 import { Link, useNavigate } from "react-router-dom";
-import { LabelProject } from "../../models/label-project.model";
 
 type ProjectFormProps = {
   project: Project | null;
@@ -36,7 +34,7 @@ export const useLabelsInputs = (project?: Project | null) => {
       return project.labels.map((label) => {
         return {
           inputId: `input-label-${label.id}`,
-          order: label.LabelProject.order,
+          order: label.labelProject.order,
           labelId: label.id,
         };
       });

@@ -1,17 +1,32 @@
-import { Image } from "./image.model";
-import { Label } from "./label.model";
 export interface Project {
-  id: number;
-  link: string;
-  repository: string;
-  title: string;
+  id:               number;
+  link:             string;
+  repository:       string;
+  title:            string;
   shortDescription: string;
-  published: boolean;
-  description: string;
+  published:        boolean;
+  description:      string;
+  createdAt:        string;
+  slug:             string;
+  images:           Image[];
+  labels:           Label[];
+}
+
+export interface Image {
+  id:  number;
+  url: string;
+}
+
+export interface Label {
+  id:           number;
+  title:        string;
+  image:        string;
+  labelProject: LabelProject;
+}
+
+export interface LabelProject {
+  order:     null;
   createdAt: Date;
-  slug: string;
-  images: Image[];
-  labels: Label[];
 }
 
 export interface CreateProjectDto

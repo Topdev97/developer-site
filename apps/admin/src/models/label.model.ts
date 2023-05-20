@@ -5,7 +5,6 @@ export interface Label {
     type:         string;
     image:          string;
     createdAt:    Date;
-    LabelProject: LabelProject;
 }
 
 export interface CreateLabelDto extends Omit<Label,'id' | 'createdAt' | 'labelProject'>{}

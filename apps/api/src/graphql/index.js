@@ -16,7 +16,8 @@ const useGraphql = async (app) => {
         resolvers,
         plugins:[
             ApolloServerPluginDrainHttpServer({httpServer})
-        ]
+        ],
+        introspection:true
     })
     await server.start()
     app.use('/graphql',expressMiddleware(server,{}))
