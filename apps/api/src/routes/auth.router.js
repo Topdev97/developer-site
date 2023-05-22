@@ -1,35 +1,43 @@
-const express  = require('express')
-const { AuthService } = require('../services/auth.service.js') 
-const { checkAuth } = require('../middlewares/auth.jwt.js')
-const { UserService } = require('../services/user.service.js')
+const express = require("express");
+const { AuthService } = require("../services/auth.service.js");
+const { checkAuth } = require("../middlewares/auth.jwt.js");
+const { UserService } = require("../services/user.service.js");
 
+const router = express.Router();
+const authService = new AuthService();
+const userService = new UserService();
+router.post("/login", async (req, res, next) => {
+  try {
+    const {email,password} = req.body;
 
-const router = express.Router()
-const service = new AuthService()
-const userService = new UserService()
-router.post('/login',async (req,res,next)=>{
-    try {
-        const data = req.body
-        
-        const token = await service.sendToken(data)
-        res.json({token})        
-    } catch (error) {
-        next(error)
-    }
+    const user = await authService.getUser(email,password)
+    const payload = await authService.signToken(user)
+    res.json(payload);
+  } catch (error) {
+    next(error);
+  }
+});
+router.post("/recovery", async (req, res, next) => {
+  try {
+    const {email} = req.body;
+    const rta =await authService.sendRecovery(email)
 
-})
+    res.json(rta);
+  } catch (error) {
+    next(error);
+  }
+});
 
-router.get('/profile',checkAuth, async (req, res, next) => {
-    try {
-      const {id} = req.user
-      const user= await userService.findOne(id)
+router.get("/profile", checkAuth, async (req, res, next) => {
+  try {
+    const { sub } = req.payload;
     
-      res.status(200).json(user)
-    } catch (error) {
-      next(error)
-    }
-  
-  });
+    const user = await userService.findOne(sub);
 
+    res.status(200).json(user);
+  } catch (error) {
+    next(error);
+  }
+});
 
-module.exports = router
+module.exports = router;

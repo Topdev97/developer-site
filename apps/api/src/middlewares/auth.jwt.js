@@ -1,13 +1,13 @@
 
 const { AuthService } = require('../services/auth.service.js') 
 
-const service = new AuthService()
+const authService = new AuthService()
 async function checkAuth(req,res,next) {
-    const token = req.headers.authorization 
+    
+    
     try {
-        const user = await service.verifyToken(token)
-        
-        req.user = user
+        const result = await authService.verifyToken(req.headers.authorization.replace('Bearer ',''))
+        req.payload = result.payload
         next()        
     } catch (error) {
         next(new Error('invalid token'))
