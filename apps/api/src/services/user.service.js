@@ -45,7 +45,7 @@ class UserService {
     const user = await models.User.findOne({
       id,
       attributes: {
-        exclude: ["password", "recoveryToken"],
+        exclude: ["password"],
       },
     });
     if (!user) {

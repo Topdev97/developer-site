@@ -20,7 +20,7 @@ const config = {
   refreshSecret: process.env.JWT_SECRET,
   cloudinaryUrl: process.env.CLOUDINARY_URL,
   smtpEmail: process.env.SMTP_EMAIL,
-  smtpPassword: process.env.SMTP_PASSOWRD,
+  smtpPassword: process.env.SMTP_PASSWORD,
 };
 
 console.log("[project-config]:", config);
