@@ -43,10 +43,7 @@ export const ProjectDetail = ({project}:ProjectDetailProps) => {
         </div>
         <div className='buttons w-full flex flex-col items-center md:flex-row gap-3 md:gap-6' style={{alignSelf:'start'}}>
             <Link href={project.repository} className='btn--primary w-64'>
-                Go to Repo
-            </Link>
-            <Link href={project.link} className='btn--tertiary w-64'>
-                Go to App
+                Go to Repository
             </Link>
         </div>
 
