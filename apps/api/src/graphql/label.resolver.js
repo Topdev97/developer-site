@@ -11,7 +11,24 @@ const getLabel = async (_,{id}) => {
   return label
 };
 
+const addLabel = async (_,{dto}) => {
+  const label = await service.create(dto)
+  return label
+}
+const updateLabel = async (_,{dto,id}) => {
+  
+  const label = await service.update(id,dto)
+  return label
+}
+const deleteLabel = async (_,{id}) => { 
+
+  return await service.delete(id)
+ }
+
 module.exports = {
   getLabel,
   getLabels,
+  addLabel,
+  updateLabel,
+  deleteLabel
 };

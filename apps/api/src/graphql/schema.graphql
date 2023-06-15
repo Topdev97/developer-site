@@ -38,3 +38,43 @@ type Profile {
   role: String!
   password: String
 }
+type Mutation {
+
+  addProject(dto:CreateProjectInput): Project
+  deleteProject(id:ID!):ID
+  
+  updateProject(id:ID!,dto:UpdateProjectInput):Project
+  addLabel(dto:CreateLabelInput): Label
+  updateLabel(id:ID!,dto:UpdateLabelInput):Label
+  deleteLabel(id:ID!):ID
+   
+}
+
+input CreateProjectInput {
+  title: String!
+  description: String
+  shortDescription: String!
+  link: String
+  repository: String
+  published: Boolean!
+  createdAt: String!
+  slug: String!
+  images: [Image!]
+  labels: [Label!]
+  
+
+}
+
+input UpdateProjectInput{
+  title: String
+  description: String
+  shortDescription: String
+  link: String
+  repository: String
+  published: Boolean
+  createdAt: String
+  slug: String
+  images: [Image]
+  labels: [Label]
+  
+}
