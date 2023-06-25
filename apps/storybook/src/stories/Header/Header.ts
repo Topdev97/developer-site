@@ -1,5 +1,5 @@
 import './header.css';
-import { createButton } from './Button';
+import { createButton } from '../Button/Button';
 
 export interface HeaderProps {
   user?: { name: string };
