@@ -12,4 +12,9 @@ const preview: Preview = {
   },
 };
 
+// const customViewPorts = {
+//   small:{},
+//   medium:{}
+// }
+
 export default preview;

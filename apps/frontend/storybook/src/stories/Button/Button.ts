@@ -40,8 +40,8 @@ export const createButton = ({
     btn.addEventListener('click', onClick);
   }
 
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  btn.className = ['storybook-button', `storybook-button--${size}`, mode].join(' ');
+  const mode = primary ? 'button--primary' : 'button--secondary';
+  btn.className = ['button', `button--${size}`, mode].join(' ');
 
   if (backgroundColor) {
     btn.style.backgroundColor = backgroundColor;

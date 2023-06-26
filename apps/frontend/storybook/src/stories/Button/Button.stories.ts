@@ -1,7 +1,6 @@
 import type { StoryObj, Meta } from '@storybook/html';
 import type { ButtonProps } from './Button';
 import { createButton } from './Button';
-
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 const meta = {
   title: 'Example/Button',
@@ -14,13 +13,30 @@ const meta = {
   argTypes: {
     backgroundColor: { control: 'color' },
     label: { control: 'text' },
-    onClick: { action: 'onClick' },
+    onClick: { action: 'onClick',description:"Evento de Javascript" },
     primary: { control: 'boolean' },
     size: {
       control: { type: 'select' },
       options: ['small', 'medium', 'large'],
     },
   },
+  parameters:{
+    
+    backgrounds:{
+      default:"blackfriday",
+      values:[
+        {
+          name:"blackfriday",
+          value:'#000000'
+        },
+        {
+          name:"default",
+          value:'#ffffff'
+        },
+      ]
+    }
+  },
+  decorators:[]
 } satisfies Meta<ButtonProps>;
 
 export default meta;
@@ -31,6 +47,7 @@ export const Primary: Story = {
   args: {
     primary: true,
     label: 'Button',
+    
   },
 };
 

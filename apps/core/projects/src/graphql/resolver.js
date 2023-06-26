@@ -13,12 +13,12 @@ const resolvers = {
     // Image:getImage,
     // Images:getImages
   },
-  Mutation:{
-    addProject,
-    updateProject,
-    deleteProject,
-    deleteLabel
-  }
+  // Mutation:{
+  //   addProject,
+  //   updateProject,
+  //   deleteProject,
+  //   deleteLabel
+  // }
 };
 
 module.exports = {
