@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_1ad810717649ccf"
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.21",

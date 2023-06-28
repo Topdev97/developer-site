@@ -23,7 +23,7 @@ const meta = {
   parameters:{
     
     backgrounds:{
-      default:"blackfriday",
+      default:"default",
       values:[
         {
           name:"blackfriday",
