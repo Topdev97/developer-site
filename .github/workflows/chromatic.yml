@@ -20,6 +20,8 @@ jobs:
         with:
           version: 6.0.2
         # 👇 Adds Chromatic as a step in the workflow
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
       - name: Publish Extreme to Chromatic
         uses: chromaui/action@v1
         # Chromatic GitHub Action options
