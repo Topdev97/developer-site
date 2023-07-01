@@ -14,7 +14,7 @@ jobs:
     # Job steps
     steps:
       - uses: actions/checkout@v1
-      - name: Install dependencies
+      - name: Install pnpm
         # 👇 Install dependencies with the same package manager used in the project (replace it as needed), e.g., yarn, npm, pnpm
         uses: pnpm/action-setup@v2
         with:
