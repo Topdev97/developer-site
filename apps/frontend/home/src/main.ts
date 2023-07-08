@@ -87,14 +87,14 @@ async function loadLabels() {
   const techsToSelect = [
     'react',
     'angular',
-    'tailwind',
     'nodejs',
+    'tailwind',
     'typescript',
-
     'mongodb',
     'postgresql',
     'css',
-    'sequelize'
+    'sequelize',
+    'rust'
   ]
   const selectedTechs = techs.filter((tech)=>{
     const textTransform = tech.title.toLowerCase().replaceAll(' ','-')

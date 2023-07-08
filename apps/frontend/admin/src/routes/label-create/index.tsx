@@ -1,8 +1,12 @@
-import React from 'react'
-import { LabelForm } from '../../components/LabelForm'
+import React from "react";
+import { LabelForm } from "../../components/LabelForm";
 
-export const CreateLabelPage =  () => {
+export const CreateLabelPage = () => {
   return (
-    <LabelForm label={null}/>
-  )
-}
+    <main className="absolute top-20 left-0 right-0">
+      <div className="flex justify-center ">
+        <LabelForm label={null} />
+      </div>
+    </main>
+  );
+};
