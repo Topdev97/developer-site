@@ -33,7 +33,8 @@ type Story = StoryObj<ButtonProps>;
 
 // More on writing stories with args: https://storybook.js.org/docs/html/writing-stories/args
 
-export const Large: Story = {
+export const filled: Story = {
+  name:"Filled",
   args: {
     size: ButtonSize.Large,
     style: Style.filled,
@@ -44,13 +45,64 @@ export const Large: Story = {
   },
 };
 
-export const Medium: Story = {
+export const loadingFilled: Story = {
+  name:"Button Filled loading",
   args: {
-    size: ButtonSize.Medium,
-    label: "Button",
+    size: ButtonSize.Large,
+    style: Style.filled,
+    loading: true,
+    disable: false,
+    hidden: false,
+    label: "Button"
+  },
+};
+export const filledDisabled: Story = {
+  name:"Filled Disabled",
+  args: {
+    size: ButtonSize.Large,
+    style: Style.filled,
+    loading: false,
+    disable: true,
+    hidden: false,
+    label: "Button"
+  },
+};
+
+export const outlined: Story = {
+  name:"Outlined",
+  args: {
+    size: ButtonSize.Large,
+    style: Style.outlined,
     loading: false,
     disable: false,
     hidden: false,
+    label: "Button"
+  },
+};
+
+
+
+export const loadingOutlined: Story = {
+  name:"Button Outlined loading",
+  args: {
+    size: ButtonSize.Large,
     style: Style.outlined,
+    loading: true,
+    disable: false,
+    hidden: false,
+    label: "Button"
+  },
+};
+
+
+export const outlinedDisabled: Story = {
+  name:"Outlined disabled",
+  args: {
+    size: ButtonSize.Large,
+    style: Style.outlined,
+    loading: false,
+    disable: true,
+    hidden: false,
+    label: "Button"
   },
 };
