@@ -1,0 +1,77 @@
+@import "../common/variables.css";
+  
+.button {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+}
+
+.button--filled {
+  color: var(--black);
+  background-color: var(--primary-600);
+  border: 1px solid var(--primary-600);
+
+}
+.button--outlined {
+  color: var(--primary-600);
+  background-color: var(--white);
+  border: 1px solid var(--primary-600);
+}
+.button--small {
+  
+  font-size: var(--font-size-body-small);
+  padding: 10px 16px;
+}
+.button--medium {
+
+  font-size: var(--font-size-body-medium);
+  padding: 8px 16px;
+}
+.button--large {
+  font-size: var(--font-size-body-large);
+  padding: 12px 24px;
+}
+
+.button > div {
+  width: var(--font-size-body-large);
+  height: var(--font-size-body-large);
+  border-radius: 50%;
+  border: 4px solid #0000;
+  border-right-color: var(--primary-600);
+  position: relative;
+  animation: s4 1s infinite linear;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.button > div:before,
+.button > div:after {
+  content: "";
+  position: absolute;
+  inset:-4px;
+  border-radius: 50%;
+  border:inherit;
+  animation:inherit;
+  animation-duration: 2s;
+}
+.button > div:after {
+  animation-duration: 4s;
+}
+
+@keyframes s4 {
+  100% {transform: rotate(1turn)}
+}
+
+
+.button--disabled {
+  cursor: not-allowed;
+  color: var(--neutral-600);
+  border: 1px solid var(--neutral-600);
+  
+  
+}
+.hidden{
+  display: none;
+}

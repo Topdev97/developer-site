@@ -42,7 +42,7 @@ export const createHeader = ({ user, onLogout, onLogin, onCreateAccount }: Heade
         size: 'small',
         label: 'Sign up',
         onClick: onCreateAccount,
-        primary: true,
+        style: true,
       })
     );
   }

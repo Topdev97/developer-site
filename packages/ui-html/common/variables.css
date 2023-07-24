@@ -1,0 +1,93 @@
+:root {
+  /* Colors */
+
+  --primary-100: #f6c6c6ff;
+  --primary-300: #de2a39ff;
+  --primary-600: #d91a1aff;
+  --primary-700: #a61414ff;
+  --secondary-100: #e6eff3ff;
+  --secondary-300: #9bbdcdff;
+  --secondary-600: #065a82ff;
+  --secondary-700: #054462ff;
+  --warning-100: #ffdb99ff;
+  --warning-300: #ffa500ff;
+  --warning-600: #a16800ff;
+  --success-100: #99dbc8ff;
+  --success-300: #00a676ff;
+  --success-600: #007d5aff;
+  --info-100: #a6d5faff;
+  --info-300: #2196f3ff;
+  --info-600: #1971b6ff;
+  --neutral-100: #f8f8f8ff;
+  --neutral-300: #e2e2e2ff;
+  --neutral-600: #6f6f6fff;
+  --white: #ffffffff;
+  --black: #000000ff;
+  --error-100: #f6c6c6ff;
+  --error-300: #ff0000ff;
+  --error-600: #a61414ff;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --box-shadow1:0px 2px 3px 1px rgba(0, 0, 0, 0.50);
+
+
+  /* Typographies */
+  --font-size-title-big: 68px;
+  --font-size-title-medium: 42px;
+  --font-size-title-small: 26px;
+  --font-size-body-large: 16px;
+  --font-size-body-medium: 10px;
+  --font-size-body-small: 6px;
+
+  /* Font weight */
+  --font-weight-normal: 400;
+
+}
+
+/* Classes using CSS variables */
+.title-large {
+  font-size: var(--font-size-title-big);
+  font-weight: var(--font-weight-normal);
+}
+
+.title-medium {
+  font-size: var(--font-size-title-medium);
+  font-weight: var(--font-weight-normal);
+}
+
+.title-small {
+  font-size: var(--font-size-title-small);
+  font-weight: var(--font-weight-normal);
+}
+
+.body-big {
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-normal);
+}
+
+.body-medium {
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-normal);
+}
+
+.body-small {
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-normal);
+}
+
+
+
+
+
+
+
+
