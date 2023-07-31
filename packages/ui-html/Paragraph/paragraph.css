@@ -1,0 +1,17 @@
+@import '../common/variables.css';
+
+h1.paragraph {
+    font-size: var(--font-size-title-large);
+    color: var(--primary-300);
+}
+
+h2.paragraph {
+    font-size: var(--font-size-title-medium);
+    color: var(--primary-300);
+}
+
+
+h3.paragraph {
+    font-size: var(--font-size-title-small);
+    color: var(--primary-300);
+}

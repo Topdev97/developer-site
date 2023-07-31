@@ -41,7 +41,7 @@
 
 
   /* Typographies */
-  --font-size-title-big: 68px;
+  --font-size-title-large: 68px;
   --font-size-title-medium: 42px;
   --font-size-title-small: 26px;
   --font-size-body-large: 16px;
@@ -55,7 +55,7 @@
 
 /* Classes using CSS variables */
 .title-large {
-  font-size: var(--font-size-title-big);
+  font-size: var(--font-size-title-large);
   font-weight: var(--font-weight-normal);
 }
 
