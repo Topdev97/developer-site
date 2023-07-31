@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/html";
-import { ButtonProps, ButtonSize, Style } from "ui-html";
+import {  ButtonSize, Style, ButtonProps } from "ui-html";
 import { createButton } from "ui-html";
 
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
