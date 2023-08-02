@@ -1,4 +1,4 @@
-import './paragraph.css'
+import './markdown.css'
 
 export interface TagProps {
     backgroundColor?: string;
@@ -10,7 +10,7 @@ export interface TagProps {
 export const createElement = ({label,backgroundColor,tag}:TagProps) => {
 
     const element = document.createElement(tag)
-    element.className = "paragraph"
+    element.className = "markdown"
     element.textContent = label
     return element
 }

@@ -1,0 +1,36 @@
+@import "../common/variables.css";
+
+
+.text {
+    color: var(--white);
+    font-family: 'Ubuntu Mono', monospace;
+}
+.text--title-large {
+  font-size: var(--font-size-title-large);
+  font-weight: var(--font-weight-normal);
+}
+
+.text--title-medium {
+  font-size: var(--font-size-title-medium);
+  font-weight: var(--font-weight-normal);
+}
+
+.text--title-small {
+  font-size: var(--font-size-title-small);
+  font-weight: var(--font-weight-normal);
+}
+
+.text--body-big {
+  font-size: var(--font-size-body-large);
+  font-weight: var(--font-weight-normal);
+}
+
+.text--body-medium {
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-normal);
+}
+
+.text--body-small {
+  font-size: var(--font-size-body-small);
+  font-weight: var(--font-weight-normal);
+}
