@@ -8,6 +8,20 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+      
+    },
+    backgrounds: {
+      default: 'black',
+      values: [
+        {
+          name: 'black',
+          value: '#000000',
+        },
+        {
+          name: 'facebook',
+          value: '#3b5998',
+        },
+      ],
     },
   },
 };

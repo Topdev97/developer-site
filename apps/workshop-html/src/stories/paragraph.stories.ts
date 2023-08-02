@@ -1,6 +1,6 @@
 import type { StoryObj, Meta } from "@storybook/html";
 import type { TagProps } from "ui-html";
-import { createElement } from "ui-html";
+import { createText } from "ui-html";
 
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 const meta = {
@@ -9,7 +9,7 @@ const meta = {
   render: (args) => {
     // You can either use a function to create DOM elements or use a plain html string!
     // return `<div>${label}</div>`;
-    return createElement(args);
+    return createText(args);
   },
   argTypes: {
     backgroundColor: { control: "color" },

@@ -11,7 +11,7 @@
     "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.1.1",
+    "@storybook/addon-essentials": "^7.2.0",
     "@storybook/addon-interactions": "^7.1.1",
     "@storybook/addon-links": "^7.1.1",
     "@storybook/addon-mdx-gfm": "^7.1.1",
