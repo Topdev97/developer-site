@@ -1,7 +1,7 @@
 import type { StoryObj, Meta } from "@storybook/html";
 import { TextProps,TextType } from "ui-html";
 import { createText } from "ui-html";
-
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 const meta = {
   title: "Text",
@@ -22,7 +22,7 @@ const meta = {
       TextType.bodySmall
     ] }
 
-  },
+  }
 } satisfies Meta<TextProps>;
 
 export default meta;
@@ -33,7 +33,7 @@ type Story = StoryObj<TextProps>;
 export const titleLarge: Story = {
   name:"Title large",
   args: {
-    label: "Element",
+    label: "Fullstack Developer",
     type:TextType.titleLarge
   },
 };
@@ -42,7 +42,7 @@ export const titleLarge: Story = {
 export const titleMedium: Story = {
   name:"Title medium",
   args: {
-    label: "Element",
+    label: "Favorites tools",
     type:TextType.titleMedium
   },
 };
@@ -50,7 +50,7 @@ export const titleMedium: Story = {
 export const titleSmall: Story = {
   name:"Title small",
   args: {
-    label: "Element",
+    label: "Mercadopago Checkout",
     type:TextType.titleSmall
   },
 };
@@ -59,7 +59,7 @@ export const titleSmall: Story = {
 export const bodyLarge: Story = {
   name:"Body large",
   args: {
-    label: "Element",
+    label: "I'm a business administrator by profession, I worked in management control for 5 years, and now that I discovered what I am passionate about, Tech and bussiness, specially a i like web development with Javascript in frontend and backend with NodeJS I like to meet people, learn new things, achieve goals and sports, I'm a blue belt in brazilian jiu jitsu.",
     type:TextType.bodyLarge
   },
 };
@@ -67,7 +67,7 @@ export const bodyLarge: Story = {
 export const bodyMedium: Story = {
     name:"Body medium",
     args: {
-      label: "Element",
+      label: "I'm a business administrator by profession, I worked in management control for 5 years, and now that I discovered what I am passionate about, Tech and bussiness, specially a i like web development with Javascript in frontend and backend with NodeJS I like to meet people, learn new things, achieve goals and sports, I'm a blue belt in brazilian jiu jitsu.",
       type:TextType.bodyMedium
     },
   };
@@ -75,7 +75,7 @@ export const bodyMedium: Story = {
 export const bodySmall: Story = {
     name:"Body small",
     args: {
-      label: "Element",
+      label: "I'm a business administrator by profession, I worked in management control for 5 years, and now that I discovered what I am passionate about, Tech and bussiness, specially a i like web development with Javascript in frontend and backend with NodeJS I like to meet people, learn new things, achieve goals and sports, I'm a blue belt in brazilian jiu jitsu.",
       type:TextType.bodySmall
     },
   };

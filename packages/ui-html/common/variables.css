@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap');
+
 :root {
   /* Colors */
 
@@ -45,45 +46,17 @@
   --font-size-title-large: 68px;
   --font-size-title-medium: 42px;
   --font-size-title-small: 26px;
-  --font-size-body-large: 16px;
-  --font-size-body-medium: 10px;
-  --font-size-body-small: 6px;
+  --font-size-body-medium: 16px;
+  --font-size-body-small: 10px;
 
   /* Font weight */
+  --font-weight-light: 300;
+
   --font-weight-normal: 400;
 
 }
 
-/* Classes using CSS variables */
-.title-large {
-  font-size: var(--font-size-title-large);
-  font-weight: var(--font-weight-normal);
-}
 
-.title-medium {
-  font-size: var(--font-size-title-medium);
-  font-weight: var(--font-weight-normal);
-}
-
-.title-small {
-  font-size: var(--font-size-title-small);
-  font-weight: var(--font-weight-normal);
-}
-
-.body-big {
-  font-size: var(--font-size-body-large);
-  font-weight: var(--font-weight-normal);
-}
-
-.body-medium {
-  font-size: var(--font-size-body-medium);
-  font-weight: var(--font-weight-normal);
-}
-
-.body-small {
-  font-size: var(--font-size-body-small);
-  font-weight: var(--font-weight-normal);
-}
 
 
 

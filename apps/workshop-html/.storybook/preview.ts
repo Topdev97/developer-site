@@ -1,7 +1,11 @@
 import type { Preview } from "@storybook/html";
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
+
 
 const preview: Preview = {
   parameters: {
+    
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
@@ -10,19 +14,23 @@ const preview: Preview = {
       },
       
     },
+    viewport: {
+      viewports: INITIAL_VIEWPORTS,
+    },
     backgrounds: {
-      default: 'black',
+      default: 'dark',
       values: [
         {
-          name: 'black',
+          name: 'dark',
           value: '#000000',
         },
         {
-          name: 'facebook',
-          value: '#3b5998',
+          name: 'light',
+          value: '#ffffff',
         },
       ],
     },
+    
   },
 };
 

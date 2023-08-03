@@ -1,33 +1,42 @@
-import type { Meta, StoryObj } from '@storybook/html';
-import type { HeaderProps } from './Header';
-import { createHeader } from './Header';
-
+import type { StoryObj, Meta } from "@storybook/html";
+import { HeaderProps } from "ui-html";
+import { createHeader } from "ui-html";
+// More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 const meta = {
-  title: 'Example/Header',
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/html/writing-docs/autodocs
-  tags: ['autodocs'],
-  render: (args) => createHeader(args),
-  parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/html/configure/story-layout
-    layout: 'fullscreen',
+  title: "Header",
+  tags: ["autodocs"],
+  render: (args) => {
+    // You can either use a function to create DOM elements or use a plain html string!
+    // return `<div>${label}</div>`;
+    return createHeader(args);
   },
-  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    onLogin: { action: 'onLogin' },
-    onLogout: { action: 'onLogout' },
-    onCreateAccount: { action: 'onCreateAccount' },
-  },
+    title: { control: "text" },
+    
+    subtitle:{ control: "text" },
+    
+
+  }
 } satisfies Meta<HeaderProps>;
 
 export default meta;
 type Story = StoryObj<HeaderProps>;
 
-export const LoggedIn: Story = {
+// More on writing stories with args: https://storybook.js.org/docs/html/writing-stories/args
+
+export const header: Story = {
+  name:"Card small",
   args: {
-    user: {
-      name: 'Jane Doe',
-    },
+    title: "Element",
+    subtitle:"description",
   },
 };
 
-export const LoggedOut: Story = {};
+
+export const headerCTA: Story = {
+  name:"Card small",
+  args: {
+    title: "Element",
+    subtitle:"description",
+  },
+};

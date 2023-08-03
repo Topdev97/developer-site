@@ -3,34 +3,38 @@
 
 .text {
     color: var(--white);
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: 'Ubuntu', sans-serif;
 }
 .text--title-large {
   font-size: var(--font-size-title-large);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-light);
 }
 
 .text--title-medium {
   font-size: var(--font-size-title-medium);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-light);
 }
 
 .text--title-small {
   font-size: var(--font-size-title-small);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-light);
 }
 
-.text--body-big {
-  font-size: var(--font-size-body-large);
+
+.text--body-large {
+  font-size: var(--font-size-body-medium);
   font-weight: var(--font-weight-normal);
+  line-height: var(--space-6);
 }
 
 .text--body-medium {
   font-size: var(--font-size-body-medium);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-light);
+  line-height: var(--space-5);
+
 }
 
 .text--body-small {
   font-size: var(--font-size-body-small);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-light);
 }
