@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/html";
-import { TextProps,TextType } from "ui-html";
+import { TextProps,TextType ,TextTags} from "ui-html";
 import { createText } from "ui-html";
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
@@ -20,6 +20,14 @@ const meta = {
       TextType.bodyLarge,
       TextType.bodyMedium,
       TextType.bodySmall
+    ] },
+    tag:{ control: { type: "select" }, options: [
+      TextTags.H1,
+      TextTags.H2,
+      TextTags.H3,
+      TextTags.H4,
+      TextTags.P
+  
     ] }
 
   }

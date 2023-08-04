@@ -1,6 +1,8 @@
-@import "../common/variables.css";
 
 
+h1,h2,h3,h4,h5,h6,p,span {
+  margin: 0;
+}
 .text {
     color: var(--white);
     font-family: 'Ubuntu', sans-serif;

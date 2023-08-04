@@ -42,9 +42,9 @@ export const cardMedium: Story = {
 export const cardSmall: Story = {
   name:"Card small",
   args: {
-    title: "Element",
-    description:"description",
-    image:"https://images.unsplash.com/photo-1690699708663-b1ad664473b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=685&q=80",
+    title: "Consulting",
+    description:"An amazing implementation of authentication with Firebase and NodeJS",
+    image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1680902584/davc93/Screenshot%20from%202023-04-07%2017-20-26.png.png",
     size:CardSize.Small
   },
 };

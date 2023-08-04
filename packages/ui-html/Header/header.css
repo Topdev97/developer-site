@@ -1,0 +1,13 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.header__subtitle{
+
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-5);
+}
+.header__button {
+    width: fit-content;
+}

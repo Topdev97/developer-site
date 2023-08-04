@@ -14,6 +14,10 @@ const meta = {
     title: { control: "text" },
     
     subtitle:{ control: "text" },
+    buttonText:{ control: "text" },
+    CTA:{ control: "boolean" },
+    
+    onClick: { action: 'clicked' }
     
 
   }
@@ -25,18 +29,22 @@ type Story = StoryObj<HeaderProps>;
 // More on writing stories with args: https://storybook.js.org/docs/html/writing-stories/args
 
 export const header: Story = {
-  name:"Card small",
+  name:"Header with CTA",
   args: {
-    title: "Element",
-    subtitle:"description",
+    title: "Book your appointment",
+    subtitle:"build your idea together, and get started",
+    buttonText:"Book now!",
+    CTA:true
   },
 };
 
 
 export const headerCTA: Story = {
-  name:"Card small",
+  name:"Header",
   args: {
-    title: "Element",
-    subtitle:"description",
+    title: "Book your appointment",
+    subtitle:"build your idea together, and get started",
+    buttonText:"",
+    CTA:false
   },
 };

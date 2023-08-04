@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/html";
-import {  ButtonSize, Style, ButtonProps } from "ui-html";
+import {  ButtonSizes, ButtonStyles, ButtonProps } from "ui-html";
 import { createButton } from "ui-html";
 
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
@@ -37,8 +37,8 @@ type Story = StoryObj<ButtonProps>;
 export const filled: Story = {
   name:"Filled",
   args: {
-    size: ButtonSize.Large,
-    style: Style.filled,
+    size: ButtonSizes.Large,
+    style: ButtonStyles.filled,
     loading: false,
     disable: false,
     hidden: false,
@@ -49,8 +49,8 @@ export const filled: Story = {
 export const loadingFilled: Story = {
   name:"Button Filled loading",
   args: {
-    size: ButtonSize.Large,
-    style: Style.filled,
+    size: ButtonSizes.Large,
+    style: ButtonStyles.filled,
     loading: true,
     disable: false,
     hidden: false,
@@ -60,8 +60,8 @@ export const loadingFilled: Story = {
 export const filledDisabled: Story = {
   name:"Filled Disabled",
   args: {
-    size: ButtonSize.Large,
-    style: Style.filled,
+    size: ButtonSizes.Large,
+    style: ButtonStyles.filled,
     loading: false,
     disable: true,
     hidden: false,
@@ -72,8 +72,8 @@ export const filledDisabled: Story = {
 export const outlined: Story = {
   name:"Outlined",
   args: {
-    size: ButtonSize.Large,
-    style: Style.outlined,
+    size: ButtonSizes.Large,
+    style: ButtonStyles.outlined,
     loading: false,
     disable: false,
     hidden: false,
@@ -86,8 +86,8 @@ export const outlined: Story = {
 export const loadingOutlined: Story = {
   name:"Button Outlined loading",
   args: {
-    size: ButtonSize.Large,
-    style: Style.outlined,
+    size: ButtonSizes.Large,
+    style: ButtonStyles.outlined,
     loading: true,
     disable: false,
     hidden: false,
@@ -99,8 +99,8 @@ export const loadingOutlined: Story = {
 export const outlinedDisabled: Story = {
   name:"Outlined disabled",
   args: {
-    size: ButtonSize.Large,
-    style: Style.outlined,
+    size: ButtonSizes.Large,
+    style: ButtonStyles.outlined,
     loading: false,
     disable: true,
     hidden: false,

@@ -1,11 +1,11 @@
 import "./button.css";
-export enum ButtonSize {
-  Small = "small",
+export enum ButtonSizes {
+  
   Medium = "medium",
   Large = "large",
 }
 
-export enum Style {
+export enum ButtonStyles {
   filled = "filled",
   outlined = "outlined"
 }
@@ -14,7 +14,7 @@ export interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  style?: Style;
+  style?: ButtonStyles;
   /**
    * What background color to use
    */
@@ -22,7 +22,7 @@ export interface ButtonProps {
   /**
    * How large should the button be?
    */
-  size?: ButtonSize;
+  size?: ButtonSizes;
   /**
    * Button contents
    */
@@ -42,8 +42,8 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const createButton = ({
-  style = Style.filled,
-  size = ButtonSize.Small,
+  style = ButtonStyles.filled,
+  size = ButtonSizes.Large,
   loading = false,
   disable = false,
   hidden = false,

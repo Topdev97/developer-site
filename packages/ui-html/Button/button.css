@@ -17,13 +17,8 @@
 }
 .button--outlined {
   color: var(--primary-600);
-  background-color: var(--white);
+  background-color: var(--black);
   border: 1px solid var(--primary-600);
-}
-.button--small {
-  
-  font-size: var(--font-size-body-small);
-  padding: 10px 16px;
 }
 .button--medium {
 
@@ -31,58 +26,43 @@
   padding: 8px 16px;
 }
 .button--large {
-  font-size: var(--font-size-body-large);
+  font-size: var(--font-size-title-small);
   padding: 12px 24px;
 }
 
-
-.button.button--outlined > div {
-  border-right-color: var(--primary-600);
- 
+/* loader size */
+.button--large > div {
+  width:var(--font-size-title-small);
+  height:var(--font-size-title-small);
+  
+}
+.button--medium > div {
+  width:var(--font-size-body-medium);
+  height:var(--font-size-body-medium);
+  
 }
 
-.button.button--filled > div {
-  border-right-color: var(--white);
- 
+
+/* loader */
+
+.button--filled > div {
+  border-radius:50%;
+  background:conic-gradient(#0000 10%,var(--white));
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 4px),#000 0);
+  animation:s2 1s infinite linear;
+}
+@keyframes s2 {to{transform: rotate(1turn)}}
+
+.button--outlined > div {
+  border-radius:50%;
+  background:conic-gradient(#0000 10%,var(--primary-600));
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation:s3 1s infinite linear;
 }
 
-.button.button--medium > div {
-  width: var(--font-size-body-medium);
-  height: var(--font-size-body-medium);
- 
-}
+@keyframes s3 {to{transform: rotate(1turn)}}
 
-.button.button--large > div {
-  width: var(--font-size-body-large);
-  height: var(--font-size-body-large);
- 
-}
-.button > div {
-  border-radius: 50%;
-  border: 4px solid #0000;
-  border-right-color: var(--primary-600);
-  position: relative;
-  animation: s4 1s infinite linear;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-.button > div:before,
-.button > div:after {
-  content: "";
-  position: absolute;
-  inset:-4px;
-  border-radius: 50%;
-  border:inherit;
-  animation:inherit;
-  animation-duration: 2s;
-}
-.button > div:after {
-  animation-duration: 4s;
-}
 
-@keyframes s4 {
-  100% {transform: rotate(1turn)}
-}
 
 
 .button--disabled.button--outlined {

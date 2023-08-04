@@ -1,13 +1,63 @@
-@import "../common/variables.css";
-
 .card {
     border: 1px solid var(--primary-300);
     width: fit-content;
-    max-width: 320px;
     
 
 }
+.card--small{
+    
+    padding-block: var(--space-6);
+    padding-inline: var(--space-2);
+    display: flex;
+    align-items: center;
+   
+}
+.card--small .card__text-container{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-width: 220px;
+}
 
+.card--small .card__image {
+    width: 120px;
+    height: 120px;
+    object-fit:cover;
+
+} 
+.card--small .card__image-container{
+    padding-right: var(--space-4);
+}
+
+
+.card--small .card__title-container {
+    overflow: hidden;
+    color: var(--white);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+} 
+
+.card--small .card__description-container {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap; /* let the text wrap preserving spaces */
+
+    color: var(--white);
+    text-overflow: ellipsis;
+}
+.card--small .card__title {
+    
+    font-size: var(--font-size-title-small);
+} 
+
+.card--small .card__description {
+    color: var(--white);
+    font-size: var(--font-size-body-medium);
+    line-height: var(--space-6);
+} 
 .card--medium{
     padding-block: var(--space-7);
     padding-inline: var(--space-5);
@@ -15,6 +65,7 @@
     flex-direction: column;
     gap: 10px;
     align-items: center;
+    max-width: 320px;
     
 }
 .card--medium .card__text-container{
@@ -23,21 +74,46 @@
     align-items: center;
     gap: var(--space-2);
     text-align: center;
+    width: 100%;
 }
 
 .card--medium .card__image {
-    color: var(--white);
+    
     width: 280px;
     height: 150px;
     object-fit: cover;
 
+}
+.card--medium .card__title-container {
+    width: 100%;
+
+    overflow: hidden;
+    color: var(--white);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
 } 
-.card__title {
+
+.card--medium .card__description-container {
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; /* start showing ellipsis when 3rd line is reached */
+    white-space: pre-wrap; /* let the text wrap preserving spaces */
+
+    color: var(--white);
+    text-overflow: ellipsis;
+}
+.card--medium .card__title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     color: var(--white);
     font-size: var(--font-size-title-small);
 } 
 
-.card__description {
+.card--medium .card__description {
     color: var(--white);
     font-size: var(--font-size-body-medium);
     line-height: var(--space-6);
