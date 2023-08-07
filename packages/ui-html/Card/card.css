@@ -1,8 +1,18 @@
 .card {
-    border: 1px solid var(--primary-300);
+    border: 1px solid var(--white);
     width: fit-content;
     
+    
 
+}
+.card--on-click{
+    cursor: pointer;
+ 
+}
+.card--on-click:focus{
+
+    border: 1px solid var(--primary-300);
+    outline: none;
 }
 .card--small{
     

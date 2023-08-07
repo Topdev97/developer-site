@@ -16,9 +16,9 @@
 
 }
 .button--outlined {
-  color: var(--primary-600);
+  color: var(--white);
   background-color: var(--black);
-  border: 1px solid var(--primary-600);
+  border: 1px solid var(--white);
 }
 .button--medium {
 
@@ -48,14 +48,14 @@
 .button--filled > div {
   border-radius:50%;
   background:conic-gradient(#0000 10%,var(--white));
-  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 4px),#000 0);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
   animation:s2 1s infinite linear;
 }
 @keyframes s2 {to{transform: rotate(1turn)}}
 
 .button--outlined > div {
   border-radius:50%;
-  background:conic-gradient(#0000 10%,var(--primary-600));
+  background:conic-gradient(#0000 10%,var(--white));
   -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
   animation:s3 1s infinite linear;
 }

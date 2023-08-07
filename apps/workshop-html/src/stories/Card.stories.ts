@@ -1,5 +1,5 @@
 import type { StoryObj, Meta } from "@storybook/html";
-import { CardProps,CardSize } from "ui-html";
+import { CardProps,CardSizes } from "ui-html";
 import { createCard } from "ui-html";
 // More on how to set up stories at: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 const meta = {
@@ -13,11 +13,13 @@ const meta = {
   argTypes: {
     title: { control: "text" },
     size: { control: { type: "select" }, options: [
-        CardSize.Small,
-        CardSize.Medium
+        CardSizes.Small,
+        CardSizes.Medium
     ] },
     description:{ control: "text" },
-    image:{ control: "text" }
+    image:{ control: "text" },
+    link:{ control: "text" },
+
     
 
   }
@@ -34,7 +36,8 @@ export const cardMedium: Story = {
     title: "MercadoPago Checkout Pro",
     description:"An amazing implementation of authentication with Firebase and NodeJS",
     image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1680902584/davc93/Screenshot%20from%202023-04-07%2017-20-26.png.png",
-    size:CardSize.Medium
+    size:CardSizes.Medium,
+    link:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1680902584/davc93/Screenshot%20from%202023-04-07%2017-20-26.png.png"
   },
 };
 
@@ -45,6 +48,7 @@ export const cardSmall: Story = {
     title: "Consulting",
     description:"An amazing implementation of authentication with Firebase and NodeJS",
     image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1680902584/davc93/Screenshot%20from%202023-04-07%2017-20-26.png.png",
-    size:CardSize.Small
+    size:CardSizes.Small,
+    link:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1680902584/davc93/Screenshot%20from%202023-04-07%2017-20-26.png.png"
   },
 };
