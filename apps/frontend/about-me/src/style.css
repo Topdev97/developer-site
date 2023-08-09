@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--black);
+
+}
+header{
+  background: var(--black);
+  height: 100vh;
+  padding-top: var(--space-11);
+  padding-inline: var(--space-11);
+}
+
+.about-me{
+  background: var(--black);
+  
+}
+
+
+.skills{
+  background: var(--black);
+  
+}
+
+.portfolio{
+  background: var(--black);
+  
+}
+
+
+.contact{
+  background: var(--black);
+  
+}
+
+.navbar-container{
+  position: fixed;
+  top: var(--space-6);
+
+  left: var(--space-2);
+}

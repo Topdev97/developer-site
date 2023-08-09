@@ -1,0 +1,153 @@
+
+.main *,
+.main *::before,
+.main *::after {
+  box-sizing: border-box;
+}
+
+.main {
+  /* text-align: center; */
+  
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.hamburger {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.hamburger:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--white);
+  transform: rotate(0deg);
+  transition: all 0.4s cubic-bezier(0.54, -0.10, 0.57, 0.57);
+}
+
+.hamburger-input {
+  position: absolute;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 100%;
+  background: #fff;
+  height: 2px;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  position: relative;
+}
+
+.hamburger-line.first,
+.hamburger-line.third {
+  width: 50%;
+}
+
+.hamburger-line.third {
+  margin-left: 50%;
+  transform-origin: left;
+}
+
+.menu-button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.item-list {
+  position: absolute;
+  top: 100px;
+  transform:  scale(0);
+  transform-origin: center;
+  transition: all 0.4s cubic-bezier(0.54, -0.10, 0.57, 0.57);
+  border: 1px solid var(--white);
+  color: var(--white);
+  width: 150px;
+  left: 0;
+  padding: 15px 0;
+  text-align: left;
+  font-weight: 300;
+  opacity: 0;
+  user-select: none;
+}
+
+.item-list div {
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.item-list div:hover {
+
+  color: var(--primary-600);
+}
+
+.menu-button {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.menu-button:checked ~ .item-list {
+  transform:  scale(1);
+  opacity: 1;
+  user-select: auto;
+}
+
+.menu-button:checked ~ .icon-wrapper .hamburger-line.second {
+  transform: rotate(-45deg);
+}
+
+.menu-button:checked ~ .icon-wrapper .hamburger-line.first {
+  transform: translate(2px, 8px) rotate(-135deg);
+}
+
+.menu-button:checked ~ .icon-wrapper .hamburger-line.third {
+  transform: translate(11px, -3px) rotate(-135deg);
+}
+
+.menu-button:checked ~ .icon-wrapper .hamburger:before {
+  transform: rotate(45deg);
+}
+
+.signature-wrapper {
+  margin-top: 150px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.signature-title {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: normal;
+  color: #444;
+}
+
+.signature-link {
+  color: #444;
+  display: inline-block;
+  margin: 20px 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  border-bottom: solid 2px #444;
+}

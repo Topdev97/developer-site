@@ -19,14 +19,16 @@ const meta = {
       TextType.titleSmall,
       TextType.bodyLarge,
       TextType.bodyMedium,
-      TextType.bodySmall
+      TextType.bodySmall,
+      TextType.listItem
     ] },
     tag:{ control: { type: "select" }, options: [
       TextTags.H1,
       TextTags.H2,
       TextTags.H3,
       TextTags.H4,
-      TextTags.P
+      TextTags.P,
+      TextTags.li
   
     ] }
 
@@ -85,5 +87,12 @@ export const bodySmall: Story = {
     args: {
       label: "I'm a business administrator by profession, I worked in management control for 5 years, and now that I discovered what I am passionate about, Tech and bussiness, specially a i like web development with Javascript in frontend and backend with NodeJS I like to meet people, learn new things, achieve goals and sports, I'm a blue belt in brazilian jiu jitsu.",
       type:TextType.bodySmall
+    },
+  };
+  export const listItem: Story = {
+    name:"List Item",
+    args: {
+      label: "I'm a business administrator by profession, I worked in management control for 5 years.",
+      type:TextType.listItem
     },
   };

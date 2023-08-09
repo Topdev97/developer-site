@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="navbar-container navbar-desktop">
+        <nav class="nav">
+          <input type="checkbox" /><span></span><span></span>
+          <div class="menu">
+            <li><a href="#">About me</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </div>
+        </nav>
+      </div>
+      <header>
+        <div>
+          <h1 class="text text--title-medium">Fullstack Developer</h1>
+          <p class="text text--body-large">
+            Hello my name is Diego Vergara, i'm a Fullstack developer with
+            complete knowledge of JavaScript-based technologies, especially
+            React and NodeJS.
+          </p>
+        </div>
+        <div>
+          <button type="button" class="button button--large button--outlined">
+            Portfolio
+          </button>
+
+          <button type="button" class="button button--large button--outlined">
+            Experience
+          </button>
+
+          <button type="button" class="button button--large button--outlined">
+            Technologies Stack
+          </button>
+        </div>
+      </header>
+      <main>
+
+        <section class="about-me">
+          <h2 class="text text--title-medium">About me</h2>
+          <div class="about-me__experience">
+            <h3 class="text text--title-small">Experience</h3>
+          </div>
+  
+          <div class="about-me__expectations">
+            <h3 class="text text--title-small">Professional expectations</h3>
+          </div>
+          <div class="about-me__hobbies">
+            <h3 class="text text--title-small">Hobbies and personal life</h3>
+          </div>
+        </section>
+        <section class="skills">
+          <h2 class="text text--title-medium">Skills</h2>
+          <div class="skills__soft-skills"></div>
+          <div class="skills_tech-stack"></div>
+        </section>
+        <section class="portfolio">
+          <h2 class="text text--title-medium">My portfolio</h2>
+  
+          <div class="portfolio__list"></div>
+        </section>
+        <section class="contact">
+          <h2 class="text text--title-medium">Contact me</h2>
+  
+          <div class="contact__social-media"></div>
+          <div class="contact__contact-form"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,8 +1,8 @@
 @import "../common/variables.css";
   
 .button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+
+  font-family: 'Ubuntu', sans-serif;
   border: 0;
   cursor: pointer;
   display: inline-block;

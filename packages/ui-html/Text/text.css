@@ -40,3 +40,10 @@ h1,h2,h3,h4,h5,h6,p,span {
   font-size: var(--font-size-body-small);
   font-weight: var(--font-weight-light);
 }
+.text--list-item {
+  list-style: bullet; 
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--space-6);
+
+}

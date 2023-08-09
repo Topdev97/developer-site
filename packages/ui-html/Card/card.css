@@ -1,6 +1,8 @@
 .card {
     border: 1px solid var(--white);
     width: fit-content;
+
+    font-family: 'Ubuntu', sans-serif;
     
     
 

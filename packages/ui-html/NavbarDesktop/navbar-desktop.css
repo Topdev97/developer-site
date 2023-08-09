@@ -1,7 +1,11 @@
 
 .navbar-container{
     width: fit-content;
+    background-color: var(--black);
+
+    font-family: 'Ubuntu', sans-serif;
 }
+
 
 .nav, .menu {
     display: flex;
@@ -11,7 +15,7 @@
 
 .nav {
     position: relative;
-    background-color: var(--dark);
+    background-color: var(--black);
     padding: 20px;
     transition: 0.5s;
     overflow: hidden;
