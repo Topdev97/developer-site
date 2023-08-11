@@ -18,39 +18,31 @@ li.text {
   padding-inline: var(--space-3);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5,1fr);
   column-gap: var(--space-3);
+
+
 }
 
 .hero__text {
   grid-column: 1/7;
-  grid-row: 1/2;
+  grid-row: 2/3;
   align-self: center;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
 }
 
-.hero__CTA {
-  grid-column: 1/4;
-  grid-row: 2/3;
-  display: flex;
-  gap: var(--space-2);
-  flex-direction: column;
-}
 
 @media (min-width: 768px) {
   .hero {
     padding-inline: var(--space-8);
+    padding-top: 0;
+
   }
   .hero__text {
     grid-column: 1/5;
-    grid-row: 1/2;
-  }
-
-  .hero__CTA {
-    grid-column: 1/4;
     grid-row: 2/3;
-    flex-direction: row;
   }
 }
 .skills {
@@ -70,16 +62,30 @@ li.text {
 }
 
 .skills__techs-stack {
+  display: flex;
+  flex-direction: column;
   grid-column: 1/7;
   grid-row: 2/3;
 }
+
+.skills__techs-stack > h3 {
+  margin-bottom: var(--space-3);
+}
+
 .skills__stack-list {
   grid-column: 1/7;
   grid-row: 3/4;
 }
 .skills__soft-skills {
+  display: flex;
+  flex-direction: column;
+
   grid-column: 1/7;
   grid-row: 5/6;
+}
+
+.skills__soft-skills > h3 {
+  margin-bottom: var(--space-3);
 }
 @media (min-width: 768px) {
   .skills {
@@ -229,13 +235,13 @@ li.text {
 .contact__social-media-container {
   grid-column: 1/7;
   display: flex;
+  
   flex-direction: column;
   gap: var(--space-5);
 
 }
 .contact__form-container {
   grid-column: 1/7;
-  justify-self: center;
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
@@ -245,6 +251,7 @@ li.text {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  width: 100%;
 }
 .contact__social-media {
   display: flex;
@@ -257,10 +264,14 @@ li.text {
     padding-inline: var(--space-8);
   }
   .contact__social-media-container {
-    grid-column: 1/4;
+    grid-column: 2/4;
+    
+
   }
   .contact__form-container {
-    grid-column: 4/7;
+    grid-column: 4/6;
+    text-align: center;
+    justify-self: center;
   }
     
 }
@@ -275,3 +286,21 @@ li.text {
 .nav input:checked ~ .menu {
   width: 480px !important;
 }
+
+.navbar-desktop{
+  display: none;
+}
+.navbar-mobile{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+@media (min-width: 768px) {
+ .navbar-desktop{
+  display: block;
+ }    
+ .navbar-mobile{
+  display: none;
+ }
+}
+

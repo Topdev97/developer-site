@@ -30,7 +30,9 @@ const meta = {
       TextTags.P,
       TextTags.li
   
-    ] }
+    ] },
+    isLink: { control: "boolean" },
+
 
   }
 } satisfies Meta<TextProps>;
@@ -94,5 +96,13 @@ export const bodySmall: Story = {
     args: {
       label: "I'm a business administrator by profession, I worked in management control for 5 years.",
       type:TextType.listItem
+    },
+  };
+  export const link: Story = {
+    name:"Link",
+    args: {
+      label: "I'm a link",
+      type:TextType.bodyMedium,
+      isLink:true
     },
   };

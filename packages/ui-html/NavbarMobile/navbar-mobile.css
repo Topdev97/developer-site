@@ -32,6 +32,7 @@
   border-style: solid;
   border-width: 1px;
   border-color: var(--white);
+  background-color: var(--black);
   transform: rotate(0deg);
   transition: all 0.4s cubic-bezier(0.54, -0.10, 0.57, 0.57);
 }
@@ -78,21 +79,29 @@
   transition: all 0.4s cubic-bezier(0.54, -0.10, 0.57, 0.57);
   border: 1px solid var(--white);
   color: var(--white);
-  width: 150px;
+  width: 180px;
   left: 0;
   padding: 15px 0;
   text-align: left;
   font-weight: 300;
   opacity: 0;
   user-select: none;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
 }
 
-.item-list div {
+.item-list a {
   padding: 10px 30px;
   cursor: pointer;
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-normal);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--white);
 }
 
-.item-list div:hover {
+.item-list a:hover {
 
   color: var(--primary-600);
 }

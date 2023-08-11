@@ -17,24 +17,31 @@ export enum TextTags {
     H3 = "h3",
     H4 = "h4",
     P = "p",
-    li = "li"
+    li = "li",
+    a = "a"
 }
 
 export interface TextProps {
     label:string;
-    type:TextType
-    tag?:TextTags
+    type:TextType;
+    tag?:TextTags;
+    isLink:boolean
 }
   
 
-export const createText = ({label,type,tag}:TextProps) => {
+export const createText = ({label,type,tag,isLink}:TextProps) => {
     
     if(type == TextType.listItem){
         tag = TextTags.li
+    } else if(isLink){
+        tag = TextTags.a
     }
 
     const element = document.createElement(tag ? tag : "div")
     element.className = ["text",type].join(" ")
+    if(isLink){
+        element.classList.add("text--link")
+    }
     element.textContent = label
     return element
 }

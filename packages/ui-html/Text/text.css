@@ -7,6 +7,15 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
     color: var(--white);
     font-family: 'Ubuntu', sans-serif;
 }
+
+.text--link{
+  text-decoration: none;
+  color: var(--primary-600);
+}
+.text--link:hover{
+  color: var(--primary-100);
+  
+}
 .text--title-large {
   font-size: var(--font-size-title-large);
   font-weight: var(--font-weight-light);

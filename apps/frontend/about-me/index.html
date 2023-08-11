@@ -4,7 +4,17 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Fullstack Developer - davc93</title>
+    <!-- Seo -->
+    <meta name="description" content="Diego Vergara, Fullstack developer specializing in JavaScript (React, NodeJS). Explore my portfolio, skills, and personal info." />
+
+
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Diego Vergara Casanova" />
+    <meta name="language" content="English" />
+
   </head>
   <body>
     <div id="app">
@@ -12,12 +22,13 @@
         <nav class="nav">
           <input type="checkbox" /><span></span><span></span>
           <div class="menu">
-
             <li><a href="#">About</a></li>
             <li><a href="#">Portfolio</a></li>
             <li><a href="#">Appointments</a></li>
 
-            <li style="border: 1px solid white; height: 50px;"><a href="#"></a></li>
+            <li style="border: 1px solid white; height: 50px">
+              <a href="#"></a>
+            </li>
             <li>
               <a href="https://www.linkedin.com/in/diego-vergara-casanova/"
                 ><svg
@@ -57,6 +68,7 @@
               ></a>
             </li>
             <li>
+              
               <a href="https://github.com/davc93">
                 <svg
                   width="36px"
@@ -109,27 +121,49 @@
           </div>
         </nav>
       </div>
+      <div class="navbar-mobile main">
+        <label class="menu-button-wrapper"
+          ><input class="menu-button" type="checkbox" />
+          <div class="icon-wrapper">
+            <label class="hamburger"
+              ><input class="hamburger-input" type="checkbox" /><span
+                class="hamburger-line first"
+              ></span
+              ><span class="hamburger-line second"></span
+              ><span class="hamburger-line third"></span
+            ></label>
+          </div>
+          <div class="item-list">
+            <a href="/">About</a>
+            <a href="#">Portfolio</a>
+            <a href="/appointments">Appointments</a>
+            <div
+              style="
+                border: 1px solid white;
+                width: 70%;
+                align-self: center;
+                margin-block: var(--space-3);
+              "
+            ></div>
+            <a href="https://github.com/davc93">Github</a>
+            <a href="https://www.linkedin.com/in/diego-vergara-casanova/"
+              >Linkedin</a
+            >
+          </div></label
+        >
+      </div>
       <header class="hero">
         <div class="hero__text">
           <h1 class="text text--title-medium">Fullstack Developer</h1>
           <p class="text text--body-large">
             Hello my name is Diego Vergara, i'm a Fullstack developer with
             complete knowledge of JavaScript-based technologies, especially
-            React and NodeJS.
+            React and NodeJS. Here you could see my
+            <a href="#" class="text text--body-large text--link">Skills</a>, my
+            <a href="#" class="text text--body-large text--link">portfolio</a>
+            with some of my projects and professional and personal information
+            <a href="#" class="text text--body-large text--link">about me.</a>
           </p>
-        </div>
-        <div class="hero__CTA">
-          <button type="button" class="button button--large button--outlined">
-            Portfolio
-          </button>
-
-          <button type="button" class="button button--large button--outlined">
-            Experience
-          </button>
-
-          <button type="button" class="button button--large button--outlined">
-            Skills
-          </button>
         </div>
       </header>
       <main>
@@ -154,6 +188,7 @@
               eveniet, facilis consequuntur aperiam error assumenda, vero ullam
               minima eos tempore fugit temporibus non.
             </p>
+
             <p class="text text--body-large">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis
               ratione fuga asperiores dicta distinctio reiciendis, delectus
@@ -188,7 +223,7 @@
           </div>
 
           <div class="about-me__expectations">
-            <h3 class="text text--title-small">Professional expectations</h3>
+            <h3 class="text text--title-small">Motivations</h3>
             <p class="text text--body-medium">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
               quasi ipsa quidem sint dolore et aperiam eos possimus asperiores
@@ -328,8 +363,7 @@
             <div class="contact__form-container__text">
               <h4 class="text text--title-small">Send me a message</h4>
               <p class="text text--body-large">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Quaerat, quisquam similique.
+                I'll contact you as soon as possible
               </p>
             </div>
 
