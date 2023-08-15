@@ -1,31 +1,76 @@
-import "./slider.css"
+import "./slider.css";
+import { CardSizes, createCard } from "../Card";
 
 export interface SliderProps {
   hidden: boolean;
 }
 
-export const createSlider = ({ hidden = false }: SliderProps) => {
-  // Create section element
-  const carouselSection = document.createElement("section");
-  carouselSection.classList.add("carousel");
-  carouselSection.setAttribute("aria-label", "Gallery");
+const projects = [
+  {
+    description: "lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo ",
+    title: "Proyecto test",
+    image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1682371471/davc93/landing/descarga_3_jd1wj4.jpg"
+  
+  },
+  {
+    description: "lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo ",
+    title: "Proyecto test",
+    image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1682371471/davc93/landing/descarga_3_jd1wj4.jpg"
+  
+  },
+  {
+    description: "lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo ",
+    title: "Proyecto test",
+    image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1682371471/davc93/landing/descarga_3_jd1wj4.jpg"
+  
+  },
+  {
+    description: "lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo ",
+    title: "Proyecto test",
+    image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1682371471/davc93/landing/descarga_3_jd1wj4.jpg"
+  
+  },
+  {
+    description: "lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo ",
+    title: "Proyecto test",
+    image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1682371471/davc93/landing/descarga_3_jd1wj4.jpg"
+  
+  },
+  {
+    description: "lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo lorem qlo ",
+    title: "Proyecto test",
+    image:"https://res.cloudinary.com/dxryc5jgr/image/upload/v1682371471/davc93/landing/descarga_3_jd1wj4.jpg"
+  
+  }
+
+]
+
+
+const projectsCards = projects.map((project)=>{
+  return createCard({
+    size: CardSizes.Medium,
+    description: project.description,
+    title: project.title,
+    image:project.image
+  });
+})
+
+const slideIds = [
+  "carousel__slide1",
+  "carousel__slide2",
+  "carousel__slide3",
+  "carousel__slide4",
+];
+
+const createSliderElements = () => {
+  // Array of slide IDs
 
   // Create ol element for viewport
   const viewportList = document.createElement("ol");
   viewportList.classList.add("carousel__viewport");
-
-  // Array of slide IDs
-  const slideIds = [
-    "carousel__slide1",
-    "carousel__slide2",
-    "carousel__slide3",
-    "carousel__slide4",
-  ];
-
-  // Create slides and append to viewport list
-  slideIds.forEach((slideId, index) => {
+   projectsCards.forEach((slideId, index) => {
     const slide = document.createElement("li");
-    slide.id = slideId;
+    slide.id = `carousel__slide${index}`;
     slide.tabIndex = 0;
     slide.classList.add("carousel__slide");
 
@@ -34,8 +79,8 @@ export const createSlider = ({ hidden = false }: SliderProps) => {
     slide.appendChild(snapper);
 
     const prevLink = document.createElement("a");
-    prevLink.href = `#${
-      slideIds[(index + slideIds.length - 1) % slideIds.length]
+    prevLink.href = `#carousel__slide${
+      (index + projectsCards.length - 1) % projectsCards.length
     }`;
     prevLink.classList.add("carousel__prev");
     prevLink.textContent =
@@ -43,7 +88,7 @@ export const createSlider = ({ hidden = false }: SliderProps) => {
     snapper.appendChild(prevLink);
 
     const nextLink = document.createElement("a");
-    nextLink.href = `#${slideIds[(index + 1) % slideIds.length]}`;
+    nextLink.href = `#carousel__slide${[(index + 1) % projectsCards.length]}`;
     nextLink.classList.add("carousel__next");
     nextLink.textContent =
       index === slideIds.length - 1 ? "Go to first slide" : "Go to next slide";
@@ -51,34 +96,45 @@ export const createSlider = ({ hidden = false }: SliderProps) => {
 
     viewportList.appendChild(slide);
   });
+  return viewportList;
+};
 
-  // Append viewport list to section
-  carouselSection.appendChild(viewportList);
-
-  // Create aside element for navigation
-  const navigationAside = document.createElement("aside");
-  navigationAside.classList.add("carousel__navigation");
-
+const createSliderList = () => {
   // Create ol element for navigation list
   const navigationList = document.createElement("ol");
   navigationList.classList.add("carousel__navigation-list");
 
   // Create navigation items and append to navigation list
-  slideIds.forEach((slideId, index) => {
+  projectsCards.forEach((slideId, index) => {
     const navigationItem = document.createElement("li");
     navigationItem.classList.add("carousel__navigation-item");
 
     const navigationLink = document.createElement("a");
-    navigationLink.href = `#${slideId}`;
+    navigationLink.href = `#carousel__slide${index}`;
     navigationLink.classList.add("carousel__navigation-button");
     navigationLink.textContent = `Go to slide ${index + 1}`;
 
     navigationItem.appendChild(navigationLink);
     navigationList.appendChild(navigationItem);
   });
+  return navigationList;
+};
+
+export const createSlider = ({ hidden = false }: SliderProps) => {
+  // Create section element
+  const carouselSection = document.createElement("section");
+  carouselSection.classList.add("carousel");
+  carouselSection.setAttribute("aria-label", "Gallery");
+
+  // Append viewport list to section
+  carouselSection.appendChild(createSliderElements());
+
+  // Create aside element for navigation
+  const navigationAside = document.createElement("aside");
+  navigationAside.classList.add("carousel__navigation");
 
   // Append navigation list to aside
-  navigationAside.appendChild(navigationList);
+  navigationAside.appendChild(createSliderList());
 
   // Append aside to section
   carouselSection.appendChild(navigationAside);

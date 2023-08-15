@@ -10,7 +10,7 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
 
 .text--link{
   text-decoration: none;
-  color: var(--primary-600);
+  color: var(--primary-300);
 }
 .text--link:hover{
   color: var(--primary-100);

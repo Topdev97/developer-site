@@ -4,7 +4,7 @@
   /* Colors */
 
   --primary-100: #f6c6c6ff;
-  --primary-300: #de2a39ff;
+  --primary-300: #E52936;
   --primary-600: #d91a1aff;
   --primary-700: #a61414ff;
   --secondary-100: #e6eff3ff;
@@ -24,7 +24,9 @@
   --neutral-300: #e2e2e2ff;
   --neutral-600: #6f6f6fff;
   --white: #ffffffff;
-  --black: #000000ff;
+  --dark-100: #404040;
+  --dark-300: #202020;
+  --dark-600: #000000;
   --error-100: #f6c6c6ff;
   --error-300: #ff0000ff;
   --error-600: #a61414ff;

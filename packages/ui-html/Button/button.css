@@ -18,7 +18,7 @@
 }
 .button--outlined {
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--dark-600);
   border: 1px solid var(--white);
 }
 .button--medium {

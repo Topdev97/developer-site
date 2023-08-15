@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--black);
+  background: var(--dark-600);
   box-sizing: border-box;
 }
 
@@ -13,7 +13,7 @@ li.text {
 }
 
 .hero {
-  background: var(--black);
+  background: var(--dark-600);
   height: 100vh;
   padding-inline: var(--space-3);
   display: grid;
@@ -48,7 +48,7 @@ li.text {
 .skills {
   padding-inline: var(--space-3);
 
-  background: var(--black);
+  background: var(--dark-600);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   column-gap: var(--space-3);
@@ -109,7 +109,7 @@ li.text {
 .about-me {
   padding-top: var(--space-11);
 
-  background: var(--black);
+  background: var(--dark-600);
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto 50vh auto;
@@ -182,7 +182,7 @@ li.text {
 }
 
 .portfolio {
-  background: var(--black);
+  background: var(--dark-600);
   padding-inline: var(--space-8);
   padding-top: var(--space-11);
 
@@ -218,7 +218,7 @@ li.text {
 }
 
 .contact {
-  background: var(--black);
+  background: var(--dark-600);
 
   padding-inline: var(--space-8);
 

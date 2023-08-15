@@ -64,6 +64,7 @@ export const createNavbarMobile = ({ logo: logoUrl }: NavbarMobileProps) => {
 
   menuItems.forEach((itemText) => {
     const divMenuItem = document.createElement("a");
+    divMenuItem.href = "#"
     divMenuItem.textContent = itemText;
     divItemList.appendChild(divMenuItem);
   });

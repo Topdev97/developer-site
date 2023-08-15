@@ -54,7 +54,7 @@
     position: relative;
     flex: 0 0 100%;
     width: 100%;
-    background-color: var(--black);
+    background-color: var(--dark-600);
     counter-increment: item;
     border: 1px solid var(--white);
   }
@@ -73,7 +73,7 @@
     scroll-snap-align: center;
   }
   
-  @media (hover: hover) {
+  /* @media (hover: hover) {
     .carousel__snapper {
       animation-name: tonext, snap;
       animation-timing-function: ease;
@@ -90,7 +90,7 @@
     .carousel__snapper {
       animation-name: none;
     }
-  }
+  } */
   
   .carousel:hover .carousel__snapper,
   .carousel:focus-within .carousel__snapper {
