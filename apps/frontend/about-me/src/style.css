@@ -344,6 +344,7 @@ li.text {
 
 .navbar-desktop{
   display: none;
+  z-index: 1;
 }
 .navbar-mobile{
   z-index: 1;
