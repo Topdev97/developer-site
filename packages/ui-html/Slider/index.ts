@@ -55,21 +55,15 @@ const projectsCards = projects.map((project)=>{
   });
 })
 
-const slideIds = [
-  "carousel__slide1",
-  "carousel__slide2",
-  "carousel__slide3",
-  "carousel__slide4",
-];
-
 const createSliderElements = () => {
   // Array of slide IDs
 
   // Create ol element for viewport
   const viewportList = document.createElement("ol");
   viewportList.classList.add("carousel__viewport");
-   projectsCards.forEach((slideId, index) => {
+   projectsCards.forEach((projectCard, index) => {
     const slide = document.createElement("li");
+    slide.append(projectCard)
     slide.id = `carousel__slide${index}`;
     slide.tabIndex = 0;
     slide.classList.add("carousel__slide");
@@ -91,7 +85,7 @@ const createSliderElements = () => {
     nextLink.href = `#carousel__slide${[(index + 1) % projectsCards.length]}`;
     nextLink.classList.add("carousel__next");
     nextLink.textContent =
-      index === slideIds.length - 1 ? "Go to first slide" : "Go to next slide";
+      index === projectsCards.length - 1 ? "Go to first slide" : "Go to next slide";
     snapper.appendChild(nextLink);
 
     viewportList.appendChild(slide);

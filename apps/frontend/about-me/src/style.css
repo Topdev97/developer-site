@@ -76,6 +76,61 @@ li.text {
   grid-column: 1/7;
   grid-row: 3/4;
 }
+
+
+
+.skills__stack-list{
+
+  background-color: var(--dark-600);
+  padding: var(--space-5);
+  border: 1px solid var(--primary-300);
+}
+.skills__stack-list .legend {
+  height: fit-content;
+  color: var(--white);
+  border: none !important;
+}
+.legend li:nth-child(1)::before {
+  background-color: #e52936 !important;
+}
+
+.legend li:nth-child(2)::before {
+  background-color: #ed6972 !important;
+}
+
+.legend li:nth-child(3)::before {
+  background-color: #f5a9af !important;
+}
+#bar-example-16 
+{
+  z-index: 0;
+  height: 380px;
+  --color-1: #e52936;
+  --color-2: #e52936;
+  --color-3: #e52936;
+  --color-4: #e52936;
+  --color-5: #e52936;
+  --color-6: #ed6972;
+  --color-7: #ed6972;
+  --color-8: #ed6972;
+  --color-9: #ed6972;
+  --color-10: #ed6972;
+  --labels-size: 120px;
+}
+
+#bar-example-16 caption {
+  font-size: var(--font-size-title-small);
+  font-weight: var(--font-weight-light);
+  color: var(--white);
+}
+#bar-example-16 th{
+  color: var(--white);
+  font-family: 'Ubuntu', sans-serif;
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+
 .skills__soft-skills {
   display: flex;
   flex-direction: column;
@@ -291,6 +346,7 @@ li.text {
   display: none;
 }
 .navbar-mobile{
+  z-index: 1;
   position: fixed;
   top: 20px;
   left: 20px;
@@ -303,4 +359,3 @@ li.text {
   display: none;
  }
 }
-

@@ -1,28 +1,28 @@
   
-  * {
+  .carousel * {
     box-sizing: border-box;
     scrollbar-color: transparent transparent; /* thumb and track color */
     scrollbar-width: 0px;
   }
   
-  *::-webkit-scrollbar {
+  .carousel *::-webkit-scrollbar {
     width: 0;
   }
   
-  *::-webkit-scrollbar-track {
+  .carousel *::-webkit-scrollbar-track {
     background: transparent;
   }
   
-  *::-webkit-scrollbar-thumb {
+  .carousel *::-webkit-scrollbar-thumb {
     background: transparent;
     border: none;
   }
   
-  * {
+  .carousel * {
     -ms-overflow-style: none;
   }
   
-  ol, li {
+  .carousel ol,.carousel li {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -48,6 +48,7 @@
     counter-reset: item;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
+    height: fit-content;
   }
   
   .carousel__slide {
@@ -56,13 +57,48 @@
     width: 100%;
     background-color: var(--dark-600);
     counter-increment: item;
-    border: 1px solid var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   /* esta para tener colores de fondo del slide intercalados */
   /* .carousel__slide:nth-child(even) {
     background-color: var(--neutral-600);
   } */
+  .carousel__navigation {
+    position: absolute;
+    right: 0;
+    bottom: -100px;
+    left: 0;
+    text-align: center;
+  }
   
+  .carousel__navigation-list,
+  .carousel__navigation-item {
+    display: inline-block;
+  }
+  
+  .carousel__navigation-button {
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #333;
+    background-clip: content-box;
+    border: 0.25rem solid transparent;
+    border-radius: 50%;
+    font-size: 0;
+    transition: transform 0.1s;
+  }  
+  @media (min-width: 768px) {
+    .carousel__viewport{
+      height: auto;
+    }
+    .carousel__navigation{
+      bottom: 0;
+
+    }
+   }
+   
   
   .carousel__snapper {
     position: absolute;
@@ -90,37 +126,14 @@
     .carousel__snapper {
       animation-name: none;
     }
-  } */
+  }
   
   .carousel:hover .carousel__snapper,
   .carousel:focus-within .carousel__snapper {
     animation-name: none;
   }
-  
-  .carousel__navigation {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-  }
-  
-  .carousel__navigation-list,
-  .carousel__navigation-item {
-    display: inline-block;
-  }
-  
-  .carousel__navigation-button {
-    display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #333;
-    background-clip: content-box;
-    border: 0.25rem solid transparent;
-    border-radius: 50%;
-    font-size: 0;
-    transition: transform 0.1s;
-  }
+   */
+
   
   .carousel::before,
   .carousel::after,
