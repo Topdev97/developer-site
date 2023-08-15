@@ -3,6 +3,10 @@
 h1,h2,h3,h4,h5,h6,p,span,ul {
   margin: 0;
 }
+em{
+  font-style: normal;
+
+}
 .text {
     color: var(--white);
     font-family: 'Ubuntu', sans-serif;
@@ -13,8 +17,13 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
   color: var(--primary-300);
 }
 .text--link:hover{
+  cursor: pointer;
   color: var(--primary-100);
   
+}
+.text--em{
+  text-decoration: none;
+  color: var(--primary-300);
 }
 .text--title-large {
   font-size: var(--font-size-title-large);

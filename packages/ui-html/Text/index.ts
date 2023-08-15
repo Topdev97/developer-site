@@ -8,7 +8,10 @@ export enum TextType {
     bodyLarge = "text--body-large",
     bodyMedium = "text--body-medium",
     bodySmall = "text--body-small",
-    listItem = "text--list-item"
+    listItem = "text--list-item",
+    link = "text--link",
+    em = "text--em",
+
 }
 
 export enum TextTags {
@@ -18,7 +21,8 @@ export enum TextTags {
     H4 = "h4",
     P = "p",
     li = "li",
-    a = "a"
+    a = "a",
+    em = "em"
 }
 
 export interface TextProps {
@@ -33,15 +37,10 @@ export const createText = ({label,type,tag,isLink}:TextProps) => {
     
     if(type == TextType.listItem){
         tag = TextTags.li
-    } else if(isLink){
-        tag = TextTags.a
     }
 
     const element = document.createElement(tag ? tag : "div")
     element.className = ["text",type].join(" ")
-    if(isLink){
-        element.classList.add("text--link")
-    }
     element.textContent = label
     return element
 }
