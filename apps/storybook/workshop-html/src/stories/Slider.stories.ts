@@ -21,8 +21,8 @@ type Story = StoryObj<SliderProps>;
 
 // More on writing stories with args: https://storybook.js.org/docs/html/writing-stories/args
 
-export const navbar: Story = {
-  name:"Navbar",
+export const slider: Story = {
+  name:"Slider",
   args: {
     hidden:false,
   },

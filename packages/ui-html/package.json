@@ -5,11 +5,13 @@
     "types": "./index.ts",
     "license": "MIT",
     "scripts": {
-      "lint": "eslint \"**/*.ts*\""
+        "lint": "eslint \"**/*.ts*\""
     },
     "devDependencies": {
-      "tsconfig": "*",
-      "typescript": "^4.5.2"
+        "tsconfig": "*",
+        "typescript": "^4.5.2"
+    },
+    "dependencies": {
+        "gsap": "^3.12.2"
     }
-  }
-  
+}
