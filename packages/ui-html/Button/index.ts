@@ -48,7 +48,7 @@ export const createButton = ({
   disable = false,
   hidden = false,
   backgroundColor,
-  label,
+  label = "Button",
   onClick,
 }: ButtonProps) => {
   const btn = document.createElement("button");

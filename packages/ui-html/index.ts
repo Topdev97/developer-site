@@ -7,3 +7,4 @@ export * from "./"
 export * from "./NavbarDesktop"
 export * from './NavbarMobile'
 export * from './Slider'
+export * from "./Modal"
