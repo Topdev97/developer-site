@@ -3,62 +3,54 @@
 h1,h2,h3,h4,h5,h6,p,span,ul {
   margin: 0;
 }
-em{
-  font-style: normal;
-
-}
-.text {
+.typography {
     color: var(--white);
     font-family: 'Ubuntu', sans-serif;
 }
 
-.text--link{
+.typography--link{
   text-decoration: none;
   color: var(--primary-300);
 }
-.text--link:hover{
+.typography--link:hover{
   cursor: pointer;
   color: var(--primary-100);
   
 }
-.text--em{
-  text-decoration: none;
-  color: var(--primary-300);
-}
-.text--title-large {
+.typography--title-large {
   font-size: var(--font-size-title-large);
   font-weight: var(--font-weight-light);
 }
 
-.text--title-medium {
+.typography--title-medium {
   font-size: var(--font-size-title-medium);
   font-weight: var(--font-weight-light);
 }
 
-.text--title-small {
+.typography--title-small {
   font-size: var(--font-size-title-small);
   font-weight: var(--font-weight-light);
 }
 
 
-.text--body-large {
+.typography--body-large {
   font-size: var(--font-size-body-medium);
   font-weight: var(--font-weight-normal);
   line-height: var(--space-6);
 }
 
-.text--body-medium {
+.typography--body-medium {
   font-size: var(--font-size-body-medium);
   font-weight: var(--font-weight-light);
   line-height: var(--space-5);
 
 }
 
-.text--body-small {
+.typography--body-small {
   font-size: var(--font-size-body-small);
   font-weight: var(--font-weight-light);
 }
-.text--list-item {
+.typography--list-item {
   list-style: bullet; 
   font-size: var(--font-size-body-medium);
   font-weight: var(--font-weight-normal);

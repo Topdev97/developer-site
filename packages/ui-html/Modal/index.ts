@@ -3,6 +3,9 @@ import { createButton, ButtonStyles, ButtonSizes } from "../Button";
 import type { ButtonProps } from "../Button";
 export interface ModalProps extends ButtonProps {
   hidden?: boolean;
+  width?:string;
+  heigth?:string;
+  element:HTMLElement;
 }
 
 const closeIcon = () => {
@@ -43,8 +46,26 @@ const closeIcon = () => {
   return svgElement;
 };
 
-export const createModal = (modalProps: ModalProps) => {
-  const button = createButton({ label: "Button" });
+const createElement = () => {
+  const element = document.createElement("div");
+  // Create the image element inside the modal
+  const modalImage = document.createElement("img");
+  modalImage.src = "https://assets.codepen.io/1462889/sl3.jpg";
+  modalImage.alt = "";
+
+  // Create the paragraph inside the modal
+  const modalParagraph = document.createElement("p");
+  modalParagraph.textContent = "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.";
+  element.append(modalImage,modalParagraph)
+  return element;
+};
+
+
+export const createModal = ({element = createElement(),width = "375px",heigth = "auto",label = "button",style = ButtonStyles.outlined}: ModalProps) => {
+  const button = createButton({
+    label,
+    style
+  });
   button.classList.add("modal-btn");
   button.addEventListener("click", () => {
     modalDiv.classList.remove("inactive");
@@ -61,33 +82,23 @@ export const createModal = (modalProps: ModalProps) => {
   modalDiv.className = "modal inactive";
 
   const closeModal = closeIcon();
-  closeModal.classList.add("modal__close-icon")
+  closeModal.classList.add("modal__close-icon");
   closeModal.addEventListener("click", () => {
-      modalDiv.classList.remove("active");
+    modalDiv.classList.remove("active");
     modalDiv.classList.add("inactive");
-
   });
 
   // Create the modal wrapper
   const modalWrapDiv = document.createElement("div");
   modalWrapDiv.className = "modal-wrap";
-
-  // Create the image element inside the modal
-  const modalImage = document.createElement("img");
-  modalImage.src = "https://assets.codepen.io/1462889/sl3.jpg";
-  modalImage.alt = "";
-
-  // Create the paragraph inside the modal
-  const modalParagraph = document.createElement("p");
-  modalParagraph.textContent =
-    "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.";
-
+  modalWrapDiv.style.maxWidth = width
+  modalWrapDiv.style.height = heigth
   // Append the image and paragraph to the modal wrapper
-  modalWrapDiv.appendChild(modalImage);
-  modalWrapDiv.appendChild(modalParagraph);
+  element.classList.add("modal__element")
+  modalWrapDiv.appendChild(element);
 
   // Append the modal wrapper to the modal container
-  modalDiv.append(modalWrapDiv,closeModal);
+  modalDiv.append(modalWrapDiv, closeModal);
 
   // Append all elements to the main container div
   modalContainer.appendChild(button);

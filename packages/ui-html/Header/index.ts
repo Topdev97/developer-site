@@ -1,5 +1,5 @@
 import './header.css'
-import { createText,TextTags,TextType } from '../Text';
+import { createText,TypographyTag,TypographyType } from '../Typography';
 import { createButton,ButtonSizes,ButtonStyles } from '../Button';
 
 export interface HeaderProps {
@@ -20,9 +20,9 @@ export const createHeader = ({title,subtitle,buttonText,CTA,onClick}:HeaderProps
 
     const header = document.createElement("div")
     header.className = ["header"].join(" ")
-    const headerTitle = createText({label:title,type:TextType.titleLarge,tag:TextTags.H2})
+    const headerTitle = createText({label:title,type:TypographyType.titleLarge,tag:TypographyTag.H2})
     headerTitle.classList.add("header__title")
-    const headerSubtitle = createText({label:subtitle,type:TextType.titleSmall,tag:TextTags.P})
+    const headerSubtitle = createText({label:subtitle,type:TypographyType.titleSmall,tag:TypographyTag.P})
     headerSubtitle.classList.add("header__subtitle")
     header.append(headerTitle,headerSubtitle)
     if(CTA) {
