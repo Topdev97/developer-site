@@ -9,3 +9,5 @@ export * from './NavbarMobile'
 export * from './Slider'
 export * from "./Modal"
 export * from "./TextField"
+
+export * from "./TextArea"

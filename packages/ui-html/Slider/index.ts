@@ -1,8 +1,17 @@
 import "./slider.css";
 import { CardSizes, createCard } from "../Card";
 import { gsap } from "gsap";
+interface BreakPoint {
+  width:number;
+  itemsToShow: number;
+  itemsToScroll:number
+}
+
 export interface SliderProps {
   hidden: boolean;
+  elements:HTMLElement[]
+  breakpoints?:BreakPoint[];
+
 }
 
 const projects = [
@@ -182,63 +191,58 @@ const createNavigationPoint = () => {
   return svg;
 };
 
-const nextSlices = (event:MouseEvent) => {
-  const sliderItems = document.querySelector(".slider__items")
-  gsap.to(sliderItems,{
-    x:"-=340px",
-    duration:1
-  })
+const nextSlices = (event: MouseEvent) => {
+  const sliderItems = document.querySelector(".slider__items");
+  gsap.to(sliderItems, {
+    x: "-=340px",
+    duration: 1,
+  });
+};
 
-}
-
-   const prevSlices = (event:MouseEvent)=> {
-    const sliderItems = document.querySelector(".slider__items")
-    gsap.to(sliderItems,{
-      x:"+=340px",
-      duration:1,
-      
-    })
-  }
-
-
+const prevSlices = (event: MouseEvent) => {
+  const sliderItems = document.querySelector(".slider__items");
+  gsap.to(sliderItems, {
+    x: "+=340px",
+    duration: 1,
+  });
+};
 
 const createControls = () => {
   const sliderControls = document.createElement("div");
   sliderControls.className = "slider__controls";
-  const leftChevron = createLeftChevron()
-  const rightChevron = createRightChevron()
-  leftChevron.addEventListener('click',prevSlices)
-  rightChevron.addEventListener("click",nextSlices)
+  const leftChevron = createLeftChevron();
+  const rightChevron = createRightChevron();
+  leftChevron.addEventListener("click", prevSlices);
+  rightChevron.addEventListener("click", nextSlices);
   sliderControls.append(leftChevron, rightChevron);
 
   return sliderControls;
 };
 
-
-export const createSlider = ({ hidden = false }: SliderProps) => {
+export const createSlider = ({ hidden = false,elements = projectsCards }: SliderProps) => {
   const slider = document.createElement("div");
   slider.className = "slider";
-  const sliderItemsContainer = document.createElement("div")
-  sliderItemsContainer.className = "slider__items-container"
+  const sliderItemsContainer = document.createElement("div");
+  sliderItemsContainer.className = "slider__items-container";
 
   const sliderItems = document.createElement("div");
   sliderItems.className = "slider__items";
-  sliderItems.append(...projectsCards);
-  sliderItemsContainer.append(sliderItems)
+  sliderItems.append(...elements);
+  sliderItemsContainer.append(sliderItems);
 
   const sliderControls = createControls();
   const sliderNavigation = document.createElement("div");
   sliderNavigation.className = "slider__navigation";
   const navigationElements = document.createElement("div");
   navigationElements.className = "navigation__elements";
-  const elements = projects.map((project, index) => {
+  const points = projects.map((project, index) => {
     const element = createNavigationPoint();
     element.addEventListener("click", (event) => {
       alert(`Click en slides ${index}`);
     });
     return element;
   });
-  navigationElements.append(...elements);
+  navigationElements.append(...points);
   sliderNavigation.append(navigationElements);
   slider.append(sliderItemsContainer, sliderControls, sliderNavigation);
 
