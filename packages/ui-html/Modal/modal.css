@@ -48,10 +48,8 @@
   transition: all 300ms ease-in-out;
 }
 .modal-wrap {
-  max-width: 400px;
   border-radius: 4px;
   overflow: hidden;
-  background-color: #fff;
   align-self: center;
   box-shadow: 0 12px 25px 0 rgba(199, 175, 189, 0.25);
   opacity: 0;

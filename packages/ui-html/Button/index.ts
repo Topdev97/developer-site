@@ -1,13 +1,12 @@
 import "./button.css";
 export enum ButtonSizes {
-  
   Medium = "medium",
   Large = "large",
 }
 
 export enum ButtonStyles {
-  filled = "filled",
-  outlined = "outlined"
+  filled = "button--filled",
+  outlined = "button--outlined",
 }
 
 export interface ButtonProps {
@@ -30,12 +29,13 @@ export interface ButtonProps {
   /**
    * Optional click handler
    */
-  onClick?: () => void;
+  onClick?: (ev: MouseEvent) => void;
 
   loading?: boolean;
 
   disable?: boolean;
   hidden?: boolean;
+  type?: "button" | "submit";
 }
 
 /**
@@ -49,27 +49,30 @@ export const createButton = ({
   hidden = false,
   backgroundColor,
   label = "Button",
+  type = "button",
   onClick,
 }: ButtonProps) => {
   const btn = document.createElement("button");
-  btn.type = "button";
-  if(!loading){
+  btn.type = type;
+  const content = document.createElement("span")
+  content.className = "button__content"
+  content.textContent = label
+  const loader = document.createElement("div");
+  loader.className = "button__loader";
+  btn.append(content,loader);
 
-    btn.innerText = label;
-  } else {
-    btn.append(document.createElement("div"))
-  }
   if (onClick) {
     btn.addEventListener("click", onClick);
   }
-  
 
-  const mode = style == 'filled'
-    ? "button--filled"
-    : "button--outlined";
-  btn.className = ["button", `button--${size}`, mode, loading ? "button--loading" : "",disable ? "button--disabled" : "", hidden ? "hidden" : ""].join(
-    " "
-  );
+  btn.className = [
+    "button",
+    `button--${size}`,
+    style,
+    loading ? "button--loading" : "",
+    disable ? "button--disabled" : "",
+    hidden ? "hidden" : "",
+  ].join(" ");
 
   if (backgroundColor) {
     btn.style.backgroundColor = backgroundColor;

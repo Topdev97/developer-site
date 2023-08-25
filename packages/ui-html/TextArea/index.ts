@@ -5,12 +5,14 @@ export interface TextAreaProps {
   hidden?: boolean;
   label: string;
   required?: boolean;
+  name?:string
 }
 
 export const createTextArea = ({
   label,
   required = false,
   hidden = false,
+  name = ""
 }: TextAreaProps) => {
 
   // Create input fields with labels
@@ -20,6 +22,7 @@ export const createTextArea = ({
   inputContainer.classList.add("text-area");
 
   const input = document.createElement("textarea");
+  input.name = name
   input.classList.add("text-area-field");
   input.setAttribute("value", inputValues);
   input.setAttribute("required", "true");

@@ -11,6 +11,7 @@ export interface TextFieldProps {
   label: string;
   required?: boolean;
   inputType?: TextFieldInputType;
+  name?:string
 }
 
 export const createTextField = ({
@@ -18,6 +19,7 @@ export const createTextField = ({
   required = false,
   hidden = false,
   inputType = TextFieldInputType.TEXT,
+  name = ""
 }: TextFieldProps) => {
 
   // Create input fields with labels
@@ -28,6 +30,7 @@ export const createTextField = ({
   inputContainer.classList.add("input");
 
   const input = document.createElement("input");
+  input.name = name
   input.setAttribute("type", inputTypes);
   input.classList.add("input-field");
   input.setAttribute("value", inputValues);

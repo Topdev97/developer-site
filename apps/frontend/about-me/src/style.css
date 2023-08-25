@@ -12,6 +12,19 @@ li.text {
   list-style: square;
 }
 
+.container {
+  box-sizing: border-box;
+  background: var(--dark-600);
+  padding: var(--space-6);
+}
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.contact-form textarea {
+  margin-bottom: 2rem;
+}
 main section,header {
   padding-inline: var(--space-3);
   display: grid;
@@ -322,13 +335,15 @@ main section,header {
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
-  align-items: center;
 }
 .contact__form-container__text {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
   width: 100%;
+}
+.contact__form-container__text:nth-child(1) p {
+  margin-bottom: 12px;
 }
 .contact__social-media {
   display: flex;
@@ -346,7 +361,6 @@ main section,header {
   }
   .contact__form-container {
     grid-column: 3/5;
-    text-align: center;
     justify-self: center;
   }
     
@@ -357,12 +371,13 @@ main section,header {
   }
   .contact__social-media-container {
     grid-column: 1/4;
+    justify-self: center;
   
-  }
+  } 
+
   .contact__form-container {
     grid-column: 4/7;
   }
-    
 }
 
 .navbar-container {

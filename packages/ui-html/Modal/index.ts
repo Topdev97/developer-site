@@ -5,7 +5,7 @@ export interface ModalProps extends ButtonProps {
   hidden?: boolean;
   width?:string;
   heigth?:string;
-  element:HTMLElement;
+  element?:HTMLElement;
 }
 
 const closeIcon = () => {
@@ -91,7 +91,7 @@ export const createModal = ({element = createElement(),width = "375px",heigth = 
   // Create the modal wrapper
   const modalWrapDiv = document.createElement("div");
   modalWrapDiv.className = "modal-wrap";
-  modalWrapDiv.style.maxWidth = width
+  modalWrapDiv.style.width = width
   modalWrapDiv.style.height = heigth
   // Append the image and paragraph to the modal wrapper
   element.classList.add("modal__element")
