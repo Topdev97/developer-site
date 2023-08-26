@@ -53,9 +53,26 @@ main section,header {
 .hero {
   height: 100vh;
   grid-template-rows: repeat(5,1fr);
+        background-image: url('https://res.cloudinary.com/dxryc5jgr/image/upload/c_crop,h_1060,q_61,w_2048,y_237/v1692046970/developer-site/developer-1.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      position: relative;
+
+
   
 
 }
+.red-layer {
+      background-color: rgba(255, 0, 0, 0.3);
+      /* Red with transparency */
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
 
 .hero__text {
   grid-row: 2/3;
@@ -63,28 +80,37 @@ main section,header {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 24px;
+  z-index: 2;
+  padding-inline: var(--space-8);
+  padding-block: var(--space-6);
 }
 
 
 @media (min-width: 768px) {
   .hero__text {
     grid-column: 1/5;
-    grid-row: 2/3;
+    grid-row: 2/4;
   }
 }
 
 
 
 .skills {
+  position: relative;
   row-gap: var(--space-11);
   padding-bottom: var(--space-11);
 }
 .skills > h2 {
   justify-self: center;
   /* margin-bottom: var(--space-11); */
+  z-index: 2;
 }
 
 .skills__techs-stack {
+  z-index: 2;
+
   display: flex;
   flex-direction: column;
   grid-row: 2/3;
@@ -101,6 +127,7 @@ main section,header {
 
 
 .skills__stack-list{
+  z-index: 2;
 
   background-color: var(--dark-600);
   padding: var(--space-5);
@@ -155,6 +182,7 @@ main section,header {
 }
 
 .skills__soft-skills {
+  z-index: 2;
   display: flex;
   flex-direction: column;
 
@@ -205,13 +233,13 @@ main section,header {
   padding-top: var(--space-11);
   grid-template-rows: auto 50vh auto;
   row-gap: var(--space-11);
-
   padding-bottom: var(--space-11);
 }
 .about-me > h2 {
   justify-self: center;
 }
 .about-me__experience {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   grid-row: 2/3;
@@ -224,7 +252,7 @@ main section,header {
 }
 .about-me__expectations {
   display: flex;
-
+  z-index: 2;
   flex-direction: column;
   grid-row: 3/4;
 }
@@ -236,6 +264,7 @@ main section,header {
   margin-bottom: var(--space-2);
 }
 .about-me__hobbies {
+  z-index: 2;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -284,18 +313,21 @@ main section,header {
 }
 
 .portfolio {
+
   padding-top: var(--space-11);
   row-gap: var(--space-11);
   padding-bottom: var(--space-11);
 }
 .portfolio__text {
+  z-index: 2;
   justify-self: center;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
 }
-.portfolio__slider {
+.portfolio__slider {  
+  z-index: 2;
 }
 @media (min-width: 768px) {
   .portfolio__text {
@@ -319,19 +351,23 @@ main section,header {
 }
 
 .contact {
+  position: relative;
   row-gap: var(--space-10);
   padding-bottom: var(--space-8);
 }
 .contact > h2 {
   justify-self: center;
+  z-index: 2;
 }
 .contact__social-media-container {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
 
 }
 .contact__form-container {
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
@@ -393,10 +429,10 @@ main section,header {
 
 .navbar-desktop{
   display: none;
-  z-index: 1;
+  z-index: 5;
 }
 .navbar-mobile{
-  z-index: 1;
+  z-index: 5;
   position: fixed;
   top: 20px;
   left: 20px;
