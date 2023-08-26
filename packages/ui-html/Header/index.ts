@@ -7,7 +7,7 @@ export interface HeaderProps {
     subtitle:string;
     buttonText:string;
     CTA:boolean;
-    onClick:any
+    // onClick?:any
     // CTA?:{
     //     label:string,
     //     link?:string,
@@ -16,7 +16,7 @@ export interface HeaderProps {
 }
   
 
-export const createHeader = ({title,subtitle,buttonText,CTA,onClick}:HeaderProps) => {
+export const createHeader = ({title,subtitle,buttonText,CTA}:HeaderProps) => {
 
     const header = document.createElement("div")
     header.className = ["header"].join(" ")

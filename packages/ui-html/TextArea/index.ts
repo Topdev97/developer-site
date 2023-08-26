@@ -11,7 +11,6 @@ export interface TextAreaProps {
 export const createTextArea = ({
   label,
   required = false,
-  hidden = false,
   name = ""
 }: TextAreaProps) => {
 

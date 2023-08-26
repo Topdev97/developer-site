@@ -9,18 +9,18 @@ import {
   createButton,
   ButtonStyles,
 } from "ui-html";
-import { config } from "./config";
+// import { config } from "./config";
 
 async function sendMessage(ev: MouseEvent) {
   ev.preventDefault();
   const modalDiv = document.querySelector(".modal");
-  const target = ev.target;
-  const { email, message } = form;
+  // const target = ev.target;
+  // const { email, message } = form;
   submitMessage.classList.add("button--loading");
-  const body = {
-    email: email.value,
-    message: message.value,
-  };
+  // const body = {
+  //   email: email.value,
+  //   message: message.value,
+  // };
 
   //   const response = await fetch(`${config.apiUrl}/message`, {
   //     method: "POST",

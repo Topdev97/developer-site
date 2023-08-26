@@ -191,7 +191,7 @@ const createNavigationPoint = () => {
   return svg;
 };
 
-const nextSlices = (event: MouseEvent) => {
+const nextSlices = () => {
   const sliderItems = document.querySelector(".slider__items");
   gsap.to(sliderItems, {
     x: "-=340px",
@@ -199,7 +199,7 @@ const nextSlices = (event: MouseEvent) => {
   });
 };
 
-const prevSlices = (event: MouseEvent) => {
+const prevSlices = () => {
   const sliderItems = document.querySelector(".slider__items");
   gsap.to(sliderItems, {
     x: "+=340px",
@@ -219,7 +219,7 @@ const createControls = () => {
   return sliderControls;
 };
 
-export const createSlider = ({ hidden = false,elements = projectsCards }: SliderProps) => {
+export const createSlider = ({ elements = projectsCards }: SliderProps) => {
   const slider = document.createElement("div");
   slider.className = "slider";
   const sliderItemsContainer = document.createElement("div");
@@ -236,8 +236,10 @@ export const createSlider = ({ hidden = false,elements = projectsCards }: Slider
   const navigationElements = document.createElement("div");
   navigationElements.className = "navigation__elements";
   const points = projects.map((project, index) => {
+    console.log(project);
+    
     const element = createNavigationPoint();
-    element.addEventListener("click", (event) => {
+    element.addEventListener("click", () => {
       alert(`Click en slides ${index}`);
     });
     return element;

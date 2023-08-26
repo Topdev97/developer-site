@@ -1,5 +1,5 @@
 import "./modal.css";
-import { createButton, ButtonStyles, ButtonSizes } from "../Button";
+import { createButton, ButtonStyles, } from "../Button";
 import type { ButtonProps } from "../Button";
 export interface ModalProps extends ButtonProps {
   hidden?: boolean;

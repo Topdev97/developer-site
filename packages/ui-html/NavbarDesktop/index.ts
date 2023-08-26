@@ -6,7 +6,7 @@ export interface NavbarDesktopProps {
 
 
 
-export const createNavbarDesktop = ({logo:logoUrl}:NavbarDesktopProps) => {
+export const createNavbarDesktop = ({}:NavbarDesktopProps) => {
 
       // Create the main div with class "nav"
       const navbarContainer = document.createElement("div")

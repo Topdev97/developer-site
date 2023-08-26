@@ -17,7 +17,6 @@ export interface TextFieldProps {
 export const createTextField = ({
   label,
   required = false,
-  hidden = false,
   inputType = TextFieldInputType.TEXT,
   name = ""
 }: TextFieldProps) => {

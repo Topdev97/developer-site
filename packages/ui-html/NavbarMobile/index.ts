@@ -2,10 +2,10 @@ import "./navbar-mobile.css";
 
 // reference https://codepen.io/nikkk-me/pen/LYYWexL
 export interface NavbarMobileProps {
-  logo: string;
+  logo?: string;
 }
 
-export const createNavbarMobile = ({ logo: logoUrl }: NavbarMobileProps) => {
+export const createNavbarMobile = ({ }: NavbarMobileProps) => {
   // Create the main div with class "main"
   const divMain = document.createElement("div");
   divMain.classList.add("main");
