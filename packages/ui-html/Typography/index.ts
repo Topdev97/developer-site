@@ -1,4 +1,3 @@
-import "./typography.css";
 
 export enum TypographyType {
   titleLarge = "typography--title-large",

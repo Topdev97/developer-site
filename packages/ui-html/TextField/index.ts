@@ -1,4 +1,3 @@
-import "./text-field.css";
 
 export enum TextFieldInputType {
   TEXT = "text",

@@ -1,4 +1,3 @@
-import "./navbar-mobile.css";
 
 // reference https://codepen.io/nikkk-me/pen/LYYWexL
 export interface NavbarMobileProps {

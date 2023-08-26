@@ -1,4 +1,3 @@
-import "./card.css";
 
 export enum CardSizes {
   Small = "card--small",

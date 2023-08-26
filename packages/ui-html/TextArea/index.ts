@@ -1,4 +1,3 @@
-import "./text-area.css";
 
 
 export interface TextAreaProps {

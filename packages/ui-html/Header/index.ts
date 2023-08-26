@@ -1,4 +1,3 @@
-import './header.css'
 import { createText,TypographyTag,TypographyType } from '../Typography';
 import { createButton,ButtonSizes,ButtonStyles } from '../Button';
 

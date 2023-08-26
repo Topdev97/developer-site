@@ -1,4 +1,3 @@
-import "./navbar-desktop.css"
 // reference https://codepen.io/dmendozaec/pen/vwjRvw
 export interface NavbarDesktopProps {
     logo?:string

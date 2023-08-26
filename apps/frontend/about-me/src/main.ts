@@ -1,14 +1,14 @@
-import "./style.css";
+import "charts.css";
 import "../../../../packages/ui-html/common/variables.css";
 import "../../../../packages/ui-html/common/components.css";
-import "charts.css";
+import "./style.css";
 import {
   createModal,
   createTextField,
   createTextArea,
   createButton,
   ButtonStyles,
-} from "ui-html";
+} from "../../../../packages/ui-html";
 // import { config } from "./config";
 
 async function sendMessage(ev: MouseEvent) {

@@ -1,4 +1,3 @@
-import "./slider.css";
 import { CardSizes, createCard } from "../Card";
 import { gsap } from "gsap";
 interface BreakPoint {
