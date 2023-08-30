@@ -5,4 +5,5 @@ export * from './NavbarMobile'
 export * from "./Modal"
 export * from "./TextField"
 export * from "./TextArea"
-// export * from "./Card"
+export * from "./Container"
+export * from "./Card"

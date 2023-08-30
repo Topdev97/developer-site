@@ -1,10 +1,9 @@
 @import url("../Button/button.css");
 @import url("../Card/card.css");
-@import url("../Header/header.css");
 @import url("../Modal/modal.css");
 @import url("../NavbarDesktop/navbar-desktop.css");
 @import url("../NavbarMobile/navbar-mobile.css");
-@import url("../Slider/slider.css");
 @import url("../TextArea/text-area.css");
 @import url("../TextField/text-field.css");
 @import url("../Typography/typography.css");
+@import url("../Container/container.css");

@@ -8,6 +8,7 @@ import {
   createTextArea,
   createButton,
   ButtonStyles,
+  createContainer
 } from "../../../../packages/ui-html";
 // import { config } from "./config";
 
@@ -43,8 +44,7 @@ async function sendMessage(ev: MouseEvent) {
   }, 3000);
 }
 
-const container = document.createElement("div");
-container.className = "container";
+const container = createContainer({border:false})
 
 const form = document.createElement("form");
 form.className = "contact-form";
