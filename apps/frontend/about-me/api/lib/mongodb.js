@@ -23,7 +23,7 @@ async function connectToDatabase() {
 }
 
 const messageSchema = new mongoose.Schema({
-    name:{
+    email:{
         type:String,
         required:true,
 

@@ -15,10 +15,7 @@ input {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-/* Styling for subsequent input containers */
-.input + .input {
-    margin-top: 1.5rem;
-}
+/* padStyling for subsequent input containers */
 
 /* Styling for the input label */
 .input-label {

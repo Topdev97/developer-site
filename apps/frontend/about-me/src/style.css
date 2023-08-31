@@ -1,16 +1,14 @@
+
 .section {
   padding-inline: var(--space-3);
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: var(--space-3);
   background: var(--dark-600);
-  z-index: -3;
 }
 .first-layer {
-  z-index: -2;
 }
 .second-layer {
-  z-index: -1;
 }
 @media (min-width: 768px) {
   .section {
