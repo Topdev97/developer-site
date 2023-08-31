@@ -12,6 +12,7 @@ const meta = {
   argTypes: {
     hidden:{ control: "boolean" },
     border:{ control: "boolean" },
+    maxWidth:{control:"text"}
 
     
 

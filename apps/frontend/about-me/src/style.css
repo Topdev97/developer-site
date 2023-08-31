@@ -26,7 +26,7 @@
   }
 }
 .hero {
-  height: 100vh;
+  height: 110vh;
   grid-template-rows: repeat(5, 1fr);
   background-image: url("https://res.cloudinary.com/dxryc5jgr/image/upload/c_crop,h_1060,q_61,w_2048,y_237/v1692046970/developer-site/developer-1.jpg");
   background-size: cover;
@@ -265,11 +265,28 @@
     grid-row: 3/4;
   }
 }
+.projects::-webkit-scrollbar {
+  width: 1px; /* Width of the vertical scrollbar */
+  height: 10px;
+}
+
+.projects::-webkit-scrollbar-track {
+  background: transparent; /* Background color of the track */
+}
+
+.projects::-webkit-scrollbar-thumb {
+  background: var(--primary-700); /* Color of the scrollbar thumb */
+  border-radius: 5px; /* Radius of the scrollbar thumb corners */
+}
 
 .portfolio {
   padding-top: var(--space-11);
   row-gap: var(--space-11);
   padding-bottom: var(--space-11);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .portfolio__text {
   justify-self: center;
@@ -279,6 +296,16 @@
   gap: var(--space-6);
 }
 .portfolio__slider {
+}
+.projects {
+  width: 100%;
+  overflow-x: scroll;
+}
+.projects-container{
+  display: flex;
+  gap: var(--space-8);  
+  padding-block: var(--space-11);
+  justify-content: center;
 }
 @media (min-width: 768px) {
   .portfolio__text {

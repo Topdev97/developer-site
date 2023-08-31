@@ -1,0 +1,9 @@
+.notification {
+    display: flex;
+    gap: var(--space-3);
+}
+.notification__text-content{
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}

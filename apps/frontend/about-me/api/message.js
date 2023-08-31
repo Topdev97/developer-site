@@ -25,7 +25,6 @@ export default async function handler(request, response) {
 
       await Promise.all([sendMail(userMail), sendMail(myMail)]);
 
-      // return response.json(dbResponse);
       return response.status(200).json(body);
     } else {
       response.status(400).json({
