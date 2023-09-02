@@ -1,4 +1,3 @@
-import "charts.css";
 import "../../../../packages/ui-html/common/variables.css";
 import "../../../../packages/ui-html/common/components.css";
 import "./style.css";
@@ -9,22 +8,28 @@ import {
   createButton,
   ButtonStyles,
   createContainer,
-  createNotification,
   NotificationType,
   createCard,
-  CardSizes
+  CardSizes,
+  createText,
+  TypographyType,
+  TypographyColor
 } from "../../../../packages/ui-html";
 import { messageService } from "./services/message.service";
-// import { scrollAnimations } from "./animations";
-import { animate } from "motion";
+import { inViewAnimations } from "./animations";
 import { projectService } from "./services/project.service";
+import { showNotification } from "./utils/notifications";
+import { technologies } from "./data/technologies";
+
+
 async function sendMessage(ev: MouseEvent) {
   ev.preventDefault();
   
   const modalDiv = document.querySelector(".modal");
-  // const target = ev.target;
+  const form = formContainer.querySelector("form") as HTMLFormElement
+  const submitButton = formContainer.querySelector("button") as HTMLButtonElement
   const { email, message, organization } = form;
-  submitMessage.classList.add("button--loading");
+  submitButton.classList.add("button--loading");
   const body = {
     email: email.value,
     organization: organization.value,
@@ -32,98 +37,17 @@ async function sendMessage(ev: MouseEvent) {
   };
   try {
     await messageService.sendMessage(body);
-    submitMessage.classList.remove("button--loading");
+    submitButton.classList.remove("button--loading");
     modalDiv?.classList.remove("active");
     modalDiv?.classList.add("inactive");
-    const notification = createNotification({type:NotificationType.SUCCESS,title:"Send succesfull",description:"Your message was send succesfully"})
-    notification.style.position = "fixed"
-    notification.style.top = "9%"
-    notification.style.right = "1%"
-    notification.style.zIndex = "11"
-
-    document.body.append(notification)
-    animate(notification,{x:[600,0]},{
-      duration:0.5
-    })
-
-    setTimeout(() => {
-      animate(notification,{x:600},{
-        duration:1.5
-      })
-      setTimeout(() => {
-        notification.remove()
-        
-      }, 1000);
-  
-    }, 4500);
-  
+    showNotification({type:NotificationType.SUCCESS,title:"Send succesfull",description:"Your message was send succesfully"})
      
-  } catch (error) {
-    submitMessage.classList.remove("button--loading");
-
-    const notification = createNotification({type:NotificationType.ERROR,title:"Error",description:"Something went wrong, try later"})
-    notification.style.position = "fixed"
-    notification.style.top = "9%"
-    notification.style.right = "1%"
-    notification.style.zIndex = "11"
-
-    document.body.append(notification)
-    animate(notification,{x:[600,0]},{
-      duration:0.5
-    })
-
-    setTimeout(() => {
-      animate(notification,{x:600},{
-        duration:1.5
-      })
-      setTimeout(() => {
-        notification.remove()
-        
-      }, 1000);
-  
-    }, 4500);
+  } catch (error:any) {
+    submitButton.classList.remove("button--loading");
+    showNotification({type:NotificationType.ERROR,title:"Error",description:`${error.message}`})
   
   }
 }
-
-const container = createContainer({ border: false });
-
-const form = document.createElement("form");
-form.className = "contact-form";
-const emailInput = createTextField({
-  label: "Email",
-  required: true,
-  name: "email",
-});
-const organizationInput = createTextField({
-  label: "Organization",
-  required: true,
-  name: "organization",
-});
-const messageInput = createTextArea({
-  label: "Message",
-  required: false,
-  name: "message",
-});
-const submitMessage = createButton({
-  label: "Send",
-  style: ButtonStyles.outlined,
-  onClick: sendMessage,
-  type: "submit",
-});
-
-form.append(emailInput, organizationInput, messageInput, submitMessage);
-container.append(form);
-const contactButton = document.querySelector("#contact-button");
-
-contactButton?.append(
-  createModal({
-    label: "Send me a message",
-    element: container,
-    width: "320px",
-  })
-);
-
 async function createProjects() {
   const projectContainer = document.createElement("div")
   projectContainer.className = "projects-container"
@@ -133,7 +57,8 @@ async function createProjects() {
       size:CardSizes.Medium,
       image:project.images[0].url,
       title:project.title,
-      description:project.shortDescription
+      description:project.shortDescription,
+      link:project.link
 
     })
   })
@@ -141,4 +66,67 @@ async function createProjects() {
   document.querySelector("#projects")?.append(projectContainer)
   
 }
+
+function createTechnologies() {
+  const stackList = document.querySelector("#skills__stack-list")
+
+  const techsContainer = document.createElement("div")
+  techsContainer.className = "tech-container"
+  const techsEls = technologies.sort((a,b)=>b.knowledgeLevel -a.knowledgeLevel).map((tech)=>{
+    const name = createText({label:tech.name,type:TypographyType.bodyLarge,color:TypographyColor.Primary})
+    return name
+  })
+  techsContainer.append(...techsEls)
+
+  
+  stackList?.append(techsContainer)
+}
+
+function createContactForm() {
+  const container = createContainer({ border: false,maxWidth:"450px" });
+
+  const form = document.createElement("form");
+  form.className = "contact-form";
+  const emailInput = createTextField({
+    label: "Email",
+    required: true,
+    name: "email",
+  });
+  const organizationInput = createTextField({
+    label: "Organization",
+    required: true,
+    name: "organization",
+  });
+  const messageInput = createTextArea({
+    label: "Message",
+    required: false,
+    name: "message",
+  });
+  const submitButton = createButton({
+    label: "Send",
+    style: ButtonStyles.outlined,
+    onClick: sendMessage,
+    type: "submit",
+  });
+  
+  form.append(emailInput, organizationInput, messageInput, submitButton);
+  container.append(form);
+  return container
+    
+}
+
+const formContainer = createContactForm()
+const contactButton = document.querySelector("#contact-button");
+
+contactButton?.append(
+  createModal({
+    label: "Send me a message",
+    element: formContainer,
+    maxWidth: "450px",
+  })
+);
+
+
 createProjects()
+createTechnologies()
+inViewAnimations()

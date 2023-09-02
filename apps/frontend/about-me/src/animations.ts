@@ -1,16 +1,27 @@
 import { animate ,inView} from "motion"
 
-async function scrollAnimations() {
-    inView(".section",({target})=>{
-        console.log("elemento a entrado",target)
-        animate(
-            target.querySelector("* > *") as Element,
-            { x: [-100,0] },
-            { delay: 0.3, duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
-          );
+
+async function inViewAnimations() {
+    animate(".typography--title-medium",{opacity:0},{
+        duration:0
     })
+    
+    inView(".section",({target})=>{
+        animate(
+            target.querySelector(".typography--title-medium") as Element,
+            { opacity: 1,transform:"none" },
+            { delay: 0.3 , duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
+          );
+      
+
+    
+    },{margin:"-150px"})
+}
+async function scrollAnimation() {
+    
 }
 
 export {
-    scrollAnimations
+    inViewAnimations,
+    scrollAnimation
 }

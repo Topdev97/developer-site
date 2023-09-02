@@ -9,7 +9,8 @@ class MessageService {
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error(data.message);
+      const message = data.message ? data.message : "Something went wrong"
+      throw new Error(message);
     }
     return data
   }

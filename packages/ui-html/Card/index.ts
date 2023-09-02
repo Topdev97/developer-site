@@ -50,6 +50,7 @@ export const createCard = ({
   const cardImage = document.createElement("img");
   cardImage.className = "card__image";
   cardImage.src = image;
+  cardImage.alt = title
   imageContainer.append(cardImage);
   cardTitleContainer.append(cardTitle);
   cardDescriptionContainer.append(cardDescription);

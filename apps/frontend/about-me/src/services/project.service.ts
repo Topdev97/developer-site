@@ -1,5 +1,5 @@
 import { config } from "../config";
-import { Project } from "../project.model";
+import { Project } from "../models/project.model";
 
 class ProjectService{
 

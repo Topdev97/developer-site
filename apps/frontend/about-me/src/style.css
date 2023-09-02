@@ -5,16 +5,27 @@
   grid-template-columns: repeat(1, 1fr);
   column-gap: var(--space-3);
   background: var(--dark-600);
+  padding-block: var(--space-4);
 }
+.section > *{
+  z-index: 5;
+}
+
 .first-layer {
+  z-index: 1 !important;
 }
 .second-layer {
+  z-index: 2 !important;
 }
+
+
 @media (min-width: 768px) {
   .section {
     padding-inline: var(--space-5);
     grid-template-columns: repeat(4, 1fr);
     column-gap: var(--space-5);
+
+  padding-block: var(--space-8);
   }
 }
 
@@ -23,6 +34,8 @@
     padding-inline: var(--space-7);
     grid-template-columns: repeat(6, 1fr);
     column-gap: var(--space-7);
+
+  padding-block: var(--space-11);
   }
 }
 .hero {
@@ -33,15 +46,6 @@
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
-}
-.red-layer {
-  background-color: rgba(255, 0, 0, 0.3);
-  /* Red with transparency */
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
 }
 
 .hero__text {
@@ -71,7 +75,7 @@
 .skills > h2 {
   justify-self: center;
   /* margin-bottom: var(--space-11); */
-  z-index: 2;
+  z-index: 5;
 }
 
 .skills__techs-stack {
@@ -95,52 +99,10 @@
   padding: var(--space-5);
   border: 1px solid var(--primary-300);
 }
-.skills__stack-list .legend {
-  height: fit-content;
-  color: var(--white);
-  border: none !important;
+.skills__stack-list > .tech-container {
+  display: flex;
+  flex-direction: column;
 }
-.legend li:nth-child(1)::before {
-  background-color: #e52936 !important;
-}
-
-.legend li:nth-child(2)::before {
-  background-color: #ed6972 !important;
-}
-
-.legend li:nth-child(3)::before {
-  background-color: #f5a9af !important;
-}
-#bar-example-16 {
-  height: 380px;
-  --color-1: #e52936;
-  --color-2: #e52936;
-  --color-3: #e52936;
-  --color-4: #e52936;
-  --color-5: #e52936;
-  --color-6: #ed6972;
-  --color-7: #ed6972;
-  --color-8: #ed6972;
-  --color-9: #ed6972;
-  --color-10: #ed6972;
-  --labels-size: 120px;
-}
-
-#bar-example-16 caption {
-  font-size: var(--font-size-title-small);
-  font-weight: var(--font-weight-light);
-  color: var(--white);
-}
-#bar-example-16 th {
-  color: var(--white);
-  font-family: "Ubuntu", sans-serif;
-  font-size: var(--font-size-body-medium);
-  font-weight: var(--font-weight-medium);
-}
-.legend {
-  font-family: "Ubuntu", sans-serif;
-}
-
 .skills__soft-skills {
   display: flex;
   flex-direction: column;
@@ -305,7 +267,6 @@
   display: flex;
   gap: var(--space-8);  
   padding-block: var(--space-11);
-  justify-content: center;
 }
 @media (min-width: 768px) {
   .portfolio__text {
@@ -409,6 +370,7 @@
 }
 .navbar-mobile {
   position: fixed;
+  z-index: 10;
   top: 20px;
   left: 20px;
 }
