@@ -1,4 +1,4 @@
-import { animate ,inView} from "motion"
+import { animate ,inView,scroll} from "motion"
 
 
 async function inViewAnimations() {
@@ -16,6 +16,36 @@ async function inViewAnimations() {
 
     
     },{margin:"-150px"})
+    scroll(animate(
+        ".bg-image-1",
+        {
+            opacity:[1,0]
+        }
+        
+    ),{
+        offset:[
+            "start start","center center"
+        ]
+    })
+    scroll(animate(
+        ".bg-image-2",
+        {
+            opacity:[1,0]
+        }
+        
+    ),{
+        offset:[
+            "end center","center end"
+        ]
+    })
+    scroll(
+        animate(".progress-bar", { scaleX: [0, 1] }),
+        {
+            offset:[
+                "start start","end end"
+            ]
+        }
+      );
 }
 async function scrollAnimation() {
     

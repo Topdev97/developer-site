@@ -4,8 +4,30 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: var(--space-3);
-  background: var(--dark-600);
   padding-block: var(--space-4);
+  z-index: 3;
+  position: relative;
+}
+.progress-bar {
+  position: fixed;
+  z-index: 5;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: var(--white);
+  transform: scaleX(0);
+  transform-origin: 0%;
+}
+.bg-image-1 , .bg-image-2{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: flex;
+  opacity: 0;
+
+  /* justify-content: center; */
+  align-items: center;
 }
 .section > *{
   z-index: 5;
@@ -41,11 +63,7 @@
 .hero {
   height: 110vh;
   grid-template-rows: repeat(5, 1fr);
-  background-image: url("https://res.cloudinary.com/dxryc5jgr/image/upload/c_crop,h_1060,q_61,w_2048,y_237/v1692046970/developer-site/developer-1.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: relative;
+  overflow: hidden;
 }
 
 .hero__text {
@@ -54,8 +72,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  background-color: rgba(0, 0, 0, 0.85);
-  border-radius: 24px;
   padding-inline: var(--space-8);
   padding-block: var(--space-6);
 }
@@ -68,7 +84,6 @@
 }
 
 .skills {
-  position: relative;
   row-gap: var(--space-11);
   padding-bottom: var(--space-11);
 }
@@ -95,7 +110,6 @@
 
 .skills__stack-list {
 
-  background-color: var(--dark-600);
   padding: var(--space-5);
   border: 1px solid var(--primary-300);
 }
@@ -288,7 +302,6 @@
 }
 
 .contact {
-  position: relative;
   row-gap: var(--space-10);
   padding-bottom: var(--space-8);
 }
