@@ -2,8 +2,9 @@ import { createButton, ButtonStyles, } from "../Button";
 import type { ButtonProps } from "../Button";
 export interface ModalProps extends ButtonProps {
   hidden?: boolean;
-  maxWidth?:string;
-  heigth?:string;
+
+  width?:string;
+  height?:string;
   element?:HTMLElement;
 }
 
@@ -60,7 +61,7 @@ const createElement = () => {
 };
 
 
-export const createModal = ({element = createElement(),maxWidth = "375px",heigth = "auto",label = "button",style = ButtonStyles.outlined}: ModalProps) => {
+export const createModal = ({element = createElement(),width = "375px",height: height = "auto",label = "button",style = ButtonStyles.outlined}: ModalProps) => {
   const button = createButton({
     label,
     style
@@ -90,8 +91,8 @@ export const createModal = ({element = createElement(),maxWidth = "375px",heigth
   // Create the modal wrapper
   const modalWrapDiv = document.createElement("div");
   modalWrapDiv.className = "modal-wrap";
-  modalWrapDiv.style.maxWidth = maxWidth
-  modalWrapDiv.style.height = heigth
+  modalWrapDiv.style.width = width
+  modalWrapDiv.style.height = height
   // Append the image and paragraph to the modal wrapper
   element.classList.add("modal__element")
   modalWrapDiv.appendChild(element);

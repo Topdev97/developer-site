@@ -8,7 +8,7 @@ async function inViewAnimations() {
     
     inView(".section",({target})=>{
         animate(
-            target.querySelector(".typography--title-medium") as Element,
+            target.querySelectorAll(".typography--title-medium"),
             { opacity: 1,transform:"none" },
             { delay: 0.3 , duration: 0.9, easing: [0.17, 0.55, 0.55, 1] }
           );
@@ -16,28 +16,7 @@ async function inViewAnimations() {
 
     
     },{margin:"-150px"})
-    scroll(animate(
-        ".bg-image-1",
-        {
-            opacity:[1,0]
-        }
-        
-    ),{
-        offset:[
-            "start start","center center"
-        ]
-    })
-    scroll(animate(
-        ".bg-image-2",
-        {
-            opacity:[1,0]
-        }
-        
-    ),{
-        offset:[
-            "end center","center end"
-        ]
-    })
+    
     scroll(
         animate(".progress-bar", { scaleX: [0, 1] }),
         {

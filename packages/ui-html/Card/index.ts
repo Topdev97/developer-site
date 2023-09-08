@@ -1,5 +1,4 @@
-import "../common/components.css"
-import "../common/variables.css"
+
 export enum CardSizes {
   Small = "card--small",
   Medium = "card--medium",

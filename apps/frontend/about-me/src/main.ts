@@ -1,5 +1,4 @@
-import "../../../../packages/ui-html/common/variables.css";
-import "../../../../packages/ui-html/common/components.css";
+import "../../../../packages/ui-html/common/global.css";
 import "./style.css";
 import {
   createModal,
@@ -11,8 +10,8 @@ import {
   NotificationType,
   createCard,
   CardSizes,
-  createText,
-  TypographyType,
+  createTypography,
+  TypographySize,
   TypographyColor
 } from "../../../../packages/ui-html";
 import { messageService } from "./services/message.service";
@@ -73,7 +72,7 @@ function createTechnologies() {
   const techsContainer = document.createElement("div")
   techsContainer.className = "tech-container"
   const techsEls = technologies.sort((a,b)=>b.knowledgeLevel -a.knowledgeLevel).map((tech)=>{
-    const name = createText({label:tech.name,type:TypographyType.bodyLarge,color:TypographyColor.Primary})
+    const name = createTypography({label:tech.name,size:TypographySize.bodyLarge,color:TypographyColor.Primary})
     return name
   })
   techsContainer.append(...techsEls)
@@ -83,7 +82,7 @@ function createTechnologies() {
 }
 
 function createContactForm() {
-  const container = createContainer({ border: false,maxWidth:"450px" });
+  const container = createContainer({ border: false });
 
   const form = document.createElement("form");
   form.className = "contact-form";
@@ -122,7 +121,7 @@ contactButton?.append(
   createModal({
     label: "Send me a message",
     element: formContainer,
-    maxWidth: "450px",
+    width:"90vmin"
   })
 );
 

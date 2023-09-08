@@ -1,75 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,300&display=swap");
 
 :root {
   /* Colors */
+  --primary_100: #f6c6c6ff;
+  --primary_300: #e52936;
+  --primary_600: #d91a1aff;
+  --primary_700: #a61414ff;
+  --secondary_100: #e6eff3ff;
+  --secondary_300: #9bbdcdff;
+  --secondary_600: #065a82ff;
+  --secondary_700: #054462ff;
 
-  --primary-100: #f6c6c6ff;
-  --primary-300: #E52936;
-  --primary-600: #d91a1aff;
-  --primary-700: #a61414ff;
-  --secondary-100: #e6eff3ff;
-  --secondary-300: #9bbdcdff;
-  --secondary-600: #065a82ff;
-  --secondary-700: #054462ff;
-  --warning-100: #ffdb99ff;
-  --warning-300: #ffa500ff;
-  --warning-600: #a16800ff;
-  --success-100: #99dbc8ff;
-  --success-300: #00a676ff;
-  --success-600: #007d5aff;
-  --info-100: #a6d5faff;
-  --info-300: #2196f3ff;
-  --info-600: #1971b6ff;
-  --neutral-100: #f8f8f8ff;
-  --neutral-300: #e2e2e2ff;
-  --neutral-600: #6f6f6fff;
+  --neutral_50: #fafafa;
+  --neutral_100: #f5f5f5;
+  --neutral_200: #e5e5e5;
+  --neutral_300: #d4d4d4;
+  --neutral_400: #a3a3a3;
+  --neutral_500: #737373;
+  --neutral_600: #525252;
+  --neutral_700: #404040;
+  --neutral_800: #262626;
+  --neutral_900: #171717;
+  --neutral_950: #0a0a0a;
+
   --white: #ffffffff;
-  --dark-100: #404040;
-  --dark-300: #202020;
-  --dark-600: #000000;
-  --error-100: #f6c6c6ff;
-  --error-300: #ff0000ff;
-  --error-600: #a61414ff;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-7: 32px;
-  --space-8: 40px;
-  --space-9: 48px;
-  --space-10: 64px;
-  --space-11: 80px;
-  --box-shadow1:0px 2px 3px 1px rgba(0, 0, 0, 0.50);
+  --dark: #000000;
 
 
+  --warning_100: #ffdb99ff;
+  --warning_300: #ffa500ff;
+  --warning_600: #a16800ff;
+  --success_100: #99dbc8ff;
+  --success_300: #00a676ff;
+  --success_600: #007d5aff;
+  --info_100: #a6d5faff;
+  --info_300: #2196f3ff;
+  --info_600: #1971b6ff;
+  --error_100: #f6c6c6ff;
+  --error_300: #ff0000ff;
+  --error_600: #a61414ff;
   /* Typographies */
-  --font-size-title-large: 68px;
-  --font-size-title-medium: 42px;
-  --font-size-title-small: 26px;
-  --font-size-body-medium: 16px;
-  --font-size-body-small: 10px;
-
+  --font_size_title_large: 68px;
+  --font_size_title_medium: 42px;
+  --font_size_title_small: 26px;
+  --font_size_body_large: 16px;
+  --font_size_body_small: 10px;
   /* Font weight */
-  --font-weight-light: 300;
+  --font_weight_light: 300;
+  --font_weight_regular: 400;
+  --font_weight_medium: 500;
+  --font_weight_bold: 700;
 
-  --font-weight-normal: 400;
+
+
+  --box_shadow1: 0px 2px 3px 1px rgba(0, 0, 0, 0.5);
+
+  --space_1: 0.25rem;
+  --space_2: 0.5rem;
+  --space_3: 0.75rem;
+  --space_4: 1rem;
+  --space_5: 1.25rem;
+  --space_6: 1.5rem;
+  --space_7: 1.75rem;
+  --space_8: 2rem;
+  --space_9: 2.25rem;
+  --space_10: 2.5rem;
+  --space_11: 2.75rem;
+  --space_12: 3rem;
+  --space_14: 3.5rem;
+  --space_16: 4rem;
+  --space_20: 5rem;
+  --space_24: 6rem;
+  --space_28: 7rem;
+  --space_32: 8rem;
+  --space_36: 9rem;
+  --space_40: 10rem;
+  --space_44: 11rem;
+  --space_48: 12rem;
+  --space_52: 13rem;
+  --space_56: 14rem;
+  --space_60: 15rem;
+  --space_64: 16rem;
+  --space_72: 18rem;
+  --space_80: 20rem;
+  --space_96: 24rem;
 
 }
 
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
 }
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,5 @@
 import { createContainer } from "../Container";
-import { createText, TypographyType } from "../Typography";
+import { createTypography, TypographySize } from "../Typography";
 const warningIcon = () => {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("width", "48px");
@@ -204,10 +204,10 @@ export const createNotification = ({
   const icon = notificationIcon[type];
   const textContainer = document.createElement("div");
   textContainer.className = "notification__text-content";
-  const titleEl = createText({ label: title, type: TypographyType.bodyLarge });
-  const descriptionEl = createText({
+  const titleEl = createTypography({ label: title, size: TypographySize.bodyLarge });
+  const descriptionEl = createTypography({
     label: description,
-    type: TypographyType.bodyMedium,
+    size: TypographySize.bodyMedium,
   });
   textContainer.append(titleEl, descriptionEl);
   notification.append(icon, textContainer);

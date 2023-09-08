@@ -6,7 +6,7 @@
   z-index: 11;
   width: 40px;
   height: 30px;
-  background-color: var(--dark-600);
+  background-color: var(--dark);
   color: var(--white);
   opacity: 0;
   transition: all 200ms linear;
@@ -18,7 +18,7 @@
 
 .modal__close-icon:hover {
   background-color: var(--white) !important;
-  color: var(--dark-600) !important;
+  color: var(--dark) !important;
 }
 .modal.active .modal__close-icon {
   transition: opacity 300ms 300ms ease, transform 300ms 300ms ease,
@@ -61,6 +61,4 @@
   transform: scale(1);
   transition: opacity 250ms 500ms ease, transform 350ms 500ms ease;
 }
-.modal__element{
-  width: 100%;
-}
+

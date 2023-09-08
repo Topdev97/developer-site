@@ -19,7 +19,7 @@ input {
 
 /* Styling for the input label */
 .input-label {
-    color: var(--neutral-300);
+    color: var(--neutral_300);
     position: absolute;
     top: 1.5rem;
     transition: .25s ease;
@@ -30,7 +30,7 @@ input {
     border: 0;
     z-index: 1;
     background-color: transparent;
-    border-bottom: 1px solid var(--neutral-600);
+    border-bottom: 1px solid var(--neutral_600);
     font: inherit;
     font-size: 1.125rem;
     padding: .25rem 0;
@@ -47,7 +47,7 @@ input {
 /* Styling for focused and valid input labels */
 .input-field:focus + .input-label,
 .input-field:valid + .input-label {
-    color: var(--neutral-600);
+    color: var(--neutral_600);
     transform: translateY(-1.5rem);
 }
 

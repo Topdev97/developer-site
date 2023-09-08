@@ -1,3 +1,5 @@
+@import url("./variables.css");
+
 @import url("../Button/button.css");
 @import url("../Card/card.css");
 @import url("../Modal/modal.css");
@@ -8,3 +10,5 @@
 @import url("../Typography/typography.css");
 @import url("../Container/container.css");
 @import url("../Notification/notification.css");
+
+@import url("../Link/link.css");

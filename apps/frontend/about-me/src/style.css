@@ -1,12 +1,13 @@
 
 .section {
-  padding-inline: var(--space-3);
+  padding-inline: var(--space_3);
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: var(--space-3);
-  padding-block: var(--space-4);
+  column-gap: var(--space_3);
+  padding-block: var(--space_4);
   z-index: 3;
   position: relative;
+  background-color: var(--dark);
 }
 .progress-bar {
   position: fixed;
@@ -18,16 +19,6 @@
   background: var(--white);
   transform: scaleX(0);
   transform-origin: 0%;
-}
-.bg-image-1 , .bg-image-2{
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  display: flex;
-  opacity: 0;
-
-  /* justify-content: center; */
-  align-items: center;
 }
 .section > *{
   z-index: 5;
@@ -43,21 +34,21 @@
 
 @media (min-width: 768px) {
   .section {
-    padding-inline: var(--space-5);
+    padding-inline: var(--space_5);
     grid-template-columns: repeat(4, 1fr);
-    column-gap: var(--space-5);
+    column-gap: var(--space_5);
 
-  padding-block: var(--space-8);
+  padding-block: var(--space_8);
   }
 }
 
 @media (min-width: 1024px) {
   .section {
-    padding-inline: var(--space-7);
+    padding-inline: var(--space_7);
     grid-template-columns: repeat(6, 1fr);
-    column-gap: var(--space-7);
+    column-gap: var(--space_7);
 
-  padding-block: var(--space-11);
+  padding-block: var(--space_11);
   }
 }
 .hero {
@@ -67,25 +58,30 @@
 }
 
 .hero__text {
-  grid-row: 2/3;
+  grid-row: 2/-1;
   align-self: center;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  padding-inline: var(--space-8);
-  padding-block: var(--space-6);
+  gap: var(--space_3);
+}
+.contact__social-media-container {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: var(--space_5);
+  margin-block: var(--space_8);
 }
 
 @media (min-width: 768px) {
   .hero__text {
-    grid-column: 1/5;
-    grid-row: 2/4;
+    grid-column: 1/6;
+    grid-row: 2/5;
   }
 }
 
 .skills {
-  row-gap: var(--space-11);
-  padding-bottom: var(--space-11);
+  row-gap: var(--space_11);
+  padding-bottom: var(--space_11);
 }
 .skills > h2 {
   justify-self: center;
@@ -101,7 +97,7 @@
 }
 
 .skills__techs-stack > h3 {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space_3);
 }
 
 .skills__stack-list {
@@ -110,8 +106,8 @@
 
 .skills__stack-list {
 
-  padding: var(--space-5);
-  border: 1px solid var(--primary-300);
+  padding: var(--space_5);
+  border: 1px solid var(--primary_300);
 }
 .skills__stack-list > .tech-container {
   display: flex;
@@ -123,12 +119,9 @@
 }
 
 .skills__soft-skills > h3 {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space_3);
 }
 @media (min-width: 768px) {
-  .skills > h2 {
-    grid-column: 1/5;
-  }
   .skills__techs-stack {
     grid-column: 1/5;
     grid-row: 2/3;
@@ -144,9 +137,6 @@
   }
 }
 @media (min-width: 1024px) {
-  .skills > h2 {
-    grid-column: 1/7;
-  }
   .skills__techs-stack {
     grid-column: 1/4;
     grid-row: 2/3;
@@ -157,16 +147,16 @@
   }
 
   .skills__soft-skills {
-    grid-column: 1/7;
+    grid-column: 1/5;
     grid-row: 3/4;
   }
 }
 
 .about-me {
-  padding-top: var(--space-11);
+  padding-top: var(--space_11);
   grid-template-rows: auto 50vh auto;
-  row-gap: var(--space-11);
-  padding-bottom: var(--space-11);
+  row-gap: var(--space_11);
+  padding-bottom: var(--space_11);
 }
 .about-me > h2 {
   justify-self: center;
@@ -177,10 +167,10 @@
   grid-row: 2/3;
 }
 .about-me__experience > *:nth-child(1) {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space_3);
 }
 .about-me__experience > *:nth-child(2) {
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space_2);
 }
 .about-me__expectations {
   display: flex;
@@ -188,11 +178,11 @@
   grid-row: 3/4;
 }
 .about-me__expectations > *:nth-child(1) {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space_3);
 }
 
 .about-me__expectations > *:nth-child(2) {
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space_2);
 }
 .about-me__hobbies {
   display: flex;
@@ -201,11 +191,11 @@
   grid-row: 4/5;
 }
 .about-me__hobbies > *:nth-child(1) {
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space_3);
 }
 
 .about-me__hobbies > *:nth-child(2) {
-  margin-bottom: var(--space-2);
+  margin-bottom: var(--space_2);
 }
 @media (min-width: 768px) {
   .about-me > h2 {
@@ -251,14 +241,14 @@
 }
 
 .projects::-webkit-scrollbar-thumb {
-  background: var(--primary-700); /* Color of the scrollbar thumb */
+  background: var(--primary_700); /* Color of the scrollbar thumb */
   border-radius: 5px; /* Radius of the scrollbar thumb corners */
 }
 
 .portfolio {
-  padding-top: var(--space-11);
-  row-gap: var(--space-11);
-  padding-bottom: var(--space-11);
+  padding-top: var(--space_11);
+  row-gap: var(--space_11);
+  padding-bottom: var(--space_11);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -269,7 +259,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space_6);
 }
 .portfolio__slider {
 }
@@ -279,8 +269,8 @@
 }
 .projects-container{
   display: flex;
-  gap: var(--space-8);  
-  padding-block: var(--space-11);
+  gap: var(--space_8);  
+  padding-block: var(--space_11);
 }
 @media (min-width: 768px) {
   .portfolio__text {
@@ -302,26 +292,22 @@
 }
 
 .contact {
-  row-gap: var(--space-10);
-  padding-bottom: var(--space-8);
+  row-gap: var(--space_10);
+  padding-bottom: var(--space_8);
 }
 .contact > h2 {
   justify-self: center;
 }
-.contact__social-media-container {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-5);
-}
+
 .contact__form-container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-8);
+  gap: var(--space_8);
 }
 .contact__form-container__text {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  gap: var(--space_2);
   width: 100%;
 }
 .contact__form-container__text:nth-child(1) p {
@@ -329,13 +315,13 @@
 }
 .contact__social-media {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space_3);
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space_4);
 }
 .contact-form textarea {
   margin-bottom: 2rem;
@@ -369,9 +355,9 @@
 
 .navbar-container {
   position: fixed;
-  top: var(--space-6);
+  top: var(--space_6);
 
-  left: var(--space-2);
+  left: var(--space_2);
 }
 
 .nav input:checked ~ .menu {

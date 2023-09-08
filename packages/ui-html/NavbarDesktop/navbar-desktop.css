@@ -1,7 +1,7 @@
 
 .navbar-container{
     width: fit-content;
-    background-color: var(--dark-600);
+    background-color: var(--dark);
 
     font-family: 'Ubuntu', sans-serif;
     z-index: 10;
@@ -50,7 +50,7 @@
 }
 
 .menu li a:hover {
-    color: var(--primary-600);
+    color: var(--primary_600);
 }
 
 .nav input {

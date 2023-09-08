@@ -10,33 +10,33 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
 
 .typography--link{
   text-decoration: none;
-  color: var(--primary-300);
+  color: var(--primary_300);
 }
 .typography--link:hover{
   cursor: pointer;
-  color: var(--primary-100);
+  color: var(--primary_100);
   
 }
 .typography--title-large {
-  font-size: var(--font-size-title-large);
-  font-weight: var(--font-weight-light);
+  font-size: var(--font_size_title_large);
+  font-weight: var(--font_weight_light);
 }
 
 .typography--title-medium {
-  font-size: var(--font-size-title-medium);
-  font-weight: var(--font-weight-light);
+  font-size: var(--font_size_title_medium);
+  font-weight: var(--font_weight_light);
 }
 
 .typography--title-small {
-  font-size: var(--font-size-title-small);
-  font-weight: var(--font-weight-light);
+  font-size: var(--font_size_title_small);
+  font-weight: var(--font_weight_light);
 }
 
 
 .typography--body-large {
-  font-size: var(--font-size-body-medium);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--space-6);
+  font-size: var(--font_size_body_medium);
+  font-weight: var(--font_weight_normal);
+  line-height: var(--space_6);
 }
 
 .typography--body-medium {
@@ -47,13 +47,6 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
 }
 
 .typography--body-small {
-  font-size: var(--font-size-body-small);
-  font-weight: var(--font-weight-light);
-}
-.typography--list-item {
-  list-style: bullet; 
-  font-size: var(--font-size-body-medium);
-  font-weight: var(--font-weight-normal);
-  line-height: var(--space-6);
-
+  font-size: var(--font_size_body_small);
+  font-weight: var(--font_weight_light);
 }

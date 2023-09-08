@@ -1,6 +1,6 @@
 .container {
-  background: var(--dark-600);
-  padding: var(--space-6);
+  background: var(--dark);
+  padding: var(--space_6);
 }
 .container--border {
   border: 1px solid var(--white);
