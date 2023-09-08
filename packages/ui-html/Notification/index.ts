@@ -35,7 +35,7 @@ const warningIcon = () => {
 
   const g5 = document.createElementNS("http://www.w3.org/2000/svg", "g");
   g5.setAttribute("id", "add");
-  g5.setAttribute("fill", "var(--warning-300)");
+  g5.setAttribute("fill", "var(--warning_300)");
   g5.setAttribute("transform", "translate(32.000000, 42.666667)");
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -54,7 +54,7 @@ const warningIcon = () => {
 };
 const errorIcon = () => {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  svg.setAttribute("fill", "var(--error-300)");
+  svg.setAttribute("fill", "var(--error_300)");
   svg.setAttribute("width", "48px");
   svg.setAttribute("viewBox", "-3.5 0 19 19");
   svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
@@ -90,7 +90,7 @@ const successIcon = () => {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("width", "48px");
   svg.setAttribute("viewBox", "0 0 24 24");
-  svg.setAttribute("fill", "var(--info-300)");
+  svg.setAttribute("fill", "var(--info_300)");
   svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
 
   const g1 = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -111,19 +111,19 @@ const successIcon = () => {
   path1.setAttribute("fill-rule", "evenodd");
   path1.setAttribute("clip-rule", "evenodd");
   path1.setAttribute("d", "M4 4H20V20H4V4ZM5.5 5.5V18.5H18.5V5.5H5.5Z");
-  path1.setAttribute("fill", "var(--success-300)");
+  path1.setAttribute("fill", "var(--success_300)");
   g3.appendChild(path1);
 
   const path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path2.setAttribute("fill-rule", "evenodd");
   path2.setAttribute("clip-rule", "evenodd");
   path2.setAttribute("d", "M11.25 16V11.0562H12.75V16H11.25Z");
-  path2.setAttribute("fill", "var(--success-300)");
+  path2.setAttribute("fill", "var(--success_300)");
   g3.appendChild(path2);
 
   const path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path3.setAttribute("d", "M11 8H13V10H11V8Z");
-  path3.setAttribute("fill", "var(--success-300)");
+  path3.setAttribute("fill", "var(--success_300)");
   g3.appendChild(path3);
 
   svg.appendChild(g3);
@@ -134,7 +134,7 @@ const infoIcon = () => {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("width", "48px");
   svg.setAttribute("viewBox", "0 0 24 24");
-  svg.setAttribute("fill", "var(--info-300)");
+  svg.setAttribute("fill", "var(--info_300)");
   svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
 
   const g1 = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -155,19 +155,19 @@ const infoIcon = () => {
   path1.setAttribute("fill-rule", "evenodd");
   path1.setAttribute("clip-rule", "evenodd");
   path1.setAttribute("d", "M4 4H20V20H4V4ZM5.5 5.5V18.5H18.5V5.5H5.5Z");
-  path1.setAttribute("fill", "var(--info-300)");
+  path1.setAttribute("fill", "var(--info_300)");
   g3.appendChild(path1);
 
   const path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path2.setAttribute("fill-rule", "evenodd");
   path2.setAttribute("clip-rule", "evenodd");
   path2.setAttribute("d", "M11.25 16V11.0562H12.75V16H11.25Z");
-  path2.setAttribute("fill", "var(--info-300)");
+  path2.setAttribute("fill", "var(--info_300)");
   g3.appendChild(path2);
 
   const path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path3.setAttribute("d", "M11 8H13V10H11V8Z");
-  path3.setAttribute("fill", "var(--info-300)");
+  path3.setAttribute("fill", "var(--info_300)");
   g3.appendChild(path3);
 
   svg.appendChild(g3);
@@ -207,7 +207,7 @@ export const createNotification = ({
   const titleEl = createTypography({ label: title, size: TypographySize.bodyLarge });
   const descriptionEl = createTypography({
     label: description,
-    size: TypographySize.bodyMedium,
+    size: TypographySize.bodyLarge,
   });
   textContainer.append(titleEl, descriptionEl);
   notification.append(icon, textContainer);

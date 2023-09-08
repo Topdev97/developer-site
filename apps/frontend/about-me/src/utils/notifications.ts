@@ -8,9 +8,9 @@ export const showNotification = ( {duration = 4500,title,description,type}:ShowN
 
     const notification = createNotification({title,description,type})
     notification.style.position = "fixed"
-    notification.style.top = "9%"
-    notification.style.right = "1%"
-    notification.style.zIndex = "11"
+    notification.style.top = "5px"
+    notification.style.right = "5px"
+    notification.style.zIndex = "20"
 
     document.body.append(notification)
     animate(notification,{x:[600,0]},{
