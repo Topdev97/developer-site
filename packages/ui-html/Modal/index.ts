@@ -99,11 +99,7 @@ export const createModal = ({element = createElement(),width = "375px",height: h
 
   // Append the modal wrapper to the modal container
   modalDiv.append(modalWrapDiv, closeModal);
-
-  // Append all elements to the main container div
-  modalContainer.appendChild(button);
-  modalContainer.appendChild(modalDiv);
-
+  document.body.append(modalDiv)
   // Append the main container div to the body of the HTML document
-  return modalContainer;
+  return button;
 };

@@ -9,6 +9,61 @@
   position: relative;
   background-color: var(--dark);
 }
+
+@media (min-width: 768px) {
+  .section {
+    padding-inline: var(--space_5);
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--space_5);
+
+  padding-block: var(--space_8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-inline: var(--space_7);
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: var(--space_7);
+
+  padding-block: var(--space_16);
+  }
+}
+.jobs-list{
+  background: var(--dark);
+  grid-template-columns: 1fr;
+    display: grid;
+    gap: var(--space_4);
+}
+@media(min-width:768px){
+  .jobs-list{
+    grid-template-columns: 1fr 1fr;
+  }
+    
+}
+
+@media(min-width:1024px){
+  .jobs-list{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+    
+}
+
+.job-card{
+  display: flex;
+
+}
+.job-card img {
+  width: 80px;
+  cursor: pointer;
+  height: 80px;
+}
+.job-card > div {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding-block: 0;
+}
 .progress-bar {
   position: fixed;
   z-index: 5;
@@ -32,27 +87,8 @@
 }
 
 
-@media (min-width: 768px) {
-  .section {
-    padding-inline: var(--space_5);
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: var(--space_5);
-
-  padding-block: var(--space_8);
-  }
-}
-
-@media (min-width: 1024px) {
-  .section {
-    padding-inline: var(--space_7);
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: var(--space_7);
-
-  padding-block: var(--space_11);
-  }
-}
 .hero {
-  height: 110vh;
+  height: 105vh;
   grid-template-rows: repeat(5, 1fr);
   overflow: hidden;
 }
@@ -78,6 +114,17 @@
     grid-row: 2/5;
   }
 }
+.experience{
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: var(--space_10);
+}
+.experience > h2 {
+  text-align: center;
+}
+
 
 .skills {
   row-gap: var(--space_11);
@@ -112,6 +159,7 @@
 .skills__stack-list > .tech-container {
   display: flex;
   flex-direction: column;
+  gap: var(--space_2);
 }
 .skills__soft-skills {
   display: flex;
@@ -380,4 +428,29 @@
   .navbar-mobile {
     display: none;
   }
+}
+
+
+.linkedin-icon{
+  fill: var(--neutral_100);
+
+  stroke: var(--neutral_100);
+  transition: all 0.2s;
+
+}
+.linkedin-icon:hover{
+  fill: var(--primary_300);
+  transition: all 0.2s;
+}
+
+.github-icon g{
+  fill: var(--neutral_100);
+  transition: all 0.2s;
+
+}
+
+.github-icon g:hover{
+  fill: var(--primary_300);
+  transition: all 0.2s;
+
 }

@@ -8,6 +8,17 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
     font-family: 'Ubuntu', sans-serif;
 }
 
+.typography--primary{
+  color: var(--primary_300);
+}
+
+.typography--white{
+  color: var(--white);
+}
+
+.typography--dark{
+  color: var(--dark);
+}
 .typography--link{
   text-decoration: none;
   color: var(--primary_300);

@@ -19,6 +19,7 @@ import { inViewAnimations } from "./animations";
 import { projectService } from "./services/project.service";
 import { showNotification } from "./utils/notifications";
 import { technologies } from "./data/technologies";
+import { JobsList } from "./data/home";
 
 
 async function sendMessage(ev: MouseEvent) {
@@ -72,8 +73,17 @@ function createTechnologies() {
   const techsContainer = document.createElement("div")
   techsContainer.className = "tech-container"
   const techsEls = technologies.sort((a,b)=>b.knowledgeLevel -a.knowledgeLevel).map((tech)=>{
-    const name = createTypography({label:tech.name,size:TypographySize.bodyLarge,color:TypographyColor.Primary})
-    return name
+    const container = createContainer({border:false})
+    container.style.display = "flex"
+    container.style.gap = "var(--space_6)"
+    container.style.padding = "0"
+    const level = document.createElement("div")
+    level.style.width = "100%"
+    level.style.background = "var(--primary_300)"
+    const name = createTypography({label:tech.name,size:TypographySize.bodyLarge,color:TypographyColor.White})
+    name.style.width = "130px"
+    container.append(name,level)
+    return container
   })
   techsContainer.append(...techsEls)
 
@@ -113,10 +123,33 @@ function createContactForm() {
   return container
     
 }
+function createJobs() {
+  const jobsContainer = document.createElement("div")
+  jobsContainer.className = "jobs-list"
+  const jobsList = JobsList.map((job)=>{
+    const container = createContainer({})
+    container.classList.add("job-card")
+    const textContainer = createContainer({border:false})
+    const jobTitle = createTypography({label:job.jobTitle,size:TypographySize.titleSmall,color:TypographyColor.Primary})
+    const organization = createTypography({label:job.organization,size:TypographySize.bodyLarge,color:TypographyColor.White})
+    const fromUntil = createTypography({label:job.fromUntil,size:TypographySize.bodyLarge,color:TypographyColor.White})
+    textContainer.append(jobTitle,organization,fromUntil)
+    const image = document.createElement("img")
+    image.src = job.logoUrl
+    image.addEventListener('click',()=>{
+      window.open(job.link)
+    })
+    container.append(image,textContainer)
+    return container
+  })
+  jobsContainer.append(...jobsList)
+  return jobsContainer
+}
 
 const formContainer = createContactForm()
 const contactButton = document.querySelector("#contact-button");
-
+const jobsNode = document.querySelector("#job-node")
+jobsNode?.append(createJobs())
 contactButton?.append(
   createModal({
     label: "Send me a message",

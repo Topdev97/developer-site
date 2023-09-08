@@ -2,9 +2,7 @@ import { animate ,inView,scroll} from "motion"
 
 
 async function inViewAnimations() {
-    animate(".typography--title-medium",{opacity:0},{
-        duration:0
-    })
+    
     
     inView(".section",({target})=>{
         animate(
