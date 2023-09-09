@@ -16,7 +16,7 @@ async function inViewAnimations() {
     },{margin:"-150px"})
     
     scroll(
-        animate(".progress-bar", { scaleX: [0, 1] }),
+        animate(".progress-bar", { scaleY: [0, 1] }),
         {
             offset:[
                 "start start","end end"

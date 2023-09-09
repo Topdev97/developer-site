@@ -15,6 +15,21 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
 .typography--white{
   color: var(--white);
 }
+.typography--light{
+ font-weight: 300;
+}
+
+.typography--regular{
+  font-weight: 400;
+}
+
+.typography--medium{
+  font-weight: 500;
+}
+
+.typography--bold{
+  font-weight: 700;
+}
 
 .typography--dark{
   color: var(--dark);
@@ -30,34 +45,28 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
 }
 .typography--title-large {
   font-size: var(--font_size_title_large);
-  font-weight: var(--font_weight_light);
 }
 
 .typography--title-medium {
   font-size: var(--font_size_title_medium);
-  font-weight: var(--font_weight_light);
 }
 
 .typography--title-small {
   font-size: var(--font_size_title_small);
-  font-weight: var(--font_weight_light);
 }
 
 
 .typography--body-large {
   font-size: var(--font_size_body_medium);
-  font-weight: var(--font_weight_normal);
   line-height: var(--space_6);
 }
 
 .typography--body-medium {
   font-size: var(--font-size-body-medium);
-  font-weight: var(--font-weight-light);
   line-height: var(--space-5);
 
 }
 
 .typography--body-small {
   font-size: var(--font_size_body_small);
-  font-weight: var(--font_weight_light);
 }

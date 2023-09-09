@@ -12,7 +12,8 @@ import {
   CardSizes,
   createTypography,
   TypographySize,
-  TypographyColor
+  TypographyColor,
+  TypographyWeight
 } from "../../../../packages/ui-html";
 import { messageService } from "./services/message.service";
 import { inViewAnimations } from "./animations";
@@ -75,13 +76,12 @@ function createTechnologies() {
   const techsEls = technologies.sort((a,b)=>b.knowledgeLevel -a.knowledgeLevel).map((tech)=>{
     const container = createContainer({border:false})
     container.style.display = "flex"
-    container.style.gap = "var(--space_6)"
     container.style.padding = "0"
     const level = document.createElement("div")
     level.style.width = "100%"
     level.style.background = "var(--primary_300)"
     const name = createTypography({label:tech.name,size:TypographySize.bodyLarge,color:TypographyColor.White})
-    name.style.width = "130px"
+    name.style.width = "180px"
     container.append(name,level)
     return container
   })
@@ -130,7 +130,7 @@ function createJobs() {
     const container = createContainer({})
     container.classList.add("job-card")
     const textContainer = createContainer({border:false})
-    const jobTitle = createTypography({label:job.jobTitle,size:TypographySize.titleSmall,color:TypographyColor.Primary})
+    const jobTitle = createTypography({label:job.jobTitle,weight:TypographyWeight.BOLD,size:TypographySize.bodyLarge,color:TypographyColor.Primary})
     const organization = createTypography({label:job.organization,size:TypographySize.bodyLarge,color:TypographyColor.White})
     const fromUntil = createTypography({label:job.fromUntil,size:TypographySize.bodyLarge,color:TypographyColor.White})
     textContainer.append(jobTitle,organization,fromUntil)
