@@ -78,10 +78,10 @@ function createTechnologies() {
     container.style.display = "flex"
     container.style.padding = "0"
     const level = document.createElement("div")
-    level.style.width = "100%"
+    level.style.width = `${60/5 * tech.knowledgeLevel}%`
     level.style.background = "var(--primary_300)"
     const name = createTypography({label:tech.name,size:TypographySize.bodyLarge,color:TypographyColor.White})
-    name.style.width = "180px"
+    name.style.minWidth = "180px"
     container.append(name,level)
     return container
   })
