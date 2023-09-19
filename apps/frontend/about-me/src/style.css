@@ -7,7 +7,7 @@
   padding-block: var(--space_4);
   z-index: 3;
   position: relative;
-  background-color: var(--dark);
+  /* background-color: var(--dark); */
 }
 
 @media (min-width: 768px) {
@@ -82,11 +82,15 @@
   z-index: 5;
 }
 
-.first-layer {
+.layer-1 {
+  position: fixed;
+  top: 0;
   z-index: 1 !important;
+  width: 100%;
 }
-.second-layer {
-  z-index: 2 !important;
+.layer-1 img {
+  width: 100%;
+  min-height: 100vh;
 }
 
 
@@ -94,6 +98,9 @@
   min-height: 105vh;
   grid-template-rows: repeat(5, 1fr);
   overflow: hidden;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 1%, rgba(0,0,0,0) 100%); 
+  /* background: url("https://res.cloudinary.com/dxryc5jgr/image/upload/c_scale,q_70,w_1622/v1692046970/developer-site/developer-1.webp"); */
 }
 
 .hero__text {
@@ -137,6 +144,7 @@
 .skills {
   row-gap: var(--space_11);
   padding-bottom: var(--space_11);
+  background: var(--dark);
 }
 .skills > h2 {
   justify-self: center;
@@ -296,10 +304,6 @@
   background: transparent; /* Background color of the track */
 }
 
-.projects::-webkit-scrollbar-thumb {
-  background: var(--primary_700); /* Color of the scrollbar thumb */
-  border-radius: 5px; /* Radius of the scrollbar thumb corners */
-}
 
 .portfolio {
   padding-top: var(--space_11);
@@ -309,6 +313,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--dark);
 }
 .portfolio__text {
   justify-self: center;
@@ -461,4 +466,9 @@
   fill: var(--primary_300);
   transition: all 0.2s;
 
+}
+
+/* animations */
+.typography--title-medium{
+  opacity: 0;
 }

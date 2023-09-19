@@ -16,6 +16,14 @@ async function inViewAnimations() {
     },{margin:"-150px"})
     
     scroll(
+        animate(".layer-1", { opacity: 0 }),
+        {
+            offset:[
+                "start start","center center"
+            ]
+        }
+      );
+    scroll(
         animate(".progress-bar", { scaleY: [0, 1] }),
         {
             offset:[
@@ -24,11 +32,7 @@ async function inViewAnimations() {
         }
       );
 }
-async function scrollAnimation() {
-    
-}
 
 export {
-    inViewAnimations,
-    scrollAnimation
+    inViewAnimations
 }

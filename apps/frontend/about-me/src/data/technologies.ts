@@ -37,7 +37,7 @@ export const technologies:Technology[] = [
     {
         name:"Next JS",
         icon:null,
-        knowledgeLevel:4
+        knowledgeLevel:5
     },
     {
         name:"Tailwind CSS",

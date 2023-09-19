@@ -74,14 +74,16 @@ function createTechnologies() {
   const techsContainer = document.createElement("div")
   techsContainer.className = "tech-container"
   const techsEls = technologies.sort((a,b)=>b.knowledgeLevel -a.knowledgeLevel).map((tech)=>{
+    const width = 30
+
     const container = createContainer({border:false})
     container.style.display = "flex"
     container.style.padding = "0"
     const level = document.createElement("div")
-    level.style.width = `${60/5 * tech.knowledgeLevel}%`
+    level.style.width = `${(100-width)/5 * tech.knowledgeLevel}%`
     level.style.background = "var(--primary_300)"
     const name = createTypography({label:tech.name,size:TypographySize.bodyLarge,color:TypographyColor.White})
-    name.style.minWidth = "180px"
+    name.style.width = `${width}%`
     container.append(name,level)
     return container
   })
