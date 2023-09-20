@@ -35,7 +35,7 @@ h1,h2,h3,h4,h5,h6,p,span,ul {
   color: var(--dark);
 }
 .typography--link{
-  text-decoration: none;
+  text-decoration: underline;
   color: var(--primary_300);
 }
 .typography--link:hover{

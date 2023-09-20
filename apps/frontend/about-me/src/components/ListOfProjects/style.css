@@ -1,0 +1,18 @@
+.projects {
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .projects-container{
+    display: flex;
+    gap: var(--space_8);  
+    padding-block: var(--space_11);
+  }
+.projects::-webkit-scrollbar {
+    width: 1px; /* Width of the vertical scrollbar */
+    height: 10px;
+  }
+  
+  .projects::-webkit-scrollbar-track {
+    background: transparent; /* Background color of the track */
+  }
+  

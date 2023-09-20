@@ -211,7 +211,7 @@ export const createNotification = ({
   });
   textContainer.append(titleEl, descriptionEl);
   notification.append(icon, textContainer);
-  const container = createContainer({ maxWidth: "400px" });
+  const container = createContainer({ });
   container.append(notification);
   return container;
 };

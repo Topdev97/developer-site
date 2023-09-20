@@ -23,7 +23,10 @@ export const createTextArea = ({
   input.name = name
   input.classList.add("text-area-field");
   input.setAttribute("value", inputValues);
-  input.setAttribute("required", "true");
+   if(required){
+
+    input.setAttribute("required","true");
+   }
 
   const labelElement = document.createElement("label");
   labelElement.classList.add("text-area-label");
